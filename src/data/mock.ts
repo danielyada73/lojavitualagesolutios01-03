@@ -141,7 +141,7 @@ export const products: Product[] = [
     details: { ...commonDetails, subtitle: 'Kit Econômico 2 Potes' }
   },
   {
-    id: 'col-kit-3',
+    id: '137428494', // Colágeno Verisol 3 Potes (Yampi)
     category_id: 'colageno-po',
     name: 'Colágeno com Ácido Hialurônico - Kit com 3',
     description: 'Sabores disponíveis: Cranberry e Limão',
@@ -152,6 +152,7 @@ export const products: Product[] = [
     images: ['https://lh3.googleusercontent.com/d/1spHD4PqpZW6Bj-pZvauiAISpyGpOywfq'],
     is_popular: true,
     is_kit: true,
+    variations: [{ id: '137428494', product_id: '137428494', name: 'Kit 3 Potes', price: 179.90 }],
     details: { ...commonDetails, subtitle: 'Kit Tratamento Completo 3 Potes' }
   },
 
@@ -215,7 +216,7 @@ export const products: Product[] = [
     details: { ...commonDetails, subtitle: 'Energia Celular e Coração Forte' }
   },
   {
-    id: 'coenz-kit-3',
+    id: '137428502', // Coenzima Q10 3 Potes (Yampi)
     category_id: 'coenzima',
     name: 'Coenzima Q10 - Kit com 3',
     description: '3 potes de 60 cápsulas',
@@ -226,6 +227,7 @@ export const products: Product[] = [
     images: ['https://lh3.googleusercontent.com/d/17FKIVWECEUSfgkXNUB46Sl6U6EOBjj1e'],
     is_popular: true,
     is_kit: true,
+    variations: [{ id: '137428502', product_id: '137428502', name: 'Kit 3 Potes', price: 129.90 }],
     details: { ...commonDetails, subtitle: 'Kit Saúde 3 Potes' }
   },
   {
@@ -259,7 +261,7 @@ export const products: Product[] = [
     details: { ...commonDetails, subtitle: 'Combate a Celulite e Retenção' }
   },
   {
-    id: 'cell-kit-3',
+    id: '137428501', // Celluli Burn 3 Potes (Yampi)
     category_id: 'celluli',
     name: 'Celluli Burn - Kit com 3',
     description: '3 potes de 60 cápsulas',
@@ -270,6 +272,7 @@ export const products: Product[] = [
     images: ['https://lh3.googleusercontent.com/d/1450UF0tdiT5sjxv7CJZJeh4CuZpNZAAY'],
     is_popular: true,
     is_kit: true,
+    variations: [{ id: '137428501', product_id: '137428501', name: 'Kit 3 Potes', price: 99.90 }],
     details: { ...commonDetails, subtitle: 'Kit Redução de Medidas 3 Potes' }
   },
   {

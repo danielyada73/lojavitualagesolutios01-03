@@ -57,10 +57,7 @@ export const useCartStore = create<CartStore>()(
 
         // 2. Sincroniza com Yampi em background (gera checkout URL)
         try {
-          const { cartId, items } = get();
-          const targetVariantId = variation?.id || product.variations?.[0]?.id;
-
-          if (!targetVariantId) return;
+          const { items } = get();
 
           // Coleta todos os itens do carrinho para gerar a URL de checkout
           const checkoutItems = items.map(item => ({
@@ -68,20 +65,23 @@ export const useCartStore = create<CartStore>()(
             quantity: item.quantity,
           }));
 
-          if (!cartId) {
-            const newCheckout = await createCheckout(targetVariantId, quantity);
+          if (checkoutItems.length > 0) {
+            const newCheckout = await createCheckout(checkoutItems[0].skuId, checkoutItems[0].quantity);
             if (newCheckout) {
-              set({ cartId: newCheckout.id, checkoutUrl: newCheckout.checkoutUrl });
-            }
-          } else {
-            const updatedCheckout = await addToCheckout(
-              cartId,
-              targetVariantId,
-              quantity,
-              checkoutItems
-            );
-            if (updatedCheckout) {
-              set({ checkoutUrl: updatedCheckout.checkoutUrl });
+              // Se tiver mais de um item, atualiza com todos
+              if (checkoutItems.length > 1) {
+                const updated = await addToCheckout(
+                  newCheckout.id,
+                  checkoutItems[1].skuId,
+                  0, // Não adiciona mais um, apenas sincroniza a lista total
+                  checkoutItems
+                );
+                if (updated) {
+                  set({ cartId: updated.id, checkoutUrl: updated.checkoutUrl });
+                }
+              } else {
+                set({ cartId: newCheckout.id, checkoutUrl: newCheckout.checkoutUrl });
+              }
             }
           }
         } catch (error) {
