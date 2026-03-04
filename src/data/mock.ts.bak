@@ -1,0 +1,316 @@
+import { Category, Product, ProductVariation, Banner, PromotionalKit, Video } from '../types';
+
+export const categories: Category[] = [
+  {
+    id: '1',
+    name: 'Suplementos',
+    slug: 'suplementos',
+    banner_url: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=1920&auto=format&fit=crop'
+  },
+  {
+    id: '2',
+    name: 'Promoções',
+    slug: 'promocoes',
+    banner_url: 'https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?q=80&w=1920&auto=format&fit=crop'
+  },
+  {
+    id: '3',
+    name: 'Kits',
+    slug: 'kits',
+    banner_url: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1920&auto=format&fit=crop'
+  },
+  {
+    id: '4',
+    name: 'Creatina',
+    slug: 'creatina',
+    banner_url: 'https://placehold.co/1920x600/black/gold?text=Creatina+Category+Cover' // Replace with uploaded category cover
+  }
+];
+
+export const products: Product[] = [
+  {
+    id: '1',
+    category_id: '1',
+    name: 'Colágeno: Ácido Hialurônico',
+    description: 'Sabores disponíveis: Cranberry e Limão. 60 cápsulas.',
+    price: 89.90,
+    original_price: 112.38,
+    discount_percentage: 25,
+    thumbnail_url: 'https://lh3.googleusercontent.com/d/1jkQtn2c2AeRD-CkRk7PJi-6ulyk1jHjp',
+    images: [
+      'https://lh3.googleusercontent.com/d/1jkQtn2c2AeRD-CkRk7PJi-6ulyk1jHjp', // Cranberry
+      'https://lh3.googleusercontent.com/d/1tOBC8M0mpnAkHCUtZntZLf-PiWzcWMTo', // Limão (placeholder, replace with actual if available)
+      'https://lh3.googleusercontent.com/d/1rIKr_pT7RFEz6tVAGo3PQICq4EtT2JIU', // Aberto (placeholder)
+      'https://lh3.googleusercontent.com/d/1450UF0tdiT5sjxv7CJZJeh4CuZpNZAAY'  // Uso (placeholder)
+    ],
+    is_popular: true,
+    details: {
+      subtitle: 'Renove sua pele com o Colágeno mais eficaz do Brasil!',
+      reviews: {
+        rating: 4.9,
+        count: 2847,
+      },
+      flavors: ['Cranberry', 'Limão'],
+      main_features: {
+        title: 'Sua saúde está em foco',
+        items: [
+          'Ácido Hialurônico 50mg — elasticidade e resistência da pele',
+          'Proteína 10g — regeneração de tecidos e imunidade',
+          'Vitaminas B6, C e E — antioxidante, pele viçosa e luminosa',
+          'Zinco — protege células produtoras de colágeno',
+          'Apenas 1 Scoop por dia — prático e fácil de consumir',
+        ],
+      },
+      benefits: {
+        title: 'O que o Colágeno vai fazer por você',
+        description: 'Uma fórmula completa pensada para renovar sua pele de dentro para fora',
+        items: [
+          { icon: '❤️', title: 'Saúde Cardiovascular', description: 'O colágeno contribui para a integridade dos vasos sanguíneos e a saúde do coração.' },
+          { icon: '💧', title: 'Hidratação Profunda', description: 'O ácido hialurônico retém água nas camadas profundas, garantindo hidratação duradoura.' },
+          { icon: '👁️', title: 'Pele Mais Jovem', description: 'Reduz rugas e linhas de expressão, devolvendo firmeza, elasticidade e luminosidade.' },
+          { icon: '🦴', title: 'Ossos e Articulações', description: 'Constitui as fibras que sustentam ossos, músculos, tendões e articulações do corpo.' },
+        ],
+      },
+      timeline: [
+        { period: '1ª Semana', title: 'Primeiros Sinais', points: ['Pele começa a se hidratar com mais profundidade', 'Sensação de suavidade e conforto', 'Unhas menos quebradiças'] },
+        { period: '4ª Semana', title: 'Resultados Visíveis', points: ['Melhora na textura e elasticidade da pele', 'Redução das linhas de expressão finas', 'Cabelos mais fortes e brilhantes'] },
+        { period: '8 Semanas – 3 Meses', title: 'Transformação Completa', points: ['Redução expressiva de rugas profundas', 'Pele radiante, firme e visivelmente mais jovem', 'Articulações e ossos muito mais saudáveis'] },
+      ],
+      formula: {
+        title: 'Descubra o segredo da nossa fórmula',
+        description: 'Nossa fórmula exclusiva reúne os ingredientes mais eficazes da ciência anti-idade, com concentrações ideais para resultados reais e rápidos.',
+        features: [
+          { icon: '💧', title: 'Ácido Hialurônico 50mg', description: 'Hidratação profunda, elasticidade e resistência da pele' },
+          { icon: '💪', title: 'Proteína 10g por porção', description: 'Regeneração de tecidos, imunidade e desenvolvimento celular' },
+          { icon: '🍊', title: 'Vitaminas B6, C e E', description: 'Antioxidante potente — luminosidade e aparência saudável' },
+          { icon: '⚡', title: 'Zinco Antioxidante', description: 'Protege células produtoras de colágeno e rejuvenesce a pele' },
+        ],
+      },
+      comparison: {
+        title: 'Por que escolher nosso Colágeno?',
+        items: [
+          { attribute: 'Ác. Hialurônico 50mg', age_solution: true, others: false },
+          { attribute: 'Proteína 10g', age_solution: true, others: false },
+          { attribute: 'Vitaminas B6, C e E', age_solution: true, others: false },
+          { attribute: 'Zinco Antioxidante', age_solution: true, others: false },
+          { attribute: 'Sabor Agradável', age_solution: true, others: false },
+          { attribute: 'Resultados em 4 sem.', age_solution: true, others: false },
+        ],
+      },
+      how_to_use: {
+        title: 'Como consumir',
+        description: 'Você vai precisar de apenas 1 Scoop por dia, sempre após a refeição — podendo ser após o café da manhã ou após o almoço.',
+        steps: [
+          'Adicione 1 scoop (10g) em 200ml de água ou suco de sua preferência',
+          'Mexa bem até dissolver completamente — pode usar o liquidificador',
+          'Tome após o café da manhã ou após o almoço para melhor absorção',
+          'Use por no mínimo 4 a 8 semanas para resultados completos',
+        ],
+      },
+      kits: [
+        { id: 'kit-col-1', pots: 1, old_price: 119.90, price: 89.90, installments: '12x R$ 7,49', is_best_seller: false },
+        { id: 'kit-col-2', pots: 2, old_price: 239.80, price: 159.90, installments: '12x R$ 13,33', is_best_seller: false },
+        { id: 'kit-col-3', pots: 3, old_price: 359.70, price: 149.90, installments: '12x R$ 12,49', is_best_seller: true },
+        { id: 'kit-col-6', pots: 6, old_price: 719.90, price: 299.90, installments: '12x R$ 24,99', is_best_seller: false },
+      ],
+      testimonials: [
+        { id: 'dep1', name: 'Mariana S.', location: 'São Paulo, SP', rating: 5, comment: 'Comecei a usar há 2 meses e a diferença na minha pele é incrível! Menos rugas, mais firmeza e uma luminosidade que eu não via há anos.' },
+        { id: 'dep2', name: 'Camila R.', location: 'Rio de Janeiro, RJ', rating: 5, comment: 'Produto maravilhoso! Além da pele, minhas unhas pararam de quebrar e meu cabelo está muito mais forte. Vale cada centavo!' },
+        { id: 'dep3', name: 'Ana Paula L.', location: 'Curitiba, PR', rating: 5, comment: 'Já tentei vários colágenos e esse é disparado o melhor. O sabor Cranberry é delicioso e os resultados apareceram muito rápido!' },
+        { id: 'dep4', name: 'Juliana M.', location: 'Belo Horizonte, MG', rating: 5, comment: 'Recebi meu pedido em 3 dias e o sabor limão é incrível, não parece suplemento. Minha pele mudou completamente em 6 semanas!' },
+        { id: 'dep5', name: 'Rosana P.', location: 'Porto Alegre, RS', rating: 5, comment: 'Tenho 52 anos e estava desacreditada em suplementos. Mas esse colágeno me surpreendeu. Em 6 semanas minha pele parece 10 anos mais nova!' },
+        { id: 'dep6', name: 'Fernanda C.', location: 'Recife, PE', rating: 5, comment: 'Comprei para minha mãe de 65 anos e ela não para de elogiar. As articulações melhoraram muito e a pele ficou muito mais hidratada!' },
+        { id: 'dep7', name: 'Larissa T.', location: 'Salvador, BA', rating: 5, comment: 'O atendimento foi incrível e o produto chegou super bem embalado. Uso há 1 mês e já noto diferença na hidratação da pele.' },
+        { id: 'dep8', name: 'Patricia N.', location: 'Florianópolis, SC', rating: 5, comment: 'Minha dermatologista aprovou! A concentração de ácido hialurônico é ideal para resultados reais. Produto de altíssima qualidade!' },
+        { id: 'dep9', name: 'Beatriz O.', location: 'Goiânia, GO', rating: 5, comment: 'Comecei com 1 pote só para testar e agora compro o kit de 6. Produto sensacional, entrega rápida e preço justo. Nunca mais vou trocar!' },
+      ],
+      nutrition_facts: {
+        serving_size: '1 scoop = 10g',
+        items: [
+          { nutrient: 'Valor Energético', quantity: '38 kcal', daily_value: '2%' },
+          { nutrient: 'Carboidratos', quantity: '0,5 g', daily_value: '<1%' },
+          { nutrient: 'Proteínas', quantity: '10 g', daily_value: '13%' },
+          { nutrient: 'Gorduras Totais', quantity: '0 g', daily_value: '0%' },
+          { nutrient: 'Sódio', quantity: '100 mg', daily_value: '4%' },
+          { nutrient: 'Ác. Hialurônico', quantity: '50 mg', daily_value: '**' },
+          { nutrient: 'Vitamina C', quantity: '45 mg', daily_value: '100%' },
+          { nutrient: 'Vitamina E', quantity: '10 mg', daily_value: '100%' },
+          { nutrient: 'Vitamina B6', quantity: '1,4 mg', daily_value: '100%' },
+          { nutrient: 'Zinco', quantity: '7 mg', daily_value: '100%' },
+        ],
+      },
+      faq: [
+        { question: 'Em quanto tempo aparecem os resultados?', answer: 'A maioria dos estudos demonstra resultados visíveis a partir de 8 semanas, mas começam a ser notados a partir de 4 semanas. Resultados podem variar de organismo para organismo.' },
+        { question: 'Como devo tomar?', answer: 'Apenas 1 Scoop por dia dissolvido em água ou suco, sempre após a refeição — podendo ser após o café da manhã ou após o almoço.' },
+        { question: 'Qual o prazo de entrega?', answer: 'Capitais e regiões metropolitanas: 3 a 5 dias úteis. Demais localidades: até 10 dias úteis. Enviamos em até 24h após confirmação do pagamento.' },
+        { question: 'Contém alguma contraindicação?', answer: 'Contraindicado para crianças, gestantes e lactantes. Pessoas com doenças renais ou hepáticas devem consultar um médico antes de consumir.' },
+        { question: 'Os ingredientes são naturais?', answer: 'Sim! Todos os ingredientes são de origem natural, sem corantes artificiais ou conservantes desnecessários. Livre de glúten e lactose.' },
+        { question: 'Posso tomar com outros suplementos?', answer: 'Sim, em geral é compatível com outros suplementos. Para combinações específicas, recomendamos consultar um nutricionista ou médico.' },
+      ],
+    },
+  },
+  {
+    id: '2',
+    category_id: '1',
+    name: 'Celluli Burn 100% Natural',
+    description: '60 cápsulas de 500 mg/cada.',
+    price: 39.90,
+    original_price: 49.88,
+    discount_percentage: 25,
+    thumbnail_url: 'https://lh3.googleusercontent.com/d/1tOBC8M0mpnAkHCUtZntZLf-PiWzcWMTo',
+    images: [
+      'https://lh3.googleusercontent.com/d/1450UF0tdiT5sjxv7CJZJeh4CuZpNZAAY',
+      'https://lh3.googleusercontent.com/d/1rIKr_pT7RFEz6tVAGo3PQICq4EtT2JIU',
+      'https://lh3.googleusercontent.com/d/1tOBC8M0mpnAkHCUtZntZLf-PiWzcWMTo',
+      'https://lh3.googleusercontent.com/d/11N4q0Jo3UVzRNeh3ziaU-pxMBM37J3SM',
+      'https://lh3.googleusercontent.com/d/1ECFt4-gUq0kdUMyk9ZkHwsVm2DZlT_s5'
+    ],
+    is_popular: true
+  },
+  {
+    id: '3',
+    category_id: '1',
+    name: 'Colágeno Verisol 100% Natural',
+    description: '60 cápsulas de 500 mg/cada.',
+    price: 49.90,
+    original_price: 62.38,
+    discount_percentage: 25,
+    thumbnail_url: 'https://lh3.googleusercontent.com/d/1Y6x63-ucORHZ6uiRdcUJS0Hg19t1a2BB',
+    images: [
+      'https://lh3.googleusercontent.com/d/1Y6x63-ucORHZ6uiRdcUJS0Hg19t1a2BB',
+      'https://lh3.googleusercontent.com/d/1H15nQWZblvjbNqYBrKDgurKNHqBNTvjA',
+      'https://lh3.googleusercontent.com/d/1Y80u46RuetTFZAwtJWgfEZpkHZnfLFTF',
+      'https://lh3.googleusercontent.com/d/1U68t54OYAmaQKfwrO2NmnEuHebklcVPv',
+      'https://lh3.googleusercontent.com/d/15EA9Itgo7VmVNm_9dadIpaY-NvcfF3b8'
+    ],
+    is_popular: true
+  },
+  {
+    id: '4',
+    category_id: '1',
+    name: 'Coenzima Q10 100% Natural',
+    description: '60 cápsulas de 500 mg/cada.',
+    price: 49.90,
+    original_price: 62.38,
+    discount_percentage: 25,
+    thumbnail_url: 'https://lh3.googleusercontent.com/d/12i1-zNojutljuRZKVlNo4dfWcHy9124I',
+    images: [
+      'https://lh3.googleusercontent.com/d/12i1-zNojutljuRZKVlNo4dfWcHy9124I',
+      'https://lh3.googleusercontent.com/d/17FKIVWECEUSfgkXNUB46Sl6U6EOBjj1e',
+      'https://lh3.googleusercontent.com/d/1z764f5Ozo0qBgXsbHAjHASNF_zghzS8e',
+      'https://lh3.googleusercontent.com/d/1SwZTfY4PzLJWWl-YSO9uAEn7M2jJT_8V',
+      'https://lh3.googleusercontent.com/d/1FrI2Fg4bqDkuoacT9aywxkfBqnDaNCo3'
+    ],
+    is_popular: true
+  },
+  {
+    id: '5',
+    category_id: '4', // Creatina category
+    name: 'Creatina Premium',
+    description: '100% Pura Creatina 300g.',
+    price: 79.90,
+    thumbnail_url: 'https://placehold.co/600x600/black/gold?text=Creatina+Premium+Pot', // Replace with image 1
+    images: [
+        'https://placehold.co/600x600/black/gold?text=Creatina+Premium+Pot', // Image 1
+        'https://placehold.co/600x600/black/gold?text=Creatina+Detail', // Image 2
+        'https://placehold.co/600x600/black/gold?text=Creatina+Lifestyle' // Image 3
+    ],
+    differentials: [
+        'https://placehold.co/400x400/black/gold?text=Image+38', // Image 38 (as requested)
+        'https://placehold.co/400x400/black/gold?text=Image+39', // Image 39
+        'https://placehold.co/400x400/black/gold?text=Image+41'  // Image 41
+    ],
+    is_popular: true
+  }
+];
+
+export const productVariations: ProductVariation[] = [
+  { id: '1', product_id: '1', name: 'Cranberry', price_modifier: 0 },
+  { id: '2', product_id: '1', name: 'Limão', price_modifier: 0 },
+];
+
+export const banners: Banner[] = [
+  {
+    id: '1',
+    title: 'VOCÊ EM ALTA PERFORMANCE',
+    description: '3 CREATINAS 300g 100% PURA DE R$ 239,70 POR: R$ 149,90',
+    image_url: 'https://lh3.googleusercontent.com/d/1yy_f33w_qx8zf4aPOE3vM2WVcK_Jz_fC', // Desktop Banner
+    mobile_image_url: 'https://lh3.googleusercontent.com/d/1bkYo7vC0vGjc7rj98TvsvFjfqvUEG2FI', // Mobile Banner
+    target_url: '/category/creatina',
+    is_active: true
+  }
+];
+
+export const differentialsImages = [
+  'https://lh3.googleusercontent.com/d/1_0yv33mvmhPTljKde8mF9RP1MxejoL9i',
+  'https://lh3.googleusercontent.com/d/1N2QgM0Pbr17M3XPUEeE1kZjUjuaqmei-', 
+  'https://lh3.googleusercontent.com/d/1q87Plm6aU5X30YCUSdqxRFTnfcUr-FIr'
+];
+
+export const colagenoOffers = [
+  {
+    id: 'col-1',
+    name: 'Colágeno com Ácido Hialurônico Sabor Cranberry',
+    description: 'Sabores disponíveis do colágeno: Cranberry e Limão',
+    price: 89.90,
+    original_price: 119.90, // Inferring original price based on discount or standard markup
+    installment_price: 7.49,
+    installment_count: 12,
+    discount_percentage: 25,
+    thumbnail_url: 'https://lh3.googleusercontent.com/d/1jkQtn2c2AeRD-CkRk7PJi-6ulyk1jHjp',
+    is_kit: false
+  },
+  {
+    id: 'col-2',
+    name: 'Colágeno com Ácido Hialurônico - Kit com 2',
+    description: 'Sabores disponíveis do colágeno: Cranberry e Limão',
+    price: 139.90,
+    original_price: 239.80, // Approx double
+    installment_price: 11.66,
+    installment_count: 12,
+    discount_percentage: 42,
+    thumbnail_url: 'https://lh3.googleusercontent.com/d/1alfY7lxdTMx2TJ20snzubh8F05kUlelx',
+    is_kit: true
+  },
+  {
+    id: 'col-3',
+    name: 'Colágeno com Ácido Hialurônico - Kit com 3',
+    description: 'Sabores disponíveis do colágeno: Cranberry e Limão',
+    price: 179.90,
+    original_price: 359.70, // Approx triple
+    installment_price: 14.99,
+    installment_count: 12,
+    discount_percentage: 50,
+    thumbnail_url: 'https://lh3.googleusercontent.com/d/1spHD4PqpZW6Bj-pZvauiAISpyGpOywfq',
+    is_kit: true
+  }
+];
+
+export const promotionalKits: PromotionalKit[] = [
+  {
+    id: '1',
+    name: '3 Potes Celluli Burn',
+    description: '180 cápsulas de 500 mg/cada',
+    base_price: 119.70,
+    discount_percentage: 41, // To match approx 69.90
+    thumbnail_url: 'https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?q=80&w=500&auto=format&fit=crop'
+  },
+  {
+    id: '2',
+    name: '3 Potes Colágeno Verisol',
+    description: '180 cápsulas de 500 mg/cada',
+    base_price: 149.70,
+    discount_percentage: 53, // To match approx 69.90
+    thumbnail_url: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=500&auto=format&fit=crop'
+  }
+];
+
+export const videos: Video[] = [
+  {
+    id: '1',
+    product_id: '1',
+    title: 'Conheça o Colágeno Age',
+    url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
+    thumbnail_url: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=500&auto=format&fit=crop'
+  }
+];

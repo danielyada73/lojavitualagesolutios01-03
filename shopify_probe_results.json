@@ -1,0 +1,432 @@
+{
+  "data": {
+    "collections": {
+      "edges": [
+        {
+          "node": {
+            "title": "Home page",
+            "handle": "frontpage",
+            "products": {
+              "edges": [
+                {
+                  "node": {
+                    "title": "Colágeno: Ácido Hialurônico (Cranberry)"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Colágeno",
+            "handle": "colageno",
+            "products": {
+              "edges": [
+                {
+                  "node": {
+                    "title": "6 Potes Colágeno Verisol"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "3 Potes Colágeno Verisol"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "2 Potes Colágeno Verisol"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "1 Pote Colágeno Verisol"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Colágeno com Ácido Hialurônico - Kit com 6"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Creatina",
+            "handle": "creatina",
+            "products": {
+              "edges": [
+                {
+                  "node": {
+                    "title": "Creatina 100% Pura - Kit com 3"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Creatina 100% Pura - Kit com 2"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Creatina 100% Pura - 300g"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Coenzima",
+            "handle": "coenzima",
+            "products": {
+              "edges": [
+                {
+                  "node": {
+                    "title": "Coenzima Q10 - Kit com 6"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Coenzima Q10 - Kit com 5"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Coenzima Q10 - Kit com 3"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Coenzima Q10 - Kit com 2"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Coenzima Q10 100% Natural"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Celluli",
+            "handle": "celluli",
+            "products": {
+              "edges": [
+                {
+                  "node": {
+                    "title": "Celluli Burn - Kit com 6"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Celluli Burn - Kit com 3"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Celluli Burn - Kit com 2"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Celluli Burn 100% Natural - 1 Pote"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "Kits Promocionais",
+            "handle": "kits-promocionais",
+            "products": {
+              "edges": [
+                {
+                  "node": {
+                    "title": "Celluli Burn - Kit com 3"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Celluli Burn - Kit com 2"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Coenzima Q10 - Kit com 3"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Coenzima Q10 - Kit com 2"
+                  }
+                },
+                {
+                  "node": {
+                    "title": "Creatina 100% Pura - Kit com 3"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "products": {
+      "edges": [
+        {
+          "node": {
+            "title": "Colágeno: Ácido Hialurônico (Cranberry)",
+            "handle": "col-cran",
+            "tags": [
+              "acid-hialuronic",
+              "colageno",
+              "cranberry"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Colágeno: Ácido Hialurônico (Limão)",
+            "handle": "col-lim",
+            "tags": [
+              "acid-hialuronic",
+              "colageno",
+              "limao"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Creatina 100% Pura - 300g",
+            "handle": "cre-ind",
+            "tags": [
+              "creatina",
+              "pureza"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Coenzima Q10 100% Natural",
+            "handle": "coenz-ind",
+            "tags": [
+              "coenzima",
+              "saude-celular"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Celluli Burn 100% Natural - 1 Pote",
+            "handle": "cell-ind",
+            "tags": [
+              "celluli",
+              "emagrecimento"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Colágeno com Ácido Hialurônico - Kit com 2",
+            "handle": "col-kit-2",
+            "tags": [
+              "colageno",
+              "kit"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Colágeno com Ácido Hialurônico - Kit com 3",
+            "handle": "col-kit-3",
+            "tags": [
+              "colageno",
+              "kit",
+              "mais-vendido"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Colágeno com Ácido Hialurônico - Kit com 6",
+            "handle": "col-kit-6",
+            "tags": [
+              "colageno",
+              "kit"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Creatina 100% Pura - Kit com 2",
+            "handle": "cre-kit-2",
+            "tags": [
+              "creatina",
+              "kit"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Creatina 100% Pura - Kit com 3",
+            "handle": "cre-kit-3",
+            "tags": [
+              "creatina",
+              "kit",
+              "mais-vendido"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Coenzima Q10 - Kit com 2",
+            "handle": "coenz-kit-2",
+            "tags": [
+              "coenzima",
+              "kit"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Coenzima Q10 - Kit com 3",
+            "handle": "coenz-kit-3",
+            "tags": [
+              "coenzima",
+              "kit",
+              "mais-vendido"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Coenzima Q10 - Kit com 5",
+            "handle": "coenz-kit-5",
+            "tags": [
+              "coenzima",
+              "kit"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Coenzima Q10 - Kit com 6",
+            "handle": "coenz-kit-6",
+            "tags": [
+              "coenzima",
+              "kit"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Celluli Burn - Kit com 2",
+            "handle": "cell-kit-2",
+            "tags": [
+              "celluli",
+              "kit"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Celluli Burn - Kit com 3",
+            "handle": "cell-kit-3",
+            "tags": [
+              "celluli",
+              "kit",
+              "mais-vendido"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Celluli Burn - Kit com 6",
+            "handle": "cell-kit-6",
+            "tags": [
+              "celluli",
+              "kit"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "1 Pote Colágeno Verisol",
+            "handle": "verisol-ind",
+            "tags": [
+              "colageno",
+              "verisol"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "2 Potes Colágeno Verisol",
+            "handle": "verisol-kit-2",
+            "tags": [
+              "colageno",
+              "kit",
+              "verisol"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "3 Potes Colágeno Verisol",
+            "handle": "verisol-kit-3",
+            "tags": [
+              "colageno",
+              "kit",
+              "mais-vendido",
+              "verisol"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "6 Potes Colágeno Verisol",
+            "handle": "verisol-kit-6",
+            "tags": [
+              "colageno",
+              "kit",
+              "verisol"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Ômega 3 Ultra Concentrado",
+            "handle": "omega-ind",
+            "tags": [
+              "omega",
+              "saude-cardiovascular"
+            ]
+          }
+        },
+        {
+          "node": {
+            "title": "Ômega 3 - Kit com 3",
+            "handle": "omega-kit-3",
+            "tags": [
+              "kit",
+              "omega"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "cost": {
+      "requestedQueryCost": 79
+    }
+  }
+}

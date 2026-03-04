@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-age-gold: #E8AA24;
+  --color-age-dark: #111111;
+  --color-age-green: #32CD32;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --animate-marquee: marquee 25s linear infinite;
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  @keyframes marquee-slow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  --animate-marquee-slow: marquee-slow 40s linear infinite;
+}
+
+body {
+  font-family: var(--font-sans);
+}
