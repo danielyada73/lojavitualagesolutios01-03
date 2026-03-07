@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: alpha_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: alpha
+      POSTGRES_PASSWORD: alpha123
+      POSTGRES_DB: alpha_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - alpha_pgdata:/var/lib/postgresql/data
+
+volumes:
+  alpha_pgdata:

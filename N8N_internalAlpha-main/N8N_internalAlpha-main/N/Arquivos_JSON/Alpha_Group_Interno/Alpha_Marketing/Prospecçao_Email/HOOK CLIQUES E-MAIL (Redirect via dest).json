@@ -1,0 +1,1184 @@
+{
+  "name": "HOOK CLIQUES E-MAIL (Redirect via dest)",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "expression",
+        "numberOutputs": 3,
+        "output": "={{ (() => {\n  const step = String($node[\"Webhook\"].json.query?.step || \"\").toLowerCase();\n  if (step.includes(\"whatsapp\") || step.includes(\"what\")) return 0;\n  if (step.includes(\"site\")) return 1;\n  return 2;\n})() }}"
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -1520,
+        480
+      ],
+      "id": "f36b2dea-56a4-41c9-abbd-ee9bf794d839",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Email",
+              "lookupValue": "={{ String($json.query.cid || '').trim().toLowerCase() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1712,
+        496
+      ],
+      "id": "233ae5bd-0d35-4790-bdd1-31f51e97d6d6",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "path": "Alpha_internal_cliques",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1872,
+        272
+      ],
+      "id": "6b57448e-64c3-4de1-9e23-854f000f66a4",
+      "name": "Webhook",
+      "webhookId": "00d51c37-7b56-4daa-8be1-71b562ef8a0c"
+    },
+    {
+      "parameters": {
+        "respondWith": "noData",
+        "options": {
+          "responseCode": 302,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Location",
+                "value": "={{ String($node[\"Webhook\"].json.query.dest || \"https://marketingalphadigital.com.br/\").trim() }}"
+              },
+              {
+                "name": "Cache-Control",
+                "value": "no-store"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -1680,
+        272
+      ],
+      "id": "6676f81b-d739-41f6-b905-ddffedbf1eeb",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{$json.Email}}",
+            "Ultimo_Click_Em": "={{$now}}",
+            "Ultimo_Click_Step": "={{$node[\"Webhook\"].json.query.step}}",
+            "Clikes what 1": "=={{ String($node[\"Webhook\"].json.query.step||\"\").toLowerCase().startsWith(\"e1_\")\n  ? ((parseInt($json[\"Clikes what 1\"],10) || 0) + 1)\n  :  (parseInt($json[\"Clikes what 1\"],10) || 0) }}",
+            "Clickes What 3": "=={{ String($node[\"Webhook\"].json.query.step||\"\").toLowerCase().startsWith(\"e3_\")  ? ((parseInt($json[\"Clickes What 3\"],10) || 0) + 1)  :  (parseInt($json[\"Clickes What 3\"],10) || 0) }}",
+            "Clikes what 2": "=={{ String($node[\"Webhook\"].json.query.step||\"\").toLowerCase().startsWith(\"e2_\")  ? ((parseInt($json[\"Clikes what 2\"],10) || 0) + 1)  :  (parseInt($json[\"Clikes what 2\"],10) || 0) }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes what 1",
+              "displayName": "Clikes what 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes what 2",
+              "displayName": "Clikes what 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes What 3",
+              "displayName": "Clickes What 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site 1",
+              "displayName": "Clikes site 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site 2",
+              "displayName": "Clikes site 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site 3",
+              "displayName": "Clikes site 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta 1",
+              "displayName": "Clickes resposta 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta 2",
+              "displayName": "Clickes resposta 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta 3",
+              "displayName": "Clickes resposta 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ultimo_Click_Em",
+              "displayName": "Ultimo_Click_Em",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ultimo_Click_Step",
+              "displayName": "Ultimo_Click_Step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1264,
+        368
+      ],
+      "id": "55d6d41c-9f44-4703-812a-5f4780fa2be7",
+      "name": "Whatsap clikes",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{$json.Email}}",
+            "Ultimo_Click_Em": "={{$now}}",
+            "Ultimo_Click_Step": "={{$node[\"Webhook\"].json.query.step}}",
+            "Clikes site 1": "=={{ String($node[\"Webhook\"].json.query.step||\"\").toLowerCase().startsWith(\"e1_\")\n  ? ((parseInt($json[\"Clikes site 1\"],10) || 0) + 1)\n  :  (parseInt($json[\"Clikes site 1\"],10) || 0) }}",
+            "Clikes site 2": "=={{ String($node[\"Webhook\"].json.query.step||\"\").toLowerCase().startsWith(\"e2_\")  ? ((parseInt($json[\"Clikes site 2\"],10) || 0) + 1)  :  (parseInt($json[\"Clikes site 2\"],10) || 0) }}",
+            "Clikes site 3": "=={{ String($node[\"Webhook\"].json.query.step||\"\").toLowerCase().startsWith(\"e3_\")  ? ((parseInt($json[\"Clikes site 3\"],10) || 0) + 1)  :  (parseInt($json[\"Clikes site 3\"],10) || 0) }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes what 1",
+              "displayName": "Clikes what 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes what 2",
+              "displayName": "Clikes what 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes What 3",
+              "displayName": "Clickes What 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site 1",
+              "displayName": "Clikes site 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site 2",
+              "displayName": "Clikes site 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site 3",
+              "displayName": "Clikes site 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta 1",
+              "displayName": "Clickes resposta 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta 2",
+              "displayName": "Clickes resposta 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta 3",
+              "displayName": "Clickes resposta 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ultimo_Click_Em",
+              "displayName": "Ultimo_Click_Em",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ultimo_Click_Step",
+              "displayName": "Ultimo_Click_Step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1264,
+        496
+      ],
+      "id": "2cbca90a-5092-46d7-9589-447b59edeb5f",
+      "name": "Site Clikes",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{$json.Email}}",
+            "Ultimo_Click_Em": "={{$now}}",
+            "Ultimo_Click_Step": "={{$node[\"Webhook\"].json.query.step}}",
+            "Clickes resposta 1": "=={{ String($node[\"Webhook\"].json.query.step||\"\").toLowerCase().startsWith(\"e1_\")\n  ? ((parseInt($json[\"Clickes resposta 1\"],10) || 0) + 1)\n  :  (parseInt($json[\"Clickes resposta 1\"],10) || 0) }}",
+            "Clickes resposta 2": "=={{ String($node[\"Webhook\"].json.query.step||\"\").toLowerCase().startsWith(\"e2_\")  ? ((parseInt($json[\"Clickes resposta 2\"],10) || 0) + 1)  :  (parseInt($json[\"Clickes resposta 2\"],10) || 0) }}",
+            "Clickes resposta 3": "=={{ String($node[\"Webhook\"].json.query.step||\"\").toLowerCase().startsWith(\"e3_\")  ? ((parseInt($json[\"Clickes resposta 3\"],10) || 0) + 1)  :  (parseInt($json[\"Clickes resposta 3\"],10) || 0) }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes what 1",
+              "displayName": "Clikes what 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes what 2",
+              "displayName": "Clikes what 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes What 3",
+              "displayName": "Clickes What 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site 1",
+              "displayName": "Clikes site 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site 2",
+              "displayName": "Clikes site 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site 3",
+              "displayName": "Clikes site 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta 1",
+              "displayName": "Clickes resposta 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta 2",
+              "displayName": "Clickes resposta 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta 3",
+              "displayName": "Clickes resposta 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ultimo_Click_Em",
+              "displayName": "Ultimo_Click_Em",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ultimo_Click_Step",
+              "displayName": "Ultimo_Click_Step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1264,
+        624
+      ],
+      "id": "d4946b4e-3da2-4cb5-9e61-b4a3f714885d",
+      "name": "Resposta",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      },
+      "continueOnFail": true
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Whatsap clikes",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Site Clikes",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Resposta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "b08ebc1f-87a9-492e-a7d0-fc064b758dd9",
+  "meta": {
+    "instanceId": "975211c247f5eab3cac252d8241abd971a891f0a3a41f6a304e2e7595208c3df"
+  },
+  "id": "4jj5imDuvpxoXSuY",
+  "tags": [
+    {
+      "updatedAt": "2026-03-03T19:29:40.226Z",
+      "createdAt": "2026-03-03T19:29:40.226Z",
+      "id": "5lwcihSlVa4koflC",
+      "name": "Clique_Botoes_Corpo_Emai"
+    }
+  ]
+}

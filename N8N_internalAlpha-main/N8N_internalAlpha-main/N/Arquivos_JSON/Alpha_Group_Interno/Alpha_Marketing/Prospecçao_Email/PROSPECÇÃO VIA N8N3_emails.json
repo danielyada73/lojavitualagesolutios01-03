@@ -1,0 +1,2796 @@
+{
+  "name": "PROSPECÇÃO VIA N8N",
+  "nodes": [
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        560,
+        592
+      ],
+      "id": "47521d91-a6be-4204-b101-a323f9af8693",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "d5ed447c-4a73-4405-83de-e48a634c0bc6",
+              "leftValue": "={{ $json.Status }}",
+              "rightValue": "Pendente",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        816,
+        592
+      ],
+      "id": "748f12df-bd6b-4c70-a6a9-5e64810e9d23",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "batchSize": 100,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1040,
+        592
+      ],
+      "id": "42388ecb-61b9-467c-b396-13078c077f70",
+      "name": "Loop Over Items",
+      "alwaysOutputData": false,
+      "executeOnce": false,
+      "retryOnFail": false,
+      "notesInFlow": false
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        672
+      ],
+      "id": "b912608e-3b2e-4435-a210-530338aefdd1",
+      "alwaysOutputData": false,
+      "executeOnce": false,
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "days"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3632,
+        448
+      ],
+      "id": "dd2fb334-ba2b-4499-bd56-ce3be5f9b7c9",
+      "name": "Wait",
+      "webhookId": "805d366b-d13c-4d0f-942d-544522a35e7e",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $('Get row(s) in sheet').item.json.Email }}",
+            "E2_Enviado": "Sim",
+            "E2_EnviadoEm": "={{ $now }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        4032,
+        432
+      ],
+      "id": "112ef118-0441-422d-ade9-7f8dba4ebf87",
+      "name": "Update row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $('Get row(s) in sheet').item.json.Email }}",
+            "E3_EnviadoEm": "={{ $now }}",
+            "E3_Enviado": "Sim",
+            "Campanha": "Alpha teste"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        4752,
+        416
+      ],
+      "id": "3da36e7f-9457-49fc-abb7-46e5c24aeff4",
+      "name": "Update row in sheet2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Get row(s) in sheet').item.json.Email }}",
+        "subject": "Hoje o gargalo é volume ou qualidade de leads?",
+        "message": "=<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <meta name=\"x-apple-disable-message-reformatting\">\n  <meta name=\"format-detection\" content=\"telephone=no,address=no,email=no,date=no,url=no\">\n  <title>Agência Alpha</title>\n\n  <style>\n    /* Reset básico */\n    html,body{margin:0!important;padding:0!important;height:100%!important;width:100%!important}\n    table,td{border-collapse:collapse!important;mso-table-lspace:0pt!important;mso-table-rspace:0pt!important}\n    img{-ms-interpolation-mode:bicubic;display:block;border:0;outline:none;text-decoration:none}\n    a{text-decoration:none}\n\n    /* Colunas dos botões (desktop) */\n    .btn-col{width:50%;vertical-align:top}\n    .btn a{display:inline-block;max-width:100%}\n\n    /* Mobile */\n    @media screen and (max-width:600px){\n      .container{width:100%!important;max-width:100%!important}\n      .px{padding-left:16px!important;padding-right:16px!important}\n      .center{text-align:center!important}\n\n      /* Empilha botões e ocupa 100% */\n      .btn-col{display:block!important;width:100%!important}\n      .btn a{display:block!important;width:100%!important;text-align:center!important}\n\n      /* Zera os espaços laterais entre as colunas no mobile */\n      .btn-col-pad-left{padding-left:0!important}\n      .btn-col-pad-right{padding-right:0!important}\n\n      .icons td{padding-left:10px!important}\n      .hide{display:none!important;width:0!important;height:0!important;overflow:hidden!important}\n    }\n\n    /* Outlook: força padding em botões */\n    .btn a{mso-padding-alt:12px 18px}\n  </style>\n</head>\n\n<body style=\"margin:0; padding:0; background-color:#f4f6f8;\">\n\n  <!-- Preheader (preview do inbox) -->\n  <div style=\"display:none!important;visibility:hidden;opacity:0;color:transparent;height:0;width:0;overflow:hidden;mso-hide:all;\">\n    Henrique da Alpha — oportunidades qualificadas para construção civil.\n  </div>\n\n  <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f4f6f8;\">\n    <tr>\n      <td align=\"center\" style=\"padding:24px 12px;\">\n\n        <!-- Wrapper fixo para Outlook -->\n        <!--[if (gte mso 9)|(IE)]>\n        <table role=\"presentation\" width=\"600\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n          <tr>\n            <td>\n        <![endif]-->\n\n        <!-- Container híbrido (responsivo) -->\n        <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\"\n          style=\"width:100%; max-width:600px; background-color:#ffffff; border-radius:12px; overflow:hidden; font-family:Arial, Helvetica, sans-serif;\">\n\n          <!-- HEADER -->\n          <tr>\n            <td class=\"px center\" style=\"padding:24px; text-align:center;\">\n              <h2 style=\"margin:0; font-size:20px; color:#111827;\">Agência Alpha</h2>\n              <p style=\"margin:4px 0 0 0; font-size:13px; color:#6b7280;\">\n                Performance e previsibilidade para construção civil\n              </p>\n            </td>\n          </tr>\n\n          <!-- CONTEÚDO -->\n          <tr>\n            <td class=\"px\" style=\"padding:0 24px 24px 24px; font-size:15px; line-height:1.6; color:#111827;\">\n\n              <p style=\"margin:0 0 12px 0;\">Boa tarde, só pra eu entender rapidamente:</p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                Hoje na sua empresa você tem <strong>poucas oportunidades de vendas</strong>, ou as oportunidades que aparecem\n                são <strong>fora do perfil</strong> e <strong>desqualificadas</strong>?\n              </p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                Hoje na <strong>Alpha</strong>, temos soluções para atender esses <strong>2 gargalos</strong> que geralmente\n                atrapalham as empresas da construção civil.\n              </p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                Responda esse e-mail e eu já te digo qual caminho costuma destravar mais rápido.\n              </p>\n\n              <p style=\"margin:0 0 16px 0;\">\n                Só frisando que trabalhamos há <strong>8 anos</strong> no ramo e já ajudamos muitas empresas da construção\n                a aumentarem seu faturamento através de estratégias validadas.\n              </p>\n\n              <!-- Pixel de abertura (tracking) -->\n              <img src=\"https://n8n.marketingalphadigital.com.br/webhook/Alpha_Interno?cid={{$json.Email}}&step=2\"width=\"1\" height=\"1\" alt=\"\"\n              style=\"width:1px;height:1px;max-height:1px;overflow:hidden;border:0;outline:none;text-decoration:none;display:block;\" />\n\n              <!-- BOTÕES (desktop: lado a lado / mobile: empilha + 100%) -->\n              <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"margin:20px 0 0 0;\">\n                <tr>\n                  <!-- BOTÃO 1: WhatsApp -->\n                  <td class=\"btn btn-col btn-col-pad-right\" align=\"center\" style=\"padding:0 8px 12px 0;\">\n                    <!--[if mso]>\n                      <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\"\n                        href=\"https://n8n.vps.marketingalphadigital.com.br/webhook/click-track?cid={{$json.Email}}&step=email_whatsapp&dest=https%3A%2F%2Fwa.me%2F5511947928227\"\n                        style=\"height:44px;v-text-anchor:middle;width:260px;\" arcsize=\"12%\" stroke=\"f\" fillcolor=\"#16a34a\">\n                        <w:anchorlock/>\n                        <center style=\"color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;\">\n                          Falar no WhatsApp\n                        </center>\n                      </v:roundrect>\n                    <![endif]-->\n                    <!--[if !mso]><!-- -->\n                    <a href=\"https://n8n.marketingalphadigital.com.br/webhook/Alpha_internal_cliques?cid={{$json.Email}}&event=click&step=e2_whatsapp&dest=https%3A%2F%2Fwa.me%2F5511953277910\" target=\"_blank\"\n                       style=\"background:#16a34a; color:#ffffff; padding:12px 18px; border-radius:8px; font-weight:bold; display:block;\">\n                      Falar no WhatsApp\n                    </a>\n                    <!--<![endif]-->\n                  </td>\n\n                  <!-- BOTÃO 2: Site -->\n                  <td class=\"btn btn-col btn-col-pad-left\" align=\"center\" style=\"padding:0 0 12px 8px;\">\n                    <!--[if mso]>\n                      <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\"\n                        href=\"https://n8n.vps.marketingalphadigital.com.br/webhook/click-track?cid={{$json.Email}}&step=email_site&dest=https%3A%2F%2Fmarketingalphadigital.com.br%2F\"\n                        style=\"height:44px;v-text-anchor:middle;width:260px;\" arcsize=\"12%\" stroke=\"f\" fillcolor=\"#111827\">\n                        <w:anchorlock/>\n                        <center style=\"color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;\">\n                          Visite nosso site\n                        </center>\n                      </v:roundrect>\n                    <![endif]-->\n                    <!--[if !mso]><!-- -->\n                    <a href=\"https://n8n.marketingalphadigital.com.br/webhook/Alpha_internal_cliques?cid={{$json.Email}}&event=click&step=e2_site&dest=https%3A%2F%2Fmarketingalphadigital.com.br%2F\" target=\"_blank\"\n                       style=\"background:#111827; color:#ffffff; padding:12px 18px; border-radius:8px; font-weight:bold; display:block;\">\n                      Visite nosso site\n                    </a>\n                    <!--<![endif]-->\n                  </td>\n                </tr>\n              </table>\n\n              <p style=\"margin:18px 0 0 0;\">Abs,</p>\n              <p style=\"margin:0;\">Henrique</p>\n\n            </td>\n          </tr>\n\n          <!-- FOOTER / ASSINATURA -->\n          <tr>\n            <td class=\"px\" style=\"padding:20px 24px; background-color:#f9fafb; border-top:1px solid #e5e7eb;\">\n              <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                <tr>\n                  <!-- COLUNA ESQUERDA -->\n                  <td class=\"center\" valign=\"top\"\n                      style=\"font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#111827; padding-right:10px;\">\n                    <p style=\"margin:0; font-size:14px; font-weight:bold;\">Henrique Sousa</p>\n                    <p style=\"margin:2px 0;\">Gerente de Contas | Agência Alpha</p>\n\n                    <p style=\"margin:8px 0 0 0; line-height:1.5;\">\n                      📞 <a href=\"https://api.whatsapp.com/send?phone=5511953277910\" target=\"_blank\" style=\"color:#111827; text-decoration:underline;\">\n                        (11) 94792-8227\n                      </a><br>\n                      ✉️ <a href=\"mailto:henrique@marketingalphadigital.com.br\" style=\"color:#111827; text-decoration:underline;\">\n                        henrique@marketingalphadigital.com.br\n                      </a><br>\n                    </p>\n                  </td>\n\n                  <!-- COLUNA DIREITA -->\n                  <td class=\"center\" valign=\"top\" align=\"right\" style=\"padding-top:10px;\">\n                    <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" class=\"icons\">\n                      <tr>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.instagram.com/agenciaalpha_/\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\" width=\"24\" height=\"24\" alt=\"Instagram\">\n                          </a>\n                        </td>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.linkedin.com/company/64909946/admin/dashboard/\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/174/174857.png\" width=\"24\" height=\"24\" alt=\"LinkedIn\">\n                          </a>\n                        </td>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.youtube.com/@Alphaperformanceagencia\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/1384/1384060.png\" width=\"24\" height=\"24\" alt=\"YouTube\">\n                          </a>\n                        </td>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.tiktok.com/@alphaperformanceagencia\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/3046/3046121.png\" width=\"24\" height=\"24\" alt=\"TikTok\">\n                          </a>\n                        </td>\n                      </tr>\n                    </table>\n                  </td>\n\n                </tr>\n              </table>\n            </td>\n          </tr>\n\n        </table>\n\n        <!--[if (gte mso 9)|(IE)]>\n            </td>\n          </tr>\n        </table>\n        <![endif]-->\n\n      </td>\n    </tr>\n  </table>\n</body>\n</html>\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        3824,
+        448
+      ],
+      "id": "ba96a658-82b7-45f0-830c-0d6337e5f08d",
+      "name": "Contato 2",
+      "webhookId": "2d34eba8-be65-4093-b9f6-9ba0db0c9c2b",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "qQRrZhyDaDfNhZdo",
+          "name": "Gmail account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Get row(s) in sheet').item.json.Email }}",
+        "subject": "Faz sentido conversar ou encerro por aqui?",
+        "message": "=<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <meta name=\"x-apple-disable-message-reformatting\">\n  <meta name=\"format-detection\" content=\"telephone=no,address=no,email=no,date=no,url=no\">\n  <title>Agência Alpha</title>\n\n  <style>\n    /* Reset básico */\n    html,body{margin:0!important;padding:0!important;height:100%!important;width:100%!important}\n    table,td{border-collapse:collapse!important;mso-table-lspace:0pt!important;mso-table-rspace:0pt!important}\n    img{-ms-interpolation-mode:bicubic;display:block;border:0;outline:none;text-decoration:none}\n    a{text-decoration:none}\n\n    /* Colunas dos botões (desktop) */\n    .btn-col{width:50%;vertical-align:top}\n    .btn a{display:inline-block;max-width:100%}\n\n    /* Mobile */\n    @media screen and (max-width:600px){\n      .container{width:100%!important;max-width:100%!important}\n      .px{padding-left:16px!important;padding-right:16px!important}\n      .center{text-align:center!important}\n\n      /* Empilha botões e ocupa 100% */\n      .btn-col{display:block!important;width:100%!important}\n      .btn a{display:block!important;width:100%!important;text-align:center!important}\n\n      /* Zera os espaços laterais entre as colunas no mobile */\n      .btn-col-pad-left{padding-left:0!important}\n      .btn-col-pad-right{padding-right:0!important}\n\n      .icons td{padding-left:10px!important}\n      .hide{display:none!important;width:0!important;height:0!important;overflow:hidden!important}\n    }\n\n    /* Outlook: força padding em botões */\n    .btn a{mso-padding-alt:12px 18px}\n  </style>\n</head>\n\n<body style=\"margin:0; padding:0; background-color:#f4f6f8;\">\n\n  <!-- Preheader (preview do inbox) -->\n  <div style=\"display:none!important;visibility:hidden;opacity:0;color:transparent;height:0;width:0;overflow:hidden;mso-hide:all;\">\n    Último contato: faz sentido uma conversa rápida ainda esta semana? Manhã ou tarde?\n  </div>\n\n  <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f4f6f8;\">\n    <tr>\n      <td align=\"center\" style=\"padding:24px 12px;\">\n\n        <!-- Wrapper fixo para Outlook -->\n        <!--[if (gte mso 9)|(IE)]>\n        <table role=\"presentation\" width=\"600\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n          <tr>\n            <td>\n        <![endif]-->\n\n        <!-- Container híbrido (responsivo) -->\n        <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\"\n          style=\"width:100%; max-width:600px; background-color:#ffffff; border-radius:12px; overflow:hidden; font-family:Arial, Helvetica, sans-serif;\">\n\n          <!-- HEADER -->\n          <tr>\n            <td class=\"px center\" style=\"padding:24px; text-align:center;\">\n              <h2 style=\"margin:0; font-size:20px; color:#111827;\">Agência Alpha</h2>\n              <p style=\"margin:4px 0 0 0; font-size:13px; color:#6b7280;\">\n                Performance e previsibilidade para construção civil\n              </p>\n            </td>\n          </tr>\n\n          <!-- CONTEÚDO -->\n          <tr>\n            <td class=\"px\" style=\"padding:0 24px 24px 24px; font-size:15px; line-height:1.6; color:#111827;\">\n\n              <p style=\"margin:0 0 12px 0;\">Olá.</p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                Último contato da minha parte.\n              </p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                A <strong>Alpha</strong> é focada em performance: transformar o marketing em <strong>oportunidades reais</strong>\n                (pedido de orçamento, contato comercial), com uma estrutura simples e direta.\n              </p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                Com <strong>8 anos de experiência</strong>, especificamente no ramo da construção civil, ajudamos mais de\n                <strong>200 empresas</strong> a não depender mais de indicação, criar previsibilidade e ter uma empresa realmente estruturada.\n              </p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                Faz sentido a gente marcar uma conversa rápida ainda esta semana?\n              </p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                Se sim, me diga: <strong>manhã</strong> ou <strong>tarde</strong>.\n              </p>\n\n              <p style=\"margin:0 0 16px 0;\">\n                Se não fizer sentido agora, sem problema — me avisa que eu encerro por aqui.\n              </p>\n\n              <!-- Pixel de abertura (tracking) -->\n              <img src=\"https://n8n.marketingalphadigital.com.br/webhook/Alpha_Interno?cid={{$json.Email}}&step=3\"width=\"1\" height=\"1\" alt=\"\"\n              style=\"width:1px;height:1px;max-height:1px;overflow:hidden;border:0;outline:none;text-decoration:none;display:block;\" />\n\n\n              <!-- BOTÕES (desktop: lado a lado / mobile: empilha + 100%) -->\n              <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"margin:20px 0 0 0;\">\n                <tr>\n                  <!-- BOTÃO 1: WhatsApp -->\n                  <td class=\"btn btn-col btn-col-pad-right\" align=\"center\" style=\"padding:0 8px 12px 0;\">\n                    <!--[if mso]>\n                      <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\"\n                        href=\"https://n8n.vps.marketingalphadigital.com.br/webhook/click-track?cid={{$json.Email}}&step=email_whatsapp&dest=https%3A%2F%2Fwa.me%2F5511947928227\"\n                        style=\"height:44px;v-text-anchor:middle;width:260px;\" arcsize=\"12%\" stroke=\"f\" fillcolor=\"#16a34a\">\n                        <w:anchorlock/>\n                        <center style=\"color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;\">\n                          Falar no WhatsApp\n                        </center>\n                      </v:roundrect>  \n                    <![endif]-->\n                    <!--[if !mso]><!-- -->\n                    <a href=\"https://n8n.marketingalphadigital.com.br/webhook/Alpha_internal_cliques?cid={{$json.Email}}&event=click&step=e3_whatsapp&dest=https%3A%2F%2Fwa.me%2F5511953277910\" target=\"_blank\"\n                       style=\"background:#16a34a; color:#ffffff; padding:12px 18px; border-radius:8px; font-weight:bold; display:block;\">\n                      Falar no WhatsApp\n                    </a>\n                    <!--<![endif]-->\n                  </td>\n\n                  <!-- BOTÃO 2: Site -->\n                  <td class=\"btn btn-col btn-col-pad-left\" align=\"center\" style=\"padding:0 0 12px 8px;\">\n                    <!--[if mso]>\n                      <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\"\n                        href=\"https://n8n.vps.marketingalphadigital.com.br/webhook/click-track?cid={{$json.Email}}&step=email_site&dest=https%3A%2F%2Fmarketingalphadigital.com.br%2F\"\n                        style=\"height:44px;v-text-anchor:middle;width:260px;\" arcsize=\"12%\" stroke=\"f\" fillcolor=\"#111827\">\n                        <w:anchorlock/>\n                        <center style=\"color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;\">\n                          Visite nosso site\n                        </center>\n                      </v:roundrect>\n                    <![endif]-->\n                    <!--[if !mso]><!-- -->\n                    <a href=\"https://n8n.marketingalphadigital.com.br/webhook/Alpha_internal_cliques?cid={{$json.Email}}&event=click&step=e3_site&dest=https%3A%2F%2Fmarketingalphadigital.com.br%2F\" target=\"_blank\"\n                       style=\"background:#111827; color:#ffffff; padding:12px 18px; border-radius:8px; font-weight:bold; display:block;\">\n                      Visite nosso site\n                    </a>\n                    <!--<![endif]-->\n                  </td>\n                </tr>\n              </table>\n\n              <p style=\"margin:18px 0 0 0;\">Abs,</p>\n              <p style=\"margin:0;\">Henrique</p>\n\n            </td>\n          </tr>\n\n          <!-- FOOTER / ASSINATURA -->\n          <tr>\n            <td class=\"px\" style=\"padding:20px 24px; background-color:#f9fafb; border-top:1px solid #e5e7eb;\">\n              <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                <tr>\n                  <!-- COLUNA ESQUERDA -->\n                  <td class=\"center\" valign=\"top\"\n                      style=\"font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#111827; padding-right:10px;\">\n                    <p style=\"margin:0; font-size:14px; font-weight:bold;\">Henrique Sousa</p>\n                    <p style=\"margin:2px 0;\">Gerente de Contas | Agência Alpha</p>\n\n                    <p style=\"margin:8px 0 0 0; line-height:1.5;\">\n                      📞 <a href=\"https://api.whatsapp.com/send?phone=5511953277910\" target=\"_blank\" style=\"color:#111827; text-decoration:underline;\">\n                        (11) 94792-8227\n                      </a><br>\n                      ✉️ <a href=\"mailto:henrique@marketingalphadigital.com.br\" style=\"color:#111827; text-decoration:underline;\">\n                        henrique@marketingalphadigital.com.br\n                      </a><br>\n                    </p>\n                  </td>\n\n                  <!-- COLUNA DIREITA -->\n                  <td class=\"center\" valign=\"top\" align=\"right\" style=\"padding-top:10px;\">\n                    <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" class=\"icons\">\n                      <tr>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.instagram.com/agenciaalpha_/\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\" width=\"24\" height=\"24\" alt=\"Instagram\">\n                          </a>\n                        </td>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.linkedin.com/company/64909946/admin/dashboard/\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/174/174857.png\" width=\"24\" height=\"24\" alt=\"LinkedIn\">\n                          </a>\n                        </td>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.youtube.com/@Alphaperformanceagencia\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/1384/1384060.png\" width=\"24\" height=\"24\" alt=\"YouTube\">\n                          </a>\n                        </td>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.tiktok.com/@alphaperformanceagencia\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/3046/3046121.png\" width=\"24\" height=\"24\" alt=\"TikTok\">\n                          </a>\n                        </td>\n                      </tr>\n                    </table>\n                  </td>\n\n                </tr>\n              </table>\n            </td>\n          </tr>\n\n        </table>\n\n        <!--[if (gte mso 9)|(IE)]>\n            </td>\n          </tr>\n        </table>\n        <![endif]-->\n\n      </td>\n    </tr>\n  </table>\n</body>\n</html>\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        4528,
+        432
+      ],
+      "id": "1efa57b1-f577-480d-8fde-dd611fe35c52",
+      "name": "Contato 3",
+      "webhookId": "2d34eba8-be65-4093-b9f6-9ba0db0c9c2b",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "qQRrZhyDaDfNhZdo",
+          "name": "Gmail account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "Vocês querem captar mais obras agora?",
+        "message": "=<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <meta name=\"x-apple-disable-message-reformatting\">\n  <meta name=\"format-detection\" content=\"telephone=no,address=no,email=no,date=no,url=no\">\n  <title>Agência Alpha</title>\n\n  <style>\n    /* Reset básico */\n    html,body{margin:0!important;padding:0!important;height:100%!important;width:100%!important}\n    table,td{border-collapse:collapse!important;mso-table-lspace:0pt!important;mso-table-rspace:0pt!important}\n    img{-ms-interpolation-mode:bicubic;display:block;border:0;outline:none;text-decoration:none}\n    a{text-decoration:none}\n\n    /* Colunas dos botões (desktop) */\n    .btn-col{width:50%;vertical-align:top}\n    .btn a{display:inline-block;max-width:100%}\n\n    /* Mobile */\n    @media screen and (max-width:600px){\n      .container{width:100%!important;max-width:100%!important}\n      .px{padding-left:16px!important;padding-right:16px!important}\n      .center{text-align:center!important}\n\n      /* Empilha botões e ocupa 100% */\n      .btn-col{display:block!important;width:100%!important}\n      .btn a{display:block!important;width:100%!important;text-align:center!important}\n\n      /* Zera os espaços laterais entre as colunas no mobile */\n      .btn-col-pad-left{padding-left:0!important}\n      .btn-col-pad-right{padding-right:0!important}\n\n      .icons td{padding-left:10px!important}\n      .hide{display:none!important;width:0!important;height:0!important;overflow:hidden!important}\n    }\n\n    /* Outlook: força padding em botões */\n    .btn a{mso-padding-alt:12px 18px}\n  </style>\n</head>\n\n<body style=\"margin:0; padding:0; background-color:#f4f6f8;\">\n\n  <!-- Preheader (preview do inbox) -->\n  <div style=\"display:none!important;visibility:hidden;opacity:0;color:transparent;height:0;width:0;overflow:hidden;mso-hide:all;\">\n    Henrique da Alpha — previsibilidade de obras/orçamentos para construção civil.\n  </div>\n\n  <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f4f6f8;\">\n    <tr>\n      <td align=\"center\" style=\"padding:24px 12px;\">\n\n        <!-- Wrapper fixo para Outlook -->\n        <!--[if (gte mso 9)|(IE)]>\n        <table role=\"presentation\" width=\"600\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n          <tr>\n            <td>\n        <![endif]-->\n\n        <!-- Container híbrido (responsivo) -->\n        <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\"\n          style=\"width:100%; max-width:600px; background-color:#ffffff; border-radius:12px; overflow:hidden; font-family:Arial, Helvetica, sans-serif;\">\n\n          <!-- HEADER -->\n          <tr>\n            <td class=\"px center\" style=\"padding:24px; text-align:center;\">\n              <h2 style=\"margin:0; font-size:20px; color:#111827;\">Agência Alpha</h2>\n              <p style=\"margin:4px 0 0 0; font-size:13px; color:#6b7280;\">\n                Performance e previsibilidade para construção civil\n              </p>\n            </td>\n          </tr>\n\n          <!-- CONTEÚDO -->\n          <tr>\n            <td class=\"px\" style=\"padding:0 24px 24px 24px; font-size:15px; line-height:1.6; color:#111827;\">\n\n              <p style=\"margin:0 0 12px 0;\">Olá, tudo bem?</p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                Sou o <strong>Henrique</strong> da <strong>Alpha</strong>, empresa focada em <strong>performance</strong>\n                e em gerar <strong>mais oportunidades de venda</strong> — especializada em empresas da construção civil.\n              </p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                Trabalhamos há <strong>8 anos</strong> no segmento, já atendemos <strong>+400 empresas</strong> no ramo\n                e geramos <strong>+300 milhões</strong> em orçamentos para parceiros.\n              </p>\n\n              <p style=\"margin:0 0 12px 0;\">\n                Pergunta direta: hoje vocês estão buscando captar mais obras, orçamentos com previsibilidade,\n                ou estão bem só com indicação?\n              </p>\n\n              <p style=\"margin:0 0 16px 0;\">\n                Se estiverem buscando, posso te explicar em poucos minutos como a gente estrutura isso (sem enrolação).\n              </p>\n\n              <p style=\"margin:0 0 16px 0;\">\n                Se não for com você, pode me direcionar para a pessoa correta aí?\n              </p>\n\n              <!-- Pixel de abertura (tracking) -->\n              <img src=\"https://n8n.marketingalphadigital.com.br/webhook/Alpha_Interno?cid={{$json.Email}}&step=1\"width=\"1\" height=\"1\" alt=\"\"\n              style=\"width:1px;height:1px;max-height:1px;overflow:hidden;border:0;outline:none;text-decoration:none;display:block;\" />\n\n              <!-- BOTÕES (desktop: lado a lado / mobile: empilha + 100%) -->\n              <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"margin:20px 0 0 0;\">\n                <tr>\n                  <!-- BOTÃO 1: WhatsApp -->\n                  <td class=\"btn btn-col btn-col-pad-right\" align=\"center\" style=\"padding:0 8px 12px 0;\">\n                    <!--[if mso]>\n                      <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\"\n                        href=\"https://n8n.vps.marketingalphadigital.com.br/webhook/click-track?cid={{$json.Email}}&step=email_whatsapp&dest=https%3A%2F%2Fwa.me%2F5511947928227\"\n                        style=\"height:44px;v-text-anchor:middle;width:260px;\" arcsize=\"12%\" stroke=\"f\" fillcolor=\"#16a34a\">\n                        <w:anchorlock/>\n                        <center style=\"color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;\">\n                          Falar no WhatsApp\n                        </center>\n                      </v:roundrect>\n                    <![endif]-->\n                    <!--[if !mso]><!-- -->\n                    <a href=\"https://n8n.marketingalphadigital.com.br/webhook/Alpha_internal_cliques?cid={{$json.Email}}&event=click&step=e1_whatsapp&dest=https%3A%2F%2Fwa.me%2F5511953277910\" target=\"_blank\"\n                       style=\"background:#16a34a; color:#ffffff; padding:12px 18px; border-radius:8px; font-weight:bold; display:block;\">\n                      Falar no WhatsApp\n                    </a>\n                    <!--<![endif]-->\n                  </td>\n\n                  <!-- BOTÃO 2: Site -->\n                  <td class=\"btn btn-col btn-col-pad-left\" align=\"center\" style=\"padding:0 0 12px 8px;\">\n                    <!--[if mso]>\n                      <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\"\n                        href=\"https://n8n.vps.marketingalphadigital.com.br/webhook/click-track?cid={{$json.Email}}&step=email_site&dest=https%3A%2F%2Fmarketingalphadigital.com.br%2F\"\n                        style=\"height:44px;v-text-anchor:middle;width:260px;\" arcsize=\"12%\" stroke=\"f\" fillcolor=\"#111827\">\n                        <w:anchorlock/>\n                        <center style=\"color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;\">\n                          Visite nosso site\n                        </center>\n                      </v:roundrect>\n                    <![endif]-->\n                    <!--[if !mso]><!-- -->\n                    <a href=\"https://n8n.marketingalphadigital.com.br/webhook/Alpha_internal_cliques?cid={{$json.Email}}&event=click&step=e1_site&dest=https%3A%2F%2Fmarketingalphadigital.com.br%2F\" target=\"_blank\"\n                       style=\"background:#111827; color:#ffffff; padding:12px 18px; border-radius:8px; font-weight:bold; display:block;\">\n                      Visite nosso site\n                    </a>\n                    <!--<![endif]-->\n                  </td>\n                </tr>\n              </table>\n\n              <p style=\"margin:18px 0 0 0;\">Abs,</p>\n              <p style=\"margin:0;\">Henrique</p>\n\n            </td>\n          </tr>\n\n          <!-- FOOTER / ASSINATURA -->\n          <tr>\n            <td class=\"px\" style=\"padding:20px 24px; background-color:#f9fafb; border-top:1px solid #e5e7eb;\">\n              <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n                <tr>\n                  <!-- COLUNA ESQUERDA -->\n                  <td class=\"center\" valign=\"top\"\n                      style=\"font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#111827; padding-right:10px;\">\n                    <p style=\"margin:0; font-size:14px; font-weight:bold;\">Henrique Sousa</p>\n                    <p style=\"margin:2px 0;\">Gerente de Contas | Agência Alpha</p>\n\n                    <p style=\"margin:8px 0 0 0; line-height:1.5;\">\n                      📞 <a href=\"https://api.whatsapp.com/send?phone=5511953277910\" target=\"_blank\" style=\"color:#111827; text-decoration:underline;\">\n                        (11) 94792-8227\n                      </a><br>\n                      ✉️ <a href=\"mailto:henrique@marketingalphadigital.com.br\" style=\"color:#111827; text-decoration:underline;\">\n                        henrique@marketingalphadigital.com.br\n                      </a><br>\n                    </p>\n                  </td>\n\n                  <!-- COLUNA DIREITA -->\n                  <td class=\"center\" valign=\"top\" align=\"right\" style=\"padding-top:10px;\">\n                    <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" class=\"icons\">\n                      <tr>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.instagram.com/agenciaalpha_/\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/2111/2111463.png\" width=\"24\" height=\"24\" alt=\"Instagram\">\n                          </a>\n                        </td>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.linkedin.com/company/64909946/admin/dashboard/\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/174/174857.png\" width=\"24\" height=\"24\" alt=\"LinkedIn\">\n                          </a>\n                        </td>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.youtube.com/@Alphaperformanceagencia\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/1384/1384060.png\" width=\"24\" height=\"24\" alt=\"YouTube\">\n                          </a>\n                        </td>\n                        <td style=\"padding-left:8px;\">\n                          <a href=\"https://www.tiktok.com/@alphaperformanceagencia\" target=\"_blank\" rel=\"noopener\">\n                            <img src=\"https://cdn-icons-png.flaticon.com/512/3046/3046121.png\" width=\"24\" height=\"24\" alt=\"TikTok\">\n                          </a>\n                        </td>\n                      </tr>\n                    </table>\n                  </td>\n\n                </tr>\n              </table>\n            </td>\n          </tr>\n\n        </table>\n\n        <!--[if (gte mso 9)|(IE)]>\n            </td>\n          </tr>\n        </table>\n        <![endif]-->\n\n      </td>\n    </tr>\n  </table>\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        3216,
+        464
+      ],
+      "id": "1532f4c0-abde-4a2d-b420-1476b134dcfe",
+      "name": "Contato 1",
+      "webhookId": "2d34eba8-be65-4093-b9f6-9ba0db0c9c2b",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "qQRrZhyDaDfNhZdo",
+          "name": "Gmail account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f6fc9b53-6b9f-43a8-bd9b-a8029689cbb2",
+              "name": "email_tratado",
+              "value": "={{ \n  $json.Email && $json.Email.toString().match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)/) \n  ? $json.Email.toString().match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)/)[0].toLowerCase().trim() \n  : null \n}}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1408,
+        576
+      ],
+      "id": "21b15dca-b49b-4dd4-a201-581f1bf95a9c",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $('Get row(s) in sheet').item.json.Email }}",
+            "Status": "Erro no envio um"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes What",
+              "displayName": "Clickes What",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site",
+              "displayName": "Clikes site",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta",
+              "displayName": "Clickes resposta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ultimo_Click_Em",
+              "displayName": "Ultimo_Click_Em",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ultimo_Click_Step",
+              "displayName": "Ultimo_Click_Step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3568,
+        832
+      ],
+      "id": "63f18293-b559-435b-bd38-116cbfca8c05",
+      "name": "Update row in sheet3",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Rota do sucesso\n**Caso tudo ocorra bem com o envio dos emails e nada de errado",
+        "height": 240,
+        "width": 1824
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3136,
+        352
+      ],
+      "typeVersion": 1,
+      "id": "3f3916a8-82e6-471b-9338-d949d0eecadd",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "height": 256,
+        "width": 864
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3472,
+        720
+      ],
+      "typeVersion": 1,
+      "id": "76b8e355-0a1f-4ea0-bf44-8d683868e388",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "mode": "expression",
+        "numberOutputs": 2,
+        "output": "={{ $json.email_tratado && $json.email_tratado.length > 5 && $json.email_tratado.includes('@') ? 0 : 1 }}"
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        1648,
+        576
+      ],
+      "id": "a6763c46-f758-4d0f-bda3-63356e45a9eb",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $('Get row(s) in sheet').item.json.Email }}",
+            "Status": "={{ $json.qv_status === 'api_error' ? 'Erro validação (API)' : ($json.qv_status ? ('Email inválido (validação: ' + $json.qv_status + ')') : 'Email inválido (formato)') }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes what 1",
+              "displayName": "Clikes what 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes what 2",
+              "displayName": "Clikes what 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes What 3",
+              "displayName": "Clickes What 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes site 1",
+              "displayName": "Clikes site 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes site 2",
+              "displayName": "Clikes site 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes site 3",
+              "displayName": "Clikes site 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes resposta 1",
+              "displayName": "Clickes resposta 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes resposta 2",
+              "displayName": "Clickes resposta 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes resposta 3",
+              "displayName": "Clickes resposta 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Ultimo_Click_Em",
+              "displayName": "Ultimo_Click_Em",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Ultimo_Click_Step",
+              "displayName": "Ultimo_Click_Step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2176,
+        1008
+      ],
+      "id": "1ac1fde6-63ee-482a-8a47-6d52088acc51",
+      "name": "Update row in sheet6",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $json.Email }}",
+            "Status": "Erro no envio trez",
+            "Email": "={{ $('Get row(s) in sheet').item.json.Email }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes What",
+              "displayName": "Clickes What",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clikes site",
+              "displayName": "Clikes site",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Clickes resposta",
+              "displayName": "Clickes resposta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ultimo_Click_Em",
+              "displayName": "Ultimo_Click_Em",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Ultimo_Click_Step",
+              "displayName": "Ultimo_Click_Step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        4144,
+        848
+      ],
+      "id": "0c264d5b-8a95-4cce-8d54-9e772e717df5",
+      "name": "Update row in sheet5",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $json.Email }}",
+            "Status": "Erro no envio dois",
+            "Email": "={{ $('Get row(s) in sheet').item.json.Email }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3856,
+        848
+      ],
+      "id": "e016cfb4-316e-4873-9758-e31637a12375",
+      "name": "Update row in sheet4",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "days"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4288,
+        432
+      ],
+      "id": "39f3e675-ce4e-458d-8dba-7739a4f5b263",
+      "name": "Wait1",
+      "webhookId": "805d366b-d13c-4d0f-942d-544522a35e7e",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $('Get row(s) in sheet').item.json.Email }}",
+            "Status": "Enviado",
+            "E1_Enviado": "Sim",
+            "E1_EnviadoEm": "={{ $now }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes what 1",
+              "displayName": "Clikes what 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes what 2",
+              "displayName": "Clikes what 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes What 3",
+              "displayName": "Clickes What 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes site 1",
+              "displayName": "Clikes site 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes site 2",
+              "displayName": "Clikes site 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes site 3",
+              "displayName": "Clikes site 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes resposta 1",
+              "displayName": "Clickes resposta 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes resposta 2",
+              "displayName": "Clickes resposta 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes resposta 3",
+              "displayName": "Clickes resposta 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Ultimo_Click_Em",
+              "displayName": "Ultimo_Click_Em",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Ultimo_Click_Step",
+              "displayName": "Ultimo_Click_Step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3424,
+        448
+      ],
+      "id": "5fc02932-42db-4c5f-9101-01be78ad9974",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://api.quickemailverification.com/v1/verify",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $json.email_tratado }}"
+            },
+            {
+              "name": "apikey",
+              "value": "={{ \"82379eb5ebb97a9232f6a83427af465b9ebc44a85c54c0ab6ba596daea34\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1984,
+        560
+      ],
+      "id": "4b93b013-393a-4773-b7a0-d58ba8ea39e4",
+      "name": "QuickValidation - Validate",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "94c88303-a495-475b-9a6b-6d5da9a77da9",
+              "name": "Email",
+              "type": "string",
+              "value": "={{ $('Edit Fields').item.json.Email }}"
+            },
+            {
+              "id": "e1909b19-1b82-48e6-b83a-4d352068465c",
+              "name": "email_tratado",
+              "type": "string",
+              "value": "={{ $('Edit Fields').item.json.email_tratado }}"
+            },
+            {
+              "id": "a93a87d0-317e-42a0-bf48-337e448164fa",
+              "name": "row_number",
+              "type": "number",
+              "value": "={{ $('Edit Fields').item.json.row_number }}"
+            },
+            {
+              "id": "c036e485-97e7-46e0-a09e-4283628b973f",
+              "name": "qv_status",
+              "type": "string",
+              "value": "={{ $json.status ?? $json.result ?? $json.deliverability ?? $json.data?.status ?? $json.data?.result ?? $json.data?.deliverability ?? (($json.deliverable === true || $json.data?.deliverable === true) ? 'deliverable' : 'undeliverable') }}"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2288,
+        480
+      ],
+      "id": "ef8e1e41-6784-4f2c-8cf4-8525b99d02a7",
+      "name": "QuickValidation - Combina dados"
+    },
+    {
+      "parameters": {
+        "mode": "expression",
+        "numberOutputs": 2,
+        "output": "={{\n  (() => {\n    const s = String($json.qv_status ?? '').toLowerCase();\n    const d = ($json.deliverable ?? $json.data?.deliverable);\n    if (d === true) return 0;\n    if (s === 'valid' || s === 'deliverable' || s === 'delivered' || s === 'ok') return 0;\n    if (s.includes('deliverable')) return 0;\n    return 1;\n  })()\n}}"
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        2656,
+        576
+      ],
+      "id": "88546f67-9c7f-4106-978e-8f1d29fcbe18",
+      "name": "Switch - QuickValidation"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "94da1a24-1da0-478e-8835-b4d70ce2bd12",
+              "name": "Email",
+              "type": "string",
+              "value": "={{ $('Edit Fields').item.json.Email }}"
+            },
+            {
+              "id": "f2c98835-ae5b-4fba-b650-5c69121207c7",
+              "name": "email_tratado",
+              "type": "string",
+              "value": "={{ $('Edit Fields').item.json.email_tratado }}"
+            },
+            {
+              "id": "0f2de6b6-a631-4ae5-a867-f5141b0db7be",
+              "name": "row_number",
+              "type": "number",
+              "value": "={{ $('Edit Fields').item.json.row_number }}"
+            },
+            {
+              "id": "c3cf4d64-db0f-4c91-81c4-31fad4809d53",
+              "name": "qv_status",
+              "type": "string",
+              "value": "'api_error'"
+            },
+            {
+              "id": "cc91853c-d932-4c93-923f-311e0ddf0b37",
+              "name": "qv_error",
+              "type": "string",
+              "value": "={{ $json.message ?? $json.error?.message ?? 'Erro na validação' }}"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2288,
+        656
+      ],
+      "id": "43fa92e8-5526-4d9d-b396-b62896776d7e",
+      "name": "QuickValidation - Erro"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1sAzHb-IomiTXj4vAMwjgQgcuIc8LwCQFuhihhFkDCek/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $json.email }}",
+            "Status": "Validado"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Enviado",
+              "displayName": "E1_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_EnviadoEm",
+              "displayName": "E1_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Enviado",
+              "displayName": "E2_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_EnviadoEm",
+              "displayName": "E2_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Enviado",
+              "displayName": "E3_Enviado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_EnviadoEm",
+              "displayName": "E3_EnviadoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_Aberto",
+              "displayName": "Email_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Data_Abertura",
+              "displayName": "Data_Abertura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_Aberto",
+              "displayName": "E1_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E1_AbertoEm",
+              "displayName": "E1_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_Aberto",
+              "displayName": "E2_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E2_AbertoEm",
+              "displayName": "E2_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_Aberto",
+              "displayName": "E3_Aberto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "E3_AbertoEm",
+              "displayName": "E3_AbertoEm",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Campanha",
+              "displayName": "Campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes what 1",
+              "displayName": "Clikes what 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes what 2",
+              "displayName": "Clikes what 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes what 3",
+              "displayName": "Clikes what 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes site 1",
+              "displayName": "Clikes site 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes site 2",
+              "displayName": "Clikes site 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clikes site 3",
+              "displayName": "Clikes site 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes resposta 1",
+              "displayName": "Clickes resposta 1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes resposta 2",
+              "displayName": "Clickes resposta 2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Clickes resposta 3",
+              "displayName": "Clickes resposta 3",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Ultimo_Click_Em",
+              "displayName": "Ultimo_Click_Em",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Ultimo_Click_Step",
+              "displayName": "Ultimo_Click_Step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2928,
+        512
+      ],
+      "id": "530161c9-300d-4bdd-9d27-2ad0c1ec168e",
+      "name": "Update row in sheet7",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        288,
+        592
+      ],
+      "id": "661361c4-7c12-4c12-a680-bd38d37e7c55",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Contato 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contato 2": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update row in sheet4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contato 3": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update row in sheet5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contato 1": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update row in sheet3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "QuickValidation - Validate",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update row in sheet6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Contato 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QuickValidation - Validate": {
+      "main": [
+        [
+          {
+            "node": "QuickValidation - Combina dados",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "QuickValidation - Erro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QuickValidation - Combina dados": {
+      "main": [
+        [
+          {
+            "node": "Switch - QuickValidation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch - QuickValidation": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update row in sheet6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QuickValidation - Erro": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet7": {
+      "main": [
+        [
+          {
+            "node": "Contato 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true
+  },
+  "versionId": "da1800a5-0f61-4eff-b034-fe4d71fadd72",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "975211c247f5eab3cac252d8241abd971a891f0a3a41f6a304e2e7595208c3df"
+  },
+  "id": "j4SxoNVE2xgAKJfE",
+  "tags": [
+    {
+      "updatedAt": "2026-03-03T19:26:30.672Z",
+      "createdAt": "2026-03-02T19:35:31.465Z",
+      "id": "trcMcdhgv3ZUxiYX",
+      "name": "Envio_Email"
+    }
+  ]
+}

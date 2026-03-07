@@ -1,0 +1,462 @@
+{
+  "name": "WHATSAPP - Sheets -> Evolution (30/dia) [Starter]",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "hour": 9
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        688,
+        208
+      ],
+      "id": "f42d6f65-de1a-40bc-a429-65c30d358d0f",
+      "name": "Cron (09:00)"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        688,
+        400
+      ],
+      "id": "fb3ef6b8-5433-4bfd-bca4-c95ed674a226",
+      "name": "Manual Trigger (teste)"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "COLE_AQUI_O_ID_DA_PLANILHA"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "Leads"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        960,
+        304
+      ],
+      "id": "0e66e783-e192-48d8-a682-e7301df4c8e2",
+      "name": "Sheets: Ler Leads",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.Status}}",
+              "operation": "equals",
+              "value2": "Pendente"
+            },
+            {
+              "value1": "={{$json.OptIn}}",
+              "operation": "equals",
+              "value2": "SIM"
+            },
+            {
+              "value1": "={{($json.Telefone_E164 || $json.Telefone || '').toString()}}",
+              "operation": "notEmpty"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1184,
+        304
+      ],
+      "id": "34fdeeef-4e69-4ff2-bb11-2623046b58ca",
+      "name": "IF: Pendente + OptIn"
+    },
+    {
+      "parameters": {
+        "operation": "limit"
+      },
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1408,
+        304
+      ],
+      "id": "6f2d849b-7c71-40b5-a0bb-50c8195070b8",
+      "name": "Limitar a 30"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1632,
+        304
+      ],
+      "id": "bd300a3c-67aa-4a3f-9e47-850107ac5c69",
+      "name": "Loop (1 por vez)"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1872,
+        304
+      ],
+      "id": "7b63e01f-1233-4221-a6e9-9c5cb43e6633",
+      "name": "Set: Preparar envio"
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "unit": "seconds"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        304
+      ],
+      "id": "60a83c74-aea1-4620-8fb4-a8b81d0a0619",
+      "name": "Wait 3s",
+      "webhookId": "43aeca36-a114-42ac-94bc-1d40b78b62f0"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://SEU_HOST_EVOLUTION/message/sendText/SUA_INSTANCE",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        2320,
+        304
+      ],
+      "id": "0bc3ad3b-a542-42ce-a8c0-c4b6ea930215",
+      "name": "HTTP: Evolution sendText",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "mode": "mergeByIndex",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        2544,
+        304
+      ],
+      "id": "6c378d2a-3f39-4ecb-81f7-e3162bd9fadf",
+      "name": "Merge: Lead + Resposta"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json.statusCode}}",
+              "operation": "equal",
+              "value2": 200
+            },
+            {
+              "value1": "={{$json.statusCode}}",
+              "operation": "equal",
+              "value2": 201
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2768,
+        304
+      ],
+      "id": "0e792415-0832-4937-a8c2-db343f3ef9c7",
+      "name": "IF: HTTP OK"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3008,
+        208
+      ],
+      "id": "0820a260-cac1-44bb-8b02-009fc802335e",
+      "name": "Set: Marcar Enviado"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "COLE_AQUI_O_ID_DA_PLANILHA"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "Leads"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3232,
+        208
+      ],
+      "id": "a1ff42a2-4a64-4e8e-b6c5-a2f30b2efd8b",
+      "name": "Sheets: Update (Enviado)",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3008,
+        400
+      ],
+      "id": "d214542c-5ad8-4411-98c8-f925015302c5",
+      "name": "Set: Marcar Erro"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "COLE_AQUI_O_ID_DA_PLANILHA"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "Leads"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3232,
+        400
+      ],
+      "id": "0fc6588e-8893-49b6-a2b6-8240794b9a7f",
+      "name": "Sheets: Update (Erro)",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Cron (09:00)": {
+      "main": [
+        [
+          {
+            "node": "Sheets: Ler Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual Trigger (teste)": {
+      "main": [
+        [
+          {
+            "node": "Sheets: Ler Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets: Ler Leads": {
+      "main": [
+        [
+          {
+            "node": "IF: Pendente + OptIn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF: Pendente + OptIn": {
+      "main": [
+        [
+          {
+            "node": "Limitar a 30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limitar a 30": {
+      "main": [
+        [
+          {
+            "node": "Loop (1 por vez)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop (1 por vez)": {
+      "main": [
+        [
+          {
+            "node": "Set: Preparar envio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set: Preparar envio": {
+      "main": [
+        [
+          {
+            "node": "Wait 3s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3s": {
+      "main": [
+        [
+          {
+            "node": "HTTP: Evolution sendText",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge: Lead + Resposta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP: Evolution sendText": {
+      "main": [
+        [
+          {
+            "node": "Merge: Lead + Resposta",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge: Lead + Resposta": {
+      "main": [
+        [
+          {
+            "node": "IF: HTTP OK",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF: HTTP OK": {
+      "main": [
+        [
+          {
+            "node": "Set: Marcar Enviado",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set: Marcar Erro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set: Marcar Enviado": {
+      "main": [
+        [
+          {
+            "node": "Sheets: Update (Enviado)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set: Marcar Erro": {
+      "main": [
+        [
+          {
+            "node": "Sheets: Update (Erro)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "4d827fb7-19ca-4e46-9f3a-21a63b16cee1",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "975211c247f5eab3cac252d8241abd971a891f0a3a41f6a304e2e7595208c3df"
+  },
+  "id": "FjKXwQJZXVmP0EfO",
+  "tags": []
+}

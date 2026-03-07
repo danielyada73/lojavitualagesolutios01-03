@@ -1,0 +1,292 @@
+
+/* Reset removido para evitar conflito com a loja principal */
+
+.app-layout{
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: var(--bg);
+}
+
+.main-area{
+  min-height: 100vh;
+  background: transparent;
+  padding: 20px;
+}
+
+/* =========================
+   THEME — Dark Red + Blue + Yellow
+   ========================= */
+:root{
+  /* Base */
+  --bg:        #0b070a;   /* quase preto com tom vinho */
+  --panel:     #140b10;   /* painel vinho escuro */
+  --panel-2:   #1b0f16;   /* variação para cards internos */
+  --text:      #f3eef2;
+  --muted:     #c2a8b6;
+
+  /* Brand accents */
+  --red:       #a0182a;   /* vermelho principal */
+  --red-2:     #6f0f1d;   /* bordas/hover */
+  --blue:      #2f7dff;   /* ações (botões/links) */
+  --yellow:    #f5c542;   /* avisos/detalhes */
+
+  /* Status */
+  --ok:        #22c55e;
+  --warn:      var(--yellow);
+  --danger:    #ef4444;
+
+  /* Surfaces & borders */
+  --stroke:    rgba(245, 238, 242, 0.08);
+  --stroke-2:  rgba(47, 125, 255, 0.22);  /* brilho azul sutil */
+  --shadow:    0 12px 28px rgba(0,0,0,.45);
+
+  /* Radius & spacing */
+  --r-lg: 16px;
+  --r-md: 12px;
+  --r-sm: 10px;
+}
+
+/* =========================
+   RESET / BASE
+   ========================= */
+*{ box-sizing:border-box; }
+
+.dashboard-theme {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 70% -10%, rgba(47,125,255,0.12), transparent 55%),
+    radial-gradient(900px 500px at 10% 0%, rgba(245,197,66,0.08), transparent 55%),
+    radial-gradient(1000px 800px at 50% 120%, rgba(160,24,42,0.22), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  min-height: 100vh;
+}
+
+a{
+  color: var(--blue);
+  text-decoration: none;
+}
+a:hover{ text-decoration: underline; }
+
+/* =========================
+   LAYOUT HELPERS
+   ========================= */
+.row{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  align-items:flex-start;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+}
+.grid-2{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:16px;
+}
+
+/* =========================
+   SURFACES
+   ========================= */
+.panel{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 55%), var(--panel);
+  border: 1px solid var(--stroke);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* Um card genérico, caso seu HTML use .card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 55%), var(--panel-2);
+  border: 1px solid var(--stroke);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.btn,
+button.primary{
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), transparent 50%), var(--blue);
+  color:#fff;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  cursor:pointer;
+  transition: transform .06s ease, filter .15s ease, box-shadow .15s ease;
+  box-shadow: 0 10px 22px rgba(47,125,255,0.20);
+}
+
+.btn:hover,
+button.primary:hover{
+  filter: brightness(1.05);
+  box-shadow: 0 10px 26px rgba(47,125,255,0.28);
+}
+
+.btn:active,
+button.primary:active{
+  transform: translateY(1px);
+}
+
+/* Botão secundário opcional */
+.btn.secondary{
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 50%), var(--red-2);
+  box-shadow: 0 10px 22px rgba(160,24,42,0.20);
+}
+
+/* =========================
+   INPUTS
+   ========================= */
+.input,
+input,
+select{
+  background: rgba(11,7,10,0.65);
+  border: 1px solid var(--stroke);
+  color: var(--text);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  width: 100%;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.input:focus,
+input:focus,
+select:focus{
+  border-color: var(--stroke-2);
+  box-shadow: 0 0 0 4px rgba(47,125,255,0.16);
+}
+
+label{
+  display:block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+/* =========================
+   TABLE
+   ========================= */
+.table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius: var(--r-lg);
+}
+
+.table th,
+.table td{
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--stroke);
+  text-align:left;
+}
+
+.table th{
+  font-size: 12px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.03);
+}
+
+.table tr:hover td{
+  background: rgba(47,125,255,0.06);
+}
+
+/* =========================
+   BADGES / TEXT
+   ========================= */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  color: var(--muted);
+  background: rgba(255,255,255,0.02);
+}
+
+.badge.warn{
+  border-color: rgba(245,197,66,0.25);
+  color: var(--yellow);
+}
+
+.badge.ok{
+  border-color: rgba(34,197,94,0.25);
+  color: var(--ok);
+}
+
+.badge.danger{
+  border-color: rgba(239,68,68,0.25);
+  color: var(--danger);
+}
+
+.small{
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =========================
+   OPTIONAL: SCROLLBAR (visual)
+   ========================= */
+*::-webkit-scrollbar{ width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb{
+  background: rgba(160,24,42,0.35);
+  border: 2px solid rgba(11,7,10,0.9);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover{
+  background: rgba(47,125,255,0.35);
+}
+
+/* Layout base */
+.dashboard-theme { background: var(--bg); color: var(--text); }
+
+/* Grade geral */
+.app-layout{
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  background: var(--bg);
+}
+
+/* Coluna da direita */
+.app-shell{
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  background: transparent;
+}
+
+/* Alerts */
+.app-alerts{
+  padding: 0 20px 10px;
+}
+
+/* Conteúdo principal */
+.app-main{
+  padding: 0 20px 20px;
+  overflow: auto;
+
+  /* ✅ isso mata o “branco” */
+  background: transparent;
+  min-height: 0; /* importante em grid pra overflow funcionar sem quebrar */
+}
+
+/* garante que páginas que não têm panel/card não fiquem “vazias” */
+.app-main > *{
+  min-height: 100%;
+}
+
+.sidebar{
+  background: var(--bg);
+  border-right: 1px solid var(--stroke);
+}

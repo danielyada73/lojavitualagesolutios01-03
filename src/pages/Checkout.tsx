@@ -9,13 +9,17 @@ export default function Checkout() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState('credit_card');
 
+  const checkoutUrl = useCartStore((state) => state.checkoutUrl);
+
   const handleCheckout = () => {
+    if (!checkoutUrl) {
+      alert('Seu carrinho ainda não foi sincronizado com a Shopify. Por favor, aguarde um momento ou tente novamente.');
+      return;
+    }
+
     setIsProcessing(true);
-    // Mock payment processing
-    setTimeout(() => {
-      clearCart();
-      navigate('/account'); // Redirect to orders page (mocked as account)
-    }, 2000);
+    // Redireciona para o checkout real da Shopify
+    window.location.href = checkoutUrl;
   };
 
   if (items.length === 0) {
@@ -30,7 +34,7 @@ export default function Checkout() {
   return (
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-8 uppercase italic tracking-tight">Finalizar Compra</h1>
-      
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Order Summary */}
         <div className="lg:col-span-2 space-y-8">
@@ -43,9 +47,9 @@ export default function Checkout() {
               {items.map((item) => (
                 <div key={item.id} className="flex gap-4 border-b border-gray-100 pb-6 last:border-0 last:pb-0">
                   <div className="w-24 h-24 bg-gray-50 rounded-lg overflow-hidden flex-shrink-0">
-                    <img 
-                      src={item.product.thumbnail_url} 
-                      alt={item.product.name} 
+                    <img
+                      src={item.product.thumbnail_url}
+                      alt={item.product.name}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -57,7 +61,7 @@ export default function Checkout() {
                           <p className="text-sm text-gray-500">{item.variation.name}</p>
                         )}
                       </div>
-                      <button 
+                      <button
                         onClick={() => removeItem(item.id)}
                         className="text-gray-400 hover:text-red-500 transition-colors"
                       >
@@ -81,12 +85,12 @@ export default function Checkout() {
               <CreditCard className="text-orange-500" />
               Pagamento
             </h2>
-            
+
             <div className="space-y-4">
               <label className={`flex items-center p-4 border rounded-lg cursor-pointer transition-colors ${paymentMethod === 'credit_card' ? 'border-orange-500 bg-orange-50' : 'border-gray-200'}`}>
-                <input 
-                  type="radio" 
-                  name="payment" 
+                <input
+                  type="radio"
+                  name="payment"
                   value="credit_card"
                   checked={paymentMethod === 'credit_card'}
                   onChange={(e) => setPaymentMethod(e.target.value)}
@@ -94,11 +98,11 @@ export default function Checkout() {
                 />
                 <span className="ml-3 font-medium">Cartão de Crédito</span>
               </label>
-              
+
               <label className={`flex items-center p-4 border rounded-lg cursor-pointer transition-colors ${paymentMethod === 'pix' ? 'border-orange-500 bg-orange-50' : 'border-gray-200'}`}>
-                <input 
-                  type="radio" 
-                  name="payment" 
+                <input
+                  type="radio"
+                  name="payment"
                   value="pix"
                   checked={paymentMethod === 'pix'}
                   onChange={(e) => setPaymentMethod(e.target.value)}
@@ -114,7 +118,7 @@ export default function Checkout() {
         <div className="lg:col-span-1">
           <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 sticky top-24">
             <h2 className="text-xl font-bold mb-6">Resumo</h2>
-            
+
             <div className="space-y-3 text-sm text-gray-600 mb-6">
               <div className="flex justify-between">
                 <span>Subtotal</span>
@@ -131,7 +135,7 @@ export default function Checkout() {
                 </div>
               )}
             </div>
-            
+
             <div className="border-t border-gray-100 pt-4 mb-6">
               <div className="flex justify-between items-end">
                 <span className="font-bold text-lg">Total</span>
@@ -140,7 +144,7 @@ export default function Checkout() {
                 </span>
               </div>
             </div>
-            
+
             <button
               onClick={handleCheckout}
               disabled={isProcessing}
@@ -148,7 +152,7 @@ export default function Checkout() {
             >
               {isProcessing ? 'Processando...' : 'Finalizar Pedido'}
             </button>
-            
+
             <p className="text-xs text-center text-gray-400 mt-4">
               Ambiente 100% seguro. Seus dados estão protegidos.
             </p>

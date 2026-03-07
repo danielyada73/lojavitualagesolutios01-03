@@ -1,0 +1,255 @@
+{
+  "name": "WhatsApp_Tracking_Tessio",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "wa-tessio",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        16,
+        192
+      ],
+      "id": "d5b5b2dd-2777-4e09-9b2f-e441b7797525",
+      "name": "Webhook",
+      "webhookId": "2368f3d1-460f-44c2-ac4c-65bc9edf64ec"
+    },
+    {
+      "parameters": {
+        "respondWith": "redirect",
+        "redirectURL": "={{$json.redirectUrl}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        640,
+        192
+      ],
+      "id": "d4b1cd98-11fb-4e4d-9212-8e84eef09597",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "// items[0].json vem do Webhook\nconst data = items[0].json;\n\n// Query params e headers (n8n costuma expor assim)\nconst q = data.query || {};\nconst h = data.headers || {};\n\nconst offer = (q.offer || \"curadoria\").toLowerCase();\nconst cr = q.cr || q.creative || \"1\";\n\n// UTMs\nconst utm_source = q.utm_source || \"\";\nconst utm_medium = q.utm_medium || \"\";\nconst utm_campaign = q.utm_campaign || \"\";\nconst utm_content = q.utm_content || \"\";\n\n// Extra tracking útil no Meta\nconst fbclid = q.fbclid || \"\";\n\n// Identificador do clique (para atribuição)\nconst click_id = `${Date.now()}_${Math.random().toString(16).slice(2, 10)}`;\n\n// Templates (texto em claro, vamos fazer encode no fim)\nconst templates = {\n  ibira: `Oi, Téssio! Tenho interesse na Loja da Av. Ibirapuera (945m²). Meu negócio é ____, orçamento R$ ____. Pode me mandar vídeo, planta e agendar visita?`,\n  bernardino: `Oi, Téssio! Tenho interesse na Loja da Rua Bernardino de Campos (328m²). Meu negócio é ____, orçamento R$ ____. Pode me mandar vídeo, detalhes e agendar visita?`,\n  curadoria: `Oi, Téssio! Quero ajuda pra encontrar um ponto comercial na Zona Sul. Bairro(s): ____ | Orçamento: R$ ____ | Negócio: ____.`\n};\n\n// Mensagem final + tag de tracking (podes tirar se não quiser aparecer)\nconst baseMsg = templates[offer] || templates.curadoria;\nconst trackingLine = `\\n\\nRef: ${offer}_c${cr} | ${click_id}`;\nconst finalMsg = baseMsg + trackingLine;\n\n// Phone fixo do Téssio (podes deixar dinâmico se quiser)\nconst phone = \"5511987907089\";\n\n// Redirect para WhatsApp (wa.me costuma ser mais limpo)\nconst redirectUrl = `https://wa.me/${phone}?text=${encodeURIComponent(finalMsg)}`;\n\n// IP (pode variar conforme proxy/Cloudflare)\nconst ip =\n  h[\"cf-connecting-ip\"] ||\n  h[\"x-forwarded-for\"] ||\n  h[\"x-real-ip\"] ||\n  \"\";\n\n// Timestamp ISO\nconst ts = new Date().toISOString();\n\nreturn [{\n  json: {\n    // Para gravar\n    ts,\n    offer,\n    creative: cr,\n    click_id,\n    utm_source,\n    utm_medium,\n    utm_campaign,\n    utm_content,\n    fbclid,\n    referer: h.referer || h.referrer || \"\",\n    user_agent: h[\"user-agent\"] || \"\",\n    ip,\n\n    // Para redirecionar\n    redirectUrl\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        192
+      ],
+      "id": "f8801301-271f-428d-bfaa-b13197dfc749",
+      "name": "monta texto + cria click_id + prepara dados"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1veZ0QUrZoEcXFwUYq8FePfoaNgL2E06A4I7jTcwp6jw/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1veZ0QUrZoEcXFwUYq8FePfoaNgL2E06A4I7jTcwp6jw/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ts",
+              "displayName": "ts",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "offer",
+              "displayName": "offer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "creative",
+              "displayName": "creative",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "click_id",
+              "displayName": "click_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "utm_source",
+              "displayName": "utm_source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "utm_medium",
+              "displayName": "utm_medium",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "utm_campaign",
+              "displayName": "utm_campaign",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "utm_content",
+              "displayName": "utm_content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "fbclid",
+              "displayName": "fbclid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "referer",
+              "displayName": "referer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "user_agent",
+              "displayName": "user_agent",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ip",
+              "displayName": "ip",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "redirectUrl",
+              "displayName": "redirectUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        432,
+        192
+      ],
+      "id": "f657a570-0cdd-4446-8500-c9a45c92e58f",
+      "name": "WhatsApp_Tracking_Tessio",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "m6Uq8aRDPxoZWcWC",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "monta texto + cria click_id + prepara dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "monta texto + cria click_id + prepara dados": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp_Tracking_Tessio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp_Tracking_Tessio": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "5f8e9e8b-4d83-4f26-b94e-224965873bf4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "975211c247f5eab3cac252d8241abd971a891f0a3a41f6a304e2e7595208c3df"
+  },
+  "id": "Kd59S4D0f9SpaIQx",
+  "tags": []
+}

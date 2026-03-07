@@ -390,4 +390,3 @@ export async function getProductByHandle(handle: string): Promise<Product | null
 
     return data?.data?.product ? mapShopifyProduct(data.data.product) : null;
 }
-

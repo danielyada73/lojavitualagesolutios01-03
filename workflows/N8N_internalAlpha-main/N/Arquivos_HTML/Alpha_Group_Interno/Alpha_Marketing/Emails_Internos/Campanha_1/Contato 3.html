@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+  <title>Agência Alpha</title>
+
+  <style>
+    /* Reset básico */
+    html,body{margin:0!important;padding:0!important;height:100%!important;width:100%!important}
+    table,td{border-collapse:collapse!important;mso-table-lspace:0pt!important;mso-table-rspace:0pt!important}
+    img{-ms-interpolation-mode:bicubic;display:block;border:0;outline:none;text-decoration:none}
+    a{text-decoration:none}
+
+    /* Colunas dos botões (desktop) */
+    .btn-col{width:50%;vertical-align:top}
+    .btn a{display:inline-block;max-width:100%}
+
+    /* Mobile */
+    @media screen and (max-width:600px){
+      .container{width:100%!important;max-width:100%!important}
+      .px{padding-left:16px!important;padding-right:16px!important}
+      .center{text-align:center!important}
+
+      /* Empilha botões e ocupa 100% */
+      .btn-col{display:block!important;width:100%!important}
+      .btn a{display:block!important;width:100%!important;text-align:center!important}
+
+      /* Zera os espaços laterais entre as colunas no mobile */
+      .btn-col-pad-left{padding-left:0!important}
+      .btn-col-pad-right{padding-right:0!important}
+
+      .icons td{padding-left:10px!important}
+      .hide{display:none!important;width:0!important;height:0!important;overflow:hidden!important}
+    }
+
+    /* Outlook: força padding em botões */
+    .btn a{mso-padding-alt:12px 18px}
+  </style>
+</head>
+
+<body style="margin:0; padding:0; background-color:#f4f6f8;">
+
+  <!-- Preheader (preview do inbox) -->
+  <div style="display:none!important;visibility:hidden;opacity:0;color:transparent;height:0;width:0;overflow:hidden;mso-hide:all;">
+    Último contato: faz sentido uma conversa rápida ainda esta semana? Manhã ou tarde?
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f6f8;">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+
+        <!-- Wrapper fixo para Outlook -->
+        <!--[if (gte mso 9)|(IE)]>
+        <table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td>
+        <![endif]-->
+
+        <!-- Container híbrido (responsivo) -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="container"
+          style="width:100%; max-width:600px; background-color:#ffffff; border-radius:12px; overflow:hidden; font-family:Arial, Helvetica, sans-serif;">
+
+          <!-- HEADER -->
+          <tr>
+            <td class="px center" style="padding:24px; text-align:center;">
+              <h2 style="margin:0; font-size:20px; color:#111827;">Agência Alpha</h2>
+              <p style="margin:4px 0 0 0; font-size:13px; color:#6b7280;">
+                Performance e previsibilidade para construção civil
+              </p>
+            </td>
+          </tr>
+
+          <!-- CONTEÚDO -->
+          <tr>
+            <td class="px" style="padding:0 24px 24px 24px; font-size:15px; line-height:1.6; color:#111827;">
+
+              <p style="margin:0 0 12px 0;">Olá.</p>
+
+              <p style="margin:0 0 12px 0;">
+                Último contato da minha parte.
+              </p>
+
+              <p style="margin:0 0 12px 0;">
+                A <strong>Alpha</strong> é focada em performance: transformar o marketing em <strong>oportunidades reais</strong>
+                (pedido de orçamento, contato comercial), com uma estrutura simples e direta.
+              </p>
+
+              <p style="margin:0 0 12px 0;">
+                Com <strong>8 anos de experiência</strong>, especificamente no ramo da construção civil, ajudamos mais de
+                <strong>200 empresas</strong> a não depender mais de indicação, criar previsibilidade e ter uma empresa realmente estruturada.
+              </p>
+
+              <p style="margin:0 0 12px 0;">
+                Faz sentido a gente marcar uma conversa rápida ainda esta semana?
+              </p>
+
+              <p style="margin:0 0 12px 0;">
+                Se sim, me diga: <strong>manhã</strong> ou <strong>tarde</strong>.
+              </p>
+
+              <p style="margin:0 0 16px 0;">
+                Se não fizer sentido agora, sem problema — me avisa que eu encerro por aqui.
+              </p>
+
+              <!-- Pixel de abertura (tracking) -->
+              <img src="https://n8n.marketingalphadigital.com.br/webhook/Alpha_Interno?cid={{$json.Email}}&step=3"width="1" height="1" alt=""
+              style="width:1px;height:1px;max-height:1px;overflow:hidden;border:0;outline:none;text-decoration:none;display:block;" />
+
+
+              <!-- BOTÕES (desktop: lado a lado / mobile: empilha + 100%) -->
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin:20px 0 0 0;">
+                <tr>
+                  <!-- BOTÃO 1: WhatsApp -->
+                  <td class="btn btn-col btn-col-pad-right" align="center" style="padding:0 8px 12px 0;">
+                    <!--[if mso]>
+                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                        href="https://n8n.vps.marketingalphadigital.com.br/webhook/click-track?cid={{$json.Email}}&step=email_whatsapp&dest=https%3A%2F%2Fwa.me%2F5511947928227"
+                        style="height:44px;v-text-anchor:middle;width:260px;" arcsize="12%" stroke="f" fillcolor="#16a34a">
+                        <w:anchorlock/>
+                        <center style="color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;">
+                          Falar no WhatsApp
+                        </center>
+                      </v:roundrect>  
+                    <![endif]-->
+                    <!--[if !mso]><!-- -->
+                    <a href="https://n8n.marketingalphadigital.com.br/webhook/Alpha_internal_cliques?cid={{$json.Email}}&event=click&step=e3_whatsapp&dest=https%3A%2F%2Fwa.me%2F5511953277910" target="_blank"
+                       style="background:#16a34a; color:#ffffff; padding:12px 18px; border-radius:8px; font-weight:bold; display:block;">
+                      Falar no WhatsApp
+                    </a>
+                    <!--<![endif]-->
+                  </td>
+
+                  <!-- BOTÃO 2: Site -->
+                  <td class="btn btn-col btn-col-pad-left" align="center" style="padding:0 0 12px 8px;">
+                    <!--[if mso]>
+                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                        href="https://n8n.vps.marketingalphadigital.com.br/webhook/click-track?cid={{$json.Email}}&step=email_site&dest=https%3A%2F%2Fmarketingalphadigital.com.br%2F"
+                        style="height:44px;v-text-anchor:middle;width:260px;" arcsize="12%" stroke="f" fillcolor="#111827">
+                        <w:anchorlock/>
+                        <center style="color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;">
+                          Visite nosso site
+                        </center>
+                      </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-- -->
+                    <a href="https://n8n.marketingalphadigital.com.br/webhook/Alpha_internal_cliques?cid={{$json.Email}}&event=click&step=e3_site&dest=https%3A%2F%2Fmarketingalphadigital.com.br%2F" target="_blank"
+                       style="background:#111827; color:#ffffff; padding:12px 18px; border-radius:8px; font-weight:bold; display:block;">
+                      Visite nosso site
+                    </a>
+                    <!--<![endif]-->
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:18px 0 0 0;">Abs,</p>
+              <p style="margin:0;">Henrique</p>
+
+            </td>
+          </tr>
+
+          <!-- FOOTER / ASSINATURA -->
+          <tr>
+            <td class="px" style="padding:20px 24px; background-color:#f9fafb; border-top:1px solid #e5e7eb;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <!-- COLUNA ESQUERDA -->
+                  <td class="center" valign="top"
+                      style="font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#111827; padding-right:10px;">
+                    <p style="margin:0; font-size:14px; font-weight:bold;">Henrique Sousa</p>
+                    <p style="margin:2px 0;">Gerente de Contas | Agência Alpha</p>
+
+                    <p style="margin:8px 0 0 0; line-height:1.5;">
+                      📞 <a href="https://api.whatsapp.com/send?phone=5511953277910" target="_blank" style="color:#111827; text-decoration:underline;">
+                        (11) 94792-8227
+                      </a><br>
+                      ✉️ <a href="mailto:henrique@marketingalphadigital.com.br" style="color:#111827; text-decoration:underline;">
+                        henrique@marketingalphadigital.com.br
+                      </a><br>
+                    </p>
+                  </td>
+
+                  <!-- COLUNA DIREITA -->
+                  <td class="center" valign="top" align="right" style="padding-top:10px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" class="icons">
+                      <tr>
+                        <td style="padding-left:8px;">
+                          <a href="https://www.instagram.com/agenciaalpha_/" target="_blank" rel="noopener">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="24" height="24" alt="Instagram">
+                          </a>
+                        </td>
+                        <td style="padding-left:8px;">
+                          <a href="https://www.linkedin.com/company/64909946/admin/dashboard/" target="_blank" rel="noopener">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="24" height="24" alt="LinkedIn">
+                          </a>
+                        </td>
+                        <td style="padding-left:8px;">
+                          <a href="https://www.youtube.com/@Alphaperformanceagencia" target="_blank" rel="noopener">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="24" height="24" alt="YouTube">
+                          </a>
+                        </td>
+                        <td style="padding-left:8px;">
+                          <a href="https://www.tiktok.com/@alphaperformanceagencia" target="_blank" rel="noopener">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" width="24" height="24" alt="TikTok">
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+
+        <!--[if (gte mso 9)|(IE)]>
+            </td>
+          </tr>
+        </table>
+        <![endif]-->
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

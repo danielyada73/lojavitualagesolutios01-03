@@ -1,0 +1,1451 @@
+{
+  "name": "Agendamento Alpha (OK) v2",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "renatoalphamarketingdigital@gmail.com",
+          "mode": "list",
+          "cachedResultName": "renatoalphamarketingdigital@gmail.com"
+        },
+        "returnAll": true,
+        "timeMax": "={{ $now.plus({ days: 15 }) }}",
+        "options": {
+          "orderBy": "startTime"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        976,
+        288
+      ],
+      "id": "3b41a147-ad18-415d-8aff-b2f2594040e9",
+      "name": "Get many events",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {
+          "temperature": 0.2,
+          "topP": 0.5
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1776,
+        368
+      ],
+      "id": "2ee13340-91dc-4cec-8a22-60ed616f20cd",
+      "name": "OpenAI Chat Model1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        2096,
+        368
+      ],
+      "id": "44296b49-8577-4f0c-9382-4decd666475e",
+      "name": "Calculator1"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use essa tool após todas confirmações que a data está disponível para agendamento de reunião. \n\nEssa tool é responsável para criar evento da reunião com o lead.",
+        "calendar": {
+          "__rl": true,
+          "value": "renatoalphamarketingdigital@gmail.com",
+          "mode": "list",
+          "cachedResultName": "renatoalphamarketingdigital@gmail.com"
+        },
+        "start": "={{ $fromAI(\"starttime\",\"o horário que o usuário solicita para iniciar o evento\") }}",
+        "end": "={{ $fromAI(\"endtime\",\"o horário que o usuário solicita para finalizar o evento ou a duração padrão\") }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ $fromAI(\"participante\",\"o endereço de email do usuário que participará do evento\") }}",
+            "henriquemarketingalphadigital@gmail.com"
+          ],
+          "conferenceDataUi": {
+            "conferenceDataValues": {
+              "conferenceSolution": "hangoutsMeet"
+            }
+          },
+          "description": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Description', `Insere o número do telefone do cliente`, 'string') }}",
+          "summary": "={{ $fromAI(\"name\",\"o nome do evento deo calendário padronizado\") }}"
+        }
+      },
+      "id": "aaf10e8f-01d2-4e40-a222-02b808c4dbcf",
+      "name": "create",
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.1,
+      "position": [
+        1360,
+        864
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "39c2f302-03be-4464-a17a-d7cc481d6d44",
+              "name": "=response",
+              "value": "={{ $('Secretaria Agenda Horarios').item.json.output }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c1c88615-2144-4d95-8a93-6b401b4d22fc",
+      "name": "Sucesso",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1984,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "39c2f302-03be-4464-a17a-d7cc481d6d44",
+              "name": "=response",
+              "value": "={{$json.output}} Não consegui utilizar a ferramenta corretamente, por favor tente novamente",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b302743e-167f-467d-bf42-d1d2bef241e9",
+      "name": "Tentar novamente",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1792,
+        816
+      ]
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').first().json.remote_jid }}.agendamento",
+        "tableName": "n8n_chat_histories_agendamento",
+        "contextWindowLength": 30
+      },
+      "id": "ada4ecd9-0f03-4a92-9ed4-49a3795b0a32",
+      "name": "Postgres Chat Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.1,
+      "position": [
+        1136,
+        864
+      ]
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "nome_cliente"
+            },
+            {
+              "name": "telefone_cliente"
+            },
+            {
+              "name": "email_cliente"
+            },
+            {
+              "name": "data_consulta_reuniao"
+            },
+            {
+              "name": "remote_jid"
+            },
+            {
+              "name": "intenção"
+            },
+            {
+              "name": "informação_extra"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -640,
+        656
+      ],
+      "id": "b4c0d222-b53f-4167-85fe-e8b3d615fc59",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4.1",
+        "options": {
+          "temperature": 0.2,
+          "topP": 0.5
+        }
+      },
+      "id": "6cb67904-8319-4b4c-94d1-3181d029d7cb",
+      "name": "OpenAI Chat Model2",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        976,
+        864
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        1504,
+        864
+      ],
+      "id": "20dd869b-8b0f-43a5-b6eb-5fa8c3f4fd3f",
+      "name": "Calculator2"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use a tool fetch para consultar se o horário solicitado para agendamento está disponível",
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "renatoalphamarketingdigital@gmail.com",
+          "mode": "list",
+          "cachedResultName": "renatoalphamarketingdigital@gmail.com"
+        },
+        "limit": 20,
+        "options": {
+          "timeMin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('After', `verificar apenas a hora enviada para o agendamento`, 'string') }}",
+          "timeMax": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Before', `verificar apenas uma hora depois do horário de agendamento`, 'string') }}"
+        }
+      },
+      "id": "2f582799-7e46-4fe0-a5b4-0c36fd09dcfc",
+      "name": "fetch",
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.1,
+      "position": [
+        1248,
+        864
+      ]
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').first().json.remote_jid }}.cancelamento",
+        "tableName": "n8n_chat_histories_agendamento",
+        "contextWindowLength": 30
+      },
+      "id": "62f38a79-868f-41b3-a5c5-4ee9d51e4049",
+      "name": "Postgres Chat Memory1",
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.1,
+      "position": [
+        1152,
+        1456
+      ]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4.1",
+        "options": {
+          "temperature": 0.2,
+          "topP": 0.5
+        }
+      },
+      "id": "fe5388da-4c7c-46da-9035-6715694e163a",
+      "name": "OpenAI Chat Model3",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        992,
+        1456
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        1584,
+        1472
+      ],
+      "id": "8506a2a9-770c-4363-a85d-714d08fcdb23",
+      "name": "Calculator3"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "calendar": {
+          "__rl": true,
+          "value": "renatoalphamarketingdigital@gmail.com",
+          "mode": "list",
+          "cachedResultName": "renatoalphamarketingdigital@gmail.com"
+        },
+        "eventId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_ID', `o ID do evento que o usuário quer cancelar no Google Calendar`, 'string') }}",
+        "options": {}
+      },
+      "id": "7c010bdb-cc0e-4e74-a74a-4c46bc24cb3a",
+      "name": "delete",
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.2,
+      "position": [
+        1472,
+        1456
+      ]
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use a tool fetch para consultar se o horário solicitado para cancelamento existe",
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "renatoalphamarketingdigital@gmail.com",
+          "mode": "list",
+          "cachedResultName": "renatoalphamarketingdigital@gmail.com"
+        },
+        "options": {
+          "timeMin": "={{ $now }}",
+          "timeMax": "={{ $now.plus({ week: 2 }) }}",
+          "singleEvents": true
+        }
+      },
+      "id": "ad742597-4e69-4b7a-9923-6b17abf59c0b",
+      "name": "fetch1",
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.1,
+      "position": [
+        1280,
+        1456
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "decbca74-b072-43bc-b76b-fdaebbc19c2a",
+              "name": "nome_cliente",
+              "value": "={{ $json.nome_cliente }}",
+              "type": "string"
+            },
+            {
+              "id": "ba1c8a66-08f3-417f-bc8a-5ed4544df794",
+              "name": "telefone_cliente",
+              "value": "={{ $json.telefone_cliente }}",
+              "type": "string"
+            },
+            {
+              "id": "2c0aa2ec-a355-41da-a519-99503a823da7",
+              "name": "email_cliente",
+              "value": "={{ $json.email_cliente }}",
+              "type": "string"
+            },
+            {
+              "id": "e253ff87-fcc0-4549-b650-0e7cf555303a",
+              "name": "data_consulta_reuniao",
+              "value": "={{ $json.data_consulta_reuniao }}",
+              "type": "string"
+            },
+            {
+              "id": "4fba5bfd-b041-423c-be01-62c3bf55789b",
+              "name": "remote_jid",
+              "value": "={{ $json.remote_jid }}",
+              "type": "string"
+            },
+            {
+              "id": "026c9805-880b-4e6b-aeb2-28dd3b3d37cf",
+              "name": "intencao",
+              "value": "={{ $json['intenção'] }}",
+              "type": "string"
+            },
+            {
+              "id": "df4924c2-f70c-4215-afc3-94925687e4c5",
+              "name": "informação_extra",
+              "value": "={{ $json[\"informação_extra\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -480,
+        656
+      ],
+      "id": "1ae8cf4f-7a12-4432-abde-402a0a483960",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.intencao }}",
+                    "rightValue": "consultar",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "93e9b62d-2dd0-4a25-a808-9c2313d35680"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "consultar"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4b556220-b484-4c33-963f-cfe6434b1a17",
+                    "leftValue": "={{ $json.intencao }}",
+                    "rightValue": "agendar",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "agendar"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ad39a7cf-c10c-4729-bd44-2950ecfd7576",
+                    "leftValue": "={{ $json.intencao }}",
+                    "rightValue": "cancelar",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "cancelar"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "3ff86b10-9c0a-409b-b9fc-d6274e4eb784",
+                    "leftValue": "={{ $json.intencao }}",
+                    "rightValue": "atualizar",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "atualizar"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -320,
+        608
+      ],
+      "id": "d6e429ab-062d-4b6e-85b5-3fc1480c0a2b",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "39c2f302-03be-4464-a17a-d7cc481d6d44",
+              "name": "=response",
+              "value": "={{$json.output}} Não consegui utilizar a ferramenta corretamente, por favor tente novamente",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2ef7b71b-8106-46c6-b9ed-11802e6fc7ee",
+      "name": "Tentar novamente1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2032,
+        1360
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "39c2f302-03be-4464-a17a-d7cc481d6d44",
+              "name": "=response",
+              "value": "={{$json.output}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c4564528-9a9d-4749-9541-ac8d1b7fda19",
+      "name": "Sucesso1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2048,
+        1136
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "39c2f302-03be-4464-a17a-d7cc481d6d44",
+              "name": "=response",
+              "value": "={{$json.output}} Não consegui utilizar a ferramenta corretamente, por favor tente novamente",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cb768c9f-1393-4ee2-b410-4ceea4a344bc",
+      "name": "Tentar novamente2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2288,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "39c2f302-03be-4464-a17a-d7cc481d6d44",
+              "name": "=response",
+              "value": "={{ $json.output || $json.response || '' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "869df65f-2bc7-4ffd-b6a7-e2db32d1aec4",
+      "name": "Sucesso2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2288,
+        64
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=## REGRA MÁXIMA\n**APENAS** ofereça horários que estejam nos slots disponíveis: {{ $json.slots_disponiveis.toJsonString() }}\n\nBUSQUE: {{ $('Edit Fields1').first().json['informação_extra'] }}\n\n",
+        "options": {
+          "systemMessage": "=# Agente de Agendamento - Baseado em Slots Disponíveis\n\n## CONTEXTO\nData atual: {{ $now.weekdayLong }} {{ $now.format('DD/MM/YYYY') }} às {{ $now.format('HH:mm') }}\n\n## HORÁRIOS DE FUNCIONAMENTO\n- **Segunda a Sexta**: 09h, 10h, 11h, 14h, 15h, 16h, 17h, 18h\n- **Sábado**: FECHADO\n- **Domingo**: FECHADO\n\n## PROCESSO OBRIGATÓRIO\n\n### ETAPA 1: PROCESSAR SLOTS DISPONÍVEIS\nPara cada slot da lista recebida:\n1. Verificar se `slotStart` e `slotEnd` estão preenchidos\n2. Confirmar que o slot tem duração de 1 hora\n3. Verificar se não é domingo (`dayOfWeek !== \"Domingo\"`)\n4. Confirmar que o horário está no futuro (após momento atual)\n5. Verificar se não tem nenhuma informação extra: {{ $('Edit Fields1').first().json['informação_extra'] }} e verifique horários apartir daqui. Se estiver vazio, desconsidere.\n\n### ETAPA 2: VALIDAR HORÁRIOS DE FUNCIONAMENTO\nPara cada slot válido da Etapa 1:\n1. Extrair a hora do `slotStart` (formato: DD/MM/YYYY HH:mm)\n2. Verificar se a hora está nos horários válidos:\n- **Segunda a Sexta**: 09h, 10h, 11h, 14h, 15h, 16h, 17h, 18h\n\n### ETAPA 3: ORDENAR CRONOLOGICAMENTE\nOrdenar slots válidos por:\n1. Data (mais próxima primeiro)\n2. Horário (mais cedo primeiro)\n\n### ETAPA 4: SELECIONAR  3 HORÁRIOS\nPegar apenas 3  slots da lista ordenada de acordo com a necessidade.\n\n## REFERÊNCIAS TEMPORAIS PARA RESPOSTA\n- **Hoje**: mesmo dia da data atual\n- **Amanhã**: próximo dia da data atual  \n- **Depois de amanhã**: dois dias após a data atual\n- **[Dia da semana]**: usar nome do dia (Segunda, Terça, etc.)\n\n## REGRAS DE VALIDAÇÃO (CHECKLIST)\nAntes de incluir qualquer horário na resposta:\n- Está na lista de slots disponíveis fornecida?\n- É horário de funcionamento válido?\n- É horário futuro (após momento atual)?\n- Não é domingo?\n- Tem duração de exatamente 1 hora?\n- Campos `slotStart` e `slotEnd` estão preenchidos?\n- O horário não é do dia de hoje.\n\n## FORMATO DE RESPOSTA OBRIGATÓRIO\n```\nForam encontrados 3 horários próximos:\n- [Dia da semana] ([DD/MM]) às [HH:00]h\n- [Dia da semana] ([DD/MM]) às [HH:00]h  \n- [Dia da semana] ([DD/MM]) às [HH:00]h\n```\n\n## EXEMPLO DE RESPOSTA\n```\nForam encontrados 3 horários próximos:\n- Segunda (14/07) às 15:00h\n- Terça (15/07) às 13:00h\n- Quarta (16/07) às 14:00h\n```\n\n## INSTRUÇÕES CRÍTICAS\n1. **NÃO RETORNE NADA ALÉM DO FORMATO DE RESPOSTA**\n2. **USE APENAS SLOTS DA LISTA FORNECIDA**  \n3. **NUNCA INVENTE HORÁRIOS**\n4. **SEMPRE VALIDAR TODAS AS REGRAS**\n5. **MÁXIMO 3 HORÁRIOS NA RESPOSTA**\n\n## TRATAMENTO DE ERROS\n- Se não houver slots válidos: \"Não há horários disponíveis no momento.\"\n- Se houver menos de 3 slots: mostrar apenas os disponíveis\n- Se houver erro nos dados: \"Erro ao processar horários disponíveis.\"\n- Um slot só pode ser incluído se o valor de `slotStart` (data+hora, em America/Sao_Paulo) for **estritamente maior** do que o momento exato da requisição, também em America/Sao_Paulo.\n- Slots no mesmo dia, porém com hora já passada, devem ser excluídos.\n- Se conseguiu marcar, se remarcou ou reagendou uma troca de horários, não pesquise novamente o horário anterior.\n\nUse a tool think para pensar.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1872,
+        144
+      ],
+      "id": "4002a0e9-299d-4801-ac3a-c858f50c4d26",
+      "name": "Secretaria Consulta Horarios",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=O cliente {{ $json.nome_cliente }} demonstrou intenção de {{ $json.intencao }} uma reunião.  \nInformações recebidas:  \n- Nome: {{ $json.nome_cliente }}  \n- E-mail: {{ $json.email_cliente }}  \n- Telefone: {{ $json.telefone_cliente }}  \n- Data desejada: {{ $json.data_consulta_reuniao }}  \n- Session ID: {{ $json.senssion_id }}\n\n# Se o cliente não tem email: retorne com o agente e solicite novamente o e-mail ao cliente, ele é extremamente necessário para marcar a reunião.\n\nCom base na intenção, utilize a ferramenta correta entre `fetch` ou `create`. Após executar, gere uma resposta padronizada no campo `response` e retorne para o agente anterior.\n\nRetorne também os campos: ID do evento, Nome do cliente, horário agendado e telefone.",
+        "options": {
+          "systemMessage": "=# Identidade  \nVocê é Tais, assistente responsável por **CRIAR** reuniões no Google Calendar após verificar disponibilidade.\n\n# Função\nVocê recebe uma data/horário já validado por outro agente e deve:\n1. **VERIFICAR** se o horário está livre usando `fetch`\n2. **CRIAR** o evento usando `create` se estiver livre\n\n# Dados de entrada\n- **Data/Horário**: {{ $json.data_consulta_reuniao }} (formato: 2025-07-02 13:00)\n- **Cliente**: {{ $json.nome_cliente }}\n- **E-mail**: {{ $json.email_cliente }}\n\n# Configuração do evento\n- **Título**: Reunião Alpha Assessoria / {{ $json.nome_cliente }}\n- **Descrição**: Agendamento automático\n- **Convidados**:\n  - {{ $json.email_cliente }}\n  - henriquemarketingalphadigital@gmail.com\n- **Duração**: 1 hora\n\n# Fluxo de execução\n1. **Use `fetch`** para verificar se {{ $json.data_consulta_reuniao }} está livre\n2. **Analise o resultado**:\n   - Se retornar eventos = OCUPADO\n   - Se não retornar eventos = LIVRE\n3. **Execute a ação**:\n   - Se LIVRE: use `create` para agendar\n   - Se OCUPADO: retorne erro\n\n# Respostas\n\n## Se conseguir agendar:\n```\nPROCESSO: Agendamento de reunião  \nRESULTADO: Reunião agendada com sucesso para {{ $json.data_consulta_reuniao }}\nAÇÃO: Confirmação enviada ao cliente.\n```\n\n## Se horário ocupado:\n```\nPROCESSO: Tentativa de agendamento  \nRESULTADO: Horário não disponível - já existe um evento marcado para {{ $json.data_consulta_reuniao }}\nAÇÃO: Solicitar novo horário ao cliente.\n```\n\n# Validação\n- [ ] Usei `fetch` para verificar conflitos?\n- [ ] Verifiquei se o horário está realmente livre?\n- [ ] Não tentei agendar em horário ocupado?",
+          "maxIterations": 30
+        }
+      },
+      "id": "836cfb22-91f8-447c-9c61-97ab5bc991ff",
+      "name": "Secretaria Agenda Horarios",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        1136,
+        624
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Informações recebidas:  \n- Nome:  {{ $('Edit Fields1').item.json.nome_cliente }}\n- E-mail: {{ $('Edit Fields1').item.json.email_cliente }}\n- Telefone:  {{ $json.telefone_cliente }}\n- Data desejada: {{ $('Edit Fields1').item.json.data_consulta_reuniao }}{{ $('Edit Fields1').item.json.data_alternativa }}\n- Session ID: {{ $('Edit Fields1').item.json.senssion_id }}\n\n\nCom base na intenção, utilize a ferramenta correta entre `fetch` ou `delete`. Após executar, gere uma resposta padronizada no campo `response` e retorne para o agente anterior.\n",
+        "options": {
+          "systemMessage": "=# Identidade  \nVocê é Tais, assistente responsável por **CANCELAR** reuniões no Google Calendar após verificar se existem e também excluir o registro correspondente no Supabase.\n\n# Função\nVocê recebe uma data/horário e dados do cliente e deve:\n1. **VERIFICAR** se existe um evento agendado usando `fetch`\n2. **CANCELAR** o evento usando `delete` se existir\n3. **ATUALIZAR_SUPA1** excluir o evento salvo no banco de dados.\n\n# Dados de entrada\n- **Data/Horário**: {{ $json.data_consulta_reuniao }} (formato: 2025-07-02 13:00)\n- **Cliente**: {{ $json.nome_cliente }}\n- **E-mail**: {{ $json.email_cliente }}\n\n# Configuração de busca\n- **Título esperado**: Reunião Alpha Assessoria / {{ $json.nome_cliente }}\n- **Data/Horário**: {{ $json.data_consulta_reuniao }}\n- **E-mail do cliente**: {{ $json.email_cliente }}\n\n# Fluxo de execução\n1. **Use `fetch`** para verificar se existe evento em {{ $json.data_consulta_reuniao }}\n2. **Analise o resultado**:\n   - Se retornar eventos = EXISTE\n   - Se não retornar eventos = NÃO EXISTE\n3. **Verificar correspondência** (se evento existe):\n   - Título deve conter: {{ $json.nome_cliente }}\n   - E-mail {{ $json.email_cliente }} deve estar como convidado\n4. **Execute a ação**:\n   - Se EXISTE E DADOS BATEM: use `delete` para cancelar\n   - Em seguida, use `ATUALIZA_SUPA1` passando o `id_calendar` para excluir o registro do banco Supabase\n   - Se NÃO EXISTE OU DADOS NÃO BATEM: retorne erro\n\n# Tool: ATUALIZA_SUPA1\n\n**Quando usar:** Após cancelar com sucesso um evento no Google Calendar  \n**Objetivo:** Excluir do Supabase o registro correspondente ao evento cancelado  \n**Critério de busca:** Campo `id_calendar`  \n\n# Respostas\n\n## Se conseguir cancelar:\n```\nPROCESSO: Cancelamento de reunião  \nRESULTADO: Reunião cancelada com sucesso para {{ $json.data_consulta_reuniao }}\nAÇÃO: Cancelamento confirmado ao cliente.\n```\n\n## Se evento não existir ou dados não conferirem:\n```\nPROCESSO: Tentativa de cancelamento  \nRESULTADO: Nenhum evento encontrado para {{ $json.nome_cliente }} ({{ $json.email_cliente }}) na data {{ $json.data_consulta_reuniao }}\nAÇÃO: Solicitar que o cliente verifique os dados informados.\n```\n\n# Validação\n- [ ] Usei `fetch` para verificar se o evento existe?\n- [ ] Verifiquei se o nome do cliente está no título?\n- [ ] Verifiquei se o e-mail do cliente está como convidado?\n- [ ] Confirmi que os dados batem antes de cancelar?\n- [ ] Não tentei cancelar evento de outro cliente?\n- [ ] Após o cancelamento, usei `ATUALIZA_SUPA1` para excluir o evento do Supabase usando `id_calendar`?\n",
+          "maxIterations": 30
+        }
+      },
+      "id": "45e15fe4-4729-42cf-8156-ad97df5d4f2d",
+      "name": "Secretaria Cancela Horarios",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        1168,
+        1184
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const allInputs = $input.all();\n\n// CONFIGURAÇÕES\nconst MAX_HORARIOS = 10; // Fácil de ajustar: quantidade máxima de horários a retornar\nconst diasPadrao = 15; // Dias para buscar caso nenhuma data definida\nconst diasDataAlternativa = 7; // Dias para buscar se data_alternativa existir\nconst diasDataConsulta = 10; // Dias para buscar se data_consulta_reuniao existir\n\nconst agendaSemana = {\n  1: ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'], // Segunda\n  2: ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'], // Terça\n  3: ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'], // Quarta\n  4: ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'], // Quinta\n  5: ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'], // Sexta\n  6: [], // Sábado\n  0: [] // Domingo\n};\n\n// Extrair eventos com start e end válidos\nconst eventos = allInputs\n  .filter(item => item.json?.start?.dateTime && item.json?.end?.dateTime)\n  .map(item => ({\n    inicio: new Date(item.json.start.dateTime),\n    fim: new Date(item.json.end.dateTime)\n  }));\n\n// Puxar dados do cliente de qualquer item (todos têm o mesmo valor)\nconst cliente = allInputs[0]?.json || {};\n\n// Debug: verificar dados do cliente\nconsole.log('Dados do cliente:', {\n  nome: cliente.nome_cliente,\n  email: cliente.email_cliente,\n  telefone: cliente.telefone_cliente,\n  data_consulta: cliente.data_consulta_reuniao,\n  data_alternativa: cliente.data_alternativa\n});\n\nconsole.log('Eventos encontrados:', eventos.length);\n\n// --- DATA DE REFERÊNCIA ---\nlet inicioBusca;\nlet diasParaBuscar = diasPadrao;\nlet horarioEspecificoSolicitado = null;\nconst agora = new Date();\n\nif (cliente.data_alternativa) {\n  inicioBusca = new Date(cliente.data_alternativa);\n  diasParaBuscar = diasDataAlternativa;\n  console.log('Usando data_alternativa:', cliente.data_alternativa);\n} else if (cliente.data_consulta_reuniao) {\n  const dataConsulta = new Date(cliente.data_consulta_reuniao);\n  inicioBusca = dataConsulta;\n  diasParaBuscar = diasDataConsulta;\n  \n  // Extrair horário específico solicitado\n  horarioEspecificoSolicitado = {\n    data: dataConsulta.toISOString().slice(0, 10),\n    hora: dataConsulta.toLocaleTimeString('pt-BR', { \n      hour: '2-digit', \n      minute: '2-digit',\n      timeZone: 'America/Sao_Paulo'\n    })\n  };\n  \n  console.log('Usando data_consulta_reuniao:', cliente.data_consulta_reuniao);\n  console.log('Horário específico solicitado:', horarioEspecificoSolicitado);\n} else {\n  inicioBusca = agora;\n  console.log('Usando data atual');\n}\n\n// Helper para criar horário completo\nfunction criarHorarioCompleto(dataISO, horaMin) {\n  return `${dataISO}T${horaMin}:00-03:00`;\n}\n\n// Helper para somar 1 hora ao horário\nfunction somarUmaHora(horaStr) {\n  const [hora, minuto] = horaStr.split(':');\n  const novaHora = (parseInt(hora) + 1).toString().padStart(2, '0');\n  return `${novaHora}:${minuto}`;\n}\n\n// Helper para formatar data\nfunction formatarData(dt) {\n  return dt.toLocaleDateString('pt-BR', { weekday: 'short', day: '2-digit', month: '2-digit' });\n}\n\nconst horariosLivres = [];\n\n// PRIMEIRA PRIORIDADE: Verificar se o horário específico solicitado está disponível\nif (horarioEspecificoSolicitado) {\n  console.log('\\n🎯 VERIFICANDO HORÁRIO ESPECÍFICO SOLICITADO');\n  \n  const dataISO = horarioEspecificoSolicitado.data;\n  const horaStr = horarioEspecificoSolicitado.hora;\n  const dataSolicitada = new Date(dataISO + 'T00:00:00');\n  const diaSemana = dataSolicitada.getDay();\n  const horariosPermitidos = agendaSemana[diaSemana] || [];\n  \n  console.log(`Data: ${dataISO} (${formatarData(dataSolicitada)})`);\n  console.log(`Horário solicitado: ${horaStr}`);\n  console.log(`Horários permitidos no dia: ${horariosPermitidos.join(', ')}`);\n  \n  // Verificar se o horário solicitado está nos horários permitidos\n  if (horariosPermitidos.includes(horaStr)) {\n    const inicioStr = criarHorarioCompleto(dataISO, horaStr);\n    const inicioSlot = new Date(inicioStr);\n    const fimSlot = new Date(inicioSlot.getTime() + 60 * 60 * 1000);\n    \n    // Verificar se há conflito com eventos existentes\n    const ocupados = eventos.filter(ev =>\n      ev.inicio.toISOString().startsWith(dataISO)\n    );\n    \n    const conflitante = ocupados.some(ev =>\n      (inicioSlot < ev.fim) && (fimSlot > ev.inicio)\n    );\n    \n    const noFuturo = inicioSlot > agora;\n    \n    console.log(`Status: ${conflitante ? '❌ OCUPADO' : '✅ LIVRE'} | ${noFuturo ? '✅ FUTURO' : '❌ PASSADO'}`);\n    \n    if (!conflitante && noFuturo) {\n      const horaFim = somarUmaHora(horaStr);\n      const fimStr = criarHorarioCompleto(dataISO, horaFim);\n      \n      horariosLivres.push({\n        cliente_nome: cliente.nome_cliente || '',\n        cliente_email: cliente.email_cliente || '',\n        cliente_telefone: cliente.telefone_cliente || '',\n        data: dataISO,\n        dia_semana: formatarData(inicioSlot),\n        horario: horaStr,\n        horario_fim: horaFim,\n        inicio: inicioStr,\n        fim: fimStr,\n        inicio_utc: inicioSlot.toISOString(),\n        fim_utc: fimSlot.toISOString(),\n        tipo: 'HORARIO_SOLICITADO'\n      });\n      \n      console.log(`🎉 HORÁRIO ESPECÍFICO DISPONÍVEL! Retornando: ${horaStr} - ${horaFim}`);\n    } else {\n      console.log(`❌ Horário específico não disponível. Motivo: ${conflitante ? 'ocupado' : 'no passado'}`);\n    }\n  } else {\n    console.log(`❌ Horário ${horaStr} não está nos horários de funcionamento deste dia`);\n  }\n}\n\n// Se já encontrou o horário específico, retornar apenas ele\nif (horariosLivres.length > 0) {\n  console.log('\\n✅ Horário específico encontrado! Retornando apenas ele.');\n  return horariosLivres.map(h => ({ json: h }));\n}\n\n// SEGUNDA PRIORIDADE: Buscar outros horários disponíveis\nconsole.log('\\n🔍 BUSCANDO HORÁRIOS ALTERNATIVOS');\n\n// Procurar horários disponíveis\nfor (let d = 0; d < diasParaBuscar && horariosLivres.length < MAX_HORARIOS; d++) {\n  const dataBusca = new Date(inicioBusca);\n  dataBusca.setDate(dataBusca.getDate() + d);\n  const dataISO = dataBusca.toISOString().slice(0, 10);\n  const diaSemana = dataBusca.getDay();\n  const horariosHoje = agendaSemana[diaSemana] || [];\n  \n  if (horariosHoje.length === 0) continue;\n  \n  // Eventos ocupados neste dia\n  const ocupados = eventos.filter(ev =>\n    ev.inicio.toISOString().startsWith(dataISO)\n  );\n  \n  console.log(`\\nDia ${dataISO} (${formatarData(dataBusca)}):`);\n  console.log('Horários disponíveis:', horariosHoje);\n  console.log('Eventos ocupados:', ocupados.length);\n  \n  for (const horaStr of horariosHoje) {\n    const inicioStr = criarHorarioCompleto(dataISO, horaStr);\n    const inicioSlot = new Date(inicioStr);\n    const fimSlot = new Date(inicioSlot.getTime() + 60 * 60 * 1000); // +1 hora\n    \n    // Verificar conflitos\n    const conflitante = ocupados.some(ev =>\n      (inicioSlot < ev.fim) && (fimSlot > ev.inicio)\n    );\n    \n    // Verificar se é no futuro\n    const noFuturo = inicioSlot > agora;\n    \n    console.log(`  ${horaStr}: ${conflitante ? 'OCUPADO' : 'LIVRE'} | ${noFuturo ? 'FUTURO' : 'PASSADO'}`);\n    \n    if (!conflitante && noFuturo) {\n      const horaFim = somarUmaHora(horaStr);\n      const fimStr = criarHorarioCompleto(dataISO, horaFim);\n      \n      horariosLivres.push({\n        cliente_nome: cliente.nome_cliente || '',\n        cliente_email: cliente.email_cliente || '',\n        cliente_telefone: cliente.telefone_cliente || '',\n        data: dataISO,\n        dia_semana: formatarData(inicioSlot),\n        horario: horaStr,\n        horario_fim: horaFim,\n        inicio: inicioStr,\n        fim: fimStr,\n        inicio_utc: inicioSlot.toISOString(),\n        fim_utc: fimSlot.toISOString(),\n        tipo: 'HORARIO_ALTERNATIVO'\n      });\n      \n      console.log(`    ✅ Horário alternativo adicionado: ${horaStr} - ${horaFim}`);\n    }\n    \n    if (horariosLivres.length >= MAX_HORARIOS) break;\n  }\n}\n\nconsole.log(`\\nRESULTADO FINAL:`);\nconsole.log(`Total de horários encontrados: ${horariosLivres.length}`);\n\nif (horariosLivres.length > 0) {\n  horariosLivres.forEach((h, i) => {\n    console.log(`${i + 1}. ${h.data} ${h.horario} - ${h.horario_fim} (${h.tipo})`);\n  });\n}\n\n// Retorno\nif (horariosLivres.length === 0) {\n  return [{ json: { \n    mensagem: \"❌ Não há horários disponíveis no período configurado.\",\n    horario_solicitado: horarioEspecificoSolicitado ? `${horarioEspecificoSolicitado.data} ${horarioEspecificoSolicitado.hora}` : null\n  } }];\n}\n\nreturn horariosLivres.map(h => ({ json: h }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1408,
+        144
+      ],
+      "id": "a90d0eeb-5cce-454d-b71d-01f05c65c557",
+      "name": "Code7",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "slots_disponiveis",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1696,
+        144
+      ],
+      "id": "f10378f1-fb0f-4eab-9885-2b1966832496",
+      "name": "Aggregate3",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "content": "# SECRETÁRIA CONSULTA & SUGESTÃO DE HORÁRIOS",
+        "height": 500,
+        "width": 2440,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "3827efdf-7e73-40a0-88e9-0390a1c1aef7",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# SECRETÁRIA AGENDAMENTO (MARCA HORÁRIOS NA AGENDA)",
+        "height": 500,
+        "width": 2440,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        528
+      ],
+      "id": "d1c9cab0-2303-42db-8186-57b42540f8bf",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# SECRETÁRIA CANCELAMENTO DE HORÁRIOS",
+        "height": 596,
+        "width": 2440,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        16,
+        1056
+      ],
+      "id": "d22b57f4-9891-4886-9954-02a55f3a31c0",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields1').first().json.remote_jid }}.consulta",
+        "tableName": "n8n_chat_histories_agendamento",
+        "contextWindowLength": 30
+      },
+      "id": "fcab0036-ca5e-4a3d-b304-27056d374fcf",
+      "name": "Postgres Chat Memory3",
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.1,
+      "position": [
+        1888,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cf26b4f5-27a7-4f5c-94dc-f61095380d17",
+              "name": "summary",
+              "value": "={{ $json.summary }}",
+              "type": "string"
+            },
+            {
+              "id": "63200cc1-5823-4086-ab5c-10d83b2687f9",
+              "name": "start.dateTime",
+              "value": "={{ $json.start.dateTime }}",
+              "type": "string"
+            },
+            {
+              "id": "221833ed-fcf7-4627-a140-de18ec9373b6",
+              "name": "end.dateTime",
+              "value": "={{ $json.end.dateTime }}",
+              "type": "string"
+            },
+            {
+              "id": "21c8e099-81e6-4ba3-95cf-5734d5199d84",
+              "name": "nome_cliente",
+              "value": "={{ $('Edit Fields1').item.json.nome_cliente }}",
+              "type": "string"
+            },
+            {
+              "id": "94371f39-6303-4b41-8467-7dfab27c7b28",
+              "name": "data_consulta_reuniao",
+              "value": "={{ $('Edit Fields1').item.json.data_consulta_reuniao }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1168,
+        144
+      ],
+      "id": "e07c3f6c-aad1-4a91-9816-7ba07ad7e27c",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $json.output;\n\n// Função para extrair valores com fallback\nfunction extractValue(key, text) {\n  const regex = new RegExp(`${key}:\\\\s*(.*)`);\n  const match = text.match(regex);\n  return match ? match[1].trim() : \"\";\n}\n\n// Extrair campos principais\nconst processo = extractValue(\"PROCESSO\", response);\nconst resultado = extractValue(\"RESULTADO\", response);\nconst acao = extractValue(\"AÇÃO\", response);\nconst idEvento = extractValue(\"ID do evento\", response);\nconst nomeCliente = extractValue(\"Nome do cliente\", response);\nconst telefone = extractValue(\"Telefone\", response);\n\n// 🔥 Novo: extrair horário agendado (se existir)\nconst horarioAgendado = extractValue(\"Horário agendado\", response);\n\n// Verificar se algum campo está vazio\nconst faltandoCampos = [processo, resultado, acao, idEvento, nomeCliente, telefone]\n  .some(v => v === \"\");\n\nreturn [\n  {\n    json: {\n      processo,\n      resultado,\n      acao,\n      id_evento: idEvento,\n      nome_cliente: nomeCliente,\n      telefone,\n      horario_agendado: horarioAgendado, // Novo campo\n      faltando_campos: faltandoCampos\n    },\n  },\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1584,
+        560
+      ],
+      "id": "ee5c9d80-2641-4903-bd6a-99f1011187f1",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "calendar": {
+          "__rl": true,
+          "value": "renatoalphamarketingdigital@gmail.com",
+          "mode": "list",
+          "cachedResultName": "renatoalphamarketingdigital@gmail.com"
+        },
+        "eventId": "={{ $fromAI(\"event_id\", \"o ID do evento que o usuário quer atualizar no Google Calendar\") }}",
+        "updateFields": {
+          "end": "={{ $fromAI(\"endtime\",\"o horário que o usuário solicita para finalizar o evento ou a duração padrão\") }}",
+          "start": "={{ $fromAI(\"starttime\",\"o horário que o usuário solicita para iniciar o evento\") }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        1376,
+        1456
+      ],
+      "id": "cecfa3b9-c83b-4ba7-916b-ec0b614989dd",
+      "name": "update"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        2016,
+        368
+      ],
+      "id": "5bfe4887-d543-4cfa-b752-bf344f05882b",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ 'ag:' + (\n  $('Edit Fields1').first().json.remote_jid\n  ?? $('Filtra Os Dados').item.json.cliente.Numero\n  ?? ''\n) }}",
+        "value": "={{ JSON.stringify({\n  status: \"agendado\",\n  horario: $json.horario_agendado || $json.data_consulta_reuniao || null,\n  nome: $json.nome_cliente || null,\n  telefone: $json.telefone || null,\n  id_calendar: $json.id_evento || null,\n  quando_flag: $now.setZone('America/Sao_Paulo').toISO()\n}) }}",
+        "expire": true,
+        "ttl": 259200
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        1792,
+        560
+      ],
+      "id": "03a1a60d-1c8e-4e63-9f47-5b7b7e2fb3f2",
+      "name": "Redis"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "key": "={{ 'ag:' + (   $('Edit Fields1').first().json.remote_jid     ? $('Edit Fields1').first().json.remote_jid     : ($('Filtra Os Dados').item.json.cliente.Numero || '') ) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        208,
+        144
+      ],
+      "id": "46aa9403-0f9b-457c-af69-413c701c6393",
+      "name": "Redis1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ae409a10-d009-4e2c-8a41-719c76f1608f",
+              "leftValue": "={{ (function () {   try {     return JSON.parse($('ChecaAgendado').item.json.value || '{}').status || '';   } catch (e) {     return '';   } })() }}",
+              "rightValue": "agendado",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        464,
+        176
+      ],
+      "id": "ca234d40-6f7c-410d-b1ca-6db4257a242c",
+      "name": "JaAgendado?"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5edf6091-8fec-42d4-8cc2-ed523472d776",
+              "name": "={{ (function(){   try{     const v = JSON.parse($('Redis1').item.json.value || '{}');     const quando = v.horario       ? $fromISO(v.horario).setZone('America/Sao_Paulo').toFormat('dd/LL/yyyy HH:mm')       : '';     return quando       ? `Tudo certo, reunião confirmada para ${quando} 😉 Qualquer ajuste é só avisar!`       : `Tudo certo! Reunião confirmada. Qualquer ajuste é só avisar!`;   }catch(e){     return `Tudo certo! Reunião confirmada. Qualquer ajuste é só avisar!`;   } })() }}",
+              "value": "output",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        832,
+        64
+      ],
+      "id": "1f6120ac-99ee-4269-9615-ca65427c3daf",
+      "name": "RespostaAgendada"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "9RbfGur98uOlqnEg",
+          "mode": "list",
+          "cachedResultName": "Atualiza o Trello"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "nomeCliente",
+              "displayName": "nomeCliente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "numeroCliente",
+              "displayName": "numeroCliente",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "boardId",
+              "displayName": "boardId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "listFromName",
+              "displayName": "listFromName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "listToName",
+              "displayName": "listToName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "cardId",
+              "displayName": "cardId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        2192,
+        560
+      ],
+      "id": "153c6646-6ec3-4fb5-80f6-fed1add219a8",
+      "name": "AtualizaTrello",
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "nome_cliente": "Luan Alves",
+          "telefone_cliente": "62981364076",
+          "email_cliente": "luan.alvesk@gmail.com",
+          "data_consulta_reuniao": "2025-09-10T10:00:00-03:00",
+          "remote_jid": "",
+          "intenção": "cancelar",
+          "informação_extra": ""
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Get many events": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Secretaria Consulta Horarios",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Secretaria Consulta Horarios",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create": {
+      "ai_tool": [
+        [
+          {
+            "node": "Secretaria Agenda Horarios",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Secretaria Agenda Horarios",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Secretaria Agenda Horarios",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator2": {
+      "ai_tool": [
+        [
+          {
+            "node": "Secretaria Agenda Horarios",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fetch": {
+      "ai_tool": [
+        [
+          {
+            "node": "Secretaria Agenda Horarios",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "Secretaria Cancela Horarios",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Secretaria Cancela Horarios",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator3": {
+      "ai_tool": [
+        [
+          {
+            "node": "Secretaria Cancela Horarios",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "delete": {
+      "ai_tool": [
+        [
+          {
+            "node": "Secretaria Cancela Horarios",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fetch1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Secretaria Cancela Horarios",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Redis1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Secretaria Agenda Horarios",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Secretaria Cancela Horarios",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Secretaria Cancela Horarios",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Secretaria Consulta Horarios": {
+      "main": [
+        [
+          {
+            "node": "Sucesso2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tentar novamente2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Secretaria Agenda Horarios": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tentar novamente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Secretaria Cancela Horarios": {
+      "main": [
+        [
+          {
+            "node": "Sucesso1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tentar novamente1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code7": {
+      "main": [
+        [
+          {
+            "node": "Aggregate3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate3": {
+      "main": [
+        [
+          {
+            "node": "Secretaria Consulta Horarios",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory3": {
+      "ai_memory": [
+        [
+          {
+            "node": "Secretaria Consulta Horarios",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Code7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Redis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update": {
+      "ai_tool": [
+        [
+          {
+            "node": "Secretaria Cancela Horarios",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "Secretaria Consulta Horarios",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis": {
+      "main": [
+        [
+          {
+            "node": "Sucesso",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis1": {
+      "main": [
+        [
+          {
+            "node": "JaAgendado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JaAgendado?": {
+      "main": [
+        [
+          {
+            "node": "RespostaAgendada",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get many events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RespostaAgendada": {
+      "main": [
+        [
+          {
+            "node": "Sucesso2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sucesso": {
+      "main": [
+        [
+          {
+            "node": "AtualizaTrello",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "fb127a99-aef9-4a07-a510-4766c78c3855",
+  "meta": {
+    "instanceId": "975211c247f5eab3cac252d8241abd971a891f0a3a41f6a304e2e7595208c3df"
+  },
+  "id": "nviXpB8rHAaVeECZ",
+  "tags": []
+}
