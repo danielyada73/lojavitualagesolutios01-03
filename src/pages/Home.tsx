@@ -11,7 +11,7 @@ import VideoGallery from '../components/home/VideoGallery';
 import InstagramFeed from '../components/home/InstagramFeed';
 import Newsletter from '../components/home/Newsletter';
 import { differentialsImages, colagenoOffers } from '../data/mock';
-import { getProductsByCategory } from '../lib/yampi';
+import { getProductsByCollection } from '../lib/shopify';
 import ProductCard from '../components/ui/ProductCard';
 import { Product } from '../types';
 
@@ -22,17 +22,23 @@ export default function Home() {
   useEffect(() => {
     async function loadProducts() {
       try {
-        const products = await getProductsByCategory('colageno', 10);
+        const products = await getProductsByCollection('colageno', 10);
         if (products && products.length > 0) {
-          // Buscamos no total da coleção para garantir que pegamos os kits mesmo que não tenham a tag acid-hialuronic
-          const pote1 = products.find(p => p.handle === 'col-cran');
+          // Buscamos produtos específicos se existirem, ou pegamos os primeiros
+          const pote1 = products.find(p => p.handle === 'col-cran' || p.handle === 'colageno');
           const kit2 = products.find(p => p.handle === 'col-kit-2');
           const kit3 = products.find(p => p.handle === 'col-kit-3');
 
           const finalProducts = [pote1, kit2, kit3].filter(Boolean) as Product[];
-          setColagenoProducts(finalProducts);
+
+          // Se não encontrou os específicos via handle, usa os primeiros 3 encontrados
+          if (finalProducts.length === 0) {
+            setColagenoProducts(products.slice(0, 3));
+          } else {
+            setColagenoProducts(finalProducts);
+          }
         } else {
-          // Fallback para dados mockados se a Yampi retornar vazio
+          // Fallback para dados mockados se a Shopify retornar vazio
           const mappedMocks: Product[] = colagenoOffers.map(offer => ({
             id: offer.id,
             category_id: 'colageno',
@@ -42,12 +48,15 @@ export default function Home() {
             original_price: offer.original_price,
             discount_percentage: offer.discount_percentage,
             thumbnail_url: offer.thumbnail_url,
-            is_popular: true
+            is_popular: true,
+            handle: offer.id,
+            images: [offer.thumbnail_url],
+            variations: []
           }));
           setColagenoProducts(mappedMocks);
         }
       } catch (error) {
-        console.error('Erro ao carregar produtos da Yampi:', error);
+        console.error('Erro ao carregar produtos da Shopify:', error);
         // Fallback em caso de erro na API
         const mappedMocks: Product[] = colagenoOffers.map(offer => ({
           id: offer.id,
@@ -58,7 +67,10 @@ export default function Home() {
           original_price: offer.original_price,
           discount_percentage: offer.discount_percentage,
           thumbnail_url: offer.thumbnail_url,
-          is_popular: true
+          is_popular: true,
+          handle: offer.id,
+          images: [offer.thumbnail_url],
+          variations: []
         }));
         setColagenoProducts(mappedMocks);
       } finally {

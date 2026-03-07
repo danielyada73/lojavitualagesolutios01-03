@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { CartItem, Product, ProductVariation } from '../types';
-import { createCheckout, addToCheckout } from '../lib/yampi';
+import { createCart, addToCart } from '../lib/shopify';
 
 interface CartStore {
   items: CartItem[];
@@ -27,7 +27,7 @@ export const useCartStore = create<CartStore>()(
         // 1. Atualiza o estado local imediatamente para UX rápida
         set((state) => {
           const existingItem = state.items.find(
-            (item) => item.product.id === product.id && item.variation?.id === variation?.id
+            (item) => item.product.id === product.id && (item.variation?.id === variation?.id || (!item.variation && !variation))
           );
 
           if (existingItem) {
@@ -55,37 +55,29 @@ export const useCartStore = create<CartStore>()(
           };
         });
 
-        // 2. Sincroniza com Yampi em background (gera checkout URL)
+        // 2. Sincroniza com Shopify em background (gera checkout URL)
         try {
-          const { items } = get();
+          const state = get();
+          const { cartId } = state;
 
-          // Coleta todos os itens do carrinho para gerar a URL de checkout
-          const checkoutItems = items.map(item => ({
-            skuId: item.variation?.id || item.product.variations?.[0]?.id || item.product.id,
-            quantity: item.quantity,
-          }));
+          // Pega o ID da variante correta (Shopify usa variantId)
+          const variantId = variation?.id || product.variations?.[0]?.id || product.id;
 
-          if (checkoutItems.length > 0) {
-            const newCheckout = await createCheckout(checkoutItems[0].skuId, checkoutItems[0].quantity);
-            if (newCheckout) {
-              // Se tiver mais de um item, atualiza com todos
-              if (checkoutItems.length > 1) {
-                const updated = await addToCheckout(
-                  newCheckout.id,
-                  checkoutItems[1].skuId,
-                  0, // Não adiciona mais um, apenas sincroniza a lista total
-                  checkoutItems
-                );
-                if (updated) {
-                  set({ cartId: updated.id, checkoutUrl: updated.checkoutUrl });
-                }
-              } else {
-                set({ cartId: newCheckout.id, checkoutUrl: newCheckout.checkoutUrl });
-              }
+          if (!cartId) {
+            // Cria novo carrinho
+            const newCart = await createCart(variantId);
+            if (newCart) {
+              set({ cartId: newCart.id, checkoutUrl: newCart.checkoutUrl });
+            }
+          } else {
+            // Adiciona ao carrinho existente
+            const updatedCart = await addToCart(cartId, variantId, quantity);
+            if (updatedCart) {
+              set({ checkoutUrl: updatedCart.checkoutUrl });
             }
           }
         } catch (error) {
-          console.error('Erro ao sincronizar carrinho com Yampi:', error);
+          console.error('Erro ao sincronizar carrinho com Shopify:', error);
         }
       },
       removeItem: (itemId) => {

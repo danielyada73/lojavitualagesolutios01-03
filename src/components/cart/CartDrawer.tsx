@@ -122,20 +122,10 @@ export default function CartDrawer() {
                   <span className="text-xl font-bold">R$ {total().toFixed(2)}</span>
                 </div>
                 <button
-                  onClick={async () => {
-                    const { checkoutUrl, items } = useCartStore.getState();
-
-                    if (checkoutUrl && !checkoutUrl.includes('shopify.com')) {
+                  onClick={() => {
+                    const { checkoutUrl } = useCartStore.getState();
+                    if (checkoutUrl) {
                       window.location.href = checkoutUrl;
-                    } else if (items.length > 0) {
-                      // Tenta regenerar na hora se estiver faltando ou for legado
-                      const { generateCheckoutUrl } = await import('../../lib/yampi');
-                      const checkoutItems = items.map(item => ({
-                        skuId: item.variation?.id || item.product.variations?.[0]?.id || item.product.id,
-                        quantity: item.quantity,
-                      }));
-                      const newUrl = generateCheckoutUrl(checkoutItems);
-                      window.location.href = newUrl;
                     } else {
                       alert('Estamos preparando seu checkout, tente novamente em um instante.');
                     }

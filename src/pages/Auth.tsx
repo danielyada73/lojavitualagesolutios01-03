@@ -1,7 +1,7 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mail, Lock, User, ArrowRight, Phone, AlertCircle } from 'lucide-react';
-import { registerCustomer, loginCustomer } from '../lib/yampi';
+import { registerCustomer, loginCustomer, getCustomer } from '../lib/shopify';
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(false);

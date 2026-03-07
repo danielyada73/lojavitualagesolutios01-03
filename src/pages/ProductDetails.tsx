@@ -2,7 +2,7 @@ import { useState, useEffect, FormEvent } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products, promotionalKits } from '../data/mock';
 import { useCartStore } from '../store/cart';
-import { getProductBySlug } from '../lib/yampi';
+import { getProductByHandle } from '../lib/shopify';
 import { Product } from '../types';
 import {
   Star, Truck, ShieldCheck, Minus, Plus,
@@ -35,12 +35,12 @@ export default function ProductDetails() {
       setLoading(true);
 
       try {
-        const yampiProduct = await getProductBySlug(id);
+        const shopifyProduct = await getProductByHandle(id);
 
-        if (yampiProduct) {
-          setProduct(yampiProduct);
-          setSelectedVariation(yampiProduct.variations?.[0] || null);
-          setMainImage(yampiProduct.thumbnail_url || '');
+        if (shopifyProduct) {
+          setProduct(shopifyProduct);
+          setSelectedVariation(shopifyProduct.variations?.[0] || null);
+          setMainImage(shopifyProduct.thumbnail_url || '');
         } else {
           // Fallback para Mock
           const mockProduct = products.find(p => p.id === id);
@@ -51,7 +51,7 @@ export default function ProductDetails() {
           }
         }
       } catch (error) {
-        console.error('Erro ao buscar produto:', error);
+        console.error('Erro ao buscar produto na Shopify:', error);
       } finally {
         setLoading(false);
       }

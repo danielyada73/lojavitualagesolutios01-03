@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Package, MapPin, Edit2, LogOut, Loader2 } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
-import { getCustomer } from '../lib/yampi';
+import { getCustomer } from '../lib/shopify';
 
 export default function Account() {
   const [activeTab, setActiveTab] = useState('orders');
