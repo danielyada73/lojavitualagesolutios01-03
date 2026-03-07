@@ -13,7 +13,7 @@ import TermsConditions from './pages/TermsConditions';
 import AboutUs from './pages/AboutUs';
 import PaymentMethods from './pages/PaymentMethods';
 
-import ScrollToTop from './components/ui/ScrollToTop';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 // Dashboard Imports
 import AppLayoutDashboard from './dashboard/components/Layout/AppLayout';
@@ -27,6 +27,7 @@ import Logistics from './dashboard/pages/Logistics';
 import Ads from './dashboard/pages/Ads';
 import Settings from './dashboard/pages/Settings';
 import Integrations from './dashboard/pages/Integrations';
+import OAuthML from './dashboard/pages/OAuthML';
 
 export default function App() {
   return (
@@ -62,6 +63,7 @@ export default function App() {
           <Route path="ads" element={<Ads />} />
           <Route path="settings" element={<Settings />} />
           <Route path="integrations" element={<Integrations />} />
+          <Route path="auth/ml" element={<OAuthML />} />
         </Route>
       </Routes>
     </BrowserRouter>

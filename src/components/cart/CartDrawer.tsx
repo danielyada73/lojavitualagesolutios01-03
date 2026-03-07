@@ -2,9 +2,18 @@ import { useCartStore } from '../../store/cart';
 import { X, Minus, Plus, Trash2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
+import { useEffect } from 'react';
 
 export default function CartDrawer() {
-  const { items, isOpen, toggleCart, removeItem, updateQuantity, total } = useCartStore();
+  const { items, isOpen, toggleCart, removeItem, updateQuantity, total, checkoutUrl } = useCartStore();
+
+  useEffect(() => {
+    // Limpa URLs legadas da Yampi se existirem no estado
+    if (checkoutUrl && (checkoutUrl.includes('yampi.com.br') || checkoutUrl.includes('undefined'))) {
+      console.log('[CartDrawer] Limpando URL legada da Yampi/Undefined.');
+      useCartStore.setState({ checkoutUrl: null, cartId: null });
+    }
+  }, [checkoutUrl]);
 
   return (
     <AnimatePresence>

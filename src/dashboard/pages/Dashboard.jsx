@@ -47,7 +47,15 @@ export default function Dashboard() {
   async function load() {
     const uid = localStorage.getItem("ml_user_id");
     if (!uid) {
-      setErr("Sem ml_user_id. Faça OAuth em /auth/ml.");
+      setErr(
+        <span>
+          Sem ml_user_id. Faça{" "}
+          <Link to="/admin/auth/ml" style={{ color: "#78c8ff", textDecoration: "underline" }}>
+            OAuth em /auth/ml
+          </Link>
+          .
+        </span>
+      );
       return;
     }
 
@@ -236,8 +244,8 @@ export default function Dashboard() {
               {totals.receita <= 0
                 ? "Sem vendas no período"
                 : totals.lucro >= 0
-                ? "✅ Lucrativo"
-                : "❌ Prejuízo"}
+                  ? "✅ Lucrativo"
+                  : "❌ Prejuízo"}
             </div>
             <div className="small" style={{ opacity: 0.75 }}>
               {totals.receita > 0 ? "Baseado no lucro bruto" : "Carregue dados do backend"}
