@@ -63,6 +63,7 @@ export interface ProductVariation {
   id: string;
   product_id: string;
   name: string;
+  price?: number;
   price_modifier: number;
 }
 
