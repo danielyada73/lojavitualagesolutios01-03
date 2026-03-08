@@ -26,7 +26,7 @@ export default function HeroCarousel() {
         >
           <Link to={banner.target_url} className="block w-full">
             {/* Desktop Banner */}
-            <div className={`hidden md:block w-full ${!banner.image_url ? 'bg-neutral-800 h-[400px] flex items-center justify-center' : ''}`}>
+            <div className={`${banner.mobile_image_url ? 'hidden md:block' : 'block'} w-full ${!banner.image_url ? 'bg-neutral-800 h-[400px] flex items-center justify-center' : ''}`}>
               {banner.image_url ? (
                 <img
                   src={banner.image_url}

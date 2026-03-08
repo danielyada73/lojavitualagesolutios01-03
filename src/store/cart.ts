@@ -14,6 +14,7 @@ interface CartStore {
   updateQuantity: (itemId: string, quantity: number) => void;
   toggleCart: () => void;
   clearCart: () => void;
+  syncCart: () => Promise<void>;
   total: () => number;
 }
 
@@ -97,6 +98,39 @@ export const useCartStore = create<CartStore>()(
       },
       clearCart: () => {
         set({ items: [], cartId: null, checkoutUrl: null });
+      },
+      syncCart: async () => {
+        const { items, cartId } = get();
+        if (items.length === 0) return;
+
+        try {
+          set({ isSyncing: true });
+
+          // Se não tem cartId ou é inválido, cria um novo com todos os itens
+          // Simplificando: vamos pegar o primeiro item para criar o carrinho e depois os outros se necessário.
+          // Mas o createCart da lib/shopify aceita apenas um item inicialmente.
+          const firstItem = items[0];
+          const variantId = firstItem.variation?.id || firstItem.product.variations?.[0]?.id || firstItem.product.id;
+
+          const newCart = await createCart(variantId);
+          if (newCart) {
+            set({ cartId: newCart.id, checkoutUrl: newCart.checkoutUrl });
+
+            // Se houver mais itens, adiciona-os
+            if (items.length > 1) {
+              for (let i = 1; i < items.length; i++) {
+                const item = items[i];
+                const vId = item.variation?.id || item.product.variations?.[0]?.id || item.product.id;
+                await addToCart(newCart.id, vId, item.quantity);
+              }
+              // O addToCart retorna o carrinho atualizado? Sim, mas podemos apenas confiar que o checkoutUrl permanece válido ou atualizar no final.
+            }
+          }
+        } catch (error) {
+          console.error('[CartStore] Erro ao sincronizar carrinho:', error);
+        } finally {
+          set({ isSyncing: false });
+        }
       },
       total: () => {
         const { items } = get();

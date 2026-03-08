@@ -21,12 +21,11 @@ export default function CartDrawer() {
     } else if (items.length > 0) {
       // Tenta re-sincronizar se o checkoutUrl sumiu mas ainda há itens
       console.log('[CartDrawer] CheckoutUrl ausente, tentando re-sincronizar...');
-      const firstItem = items[0];
-      const variantId = firstItem.variation?.id || firstItem.product.variations?.[0]?.id || firstItem.product.id;
-
-      // Isso forçará a criação de um carrinho novo através do addItem que já possui a lógica
-      // Mas para ser mais robusto, poderíamos expor uma função de sync no store.
-      // Por enquanto, vamos apenas avisar o usuário que está tentando processar.
+      await useCartStore.getState().syncCart();
+      const newUrl = useCartStore.getState().checkoutUrl;
+      if (newUrl) {
+        window.location.href = newUrl;
+      }
     }
   };
 
