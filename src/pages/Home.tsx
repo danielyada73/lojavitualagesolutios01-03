@@ -120,9 +120,9 @@ export default function Home() {
             Diferenciais do Produto
           </h2>
 
-          <div className="hidden md:grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {differentialsImages.map((img, idx) => (
-              <div key={idx} className="w-full rounded-[20px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+              <div key={idx} className={`w-full rounded-[20px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group ${idx === differentialsImages.length - 1 && differentialsImages.length % 2 !== 0 ? 'col-span-2 sm:col-span-1' : ''}`}>
                 <img
                   src={img}
                   alt={`Diferencial ${idx + 1}`}
@@ -130,16 +130,6 @@ export default function Home() {
                 />
               </div>
             ))}
-          </div>
-
-          <div className="md:hidden relative overflow-hidden py-4">
-            <div className="flex animate-marquee-slow gap-4 w-max">
-              {[...differentialsImages, ...differentialsImages, ...differentialsImages, ...differentialsImages].map((img, idx) => (
-                <div key={idx} className="flex-shrink-0 w-[85vw] rounded-[20px] overflow-hidden shadow-md border border-gray-100">
-                  <img src={img} alt={`Diferencial ${idx + 1}`} className="w-full h-auto object-cover" />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

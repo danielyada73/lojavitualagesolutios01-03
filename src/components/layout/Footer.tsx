@@ -16,10 +16,16 @@ export default function Footer() {
             </p>
 
             <h4 className="font-bold mb-4 mt-6">Redes Sociais</h4>
-            <div className="flex gap-4 text-age-gold">
-              <a href="#" className="hover:text-black transition-colors"><Facebook size={24} /></a>
-              <a href="#" className="hover:text-black transition-colors"><Instagram size={24} /></a>
-              <a href="#" className="hover:text-black transition-colors"><div className="w-6 h-6 flex items-center justify-center font-bold border border-current rounded-full text-[10px]">Tk</div></a>
+            <div className="flex gap-4">
+              <a href="#" className="text-age-gold hover:text-black transition-colors no-underline">
+                <Facebook size={24} />
+              </a>
+              <a href="#" className="text-age-gold hover:text-black transition-colors no-underline">
+                <Instagram size={24} />
+              </a>
+              <a href="#" className="text-age-gold hover:text-black transition-colors no-underline">
+                <div className="w-6 h-6 flex items-center justify-center font-bold border border-current rounded-full text-[10px]">Tk</div>
+              </a>
             </div>
           </div>
 
@@ -27,11 +33,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-6 text-black">Links Úteis</h3>
             <ul className="space-y-3 text-sm text-gray-600 font-medium">
-              <li><Link to="/about" className="hover:text-age-gold transition-colors italic">Sobre Nós</Link></li>
-              <li><Link to="/payment-methods" className="hover:text-age-gold transition-colors italic">Formas de Pagamento</Link></li>
-              <li><Link to="/shipping-policy" className="hover:text-age-gold transition-colors italic">Políticas de Troca e Devolução</Link></li>
-              <li><Link to="/privacy" className="hover:text-age-gold transition-colors italic">Segurança e Privacidade</Link></li>
-              <li><Link to="/terms" className="hover:text-age-gold transition-colors italic">Termos e Condições</Link></li>
+              <li><Link to="/about" className="text-gray-600 hover:text-age-gold transition-colors italic no-underline">Sobre Nós</Link></li>
+              <li><Link to="/payment-methods" className="text-gray-600 hover:text-age-gold transition-colors italic no-underline">Formas de Pagamento</Link></li>
+              <li><Link to="/shipping-policy" className="text-gray-600 hover:text-age-gold transition-colors italic no-underline">Políticas de Troca e Devolução</Link></li>
+              <li><Link to="/privacy" className="text-gray-600 hover:text-age-gold transition-colors italic no-underline">Segurança e Privacidade</Link></li>
+              <li><Link to="/terms" className="text-gray-600 hover:text-age-gold transition-colors italic no-underline">Termos e Condições</Link></li>
             </ul>
           </div>
 

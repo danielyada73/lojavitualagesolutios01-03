@@ -54,20 +54,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 shadow-sm">
       {/* 1. Announcement Bar (Gold Background, Black Text, Marquee) */}
-      <div className="bg-age-gold text-black text-xs md:text-sm py-2 overflow-hidden whitespace-nowrap">
+      <div className="bg-age-gold text-black text-[10px] md:text-xs py-2 overflow-hidden whitespace-nowrap border-b border-black/5 font-black uppercase tracking-tighter">
         <div className="inline-flex animate-marquee">
-          <span className="mx-8 font-bold uppercase tracking-wide">
-            🚚 FRETE GRÁTIS EM COMPRAS A PARTIR DE R$49,90 &nbsp;&nbsp; 🚀 ENVIO EM 24H PARA REGIÕES DE SÃO PAULO
-          </span>
-          <span className="mx-8 font-bold uppercase tracking-wide">
-            🚚 FRETE GRÁTIS EM COMPRAS A PARTIR DE R$49,90 &nbsp;&nbsp; 🚀 ENVIO EM 24H PARA REGIÕES DE SÃO PAULO
-          </span>
-          <span className="mx-8 font-bold uppercase tracking-wide">
-            🚚 FRETE GRÁTIS EM COMPRAS A PARTIR DE R$49,90 &nbsp;&nbsp; 🚀 ENVIO EM 24H PARA REGIÕES DE SÃO PAULO
-          </span>
-          <span className="mx-8 font-bold uppercase tracking-wide">
-            🚚 FRETE GRÁTIS EM COMPRAS A PARTIR DE R$49,90 &nbsp;&nbsp; 🚀 ENVIO EM 24H PARA REGIÕES DE SÃO PAULO
-          </span>
+          {[1, 2, 3].map((i) => (
+            <span key={i} className="mx-4 flex items-center gap-4">
+              <span>🚚 FRETE GRÁTIS EM COMPRAS A PARTIR DE R$49,90</span>
+              <span className="opacity-20">•</span>
+              <span>🚀 ENVIO EM 24H PARA REGIÕES DE SÃO PAULO</span>
+              <span className="opacity-20">•</span>
+            </span>
+          ))}
         </div>
       </div>
 
@@ -99,7 +95,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="hover:text-age-gold transition-colors whitespace-nowrap"
+                  className="text-white hover:text-age-gold transition-colors whitespace-nowrap no-underline"
                 >
                   {link.name}
                 </Link>

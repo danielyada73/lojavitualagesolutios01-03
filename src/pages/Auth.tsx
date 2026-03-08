@@ -152,7 +152,7 @@ export default function Auth() {
           </div>
         )}
 
-        <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+        <form className="mt-8 space-y-5" onSubmit={handleSubmit} noValidate>
           {!isLogin && (
             <div className="relative group">
               <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -179,7 +179,7 @@ export default function Auth() {
             <input
               id="email"
               name="email"
-              type="email"
+              type="text"
               autoComplete="email"
               required
               disabled={loading}
@@ -253,7 +253,7 @@ export default function Auth() {
 
             {isLogin && (
               <div className="text-sm">
-                <a href="#" className="font-medium text-age-gold hover:text-white transition-colors">
+                <a href="#" className="font-medium text-age-gold hover:text-white transition-colors no-underline">
                   Esqueceu sua senha?
                 </a>
               </div>
@@ -287,7 +287,7 @@ export default function Auth() {
               setErrors({ email: '', phone: '' });
               setFormData({ name: '', email: '', phone: '', password: '' });
             }}
-            className="text-sm font-medium text-gray-400 hover:text-age-gold transition-colors uppercase tracking-wide"
+            className="text-sm font-medium text-gray-400 hover:text-age-gold transition-colors uppercase tracking-wide no-underline"
           >
             {isLogin ? 'Não tem uma conta? Cadastre-se' : 'Já tem uma conta? Entre agora'}
           </button>
