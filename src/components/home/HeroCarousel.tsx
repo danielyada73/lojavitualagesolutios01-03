@@ -26,19 +26,27 @@ export default function HeroCarousel() {
         >
           <Link to={banner.target_url} className="block w-full">
             {/* Desktop Banner */}
-            <img
-              src={banner.image_url}
-              alt={banner.title}
-              className={`w-full h-auto object-cover ${banner.mobile_image_url ? 'hidden md:block' : 'block'}`}
-            />
+            <div className={`hidden md:block w-full ${!banner.image_url ? 'bg-neutral-800 h-[400px] flex items-center justify-center' : ''}`}>
+              {banner.image_url ? (
+                <img
+                  src={banner.image_url}
+                  alt={banner.title}
+                  className="w-full h-auto object-cover"
+                />
+              ) : (
+                <span className="text-gray-500">Banner Desktop Indisponível</span>
+              )}
+            </div>
 
             {/* Mobile Banner */}
             {banner.mobile_image_url && (
-              <img
-                src={banner.mobile_image_url}
-                alt={banner.title}
-                className="w-full aspect-[4/5] object-cover block md:hidden"
-              />
+              <div className="block md:hidden w-full">
+                <img
+                  src={banner.mobile_image_url}
+                  alt={banner.title}
+                  className="w-full aspect-[4/5] object-cover"
+                />
+              </div>
             )}
           </Link>
         </div>

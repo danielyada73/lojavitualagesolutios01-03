@@ -70,12 +70,12 @@ function StatCard({ title, value, subtitle, tone = "neutral" }) {
     tone === "good"
       ? { borderColor: "rgba(93,255,176,0.18)" }
       : tone === "bad"
-      ? { borderColor: "rgba(255,93,93,0.18)" }
-      : tone === "warn"
-      ? { borderColor: "rgba(255,193,77,0.18)" }
-      : tone === "info"
-      ? { borderColor: "rgba(120,200,255,0.18)" }
-      : {};
+        ? { borderColor: "rgba(255,93,93,0.18)" }
+        : tone === "warn"
+          ? { borderColor: "rgba(255,193,77,0.18)" }
+          : tone === "info"
+            ? { borderColor: "rgba(120,200,255,0.18)" }
+            : {};
 
   return (
     <div className="panel" style={{ ...ui.card, ...toneStyle, boxShadow: ui.shadow }}>
@@ -327,6 +327,15 @@ export default function Stock() {
           <div style={{ fontSize: 18, fontWeight: 950 }}>Estoque (Saldo)</div>
           <div className="small" style={{ opacity: 0.82 }}>
             Saldo calculado por movimentos (IN/OUT/ADJUST). Sincronização ML cria OUT automaticamente via pedidos pagos.
+            <br />
+            <a
+              href="https://admin.shopify.com/store/lojavitualagesolutios/products/inventory"
+              target="_blank"
+              rel="noreferrer"
+              className="text-age-gold hover:underline font-bold mt-2 inline-block"
+            >
+              Acessar Estoque na Shopify (Real Time) →
+            </a>
           </div>
         </div>
 

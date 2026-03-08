@@ -185,7 +185,7 @@ export default function Auth() {
               disabled={loading}
               value={formData.email}
               onChange={handleChange}
-              className={`appearance-none rounded-xl relative block w-full px-4 py-4 pl-14 bg-neutral-900/50 border ${errors.email ? 'border-red-500' : 'border-white/10'} placeholder-gray-500 text-white focus:outline-none focus:border-age-gold focus:ring-1 focus:ring-age-gold transition-colors sm:text-sm disabled:opacity-50`}
+              className={`appearance-none rounded-xl relative block w-full px-4 py-4 pl-20 bg-neutral-900/50 border ${errors.email ? 'border-red-500' : 'border-white/10'} placeholder-gray-500 text-white focus:outline-none focus:border-age-gold focus:ring-1 focus:ring-age-gold transition-colors sm:text-sm disabled:opacity-50`}
               placeholder="Endereço de e-mail"
             />
             {errors.email && (
@@ -209,7 +209,7 @@ export default function Auth() {
                 value={formData.phone}
                 onChange={handleChange}
                 maxLength={15}
-                className={`appearance-none rounded-xl relative block w-full px-4 py-4 pl-14 bg-neutral-900/50 border ${errors.phone ? 'border-red-500' : 'border-white/10'} placeholder-gray-500 text-white focus:outline-none focus:border-age-gold focus:ring-1 focus:ring-age-gold transition-colors sm:text-sm disabled:opacity-50`}
+                className={`appearance-none rounded-xl relative block w-full px-4 py-4 pl-20 bg-neutral-900/50 border ${errors.phone ? 'border-red-500' : 'border-white/10'} placeholder-gray-500 text-white focus:outline-none focus:border-age-gold focus:ring-1 focus:ring-age-gold transition-colors sm:text-sm disabled:opacity-50`}
                 placeholder="(XX) XXXXX-XXXX"
               />
               {errors.phone && (
@@ -233,7 +233,7 @@ export default function Auth() {
               disabled={loading}
               value={formData.password}
               onChange={handleChange}
-              className="appearance-none rounded-xl relative block w-full px-4 py-4 pl-14 bg-neutral-900/50 border border-white/10 placeholder-gray-500 text-white focus:outline-none focus:border-age-gold focus:ring-1 focus:ring-age-gold transition-colors sm:text-sm disabled:opacity-50"
+              className="appearance-none rounded-xl relative block w-full px-4 py-4 pl-20 bg-neutral-900/50 border border-white/10 placeholder-gray-500 text-white focus:outline-none focus:border-age-gold focus:ring-1 focus:ring-age-gold transition-colors sm:text-sm disabled:opacity-50"
               placeholder="Senha"
             />
           </div>
