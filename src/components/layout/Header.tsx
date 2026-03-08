@@ -49,7 +49,6 @@ export default function Header() {
     { name: 'ÔMEGA 3', path: '/category/omega-3' },
     { name: 'CELLULI', path: '/category/celluli' },
     { name: 'KITS PROMOCIONAIS', path: '/category/kits' },
-    { name: 'PORTO ALPHA', path: '/admin' },
   ];
 
   return (
