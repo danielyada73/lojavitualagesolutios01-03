@@ -5,31 +5,32 @@ const storefrontAccessToken = import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN;
 const apiVersion = '2026-01';
 
 export async function shopifyFetch({ query, variables = {} }: { query: string, variables?: any }) {
-    if (!domain || !storefrontAccessToken) {
-        console.error('❌ Shopify config missing', { domain, token: !!storefrontAccessToken });
-        return null;
-    }
-    const endpoint = `https://${domain}/api/${apiVersion}/graphql.json`;
+  if (!domain || !storefrontAccessToken) {
+    console.error('❌ Shopify config missing', { domain, token: !!storefrontAccessToken });
+    return null;
+  }
+  const endpoint = `https://${domain}/api/${apiVersion}/graphql.json`;
 
-    try {
-        const response = await fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Shopify-Storefront-Access-Token': storefrontAccessToken,
-            },
-            body: JSON.stringify({ query, variables }),
-        });
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': storefrontAccessToken,
+      },
+      body: JSON.stringify({ query, variables }),
+      cache: 'no-store'
+    });
 
-        const body = await response.json();
-        if (!response.ok) {
-            throw new Error(`Shopify API error: ${response.status} ${JSON.stringify(body.errors)}`);
-        }
-        return body;
-    } catch (error) {
-        console.error('Error fetching from Shopify:', error);
-        return null;
+    const body = await response.json();
+    if (!response.ok) {
+      throw new Error(`Shopify API error: ${response.status} ${JSON.stringify(body.errors)}`);
     }
+    return body;
+  } catch (error) {
+    console.error('Error fetching from Shopify:', error);
+    return null;
+  }
 }
 
 /**
@@ -89,67 +90,67 @@ const PRODUCT_FRAGMENT = `
  * Mapeia um produto do GraphQL da Shopify para a interface Product do projeto
  */
 export function mapShopifyProduct(node: any): Product {
-    const firstVariant = node.variants.edges[0]?.node;
-    const price = firstVariant ? parseFloat(firstVariant.price.amount) : 0;
-    const originalPrice = firstVariant?.compareAtPrice ? parseFloat(firstVariant.compareAtPrice.amount) : price;
-    const discount = originalPrice > price ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;
+  const firstVariant = node.variants.edges[0]?.node;
+  const price = firstVariant ? parseFloat(firstVariant.price.amount) : 0;
+  const originalPrice = firstVariant?.compareAtPrice ? parseFloat(firstVariant.compareAtPrice.amount) : price;
+  const discount = originalPrice > price ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;
 
-    // Processa Metafields Complexos (JSON)
-    const safeParse = (val: string | undefined) => {
-        try {
-            return val ? JSON.parse(val) : undefined;
-        } catch {
-            return undefined;
-        }
-    };
+  // Processa Metafields Complexos (JSON)
+  const safeParse = (val: string | undefined) => {
+    try {
+      return val ? JSON.parse(val) : undefined;
+    } catch {
+      return undefined;
+    }
+  };
 
-    const benefits = safeParse(node.benefits_json?.value);
-    const timeline = safeParse(node.timeline_json?.value);
-    const faq = safeParse(node.faq_json?.value);
-    const nutrition = safeParse(node.nutrition_json?.value);
-    const steps = safeParse(node.how_to_use_steps?.value);
+  const benefits = safeParse(node.benefits_json?.value);
+  const timeline = safeParse(node.timeline_json?.value);
+  const faq = safeParse(node.faq_json?.value);
+  const nutrition = safeParse(node.nutrition_json?.value);
+  const steps = safeParse(node.how_to_use_steps?.value);
 
-    // Mapeia todas as variantes
-    const variations: ProductVariation[] = node.variants.edges.map((vEdge: any) => ({
-        id: vEdge.node.id,
-        product_id: node.id,
-        name: vEdge.node.title,
-        price: parseFloat(vEdge.node.price.amount)
-    }));
+  // Mapeia todas as variantes
+  const variations: ProductVariation[] = node.variants.edges.map((vEdge: any) => ({
+    id: vEdge.node.id,
+    product_id: node.id,
+    name: vEdge.node.title,
+    price: parseFloat(vEdge.node.price.amount)
+  }));
 
-    return {
-        id: node.handle, // Usamos o handle como ID para compatibilidade com as rotas /product/:id
-        category_id: node.collections?.edges[0]?.node.handle || 'geral',
-        name: node.title,
-        description: node.description,
-        price: price,
-        original_price: originalPrice > price ? originalPrice : undefined,
-        discount_percentage: discount > 0 ? discount : undefined,
-        thumbnail_url: node.images.edges[0]?.node.url || 'https://placehold.co/600x600?text=Sem+Imagem',
-        images: node.images.edges.map((imgEdge: any) => imgEdge.node.url),
-        is_popular: node.collections?.edges.some((c: any) => c.node.handle === 'mais-vendidos'),
-        is_kit: node.title.toLowerCase().includes('kit'),
-        is_available: firstVariant ? firstVariant.availableForSale : false,
-        tags: node.tags || [],
-        handle: node.handle,
-        variations,
-        details: {
-            subtitle: node.subtitle?.value,
-            reviews: {
-                rating: node.reviews_rating?.value ? parseFloat(node.reviews_rating.value) : 4.9,
-                count: node.reviews_count?.value ? parseInt(node.reviews_count.value) : 124
-            },
-            benefits: benefits,
-            timeline: timeline,
-            faq: faq,
-            nutrition_facts: nutrition,
-            how_to_use: node.how_to_use_desc?.value || steps ? {
-                title: "Como Usar",
-                description: node.how_to_use_desc?.value || "",
-                steps: steps || []
-            } : undefined
-        }
-    };
+  return {
+    id: node.handle, // Usamos o handle como ID para compatibilidade com as rotas /product/:id
+    category_id: node.collections?.edges[0]?.node.handle || 'geral',
+    name: node.title,
+    description: node.description,
+    price: price,
+    original_price: originalPrice > price ? originalPrice : undefined,
+    discount_percentage: discount > 0 ? discount : undefined,
+    thumbnail_url: node.images.edges[0]?.node.url || 'https://placehold.co/600x600?text=Sem+Imagem',
+    images: node.images.edges.map((imgEdge: any) => imgEdge.node.url),
+    is_popular: node.collections?.edges.some((c: any) => c.node.handle === 'mais-vendidos'),
+    is_kit: node.title.toLowerCase().includes('kit'),
+    is_available: firstVariant ? firstVariant.availableForSale : false,
+    tags: node.tags || [],
+    handle: node.handle,
+    variations,
+    details: {
+      subtitle: node.subtitle?.value,
+      reviews: {
+        rating: node.reviews_rating?.value ? parseFloat(node.reviews_rating.value) : 4.9,
+        count: node.reviews_count?.value ? parseInt(node.reviews_count.value) : 124
+      },
+      benefits: benefits,
+      timeline: timeline,
+      faq: faq,
+      nutrition_facts: nutrition,
+      how_to_use: node.how_to_use_desc?.value || steps ? {
+        title: "Como Usar",
+        description: node.how_to_use_desc?.value || "",
+        steps: steps || []
+      } : undefined
+    }
+  };
 }
 
 // --- Cart Mutations ---
@@ -194,20 +195,20 @@ export const ADD_TO_CART_MUTATION = `
 `;
 
 export async function createCart(variantId?: string): Promise<{ id: string, checkoutUrl: string } | null> {
-    const variables = variantId ? { input: { lines: [{ merchandiseId: variantId, quantity: 1 }] } } : {};
-    const data = await shopifyFetch({ query: CREATE_CART_MUTATION, variables });
-    return data?.data?.cartCreate?.cart || null;
+  const variables = variantId ? { input: { lines: [{ merchandiseId: variantId, quantity: 1 }] } } : {};
+  const data = await shopifyFetch({ query: CREATE_CART_MUTATION, variables });
+  return data?.data?.cartCreate?.cart || null;
 }
 
 export async function addToCart(cartId: string, variantId: string, quantity = 1) {
-    const data = await shopifyFetch({
-        query: ADD_TO_CART_MUTATION,
-        variables: {
-            cartId,
-            lines: [{ merchandiseId: variantId, quantity }]
-        }
-    });
-    return data?.data?.cartLinesAdd?.cart || null;
+  const data = await shopifyFetch({
+    query: ADD_TO_CART_MUTATION,
+    variables: {
+      cartId,
+      lines: [{ merchandiseId: variantId, quantity }]
+    }
+  });
+  return data?.data?.cartLinesAdd?.cart || null;
 }
 
 // --- Customer Mutations ---
@@ -247,19 +248,19 @@ export const CUSTOMER_ACCESS_TOKEN_CREATE_MUTATION = `
 `;
 
 export async function registerCustomer(input: any) {
-    const data = await shopifyFetch({
-        query: CUSTOMER_CREATE_MUTATION,
-        variables: { input }
-    });
-    return data?.data?.customerCreate;
+  const data = await shopifyFetch({
+    query: CUSTOMER_CREATE_MUTATION,
+    variables: { input }
+  });
+  return data?.data?.customerCreate;
 }
 
 export async function loginCustomer(input: any) {
-    const data = await shopifyFetch({
-        query: CUSTOMER_ACCESS_TOKEN_CREATE_MUTATION,
-        variables: { input }
-    });
-    return data?.data?.customerAccessTokenCreate;
+  const data = await shopifyFetch({
+    query: CUSTOMER_ACCESS_TOKEN_CREATE_MUTATION,
+    variables: { input }
+  });
+  return data?.data?.customerAccessTokenCreate;
 }
 
 export const GET_CUSTOMER_QUERY = `
@@ -297,11 +298,11 @@ export const GET_CUSTOMER_QUERY = `
 `;
 
 export async function getCustomer(customerAccessToken: string) {
-    const data = await shopifyFetch({
-        query: GET_CUSTOMER_QUERY,
-        variables: { customerAccessToken }
-    });
-    return data?.data?.customer;
+  const data = await shopifyFetch({
+    query: GET_CUSTOMER_QUERY,
+    variables: { customerAccessToken }
+  });
+  return data?.data?.customer;
 }
 
 
@@ -335,42 +336,42 @@ export const GET_COLLECTION_PRODUCTS_QUERY = `
 `;
 
 export async function getAllProducts(limit = 20): Promise<Product[]> {
-    const data = await shopifyFetch({
-        query: GET_ALL_PRODUCTS_QUERY,
-        variables: { first: limit }
-    });
+  const data = await shopifyFetch({
+    query: GET_ALL_PRODUCTS_QUERY,
+    variables: { first: limit }
+  });
 
-    return data?.data?.products?.edges.map((edge: any) => mapShopifyProduct(edge.node)) || [];
+  return data?.data?.products?.edges.map((edge: any) => mapShopifyProduct(edge.node)) || [];
 }
 
 // Mapeamento de Slugs do Site para Handles da Shopify
 const HANDLE_MAPPING: Record<string, string> = {
-    'kits': 'kits-promocionais',
-    'kits-promocionais': 'kits-promocionais',
-    'creatina': 'creatina',
-    'coenzima': 'coenzima',
-    'celluli-burn': 'celluli',
-    'omega-3': 'omega-3',
-    'colageno-verisol': 'colageno',
-    'colageno-po': 'colageno'
+  'kits': 'kits-promocionais',
+  'kits-promocionais': 'kits-promocionais',
+  'creatina': 'creatina',
+  'coenzima': 'coenzima',
+  'celluli-burn': 'celluli',
+  'omega-3': 'omega-3',
+  'colageno-verisol': 'colageno',
+  'colageno-po': 'colageno'
 };
 
 export async function getProductsByCollection(handle: string, limit = 20): Promise<Product[]> {
-    const shopifyHandle = HANDLE_MAPPING[handle] || handle;
+  const shopifyHandle = HANDLE_MAPPING[handle] || handle;
 
-    console.log(`[Shopify] Buscando coleção: ${handle} -> ${shopifyHandle}`);
+  console.log(`[Shopify] Buscando coleção: ${handle} -> ${shopifyHandle}`);
 
-    const data = await shopifyFetch({
-        query: GET_COLLECTION_PRODUCTS_QUERY,
-        variables: { handle: shopifyHandle, first: limit }
-    });
+  const data = await shopifyFetch({
+    query: GET_COLLECTION_PRODUCTS_QUERY,
+    variables: { handle: shopifyHandle, first: limit }
+  });
 
-    if (!data?.data?.collection) {
-        console.warn(`[Shopify] Coleção não encontrada: ${shopifyHandle}`);
-        return [];
-    }
+  if (!data?.data?.collection) {
+    console.warn(`[Shopify] Coleção não encontrada: ${shopifyHandle}`);
+    return [];
+  }
 
-    return data.data.collection.products.edges.map((edge: any) => mapShopifyProduct(edge.node));
+  return data.data.collection.products.edges.map((edge: any) => mapShopifyProduct(edge.node));
 }
 
 export const GET_PRODUCT_BY_HANDLE_QUERY = `
@@ -383,10 +384,10 @@ export const GET_PRODUCT_BY_HANDLE_QUERY = `
 `;
 
 export async function getProductByHandle(handle: string): Promise<Product | null> {
-    const data = await shopifyFetch({
-        query: GET_PRODUCT_BY_HANDLE_QUERY,
-        variables: { handle }
-    });
+  const data = await shopifyFetch({
+    query: GET_PRODUCT_BY_HANDLE_QUERY,
+    variables: { handle }
+  });
 
-    return data?.data?.product ? mapShopifyProduct(data.data.product) : null;
+  return data?.data?.product ? mapShopifyProduct(data.data.product) : null;
 }

@@ -21,9 +21,8 @@ export default function HeroCarousel() {
       {banners.map((banner, index) => (
         <div
           key={banner.id}
-          className={`relative w-full transition-opacity duration-1000 ${
-            index === current ? 'opacity-100 block' : 'opacity-0 hidden'
-          }`}
+          className={`relative w-full transition-opacity duration-1000 ${index === current ? 'opacity-100 block' : 'opacity-0 hidden'
+            }`}
         >
           <Link to={banner.target_url} className="block w-full">
             {/* Desktop Image */}
@@ -38,13 +37,13 @@ export default function HeroCarousel() {
                 Banner Desktop Indisponível
               </div>
             )}
-            
+
             {/* Mobile Image */}
             {banner.mobile_image_url && (
               <img
                 src={banner.mobile_image_url}
                 alt={banner.title}
-                className="w-full h-auto object-cover md:hidden"
+                className="w-full aspect-[4/5] object-cover md:hidden max-h-[600px]"
               />
             )}
           </Link>

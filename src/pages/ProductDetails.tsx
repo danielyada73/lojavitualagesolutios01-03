@@ -132,17 +132,17 @@ export default function ProductDetails() {
           {/* 🏛️ Arquitetura Visual do Hero - Left Side (7 columns) */}
           <div className="lg:col-span-7 flex flex-col-reverse md:flex-row gap-6">
             {/* Galeria Vertical à Esquerda */}
-            <div className="flex md:flex-col gap-4 overflow-x-auto md:overflow-y-auto no-scrollbar md:max-h-[600px] pb-2 md:pb-0">
+            <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto no-scrollbar md:max-h-[600px] pb-2 md:pb-0 scroll-smooth">
               {(product?.images || (mainImage ? [mainImage] : [])).map((img, i) => (
                 <button
                   key={i}
                   onClick={() => setMainImage(img)}
-                  className={`flex-shrink-0 w-20 h-20 md:w-24 md:h-24 bg-[#F9F9F9] rounded-2xl overflow-hidden transition-all border-2 ${mainImage === img
+                  className={`flex-shrink-0 w-16 h-16 md:w-24 md:h-24 bg-[#F9F9F9] rounded-xl md:rounded-2xl overflow-hidden transition-all border-2 ${mainImage === img
                     ? 'border-age-gold shadow-md scale-95'
                     : 'border-transparent hover:border-gray-200'
                     }`}
                 >
-                  {img && <img src={img} alt={`${title} view ${i + 1}`} className="w-full h-full object-contain p-2" />}
+                  {img && <img src={img} alt={`${title} view ${i + 1}`} className="w-full h-full object-contain p-1 md:p-2" />}
                 </button>
               ))}
             </div>
@@ -193,17 +193,17 @@ export default function ProductDetails() {
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-5xl font-black text-black leading-[1.1] tracking-tight">
+              <h1 className="text-2xl md:text-5xl font-black text-black leading-[1.1] tracking-tight">
                 {title}
               </h1>
 
               {/* Contraste de Preço */}
               <div className="space-y-2">
                 <div className="flex items-baseline gap-4">
-                  <span className="text-gray-400 line-through text-xl font-medium">
+                  <span className="text-gray-400 line-through text-lg font-medium">
                     R$ {originalPrice.toFixed(2).replace('.', ',')}
                   </span>
-                  <span className="text-4xl md:text-5xl font-black text-black tracking-tight">
+                  <span className="text-3xl md:text-5xl font-black text-black tracking-tight">
                     R$ {currentPrice.toFixed(2).replace('.', ',')}
                   </span>
                 </div>
