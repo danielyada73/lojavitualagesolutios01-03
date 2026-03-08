@@ -81,11 +81,11 @@ export default function Header() {
             </button>
 
             {/* Logo */}
-            <Link to="/" className="flex-shrink-0">
+            <Link to="/" className="flex-shrink-0 flex items-center h-full">
               <img
                 src="https://agesolution.com.br/wp-content/uploads/2023/01/age-2-e1752779329574-1024x487.png"
                 alt="Age Solutions"
-                className="h-12 md:h-16 w-auto object-contain"
+                className="max-h-[35px] md:max-h-[45px] w-auto object-contain block"
               />
             </Link>
 
