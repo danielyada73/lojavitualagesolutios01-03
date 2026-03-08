@@ -9,7 +9,7 @@ export async function shopifyFetch({ query, variables = {} }: { query: string, v
     console.error('❌ Shopify config missing', { domain, token: !!storefrontAccessToken });
     return null;
   }
-  const endpoint = `https://${domain}/api/${apiVersion}/graphql.json`;
+  const endpoint = `https://${domain}/api/${apiVersion}/graphql.json?t=${Date.now()}`;
 
   try {
     const response = await fetch(endpoint, {

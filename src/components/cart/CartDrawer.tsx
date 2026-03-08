@@ -142,7 +142,7 @@ export default function CartDrawer() {
                 </div>
                 <button
                   onClick={handleCheckout}
-                  disabled={!checkoutUrl || isSyncing}
+                  disabled={items.length === 0 || isSyncing}
                   className="w-full py-5 bg-black text-white rounded-full font-black uppercase tracking-widest text-sm hover:bg-age-gold hover:text-black transition-all disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed shadow-xl shadow-black/10"
                 >
                   {isSyncing ? 'Sincronizando...' : 'Finalizar Compra'}

@@ -10,12 +10,9 @@ export default function Layout() {
   const { checkoutUrl, clearCart } = useCartStore();
 
   useEffect(() => {
-    // Garante que links legados do Shopify sejam invalidados após o carregamento
-    if (checkoutUrl?.includes('shopify.com')) {
-      console.log('[Layout] Detectada URL legada do Shopify. Limpando carrinho para evitar erro.');
-      // Opcional: apenas limpa a URL se o carrinho tiver itens que podem ser resincronizados
-      // Mas para segurança máxima, limpamos o ID e a URL
-      useCartStore.setState({ checkoutUrl: null, cartId: null });
+    // Apenas aviso de debug, sem limpar o que é válido
+    if (checkoutUrl) {
+      console.log('[Layout] Checkout URL ativa:', checkoutUrl.substring(0, 50) + '...');
     }
   }, [checkoutUrl]);
 

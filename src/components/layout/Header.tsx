@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ShoppingCart, Search, Menu, X, User } from 'lucide-react';
 import { useState, useMemo, useEffect } from 'react';
 import { useCartStore } from '../../store/cart';
-import { getAllProducts } from '../../lib/yampi';
+import { getAllProducts } from '../../lib/shopify';
 import { Product } from '../../types';
 
 export default function Header() {
@@ -16,8 +16,9 @@ export default function Header() {
 
   useEffect(() => {
     async function loadAll() {
+      // Busca produtos da Shopify para o buscador
       const prods = await getAllProducts(50);
-      setAllProducts(prods);
+      if (prods) setAllProducts(prods);
     }
     loadAll();
   }, []);
