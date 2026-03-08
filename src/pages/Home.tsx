@@ -24,18 +24,19 @@ export default function Home() {
       try {
         const products = await getProductsByCollection('colageno', 10);
         if (products && products.length > 0) {
-          // Buscamos produtos específicos se existirem, ou pegamos os primeiros
+          // Buscamos produtos específicos se existirem
           const pote1 = products.find(p => p.handle === 'col-cran' || p.handle === 'colageno');
           const kit2 = products.find(p => p.handle === 'col-kit-2');
           const kit3 = products.find(p => p.handle === 'col-kit-3');
 
-          const finalProducts = [pote1, kit2, kit3].filter(Boolean) as Product[];
+          const foundSpecific = [pote1, kit2, kit3].filter(Boolean) as Product[];
 
-          // Se não encontrou os específicos via handle, usa os primeiros 3 encontrados
-          if (finalProducts.length === 0) {
-            setColagenoProducts(products.slice(0, 3));
+          // Se não encontrou todos os 3 específicos, preenche com os restantes da coleção
+          if (foundSpecific.length < 3) {
+            const others = products.filter(p => !foundSpecific.find(fs => fs.id === p.id));
+            setColagenoProducts([...foundSpecific, ...others].slice(0, 3));
           } else {
-            setColagenoProducts(finalProducts);
+            setColagenoProducts(foundSpecific);
           }
         } else {
           // Fallback para dados mockados se a Shopify retornar vazio

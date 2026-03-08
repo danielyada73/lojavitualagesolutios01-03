@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { products as mockProducts } from '../../data/mock';
 import ProductCard from '../ui/ProductCard';
 import { Product } from '../../types';
-import { getProductsByCategory } from '../../lib/yampi';
+import { getProductsByCategory } from '../../lib/shopify';
 import { Loader2 } from 'lucide-react';
 
 export default function BestSellers() {

@@ -42,6 +42,7 @@ const PRODUCT_FRAGMENT = `
     title
     handle
     description
+    tags
     images(first: 5) {
       edges {
         node {
@@ -346,14 +347,17 @@ export async function getAllProducts(limit = 20): Promise<Product[]> {
 
 // Mapeamento de Slugs do Site para Handles da Shopify
 const HANDLE_MAPPING: Record<string, string> = {
-  'kits': 'kits-promocionais',
-  'kits-promocionais': 'kits-promocionais',
+  'colageno': 'colageno',
   'creatina': 'creatina',
   'coenzima': 'coenzima',
+  'celluli': 'celluli',
   'celluli-burn': 'celluli',
   'omega-3': 'omega-3',
+  'colageno-po': 'colageno',
   'colageno-verisol': 'colageno',
-  'colageno-po': 'colageno'
+  'mais-vendidos': 'mais-vendidos',
+  'emagrecimento': 'celluli',
+  'geral': 'todos'
 };
 
 export async function getProductsByCollection(handle: string, limit = 20): Promise<Product[]> {
@@ -372,6 +376,13 @@ export async function getProductsByCollection(handle: string, limit = 20): Promi
   }
 
   return data.data.collection.products.edges.map((edge: any) => mapShopifyProduct(edge.node));
+}
+
+/**
+ * Alias para manter compatibilidade com código que usava Yampi
+ */
+export async function getProductsByCategory(handle: string, limit = 20): Promise<Product[]> {
+  return getProductsByCollection(handle, limit);
 }
 
 export const GET_PRODUCT_BY_HANDLE_QUERY = `
