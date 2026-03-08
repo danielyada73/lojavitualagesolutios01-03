@@ -74,9 +74,15 @@ export default function CelulliBurnSection() {
           <h2 className="text-3xl font-bold uppercase tracking-tight text-age-gold mb-2">
             Celulli Burn
           </h2>
-          <p className="text-sm uppercase tracking-widest text-gray-500">
+          <p className="text-sm uppercase tracking-widest text-gray-500 mb-6">
             ELIMINE AS CELULITES COM NOSSO SUPLEMENTO 100% NATURAL!
           </p>
+          <button
+            onClick={() => window.location.href = '/category/celluli'}
+            className="inline-block bg-black text-white text-xs font-bold px-8 py-3 uppercase rounded-full hover:bg-age-gold hover:text-black transition-all shadow-lg"
+          >
+            Ver Produtos
+          </button>
         </div>
 
         {loading ? (

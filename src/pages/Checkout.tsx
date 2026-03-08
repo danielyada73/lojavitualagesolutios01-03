@@ -148,12 +148,29 @@ export default function Checkout() {
             <button
               onClick={handleCheckout}
               disabled={isProcessing}
-              className="w-full bg-green-600 text-white font-bold uppercase tracking-wide py-4 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-green-600 text-white font-bold uppercase tracking-wide py-4 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mb-6"
             >
               {isProcessing ? 'Processando...' : 'Finalizar Pedido'}
             </button>
 
-            <p className="text-xs text-center text-gray-400 mt-4">
+            <div className="border-t border-gray-100 pt-6 mt-6">
+              <h4 className="text-sm font-bold uppercase text-black mb-2 flex items-center gap-2">
+                Dúvidas no Pagamento?
+              </h4>
+              <p className="text-[11px] text-gray-500 mb-4 leading-relaxed">
+                Se tiver qualquer dificuldade para concluir, fale com o nosso suporte agora.
+              </p>
+              <a
+                href="https://wa.me/5511916342268"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full py-3 bg-gray-100 text-black text-xs font-bold uppercase rounded-lg hover:bg-age-gold transition-colors"
+              >
+                Suporte WhatsApp
+              </a>
+            </div>
+
+            <p className="text-xs text-center text-gray-400 mt-6">
               Ambiente 100% seguro. Seus dados estão protegidos.
             </p>
           </div>

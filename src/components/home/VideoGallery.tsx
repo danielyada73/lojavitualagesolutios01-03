@@ -9,17 +9,16 @@ interface VideoItem {
 }
 
 const videoData: VideoItem[] = [
-  { id: '1', driveId: '1N42sLtQkKn5z-lkUbrTF1Egsc-Q6bqMg', title: 'Video 1' },
-  { id: '2', driveId: '1m6Zaf29goqWhFa2qQ6cmI0OJ3ndR34cs', title: 'Video 2' },
-  { id: '3', driveId: '1MRM11c2dUm0Pk21RmCkGn7ehU3pFywKf', title: 'Video 3' },
-  { id: '4', driveId: '1bW4hxFuyH19ejUBco3C2b247gZQBn6jE', title: 'Video 4' },
-  { id: '5', driveId: '1N42sLtQkKn5z-lkUbrTF1Egsc-Q6bqMg', title: 'Video 5' },
+  { id: '1', driveId: '1N42sLtQkKn5z-lkUbrTF1Egsc-Q6bqMg', title: 'Resultados 1' },
+  { id: '2', driveId: '1m6Zaf29goqWhFa2qQ6cmI0OJ3ndR34cs', title: 'Resultados 2' },
+  { id: '3', driveId: '1MRM11c2dUm0Pk21RmCkGn7ehU3pFywKf', title: 'Resultados 3' },
+  { id: '4', driveId: '1bW4hxFuyH19ejUBco3C2b247gZQBn6jE', title: 'Resultados 4' },
 ];
 
 export default function VideoGallery() {
   const [selectedVideo, setSelectedVideo] = useState<VideoItem | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  
+
   const extendedVideos = [...videoData, ...videoData, ...videoData];
 
   // Use the export=download format for direct video file access which works better with <video> tags
@@ -50,7 +49,7 @@ export default function VideoGallery() {
       <div className="relative w-full">
         <div className="flex animate-video-marquee gap-4 md:gap-6 hover:[animation-play-state:paused]">
           {extendedVideos.map((video, index) => (
-            <div 
+            <div
               key={`${video.id}-${index}`}
               className="relative flex-shrink-0 w-[calc(45vw)] md:w-[calc(20vw-1.5rem)] aspect-[9/16] rounded-[24px] md:rounded-[32px] overflow-hidden cursor-pointer group shadow-lg border border-gray-100 bg-gray-100"
               onClick={() => setSelectedVideo(video)}
@@ -79,20 +78,20 @@ export default function VideoGallery() {
 
       <AnimatePresence>
         {selectedVideo && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95 backdrop-blur-xl"
           >
-            <button 
+            <button
               onClick={() => setSelectedVideo(null)}
               className="absolute top-6 right-6 text-white/70 hover:text-white p-2 bg-white/10 rounded-full transition-colors z-[110]"
             >
               <X size={32} />
             </button>
 
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
@@ -104,19 +103,20 @@ export default function VideoGallery() {
                 allow="autoplay; fullscreen"
                 allowFullScreen
               />
-              
+
               <div className="absolute top-4 left-8 right-8 pointer-events-none">
-                 <div className="text-white">
-                    <h3 className="font-bold text-lg md:text-xl uppercase tracking-tight drop-shadow-lg">{selectedVideo.title}</h3>
-                    <p className="text-white/60 text-xs md:text-sm drop-shadow-md">Age Solutions - Resultados Reais</p>
-                 </div>
+                <div className="text-white">
+                  <h3 className="font-bold text-lg md:text-xl uppercase tracking-tight drop-shadow-lg">{selectedVideo.title}</h3>
+                  <p className="text-white/60 text-xs md:text-sm drop-shadow-md">Age Solutions - Resultados Reais</p>
+                </div>
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes video-marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-33.33%); }

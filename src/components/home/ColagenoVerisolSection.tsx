@@ -51,7 +51,6 @@ export default function ColagenoVerisolSection() {
         const yampiProducts = await getProductsByCategory('colageno-verisol', 10);
         if (yampiProducts && yampiProducts.length > 0) {
           const filtered = yampiProducts
-            .filter(p => p.tags?.includes('verisol'))
             .filter(p => !p.name.toLowerCase().includes('6 potes'))
             .sort((a, b) => a.price - b.price)
             .slice(0, 3);
@@ -76,12 +75,15 @@ export default function ColagenoVerisolSection() {
           <h2 className="text-3xl font-bold uppercase tracking-tight text-age-gold mb-2">
             Colágeno Verisol
           </h2>
-          <p className="text-sm uppercase tracking-widest text-gray-500 mb-4">
+          <p className="text-sm uppercase tracking-widest text-gray-500 mb-6">
             RENOVE SUA PELE COM O COLÁGENO MAIS EFICAZ DO BRASIL!
           </p>
-          <div className="inline-block bg-black text-white text-[10px] font-bold px-4 py-1 uppercase rounded-full">
-            FRETE GRÁTIS
-          </div>
+          <button
+            onClick={() => window.location.href = '/category/colageno-po'}
+            className="inline-block bg-black text-white text-[10px] font-bold px-8 py-3 uppercase rounded-full hover:bg-age-gold hover:text-black transition-all shadow-lg mb-4"
+          >
+            Ver Produtos
+          </button>
         </div>
 
         {loading ? (

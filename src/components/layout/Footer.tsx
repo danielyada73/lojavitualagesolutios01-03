@@ -80,9 +80,14 @@ export default function Footer() {
             alt="Age Solutions"
             className="h-16 w-auto object-contain filter grayscale opacity-50 hover:opacity-100 transition-opacity"
           />
-          <p className="text-gray-400 text-xs text-center">
+          <a
+            href="https://marketingalphadigital.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 text-xs text-center hover:text-age-gold transition-colors no-underline"
+          >
             Site desenvolvido por ALPHA MARKETING DIGITAL
-          </p>
+          </a>
         </div>
       </div>
     </footer>

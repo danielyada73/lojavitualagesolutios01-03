@@ -50,19 +50,19 @@ export default function InstagramFeed() {
           <a href="https://www.instagram.com/agesolutions/" target="_blank" rel="noopener noreferrer" className="font-bold text-lg hover:text-age-gold transition-colors">agesolutions</a>
           <span className="text-gray-600 text-sm">Soluções para beleza! 💎</span>
         </div>
-        
+
         <div className="grid grid-cols-3 gap-2 mb-8 max-w-2xl mx-auto">
           {feedItems.map((item, idx) => (
-            <a 
-              key={idx} 
+            <a
+              key={idx}
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
               className="aspect-square overflow-hidden group relative cursor-pointer"
             >
-              <img 
-                src={item.image} 
-                alt={`Instagram post ${idx + 1}`} 
+              <img
+                src={item.image}
+                alt={`Instagram post ${idx + 1}`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
@@ -72,11 +72,11 @@ export default function InstagramFeed() {
           ))}
         </div>
 
-        <a 
-          href="https://www.instagram.com/agesolutions/" 
+        <a
+          href="https://www.instagram.com/agesolutions/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-black text-white font-bold uppercase px-8 py-3 rounded-full hover:bg-age-gold transition-all duration-300 shadow-lg"
+          className="inline-flex items-center gap-2 bg-age-gold text-black font-bold uppercase px-8 py-3 rounded-full hover:bg-black hover:text-white transition-all duration-300 shadow-lg"
         >
           <Instagram size={20} />
           Siga a @agesolutions

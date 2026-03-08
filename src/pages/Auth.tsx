@@ -96,14 +96,20 @@ export default function Auth() {
         const firstName = nameParts[0];
         const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : ' ';
 
-        const result = await registerCustomer({
+        const registrationInput: any = {
           firstName,
           lastName,
           email: formData.email,
-          phone: `+55${formData.phone.replace(/\D/g, '')}`, // Format for Yampi
           password: formData.password,
           acceptsMarketing: true
-        });
+        };
+
+        if (formData.phone && formData.phone.length >= 10) {
+          registrationInput.phone = `+55${formData.phone.replace(/\D/g, '')}`;
+        }
+
+        console.log('[Auth] Tentando registrar cliente:', registrationInput.email);
+        const result = await registerCustomer(registrationInput);
 
         if (result?.customer) {
           // Auto login after registration
