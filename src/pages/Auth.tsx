@@ -166,7 +166,7 @@ export default function Auth() {
                 disabled={loading}
                 value={formData.name}
                 onChange={handleChange}
-                className="appearance-none rounded-xl relative block w-full px-4 py-4 pl-14 bg-neutral-900/50 border border-white/10 placeholder-gray-500 text-white focus:outline-none focus:border-age-gold focus:ring-1 focus:ring-age-gold transition-colors sm:text-sm disabled:opacity-50"
+                className="appearance-none rounded-xl relative block w-full px-4 py-4 pl-20 bg-neutral-900/50 border border-white/10 placeholder-gray-500 text-white focus:outline-none focus:border-age-gold focus:ring-1 focus:ring-age-gold transition-colors sm:text-sm disabled:opacity-50"
                 placeholder="Nome completo"
               />
             </div>

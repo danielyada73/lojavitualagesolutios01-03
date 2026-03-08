@@ -48,9 +48,11 @@ export default function BestSellers() {
             <Loader2 className="animate-spin text-age-gold" size={32} />
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <div key={product.id} className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(20%-1.5rem)] max-w-[280px]">
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
         )}
