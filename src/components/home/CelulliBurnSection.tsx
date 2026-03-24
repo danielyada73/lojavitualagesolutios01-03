@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import ProductCard from '../ui/ProductCard';
 import { Product } from '../../types';
 import { getProductsByCategory } from '../../lib/shopify';
-import { Loader2, ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { Loader2 } from 'lucide-react';
 
 const mockOffers: Product[] = [
   {
@@ -69,44 +68,31 @@ export default function CelulliBurnSection() {
   }, []);
 
   return (
-    <section className="py-24 bg-white overflow-hidden relative">
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-age-gold/5 blur-[120px] rounded-full -ml-64 -mb-32" />
-      
-      <div className="container max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="max-w-2xl">
-            <span className="text-age-green font-bold text-xs uppercase tracking-[0.3em] mb-4 block">100% Natural & Seguro</span>
-            <h2 className="text-4xl md:text-6xl font-black leading-none mb-6">CELULLI BURN®</h2>
-            <p className="text-gray-400 font-bold text-sm uppercase tracking-widest leading-relaxed">
-              O fim das celulites e da retenção de líquidos. Uma fórmula exclusiva desenvolvida para devolver a firmeza e a textura natural da sua pele.
-            </p>
-          </div>
-          
+    <section className="py-16 bg-white">
+      <div className="container max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold uppercase tracking-tight text-age-gold mb-2">
+            Celulli Burn
+          </h2>
+          <p className="text-sm uppercase tracking-widest text-gray-500 mb-6">
+            ELIMINE AS CELULITES COM NOSSO SUPLEMENTO 100% NATURAL!
+          </p>
           <button
             onClick={() => window.location.href = '/category/celluli'}
-            className="group flex items-center gap-4 bg-gray-50 px-8 py-5 rounded-full shadow-lg border border-gray-100 hover:bg-age-dark hover:text-white transition-all duration-500 whitespace-nowrap"
+            className="inline-block bg-black text-white text-xs font-bold px-8 py-3 uppercase rounded-full hover:bg-age-gold hover:text-black transition-all shadow-lg"
           >
-            <span className="font-black text-xs uppercase tracking-widest">Ver Tratamentos</span>
-            <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+            Ver Produtos
           </button>
         </div>
 
         {loading ? (
-          <div className="flex justify-center py-20">
-            <Loader2 className="animate-spin text-age-gold" size={48} />
+          <div className="flex justify-center py-10">
+            <Loader2 className="animate-spin text-age-gold" size={32} />
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, i) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <ProductCard product={product} />
-              </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         )}
@@ -114,3 +100,4 @@ export default function CelulliBurnSection() {
     </section>
   );
 }
+

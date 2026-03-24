@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import ProductCard from '../ui/ProductCard';
 import { Product } from '../../types';
 import { getProductsByCategory } from '../../lib/shopify';
-import { Loader2, ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { Loader2 } from 'lucide-react';
 
 const mockOffers: Product[] = [
   {
@@ -69,44 +68,25 @@ export default function CoenzimaQ10Section() {
   }, []);
 
   return (
-    <section className="py-24 bg-age-dark text-white overflow-hidden relative">
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-age-gold/10 blur-[120px] rounded-full -ml-32 -mt-32" />
-      
-      <div className="container max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="max-w-2xl">
-            <span className="text-age-gold font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Vitalidade Celular</span>
-            <h2 className="text-4xl md:text-6xl font-black leading-none mb-6">COENZIMA Q-10</h2>
-            <p className="text-gray-500 font-bold text-sm uppercase tracking-widest leading-relaxed">
-              Energia pura para seu coração e células. A suplementação essencial para quem busca longevidade e disposição máxima no dia a dia.
-            </p>
-          </div>
-          
-          <button
-            onClick={() => window.location.href = '/category/coenzima'}
-            className="group flex items-center gap-4 bg-white/5 px-8 py-5 rounded-full shadow-lg border border-white/10 hover:bg-white hover:text-age-dark transition-all duration-500 whitespace-nowrap"
-          >
-            <span className="font-black text-xs uppercase tracking-widest">Explorar Linha</span>
-            <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-          </button>
+    <section className="py-16 bg-gray-50">
+      <div className="container max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold uppercase tracking-tight text-age-gold mb-2">
+            Coenzima Q10
+          </h2>
+          <p className="text-sm uppercase tracking-widest text-gray-500">
+            CONTROLE DO COLESTEROL E AÇÃO ANTIOXIDANTE
+          </p>
         </div>
 
         {loading ? (
-          <div className="flex justify-center py-20">
-            <Loader2 className="animate-spin text-age-gold" size={48} />
+          <div className="flex justify-center py-10">
+            <Loader2 className="animate-spin text-age-gold" size={32} />
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, i) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <ProductCard product={product} />
-              </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         )}
@@ -114,3 +94,4 @@ export default function CoenzimaQ10Section() {
     </section>
   );
 }
+
