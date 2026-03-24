@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products } from '../data/mock';
 import { useCartStore } from '../store/cart';
@@ -6,26 +6,9 @@ import { getProductByHandle } from '../lib/shopify';
 import { Product } from '../types';
 import { 
   Star, Truck, ShieldCheck, Minus, Plus, 
-  ShoppingCart, Check, ChevronDown, 
-  Leaf, Zap, Heart, Clock, Award,
-  Shield, Activity
+  ShoppingCart, ChevronLeft, ChevronRight,
+  CreditCard, Package, RotateCcw
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-
-// --- Subcomponentes de Impacto ---
-
-const Badge = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
-  <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${className}`}>
-    {children}
-  </div>
-);
-
-const SectionTitle = ({ title, subtitle, centered = false }: { title: string, subtitle?: string, centered?: boolean }) => (
-  <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
-    {subtitle && <span className="text-age-gold font-bold text-xs uppercase tracking-[0.3em] mb-3 block">{subtitle}</span>}
-    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[0.9]">{title}</h2>
-  </div>
-);
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -34,18 +17,10 @@ export default function ProductDetails() {
 
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selectedKit, setSelectedKit] = useState<number>(1); // 1, 3, or 5 pots
+  const [selectedVariation, setSelectedVariation] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
-  const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const [showStickyBar, setShowStickyBar] = useState(false);
   const [mainImage, setMainImage] = useState('');
-
-  // Scroll handler para Sticky Bar
-  useEffect(() => {
-    const handleScroll = () => setShowStickyBar(window.scrollY > 600);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     async function fetchProduct() {
@@ -57,6 +32,9 @@ export default function ProductDetails() {
         if (target) {
           setProduct(target);
           setMainImage(target.thumbnail_url || '');
+          if (target.variations && target.variations.length > 0) {
+            setSelectedVariation(target.variations[0].id || target.variations[0].name || '');
+          }
         }
       } catch (err) {
         console.error(err);
@@ -67,355 +45,398 @@ export default function ProductDetails() {
     fetchProduct();
   }, [id]);
 
-  // Cálculo de Preços Dinâmicos baseado no Kit
-  const kitInfo = useMemo(() => {
-    if (!product) return null;
-    const basePrice = product.price;
-    const kits = [
-      { pots: 1, discount: 0, label: 'Tratamento 30 dias', recommended: false },
-      { pots: 3, discount: 0.15, label: 'Tratamento 90 dias', recommended: true },
-      { pots: 5, discount: 0.25, label: 'Tratamento 150 dias', recommended: false },
-    ];
-    
-    return kits.map(k => {
-      const totalPrice = (basePrice * k.pots) * (1 - k.discount);
-      const unitPrice = totalPrice / k.pots;
-      const installment = totalPrice / 12;
-      return { ...k, totalPrice, unitPrice, installment };
-    });
+  const allImages = useMemo(() => {
+    if (!product) return [];
+    const imgs: string[] = [];
+    if (product.thumbnail_url) imgs.push(product.thumbnail_url);
+    if (product.images) {
+      product.images.forEach(img => {
+        if (img !== product.thumbnail_url) imgs.push(img);
+      });
+    }
+    return imgs.length > 0 ? imgs : [product.thumbnail_url || ''];
   }, [product]);
+
+  const handlePrevSlide = () => {
+    const newIdx = currentSlide === 0 ? allImages.length - 1 : currentSlide - 1;
+    setCurrentSlide(newIdx);
+    setMainImage(allImages[newIdx]);
+  };
+
+  const handleNextSlide = () => {
+    const newIdx = currentSlide === allImages.length - 1 ? 0 : currentSlide + 1;
+    setCurrentSlide(newIdx);
+    setMainImage(allImages[newIdx]);
+  };
+
+  const handleThumbClick = (img: string, idx: number) => {
+    setMainImage(img);
+    setCurrentSlide(idx);
+  };
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-white">
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center gap-6">
-        <div className="w-16 h-16 border-4 border-age-gold border-t-transparent rounded-full animate-spin" />
-        <p className="font-black uppercase tracking-[0.4em] text-xs">Carregando Experiência</p>
-      </motion.div>
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-12 h-12 border-4 border-age-gold border-t-transparent rounded-full animate-spin" />
+        <p className="text-sm text-gray-500">Carregando produto...</p>
+      </div>
     </div>
   );
 
-  if (!product) return null;
+  if (!product) return (
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <p className="text-gray-500">Produto não encontrado.</p>
+    </div>
+  );
 
-  const activeKitData = kitInfo?.find(k => k.pots === selectedKit) || kitInfo![0];
+  const discount = product.original_price 
+    ? Math.round(((product.original_price - product.price) / product.original_price) * 100)
+    : 0;
 
   const handleAddToCart = () => {
     addItem({
-      id: `${product.id}-${selectedKit}`,
-      name: `${product.name} - Kit ${selectedKit} Potes`,
-      price: activeKitData.totalPrice,
-      quantity: 1,
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: quantity,
       image: product.thumbnail_url
     });
     navigate('/cart');
   };
 
   return (
-    <div className="bg-white selection:bg-age-gold selection:text-white">
-      
-      {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-20 overflow-hidden hero-gradient">
-        <div className="container mx-auto px-4 md:px-8 flex flex-col lg:flex-row gap-16 items-start">
+    <div className="bg-white">
+      {/* ===== SEÇÃO PRINCIPAL DO PRODUTO ===== */}
+      <section className="py-8 md:py-12">
+        <div className="container max-w-7xl mx-auto px-4">
           
-          {/* Galeria Imersiva */}
-          <div className="w-full lg:w-1/2 sticky top-32">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative aspect-square rounded-[40px] overflow-hidden bg-gray-50 shadow-premium group"
-            >
-              <img 
-                src={mainImage} 
-                alt={product.name}
-                className="w-full h-full object-contain p-12 transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute top-8 left-8 flex flex-col gap-3">
-                <Badge className="bg-age-gold text-white shadow-lg">Lançamento Exclusivo</Badge>
-                <div className="bg-white/90 backdrop-blur px-4 py-2 rounded-2xl shadow-sm flex items-center gap-2">
-                  <div className="flex text-age-gold shrink-0">
-                    {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
-                  </div>
-                  <span className="text-[10px] font-black text-age-dark">+1.2k Avaliações</span>
-                </div>
-              </div>
-            </motion.div>
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-14">
             
-            {/* Thumbnails Minimalistas */}
-            <div className="grid grid-cols-4 gap-4 mt-8">
-              {product.images?.map((img, idx) => (
-                <button 
-                  key={idx}
-                  onClick={() => setMainImage(img)}
-                  className={`aspect-square rounded-2xl bg-gray-50 p-2 border-2 transition-all ${mainImage === img ? 'border-age-gold scale-105 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'}`}
-                >
-                  <img src={img} alt="Thumbnail" className="w-full h-full object-contain" />
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Dados de Compra */}
-          <div className="w-full lg:w-1/2 flex flex-col">
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <SectionTitle 
-                subtitle="Age Solutions® Performance"
-                title={product.name}
-              />
-              
-              <div className="flex items-center gap-4 mb-8">
-                <div className="text-5xl font-black text-age-dark">
-                  R$ {activeKitData.totalPrice.toFixed(2).replace('.', ',')}
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-gray-400 line-through text-lg font-bold">R$ {(activeKitData.totalPrice * 1.4).toFixed(2).replace('.', ',')}</span>
-                  <span className="text-age-green font-black text-xs uppercase tracking-tighter">Economia de {selectedKit > 1 ? 'até 50%' : '20%'}</span>
-                </div>
-              </div>
-
-              {/* Installment Highlight */}
-              <div className="bg-gray-50 border border-gray-100 p-6 rounded-[32px] mb-10 flex items-center justify-between group hover:border-age-gold/30 transition-colors">
-                <div>
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Ou em 12x de</p>
-                  <p className="text-4xl font-black text-age-dark group-hover:text-age-gold transition-colors">R$ {activeKitData.installment.toFixed(2).replace('.', ',')}</p>
-                </div>
-                <div className="text-right">
-                  <Badge className="bg-age-green/10 text-age-green mb-2">Sem Juros</Badge>
-                  <p className="text-[10px] text-gray-400 font-bold">Cartão de Crédito</p>
-                </div>
-              </div>
-
-              {/* Kit Builder Premium */}
-              <div className="space-y-4 mb-10">
-                <p className="font-black text-xs uppercase tracking-[0.2em] mb-4">Escolha seu tratamento:</p>
-                <div className="grid grid-cols-1 gap-4">
-                  {kitInfo?.map((kit) => (
+            {/* ===== COLUNA ESQUERDA: GALERIA ===== */}
+            <div className="w-full lg:w-1/2">
+              <div className="flex flex-col-reverse lg:flex-row gap-4">
+                
+                {/* Thumbnails Verticais (Desktop) */}
+                <div className="hidden lg:flex flex-col gap-3 w-20 shrink-0">
+                  {allImages.map((img, idx) => (
                     <button
-                      key={kit.pots}
-                      onClick={() => setSelectedKit(kit.pots)}
-                      className={`relative p-6 rounded-[28px] border-2 transition-all duration-300 flex items-center justify-between text-left group
-                        ${selectedKit === kit.pots 
-                          ? 'border-age-gold bg-age-gold/5 shadow-premium' 
-                          : 'border-gray-100 hover:border-gray-300 bg-white'}`}
+                      key={idx}
+                      onClick={() => handleThumbClick(img, idx)}
+                      className={`aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200 bg-white p-1 ${
+                        currentSlide === idx 
+                          ? 'border-age-gold shadow-md' 
+                          : 'border-gray-200 hover:border-gray-400 opacity-70 hover:opacity-100'
+                      }`}
                     >
-                      <div className="flex items-center gap-6">
-                        <div className={`w-14 h-14 rounded-full flex items-center justify-center font-black text-xl transition-colors
-                          ${selectedKit === kit.pots ? 'bg-age-gold text-white' : 'bg-gray-100 text-gray-400'}`}>
-                          {kit.pots}
-                        </div>
-                        <div>
-                          <p className="font-black text-age-dark uppercase tracking-tight">{kit.label}</p>
-                          <p className="text-xs font-bold text-gray-400">R$ {kit.unitPrice.toFixed(2).replace('.', ',')} / unidade</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-black text-xl text-age-dark">R$ {kit.totalPrice.toFixed(2).replace('.', ',')}</p>
-                        {kit.recommended && (
-                          <span className="absolute -top-3 right-8 bg-age-dark text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg animate-bounce">
-                            Mais Recomendado
-                          </span>
-                        )}
-                      </div>
-                      {selectedKit === kit.pots && (
-                        <motion.div layoutId="check" className="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 bg-age-gold rounded-full flex items-center justify-center">
-                          <Check size={10} className="text-white" strokeWidth={4} />
-                        </motion.div>
-                      )}
+                      <img src={img} alt={`Imagem ${idx + 1}`} className="w-full h-full object-contain" />
                     </button>
                   ))}
                 </div>
-              </div>
 
-              {/* CTA Original */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={handleAddToCart}
-                  className="btn-premium flex-1 flex items-center justify-center gap-3 group"
-                >
-                  <ShoppingCart size={20} />
-                  COMPRAR AGORA
-                </button>
-                <div className="flex items-center gap-4 bg-gray-50 px-6 py-4 rounded-full border border-gray-100">
-                  <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="text-gray-400 hover:text-age-dark"><Minus size={18} /></button>
-                  <span className="font-black w-8 text-center">{quantity}</span>
-                  <button onClick={() => setQuantity(quantity + 1)} className="text-gray-400 hover:text-age-dark"><Plus size={18} /></button>
+                {/* Imagem Principal */}
+                <div className="flex-1 relative group">
+                  <div className="aspect-square bg-white rounded-2xl overflow-hidden border border-gray-100 flex items-center justify-center p-4 md:p-8">
+                    <img 
+                      src={mainImage} 
+                      alt={product.name}
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 cursor-zoom-in"
+                    />
+                    
+                    {/* Sale Badge */}
+                    {discount > 0 && (
+                      <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                        -{discount}% OFF
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Setas de Navegação */}
+                  {allImages.length > 1 && (
+                    <>
+                      <button 
+                        onClick={handlePrevSlide}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:text-black opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <ChevronLeft size={20} />
+                      </button>
+                      <button 
+                        onClick={handleNextSlide}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:text-black opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <ChevronRight size={20} />
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
 
-              {/* Trust badges rápidos */}
-              <div className="mt-12 grid grid-cols-3 gap-4 border-t border-gray-100 pt-8">
-                <div className="flex flex-col items-center text-center gap-2">
-                  <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-age-gold">
-                    <Truck size={20} />
-                  </div>
-                  <span className="text-[10px] font-black uppercase tracking-tighter">Entrega Expressa</span>
-                </div>
-                <div className="flex flex-col items-center text-center gap-2">
-                  <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-age-gold">
-                    <ShieldCheck size={20} />
-                  </div>
-                  <span className="text-[10px] font-black uppercase tracking-tighter">Compra 100% Segura</span>
-                </div>
-                <div className="flex flex-col items-center text-center gap-2">
-                  <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-age-gold">
-                    <Check size={20} />
-                  </div>
-                  <span className="text-[10px] font-black uppercase tracking-tighter">Garantia 30 Dias</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* --- TRUST BAR --- */}
-      <div className="bg-gray-50 py-10 border-y border-gray-100">
-        <div className="container mx-auto px-4 flex flex-wrap justify-center items-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-          <img src="https://renovabe.com.br/cdn/shop/files/logo-g1.svg" alt="G1" className="h-6" />
-          <img src="https://renovabe.com.br/cdn/shop/files/logo-vogue.svg" alt="Vogue" className="h-6" />
-          <img src="https://renovabe.com.br/cdn/shop/files/logo-estadao.svg" alt="Estadão" className="h-6" />
-          <img src="https://renovabe.com.br/cdn/shop/files/logo-r7.svg" alt="R7" className="h-6" />
-        </div>
-      </div>
-
-      {/* --- BENEFÍCIOS SECTION --- */}
-      <section className="section-padding">
-        <SectionTitle 
-          centered
-          subtitle="A Excelência da Fórmula"
-          title="Por que escolher a Age?"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            { icon: <Zap />, title: "Absorção Imediata", desc: "Nossa tecnologia de micropartículas garante que os nutrientes cheguem onde você precisa em minutos." },
-            { icon: <Leaf />, title: "100% Pureza", desc: "Sem conservantes, sem corantes artificiais e livre de açúcares. Apenas o que seu corpo realmente precisa." },
-            { icon: <Activity />, title: "Alta Performance", desc: "Concentrações até 3x superiores ao mercado para resultados que você realmente sente." },
-            { icon: <Heart />, title: "Saúde Integrativa", desc: "Fórmulas equilibradas que cuidam da sua saúde de dentro para fora, respeitando seu organismo." },
-            { icon: <Award />, title: "Padrão Europeu", desc: "Matéria-prima importada dos melhores laboratórios para garantir a máxima eficácia e segurança." },
-            { icon: <Shield />, title: "Testado em Rigor", desc: "Cada lote passa por rigorosos testes de qualidade antes de chegar à sua mesa." }
-          ].map((item, i) => (
-            <motion.div 
-              key={i}
-              whileHover={{ y: -10 }}
-              className="p-10 rounded-[40px] bg-gray-50 border border-transparent hover:border-age-gold/20 hover:bg-white hover:shadow-premium transition-all duration-500 group"
-            >
-              <div className="w-16 h-16 rounded-3xl bg-white shadow-sm flex items-center justify-center text-age-gold mb-6 group-hover:bg-age-gold group-hover:text-white transition-colors duration-500">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-black mb-4">{item.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* --- NARRATIVA / TIMELINE --- */}
-      <section className="bg-age-dark text-white py-32 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-age-gold/10 rounded-full blur-[120px] -mr-64 -mt-64" />
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-20 items-center">
-            <div className="w-full lg:w-1/2">
-              <span className="text-age-gold font-bold text-xs uppercase tracking-[0.3em] mb-3 block">Sua Jornada de Saúde</span>
-              <h2 className="text-5xl md:text-7xl font-black leading-tight mb-8">Evolução que você acompanha.</h2>
-              <p className="text-gray-400 text-lg max-w-lg mb-12">Não é mágica, é ciência. Siga o protocolo e sinta a transformação real no seu bem-estar diário.</p>
-              
-              <div className="space-y-12 border-l-2 border-white/10 pl-8 ml-4">
-                {[
-                  { time: "Dia 01", title: "O Despertar", desc: "Início da saturação celular. Seu corpo começa a receber os nutrientes essenciais." },
-                  { time: "Dia 15", title: "O Ajuste", desc: "Melhora nos níveis de energia e disposição. A absorção está em seu pico." },
-                  { time: "Dia 30", title: "O Resultado", desc: "Benefícios visíveis na pele, cabelo e performance física consolidada." }
-                ].map((step, i) => (
-                  <div key={i} className="relative">
-                    <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-age-gold shadow-[0_0_15px_rgba(212,175,55,1)]" />
-                    <span className="text-age-gold font-black text-xs uppercase tracking-widest">{step.time}</span>
-                    <h4 className="text-2xl font-black mt-2 mb-3">{step.title}</h4>
-                    <p className="text-gray-400 text-sm">{step.desc}</p>
-                  </div>
+              {/* Thumbnails Horizontais (Mobile) */}
+              <div className="flex lg:hidden gap-2 mt-4 overflow-x-auto pb-2">
+                {allImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleThumbClick(img, idx)}
+                    className={`w-16 h-16 shrink-0 rounded-lg overflow-hidden border-2 bg-white p-1 ${
+                      currentSlide === idx 
+                        ? 'border-age-gold' 
+                        : 'border-gray-200 opacity-60'
+                    }`}
+                  >
+                    <img src={img} alt={`Thumb ${idx + 1}`} className="w-full h-full object-contain" />
+                  </button>
                 ))}
               </div>
-            </div>
-            <div className="w-full lg:w-1/2">
-              <div className="relative">
-                <div className="absolute inset-0 bg-age-gold/20 blur-[100px] rounded-full scale-75" />
+
+              {/* Compra Segura Badge */}
+              <div className="mt-6 flex justify-center">
                 <img 
-                  src={product.thumbnail_url} 
-                  alt="Product Narrative" 
-                  className="relative z-10 w-full max-w-md mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]"
+                  src="https://agesolution.com.br/wp-content/uploads/2023/01/Compra-segura.webp" 
+                  alt="Compra Segura" 
+                  className="max-w-[300px] w-full"
                 />
               </div>
             </div>
+
+            {/* ===== COLUNA DIREITA: INFORMAÇÕES DO PRODUTO ===== */}
+            <div className="w-full lg:w-1/2">
+              
+              {/* Título */}
+              <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 leading-tight">
+                {product.name}
+              </h1>
+
+              {/* Avaliações */}
+              <div className="flex items-center gap-2 mb-5">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <span className="text-sm text-gray-500">(47 avaliações)</span>
+              </div>
+
+              {/* Separador */}
+              <hr className="border-gray-200 mb-5" />
+
+              {/* Preço */}
+              <div className="mb-6">
+                {product.original_price && product.original_price > product.price && (
+                  <p className="text-sm text-gray-400 line-through mb-1">
+                    De R$ {product.original_price.toFixed(2).replace('.', ',')}
+                  </p>
+                )}
+                <div className="flex items-baseline gap-3">
+                  <span className="text-4xl font-bold text-gray-900">
+                    R$ {product.price.toFixed(2).replace('.', ',')}
+                  </span>
+                  {discount > 0 && (
+                    <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">
+                      {discount}% OFF
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-green-600 font-medium mt-2">
+                  ou 12x de R$ {(product.price / 12).toFixed(2).replace('.', ',')} sem juros
+                </p>
+                <p className="text-xs text-gray-400 mt-1">
+                  No PIX com <strong className="text-green-600">5% de desconto</strong>: R$ {(product.price * 0.95).toFixed(2).replace('.', ',')}
+                </p>
+              </div>
+
+              {/* Separador */}
+              <hr className="border-gray-200 mb-5" />
+
+              {/* Seletor de Variação (Sabor) */}
+              {product.variations && product.variations.length > 0 && (
+                <div className="mb-6">
+                  <label className="block text-sm font-bold text-gray-700 mb-2">
+                    Sabor
+                  </label>
+                  <select
+                    value={selectedVariation}
+                    onChange={(e) => setSelectedVariation(e.target.value)}
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-age-gold focus:border-transparent transition-all"
+                  >
+                    {product.variations.map((v) => (
+                      <option key={v.id || v.name} value={v.id || v.name}>{v.name}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              {/* Quantidade + Botão Comprar */}
+              <div className="mb-6">
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  Quantidade
+                </label>
+                <div className="flex gap-3">
+                  {/* Seletor de Quantidade */}
+                  <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+                    <button 
+                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                      className="px-4 py-3 text-gray-600 hover:bg-gray-100 transition-colors"
+                    >
+                      <Minus size={16} />
+                    </button>
+                    <span className="px-5 py-3 font-bold text-center min-w-[50px] border-x border-gray-300 bg-white">
+                      {quantity}
+                    </span>
+                    <button 
+                      onClick={() => setQuantity(quantity + 1)}
+                      className="px-4 py-3 text-gray-600 hover:bg-gray-100 transition-colors"
+                    >
+                      <Plus size={16} />
+                    </button>
+                  </div>
+
+                  {/* Botão Comprar */}
+                  <button 
+                    onClick={handleAddToCart}
+                    className="flex-1 bg-age-gold hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-95"
+                  >
+                    <ShoppingCart size={20} />
+                    COMPRAR
+                  </button>
+                </div>
+              </div>
+
+              {/* Frete Grátis */}
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 flex items-center gap-3">
+                <Truck size={24} className="text-green-600 shrink-0" />
+                <div>
+                  <p className="text-sm font-bold text-green-800">Frete Grátis</p>
+                  <p className="text-xs text-green-600">Para compras acima de R$ 49,90</p>
+                </div>
+              </div>
+
+              {/* Badges de Confiança */}
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                  <ShieldCheck size={20} className="text-age-gold shrink-0" />
+                  <span className="text-xs font-medium text-gray-700">Compra 100% Segura</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                  <CreditCard size={20} className="text-age-gold shrink-0" />
+                  <span className="text-xs font-medium text-gray-700">12x sem Juros</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                  <Package size={20} className="text-age-gold shrink-0" />
+                  <span className="text-xs font-medium text-gray-700">Envio em 24h</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                  <RotateCcw size={20} className="text-age-gold shrink-0" />
+                  <span className="text-xs font-medium text-gray-700">Devolução Grátis</span>
+                </div>
+              </div>
+
+              {/* Separador */}
+              <hr className="border-gray-200 mb-5" />
+
+              {/* Descrição Curta */}
+              {product.description && (
+                <div className="mb-6">
+                  <h3 className="text-sm font-bold text-gray-900 mb-2 uppercase">Descrição</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {product.description}
+                  </p>
+                </div>
+              )}
+
+              {/* Meios de Pagamento */}
+              <div>
+                <h3 className="text-sm font-bold text-gray-900 mb-3 uppercase">Formas de Pagamento</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { name: 'Visa', url: 'https://img.icons8.com/color/48/000000/visa.png' },
+                    { name: 'Mastercard', url: 'https://img.icons8.com/color/48/000000/mastercard.png' },
+                    { name: 'Amex', url: 'https://img.icons8.com/color/48/000000/amex.png' },
+                    { name: 'Elo', url: 'https://img.icons8.com/color/48/000000/elo.png' },
+                    { name: 'Pix', url: 'https://img.icons8.com/color/48/000000/pix.png' },
+                    { name: 'Boleto', url: 'https://img.icons8.com/color/48/000000/bank-building.png' }
+                  ].map((card, i) => (
+                    <div key={i} className="w-12 h-8 bg-white rounded border border-gray-200 flex items-center justify-center p-1">
+                      <img src={card.url} alt={card.name} className="h-full w-auto object-contain" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* --- FAQ SECTION --- */}
-      <section className="section-padding bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <SectionTitle 
-            centered
-            subtitle="Dúvidas Frequentes"
-            title="Tire suas dúvidas"
-          />
-          <div className="space-y-4">
-            {product.details?.faq?.map((item, i) => (
-              <div key={i} className="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <button
-                  onClick={() => setActiveFaq(activeFaq === i ? null : i)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left group"
-                >
-                  <span className="font-black text-age-dark uppercase tracking-tight">{item.question}</span>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${activeFaq === i ? 'bg-age-dark text-white' : 'bg-gray-100'}`}>
-                    <ChevronDown size={18} className={`transition-transform duration-300 ${activeFaq === i ? 'rotate-180' : ''}`} />
+      {/* ===== SEÇÕES DE CONTEÚDO ABAIXO ===== */}
+      
+      {/* Informações Detalhadas */}
+      {product.details && (
+        <section className="py-12 bg-gray-50 border-t border-gray-200">
+          <div className="container max-w-7xl mx-auto px-4">
+            
+            {/* Benefícios */}
+            {product.details.benefits && product.details.benefits.length > 0 && (
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Benefícios</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {product.details.benefits.map((benefit, i) => (
+                    <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-age-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Star size={14} className="text-age-gold" />
+                      </div>
+                      <p className="text-sm text-gray-700">{benefit}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Como Usar */}
+            {product.details.how_to_use && (
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar</h2>
+                <div className="bg-white rounded-xl p-6 border border-gray-100">
+                  <p className="text-sm text-gray-700 leading-relaxed">{product.details.how_to_use}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Composição */}
+            {product.details.composition && product.details.composition.length > 0 && (
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Composição</h2>
+                <div className="bg-white rounded-xl p-6 border border-gray-100">
+                  <div className="flex flex-wrap gap-2">
+                    {product.details.composition.map((item, i) => (
+                      <span key={i} className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full">
+                        {item}
+                      </span>
+                    ))}
                   </div>
-                </button>
-                <AnimatePresence>
-                  {activeFaq === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="px-8 pb-8 text-gray-500 text-sm leading-relaxed border-t border-gray-50 pt-4">
+                </div>
+              </div>
+            )}
+
+            {/* FAQ */}
+            {product.details.faq && product.details.faq.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Perguntas Frequentes</h2>
+                <div className="space-y-3">
+                  {product.details.faq.map((item, i) => (
+                    <details key={i} className="bg-white rounded-xl border border-gray-100 overflow-hidden group">
+                      <summary className="px-6 py-4 cursor-pointer text-sm font-bold text-gray-900 hover:bg-gray-50 transition-colors list-none flex items-center justify-between">
+                        {item.question}
+                        <ChevronRight size={16} className="text-gray-400 transition-transform group-open:rotate-90 shrink-0 ml-4" />
+                      </summary>
+                      <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed border-t border-gray-50 pt-3">
                         {item.answer}
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    </details>
+                  ))}
+                </div>
               </div>
-            ))}
+            )}
           </div>
-        </div>
-      </section>
-
-      {/* --- STICKY PURCHASE BAR (MOBILE) --- */}
-      <AnimatePresence>
-        {showStickyBar && (
-          <motion.div 
-            initial={{ y: 100 }}
-            animate={{ y: 0 }}
-            exit={{ y: 100 }}
-            className="fixed bottom-0 left-0 right-0 z-50 p-4 lg:hidden"
-          >
-            <div className="glass shadow-premium rounded-[32px] p-5 flex items-center justify-between gap-4">
-              <div className="flex flex-col">
-                <span className="text-[10px] font-black uppercase text-gray-400">Tratamento {selectedKit} Potes</span>
-                <span className="text-xl font-black text-age-dark whitespace-nowrap">R$ {activeKitData.totalPrice.toFixed(2).replace('.', ',')}</span>
-              </div>
-              <button 
-                onClick={handleAddToCart}
-                className="btn-premium py-4 px-6 text-sm flex-1"
-              >
-                COMPRAR AGORA
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
+        </section>
+      )}
     </div>
   );
 }
