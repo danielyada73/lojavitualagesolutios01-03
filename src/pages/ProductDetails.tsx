@@ -85,39 +85,37 @@ export default function ProductDetails() {
   // Replacements in raw HTML:
   let finalHtml = RAW_PRODUCT_HEAD_HTML + RAW_PRODUCT_HTML;
   
-  // Replace Product Name (global)
-  finalHtml = finalHtml.replace(/Botox Firmador Instantâneo - FaceLifting PRO/g, product.name);
-  finalHtml = finalHtml.replace(/serum-firmador-facial/g, product.id);
-
-  // Replace Main Description
-  const originalDescription = "O Firmador Instantâneo da AGE Solution é um cuidado tópico desenvolvido para proporcionar efeito tensor imediato na pele. Sua fórmula atua na superfície cutânea, ajudando a suavizar linhas finas, reduzir a aparência de rugas e melhorar o aspecto da flacidez logo após a aplicação.\\nA pele fica visivelmente mais firme, lisa e com aparência descansada. Um aliado pontual para momentos em que você quer ver diferença no espelho, de forma prática e sem procedimentos invasivos.";
+  // 1. Replace Product Name (global)
+  // Replaces the specific competitor product name everywhere
+  finalHtml = finalHtml.replace(/Botox Firmador Instant[^\s]* - FaceLifting PRO/g, product.name);
+  
+  // 2. Replace Brand Name
+  finalHtml = finalHtml.replace(/Renova Be/g, 'AGE Solution');
+  
+  // 3. Replace Main Description
+  // Catches the characteristic competitor description and puts the user's product description
+  const descRegex = /O Firmador Instant.*?da (Renova Be|AGE Solution).*?procedimentos invasivos\./is;
   if (product.description) {
-    finalHtml = finalHtml.replace(originalDescription, product.description);
+    finalHtml = finalHtml.replace(descRegex, product.description);
   }
 
-  // Replace Prices (global)
+  // 4. Replace Prices (global)
   finalHtml = finalHtml.replace(/79,90/g, product.price.toFixed(2).replace('.', ','));
   if (product.original_price) {
     finalHtml = finalHtml.replace(/159,90/g, product.original_price.toFixed(2).replace('.', ','));
   }
   finalHtml = finalHtml.replace(/50% OFF/g, `${discount}% OFF`);
   
-  // Replace installments if found
+  // 5. Replace installments if found
   finalHtml = finalHtml.replace(/6,66/g, installmentPrice.toFixed(2).replace('.', ','));
   
-  // Replace image URL (main and gallery)
+  // 6. Replace image URL (main and gallery)
   if (product.thumbnail_url) {
-    // 1. URLs com "https" ou "http" do CDN da loja original
-    const mainImgRegex = /https?:\/\/agesolution\.com\.br\/cdn\/shop\/files\/[^" ]+\.(jpg|jpeg|png|webp|gif)/gi;
-    finalHtml = finalHtml.replace(mainImgRegex, product.thumbnail_url);
-    
-    // 2. URLs com "//agesolution" (protocol-relative) em srcsets e srcs
-    const protoRelativeRegex = /\/\/agesolution\.com\.br\/cdn\/shop\/files\/[^" ]+\.(jpg|jpeg|png|webp|gif)/gi;
-    finalHtml = finalHtml.replace(protoRelativeRegex, product.thumbnail_url);
-    
-    // 3. Fallback agressivo de qualquer menção de imagem na mesma pasta
-    const fallbackRegex = /[^" ']+\/(botox-firmador-instantaneo|galeria-firmador-instantaneo|pote-colageno)[^" ']+\.(jpg|jpeg|png|webp|gif)/gi;
-    finalHtml = finalHtml.replace(fallbackRegex, product.thumbnail_url);
+    // This regex catches all Renova Be product-specific CDN images and replaces them with the current product image
+    const cdnRegex = /https?:\/\/renovabe\.com\.br\/cdn\/shop\/files\/[^" ]+\.(jpg|jpeg|png|webp|gif)/gi;
+    finalHtml = finalHtml.replace(cdnRegex, product.thumbnail_url);
+    const protoRelativeCdnRegex = /\/\/renovabe\.com\.br\/cdn\/shop\/files\/[^" ]+\.(jpg|jpeg|png|webp|gif)/gi;
+    finalHtml = finalHtml.replace(protoRelativeCdnRegex, product.thumbnail_url);
   }
 
   return (
