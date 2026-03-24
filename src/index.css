@@ -1,40 +1,68 @@
 @import "tailwindcss";
 
 @theme {
-  --color-age-gold: #E8AA24;
-  --color-age-gold-light: #F4C458;
-  --color-age-gold-dark: #B98518;
+  --color-age-gold: #D4AF37;
   --color-age-dark: #0A0A0A;
-  --color-age-dark-soft: #1A1A1A;
-  --color-age-green: #2E7D32;
-  --color-age-green-soft: #E8F5E9;
-  
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  
-  --animate-marquee: marquee 30s linear infinite;
-  --animate-marquee-slow: marquee-slow 40s linear infinite;
+  --color-age-green: #008148;
+  --font-inter: "Inter", sans-serif;
 
+  /* Premium Shadows & Blurs */
+  --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.1);
+  --shadow-gold-glow: 0 0 20px rgba(212, 175, 55, 0.3);
+  
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  @keyframes shimmer {
+    from { background-position: -200% 0; }
+    to { background-position: 200% 0; }
+  }
 }
 
-body {
-  font-family: var(--font-sans);
-  background-color: #f8f8f8;
+@layer base {
+  body {
+    @apply font-inter bg-white text-age-dark antialiased overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-black tracking-tighter uppercase;
+  }
 }
 
-/* Global Link Styles to prevent Blue color */
-a,
-Link {
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+  
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-age-gold via-[#F1D592] to-age-gold;
+  }
+  
+  .btn-premium {
+    @apply relative overflow-hidden bg-age-dark text-white font-black py-5 px-8 rounded-full 
+           hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-premium;
+  }
+
+  .btn-premium::after {
+    content: '';
+    @apply absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-25deg] transition-all duration-1000 group-hover:left-[150%];
+  }
+
+  .section-padding {
+    @apply py-20 px-4 md:px-8 max-w-7xl mx-auto;
+  }
+}
+
+/* Base Styles */
+a, Link {
   text-decoration: none !important;
   color: inherit;
-}
-
-/* Ensure no default blue on focus/active */
-a:active,
-a:focus {
-  outline: none;
 }
 
 img {
   max-width: 100%;
   display: block;
 }
+
+.hero-gradient {
+  background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+}
