@@ -6,7 +6,7 @@ import { getProductByHandle } from '../lib/shopify';
 import { Product } from '../types';
 import { 
   Star, Truck, ShieldCheck, Minus, Plus, 
-  ShoppingCart, ChevronLeft, ChevronRight,
+  ShoppingCart, ChevronLeft, ChevronRight, ChevronDown,
   CreditCard, Package, RotateCcw
 } from 'lucide-react';
 
@@ -17,24 +17,29 @@ export default function ProductDetails() {
 
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selectedVariation, setSelectedVariation] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     async function fetchProduct() {
       if (!id) return;
       setLoading(true);
       try {
-        const shopifyProduct = await getProductByHandle(id);
-        const target = shopifyProduct || products.find(p => p.id === id);
+        // Tenta Shopify primeiro, depois cai no mock
+        let target: Product | null | undefined = null;
+        try {
+          target = await getProductByHandle(id);
+        } catch {
+          // Shopify indisponível, usa mock
+        }
+        if (!target) {
+          target = products.find(p => p.id === id) || null;
+        }
         if (target) {
           setProduct(target);
           setMainImage(target.thumbnail_url || '');
-          if (target.variations && target.variations.length > 0) {
-            setSelectedVariation(target.variations[0].id || target.variations[0].name || '');
-          }
         }
       } catch (err) {
         console.error(err);
@@ -89,9 +94,14 @@ export default function ProductDetails() {
     </div>
   );
 
-  const discount = product.original_price 
-    ? Math.round(((product.original_price - product.price) / product.original_price) * 100)
-    : 0;
+  const discount = product.discount_percentage || (
+    product.original_price 
+      ? Math.round(((product.original_price - product.price) / product.original_price) * 100)
+      : 0
+  );
+
+  const reviewRating = product.details?.reviews?.rating || 4.9;
+  const reviewCount = product.details?.reviews?.count || 47;
 
   const handleAddToCart = () => {
     addItem({
@@ -209,10 +219,14 @@ export default function ProductDetails() {
               <div className="flex items-center gap-2 mb-5">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                    <Star 
+                      key={i} 
+                      size={16} 
+                      className={i < Math.round(reviewRating) ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-200 text-gray-200'}
+                    />
                   ))}
                 </div>
-                <span className="text-sm text-gray-500">(47 avaliações)</span>
+                <span className="text-sm text-gray-500">({reviewCount} avaliações)</span>
               </div>
 
               {/* Separador */}
@@ -246,19 +260,24 @@ export default function ProductDetails() {
               {/* Separador */}
               <hr className="border-gray-200 mb-5" />
 
-              {/* Seletor de Variação (Sabor) */}
-              {product.variations && product.variations.length > 0 && (
+              {/* Descrição Curta */}
+              {product.description && (
+                <div className="mb-5">
+                  <p className="text-sm text-gray-600 leading-relaxed">{product.description}</p>
+                </div>
+              )}
+
+              {/* Seletor de Sabor (se houver flavors) */}
+              {product.details?.flavors && product.details.flavors.length > 0 && (
                 <div className="mb-6">
                   <label className="block text-sm font-bold text-gray-700 mb-2">
                     Sabor
                   </label>
                   <select
-                    value={selectedVariation}
-                    onChange={(e) => setSelectedVariation(e.target.value)}
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-age-gold focus:border-transparent transition-all"
                   >
-                    {product.variations.map((v) => (
-                      <option key={v.id || v.name} value={v.id || v.name}>{v.name}</option>
+                    {product.details.flavors.map((f, i) => (
+                      <option key={i} value={f}>{f}</option>
                     ))}
                   </select>
                 </div>
@@ -292,7 +311,7 @@ export default function ProductDetails() {
                   {/* Botão Comprar */}
                   <button 
                     onClick={handleAddToCart}
-                    className="flex-1 bg-age-gold hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-95"
+                    className="flex-1 bg-age-gold hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-[0.98]"
                   >
                     <ShoppingCart size={20} />
                     COMPRAR
@@ -304,8 +323,8 @@ export default function ProductDetails() {
               <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 flex items-center gap-3">
                 <Truck size={24} className="text-green-600 shrink-0" />
                 <div>
-                  <p className="text-sm font-bold text-green-800">Frete Grátis</p>
-                  <p className="text-xs text-green-600">Para compras acima de R$ 49,90</p>
+                  <p className="text-sm font-bold text-green-800">Frete Grátis para todo o Brasil!</p>
+                  <p className="text-xs text-green-600">Entrega garantida e rastreável</p>
                 </div>
               </div>
 
@@ -328,63 +347,49 @@ export default function ProductDetails() {
                   <span className="text-xs font-medium text-gray-700">Devolução Grátis</span>
                 </div>
               </div>
-
-              {/* Separador */}
-              <hr className="border-gray-200 mb-5" />
-
-              {/* Descrição Curta */}
-              {product.description && (
-                <div className="mb-6">
-                  <h3 className="text-sm font-bold text-gray-900 mb-2 uppercase">Descrição</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {product.description}
-                  </p>
-                </div>
-              )}
-
-              {/* Meios de Pagamento */}
-              <div>
-                <h3 className="text-sm font-bold text-gray-900 mb-3 uppercase">Formas de Pagamento</h3>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { name: 'Visa', url: 'https://img.icons8.com/color/48/000000/visa.png' },
-                    { name: 'Mastercard', url: 'https://img.icons8.com/color/48/000000/mastercard.png' },
-                    { name: 'Amex', url: 'https://img.icons8.com/color/48/000000/amex.png' },
-                    { name: 'Elo', url: 'https://img.icons8.com/color/48/000000/elo.png' },
-                    { name: 'Pix', url: 'https://img.icons8.com/color/48/000000/pix.png' },
-                    { name: 'Boleto', url: 'https://img.icons8.com/color/48/000000/bank-building.png' }
-                  ].map((card, i) => (
-                    <div key={i} className="w-12 h-8 bg-white rounded border border-gray-200 flex items-center justify-center p-1">
-                      <img src={card.url} alt={card.name} className="h-full w-auto object-contain" />
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ===== SEÇÕES DE CONTEÚDO ABAIXO ===== */}
-      
-      {/* Informações Detalhadas */}
       {product.details && (
         <section className="py-12 bg-gray-50 border-t border-gray-200">
           <div className="container max-w-7xl mx-auto px-4">
             
             {/* Benefícios */}
-            {product.details.benefits && product.details.benefits.length > 0 && (
+            {product.details.benefits?.items && product.details.benefits.items.length > 0 && (
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Benefícios</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {product.details.benefits.map((benefit, i) => (
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">{product.details.benefits.title || 'Benefícios'}</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {product.details.benefits.items.map((benefit, i) => (
                     <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-age-gold/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <Star size={14} className="text-age-gold" />
+                      <span className="text-2xl shrink-0">{benefit.icon}</span>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm mb-1">{benefit.title}</h3>
+                        <p className="text-sm text-gray-600">{benefit.description}</p>
                       </div>
-                      <p className="text-sm text-gray-700">{benefit}</p>
                     </div>
                   ))}
+                </div>
+              </div>
+            )}
+
+            {/* Principais Características */}
+            {product.details.main_features?.items && product.details.main_features.items.length > 0 && (
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">{product.details.main_features.title || 'Principais Benefícios'}</h2>
+                <div className="bg-white rounded-xl p-6 border border-gray-100">
+                  <ul className="space-y-3">
+                    {product.details.main_features.items.map((item, i) => (
+                      <li key={i} className="flex items-center gap-3 text-sm text-gray-700">
+                        <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                          <svg className="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                        </div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             )}
@@ -392,25 +397,77 @@ export default function ProductDetails() {
             {/* Como Usar */}
             {product.details.how_to_use && (
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Como Usar</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">{product.details.how_to_use.title || 'Como Usar'}</h2>
                 <div className="bg-white rounded-xl p-6 border border-gray-100">
-                  <p className="text-sm text-gray-700 leading-relaxed">{product.details.how_to_use}</p>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-4">{product.details.how_to_use.description}</p>
+                  {product.details.how_to_use.steps && product.details.how_to_use.steps.length > 0 && (
+                    <ol className="space-y-2">
+                      {product.details.how_to_use.steps.map((step, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+                          <span className="w-6 h-6 rounded-full bg-age-gold/10 flex items-center justify-center text-age-gold font-bold text-xs shrink-0">{i + 1}</span>
+                          {step}
+                        </li>
+                      ))}
+                    </ol>
+                  )}
                 </div>
               </div>
             )}
 
-            {/* Composição */}
-            {product.details.composition && product.details.composition.length > 0 && (
+            {/* Tabela Nutricional */}
+            {product.details.nutrition_facts?.items && product.details.nutrition_facts.items.length > 0 && (
               <div className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Composição</h2>
-                <div className="bg-white rounded-xl p-6 border border-gray-100">
-                  <div className="flex flex-wrap gap-2">
-                    {product.details.composition.map((item, i) => (
-                      <span key={i} className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full">
-                        {item}
-                      </span>
-                    ))}
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Informação Nutricional</h2>
+                <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
+                  <div className="px-6 py-3 bg-gray-100 text-xs font-bold text-gray-600">
+                    Porção de {product.details.nutrition_facts.serving_size}
                   </div>
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-gray-100 text-xs text-gray-500 font-bold">
+                        <th className="px-6 py-3 text-left">Nutriente</th>
+                        <th className="px-6 py-3 text-center">Quantidade</th>
+                        <th className="px-6 py-3 text-right">% VD*</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {product.details.nutrition_facts.items.map((item, i) => (
+                        <tr key={i} className="border-b border-gray-50 text-sm">
+                          <td className="px-6 py-3 text-gray-700">{item.nutrient}</td>
+                          <td className="px-6 py-3 text-center text-gray-600">{item.quantity}</td>
+                          <td className="px-6 py-3 text-right text-gray-500">{item.daily_value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* Depoimentos */}
+            {product.details.testimonials && product.details.testimonials.length > 0 && (
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">O que nossos clientes dizem</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {product.details.testimonials.map((test) => (
+                    <div key={test.id} className="bg-white rounded-xl p-5 border border-gray-100">
+                      <div className="flex items-center gap-1 mb-3">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={14} className={i < test.rating ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-200 text-gray-200'} />
+                        ))}
+                      </div>
+                      <p className="text-sm text-gray-700 mb-3 italic">"{test.comment}"</p>
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-age-gold/10 flex items-center justify-center text-age-gold font-bold text-xs">
+                          {test.name.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-gray-900">{test.name}</p>
+                          <p className="text-[11px] text-gray-400">{test.location}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
@@ -421,15 +478,23 @@ export default function ProductDetails() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Perguntas Frequentes</h2>
                 <div className="space-y-3">
                   {product.details.faq.map((item, i) => (
-                    <details key={i} className="bg-white rounded-xl border border-gray-100 overflow-hidden group">
-                      <summary className="px-6 py-4 cursor-pointer text-sm font-bold text-gray-900 hover:bg-gray-50 transition-colors list-none flex items-center justify-between">
+                    <div key={i} className="bg-white rounded-xl border border-gray-100 overflow-hidden">
+                      <button
+                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        className="w-full px-6 py-4 text-left text-sm font-bold text-gray-900 hover:bg-gray-50 transition-colors flex items-center justify-between"
+                      >
                         {item.question}
-                        <ChevronRight size={16} className="text-gray-400 transition-transform group-open:rotate-90 shrink-0 ml-4" />
-                      </summary>
-                      <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed border-t border-gray-50 pt-3">
-                        {item.answer}
-                      </div>
-                    </details>
+                        <ChevronDown 
+                          size={16} 
+                          className={`text-gray-400 transition-transform shrink-0 ml-4 ${openFaq === i ? 'rotate-180' : ''}`} 
+                        />
+                      </button>
+                      {openFaq === i && (
+                        <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed border-t border-gray-50 pt-3">
+                          {item.answer}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
