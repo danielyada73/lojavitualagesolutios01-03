@@ -66,8 +66,8 @@ export default function Footer() {
                 { name: 'Hipercard', url: 'https://img.icons8.com/color/48/000000/hipercard.png' },
                 { name: 'Pix', url: 'https://img.icons8.com/color/48/000000/pix.png' }
               ].map((card, i) => (
-                <div key={i} className="bg-white h-10 rounded flex items-center justify-center p-1 border border-gray-100 shadow-sm">
-                  <img src={card.url} alt={card.name} className="h-full w-auto object-contain" />
+                <div key={i} className="bg-white h-10 rounded flex items-center justify-center p-1 border border-gray-100 shadow-sm overflow-hidden">
+                  <img src={card.url} alt={card.name} className="!h-full !w-auto !max-w-full object-contain" />
                 </div>
               ))}
             </div>
@@ -78,7 +78,7 @@ export default function Footer() {
           <img
             src="https://agesolution.com.br/wp-content/uploads/2023/01/age-2-e1752779329574-1024x487.png"
             alt="Age Solutions"
-            className="h-16 w-auto object-contain filter grayscale opacity-50 hover:opacity-100 transition-opacity"
+            className="!h-16 !max-h-16 !w-auto !max-w-[200px] object-contain filter grayscale opacity-50 hover:opacity-100 transition-opacity"
           />
           <a
             href="https://marketingalphadigital.com.br/"
