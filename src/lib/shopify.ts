@@ -195,8 +195,8 @@ export const ADD_TO_CART_MUTATION = `
   }
 `;
 
-export async function createCart(variantId?: string): Promise<{ id: string, checkoutUrl: string } | null> {
-  const variables = variantId ? { input: { lines: [{ merchandiseId: variantId, quantity: 1 }] } } : {};
+export async function createCart(variantId?: string, quantity = 1): Promise<{ id: string, checkoutUrl: string } | null> {
+  const variables = variantId ? { input: { lines: [{ merchandiseId: variantId, quantity }] } } : {};
   const data = await shopifyFetch({ query: CREATE_CART_MUTATION, variables });
   return data?.data?.cartCreate?.cart || null;
 }

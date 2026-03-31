@@ -85,6 +85,13 @@ export const useCartStore = create<CartStore>()(
         set((state) => ({
           items: state.items.filter((item) => item.id !== itemId),
         }));
+        
+        // Sincroniza a remoção com o Shopify (ou limpa o checkout se vazio)
+        if (get().items.length === 0) {
+          get().clearCart();
+        } else {
+          get().syncCart();
+        }
       },
       updateQuantity: (itemId, quantity) => {
         set((state) => ({
@@ -92,6 +99,7 @@ export const useCartStore = create<CartStore>()(
             item.id === itemId ? { ...item, quantity: Math.max(1, quantity) } : item
           ),
         }));
+        get().syncCart();
       },
       toggleCart: () => {
         set((state) => ({ isOpen: !state.isOpen }));
@@ -112,7 +120,7 @@ export const useCartStore = create<CartStore>()(
           const firstItem = items[0];
           const variantId = firstItem.variation?.id || firstItem.product.variations?.[0]?.id || firstItem.product.id;
 
-          const newCart = await createCart(variantId);
+          const newCart = await createCart(variantId, firstItem.quantity);
           if (newCart) {
             set({ cartId: newCart.id, checkoutUrl: newCart.checkoutUrl });
 
