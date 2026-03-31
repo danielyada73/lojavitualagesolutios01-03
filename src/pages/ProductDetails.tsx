@@ -44,25 +44,41 @@ export default function ProductDetails() {
     const addToCartBtns = document.querySelectorAll(
       '.product-form__submit, button[name="add"], .product-form__buttons button, ' +
       '.add-to-cart, [data-add-to-cart], button.button--primary, ' +
-      'button[type="submit"], .kb-main-buy-btn, .kit-builder__buy-button'
+      'button[type="submit"], .kb-main-buy-btn, .kit-builder__buy-button, ' +
+      '.kb-cta, .kit-buy-btn'
     );
 
     const handleAdd = (e: Event) => {
       e.preventDefault();
       e.stopPropagation();
-      // Get quantity if selected
+      
+      // Get quantity from standard input
       const qtyInput = document.querySelector('input[name="quantity"]') as HTMLInputElement;
-      const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+      let quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
       
       // Determine variant from standard Shopify hidden inputs or checked radios
       let variantToSelect = product.variations?.[0] || undefined;
       const selectedIdInput = document.querySelector('input[name="id"]:checked, select[name="id"]') as HTMLInputElement | HTMLSelectElement;
-      if (selectedIdInput && selectedIdInput.value) {
-        const found = product.variations?.find(v => v.id === selectedIdInput.value);
-        if (found) variantToSelect = found;
+      
+      if (selectedIdInput) {
+        if (selectedIdInput.value) {
+          const found = product.variations?.find(v => v.id === selectedIdInput.value);
+          if (found) variantToSelect = found;
+        }
+        
+        // Se a lógica do concorrente usa um 'Kits' radio, vamos sugar a "Quantidade" pelo texto
+        const labelText = selectedIdInput.closest('label, .kit-option, .product-form__input')?.textContent || '';
+        const match = labelText.match(/(\d+)\s*unidade/i);
+        if (match) {
+          quantity = parseInt(match[1]);
+        }
       }
       
       addItem(product, variantToSelect, quantity);
+
+      // Tenta abrir o carrinho
+      const cartBtn = document.querySelector('[aria-controls="cart-drawer"], [data-drawer="cart"], .header__icon--cart') as HTMLButtonElement | null;
+      if (cartBtn) cartBtn.click();
     };
 
     const handlePlus = (e: Event) => {
@@ -86,7 +102,7 @@ export default function ProductDetails() {
     addToCartBtns.forEach(b => b.addEventListener('click', handleAdd));
 
     // Also capture any button with "Comprar" text that wasn't matched by selectors
-    const allButtons = document.querySelectorAll('.template-product button');
+    const allButtons = document.querySelectorAll('button');
     allButtons.forEach(btn => {
       const text = btn.textContent?.toLowerCase() || '';
       if (text.includes('comprar') || text.includes('adicionar') || text.includes('add to cart')) {
