@@ -1,4 +1,4 @@
-﻿export const RAW_PRODUCT_HTML = `
+export const RAW_PRODUCT_HTML = `
       <div id="shopify-section-template--18579175112775__main" class="shopify-section">
 
 
@@ -39,8 +39,10 @@
         data-testid="product-information-media"
       >
 
-
-<!-- ext script removed --><style data-shopify>
+<script
+    src="//age-solution-suplementos.myshopify.com/cdn/shop/t/64/assets/drag-zoom-wrapper.js?v=52868656766563354141773950102"
+    type="module"
+  ></script><style data-shopify>
   
 
   
@@ -190,9 +192,7 @@
   
   
 >
-  
-
-
+  
 
 <div
   class="product-media"
@@ -202,8 +202,7 @@
   
   <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) 65rem, (min-width: 750px) calc(100vw - 25rem - 40px - 0px - 40px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" fetchpriority="high" style="--focal-point: 50.0% 50.0%;">
 
-  
-
+  
   
 </div>
 
@@ -233,9 +232,7 @@
   
   
 >
-  
-
-
+  
 
 <div
   class="product-media"
@@ -245,8 +242,7 @@
   
   <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
-  
-
+  
   
 </div>
 
@@ -276,9 +272,7 @@
   
   
 >
-  
-
-
+  
 
 <div
   class="product-media"
@@ -288,8 +282,7 @@
   
   <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
-  
-
+  
   
 </div>
 
@@ -319,9 +312,7 @@
   
   
 >
-  
-
-
+  
 
 <div
   class="product-media"
@@ -331,8 +322,7 @@
   
   <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
-  
-
+  
   
 </div>
 
@@ -362,9 +352,7 @@
   
   
 >
-  
-
-
+  
 
 <div
   class="product-media"
@@ -374,8 +362,7 @@
   
   <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
-  
-
+  
   
 </div>
 
@@ -391,8 +378,7 @@
   
       
 
-      
-<slideshow-controls
+      <slideshow-controls
   
     ref="slideshowControls"
   
@@ -504,8 +490,7 @@
           class="product-media-container constrain-height media-fit-contain product-media-container--image"
           style=" --media-preview-ratio: 1.0;"
           
-        >
-
+        >
 
 <div
   class="product-media"
@@ -515,8 +500,7 @@
   
   <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) 65rem, (min-width: 750px) calc(100vw - 25rem - 40px - 0px - 40px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" fetchpriority="high" style="--focal-point: 50.0% 50.0%;">
 
-  
-
+  
   
 </div>
 
@@ -529,8 +513,7 @@
           class="product-media-container constrain-height media-fit-contain product-media-container--image"
           style=" --media-preview-ratio: 1.0;"
           
-        >
-
+        >
 
 <div
   class="product-media"
@@ -540,8 +523,7 @@
   
   <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
-  
-
+  
   
 </div>
 
@@ -554,8 +536,7 @@
           class="product-media-container constrain-height media-fit-contain product-media-container--image"
           style=" --media-preview-ratio: 1.0;"
           
-        >
-
+        >
 
 <div
   class="product-media"
@@ -565,8 +546,7 @@
   
   <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
-  
-
+  
   
 </div>
 
@@ -579,8 +559,7 @@
           class="product-media-container constrain-height media-fit-contain product-media-container--image"
           style=" --media-preview-ratio: 1.0;"
           
-        >
-
+        >
 
 <div
   class="product-media"
@@ -590,8 +569,7 @@
   
   <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
-  
-
+  
   
 </div>
 
@@ -604,8 +582,7 @@
           class="product-media-container constrain-height media-fit-contain product-media-container--image"
           style=" --media-preview-ratio: 1.0;"
           
-        >
-
+        >
 
 <div
   class="product-media"
@@ -615,8 +592,7 @@
   
   <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
-  
-
+  
   
 </div>
 
@@ -625,8 +601,7 @@
         </li>
       
     </ul>
-  
-</media-gallery>
+  </media-gallery>
 
 <script>
   (function(){
@@ -799,8 +774,7 @@
     
       
         
-      
-<div
+      <div
   id="ProductInformation-template--18579175112775__main"
   class="
     product-details
@@ -936,8 +910,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     --padding-block-start: 0px; --padding-block-end:0px; 
 --padding-inline-start:0px; --padding-inline-end:0px; 
 
-    
-
+    
     --width: fit-content;
     --max-width: var(--max-width--body-normal);
     
@@ -1036,17 +1009,14 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
 
 
-
-
+
 
 <product-price
   class="text-block  custom-typography custom-font-size custom-color text-left custom spacing-style"
   data-block-id="ANzU3cThLQm9wYlR1R__price_tVjtKg"
   data-product-id="7395852779591"
   style="
-    
---color: var(--color-foreground);
---font-size: clamp(3.7083333333333335rem, 13.142857142857142vw, 11.5rem);      --font-weight: var(--font-body--weight);--font-family: var(--font-body--family);    --text-transform: none;    --text-wrap: ;          --line-height: var(--line-height--display-loose);        --letter-spacing: var(--letter-spacing--display-normal);
+    --color: var(--color-foreground);--font-size: clamp(3.7083333333333335rem, 13.142857142857142vw, 11.5rem);      --font-weight: var(--font-body--weight);--font-family: var(--font-body--family);    --text-transform: none;    --text-wrap: ;          --line-height: var(--line-height--display-loose);        --letter-spacing: var(--letter-spacing--display-normal);
     --padding-block-start: 4px;--padding-block-end: 0px;--padding-inline-start: 0px;--padding-inline-end: 0px;
     --width: fit-content;
   "
@@ -1062,8 +1032,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     </span>
   
 
-  
-</div>
+  </div>
 
 
 
@@ -1101,9 +1070,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     --padding-block-start: 0px; --padding-block-end:0px; 
 --padding-inline-start:0px; --padding-inline-end:0px; 
 
-    
---color: var(--color-foreground);
---font-size: 1rem;      --font-weight: var(--font-body--weight);--font-family: var(--font-body--family);    --text-transform: none;    --text-wrap: pretty;          --line-height: var(--line-height--body-loose);        --letter-spacing: var(--letter-spacing--body-normal);
+    --color: var(--color-foreground);--font-size: 1rem;      --font-weight: var(--font-body--weight);--font-family: var(--font-body--family);    --text-transform: none;    --text-wrap: pretty;          --line-height: var(--line-height--body-loose);        --letter-spacing: var(--letter-spacing--body-normal);
     --width: 100%;
     --max-width: var(--max-width--body-none);
     
@@ -1124,8 +1091,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
 
 
-
-
+
 
 
 
@@ -1158,13 +1124,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     padding-inline-end: 0px;
   "
 >
-  
-<div class="kb-wrap">
+  <div class="kb-wrap">
       <h3 class="kb-title-kit">Selecione o kit</h3><ul class="kb-list" role="radiogroup" aria-label="Escolha o tamanho do kit">
         
-          
-
-<li
+          <li
             class="kb-item is-active"
             data-pack-item="1"
             data-kit-variant-id="42490360758343"
@@ -1222,14 +1185,11 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                       data-sku="CREM.0238"
                     >
                   
-                
-</div>
+                </div>
             </div>
           </li>
         
-          
-
-<li
+          <li
             class="kb-item"
             data-pack-item="3"
             data-kit-variant-id="42490360791111"
@@ -1307,8 +1267,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                       data-sku="CREM.0238"
                     >
                   
-                
-<div
+                <div
                     class="kb-extras"
                     data-extras
                     data-pack="3"
@@ -1365,9 +1324,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             </div>
           </li>
         
-          
-
-<li
+          <li
             class="kb-item"
             data-pack-item="5"
             data-kit-variant-id="42490360823879"
@@ -1465,8 +1422,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                       data-sku="CREM.0238"
                     >
                   
-                
-<div
+                <div
                     class="kb-extras"
                     data-extras
                     data-pack="5"
@@ -1625,7 +1581,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
 
   // =========================
-  // (NOVO) Atualizar preço do snippet price.liquid (Sô VISUAL no modo KIT)
+  // (NOVO) Atualizar preço do snippet price.liquid (SÓ VISUAL no modo KIT)
   // Requer no price.liquid:
   //  - data-kb-main-price no elemento do preço final
   //  - data-kb-main-compare no elemento do compare-at (se existir)
@@ -1647,7 +1603,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     const p = Number(priceCents || 0);
     if (!c || !p || c <= p) return 0;
 
-    // Ô£à igual Liquid: truncar (divisão inteira)
+    // ✅ igual Liquid: truncar (divisão inteira)
     return Math.floor(((c - p) * 100) / c);
   }
 
@@ -1707,7 +1663,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       if (el) { el.click(); return true; }
     }
 
-    // Çs vezes o botão tem o id completo "gid://shopify/Media/123"
+    // Às vezes o botão tem o id completo "gid://shopify/Media/123"
     const gid = \`gid://shopify/Media/\${mediaId}\`;
     const el2 = document.querySelector(\`[data-media-id="\${gid}"],[data-target="\${gid}"],[data-thumbnail-id="\${gid}"],[aria-controls="\${gid}"]\`);
     if (el2) { el2.click(); return true; }
@@ -1765,7 +1721,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       throw new Error('Erro ao adicionar. Atualize a página e tente novamente.');
     }
 
-    // ­ƒöÄ "Proven-only": só reporta (Sentry) se CONSEGUIR provar pelo /cart.js que o item entrou sem a property Itens
+    // 🔎 "Proven-only": só reporta (Sentry) se CONSEGUIR provar pelo /cart.js que o item entrou sem a property Itens
     // Isso evita 100% dos falsos positivos que acontecem quando alguém intercepta o response do /cart/add.js.
     try {
       const it0 = Array.isArray(items) ? items[0] : null;
@@ -1887,7 +1843,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     const caret = document.createElement('span');
     caret.className = 'kb-dd-caret';
     caret.setAttribute('aria-hidden', 'true');
-    caret.textContent = 'Ôû¥';
+    caret.textContent = '▾';
 
     btn.appendChild(sw);
     btn.appendChild(label);
@@ -2068,7 +2024,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
         // 5) depois do dropdown, garante novamente (porque ele move o select pro DOM)
         ensureDefaultsInBody(b);
       } else {
-        // ÔØî não zera para "" (isso causa o bug depois)
+        // ❌ não zera para "" (isso causa o bug depois)
         // Em vez disso, volta para o primeiro item (estado válido)
         b.querySelectorAll('select.kit-variant, select.kit-extra').forEach(s => {
           if (s.options && s.options.length) {
@@ -2091,7 +2047,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     setError('');
   }
 
-  // Ô£à Pack inicial: query param ?kit= tem prioridade, depois metafield
+  // ✅ Pack inicial: query param ?kit= tem prioridade, depois metafield
   const urlKit = new URLSearchParams(window.location.search).get('kit');
   const preferredPack = (urlKit || root.dataset.selectedPack || '').trim();
   if (preferredPack) {
@@ -2147,7 +2103,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   }
 
   buyBtn?.addEventListener('click', async (e) => {
-  // Ô£à ganha de outros listeners / evita duplo add
+  // ✅ ganha de outros listeners / evita duplo add
   e.preventDefault();
   e.stopPropagation();
   e.stopImmediatePropagation();
@@ -2156,7 +2112,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
   if (!buyBtn) return;
 
-  // Ô£à trava anti duplo clique / múltiplos listeners
+  // ✅ trava anti duplo clique / múltiplos listeners
   if (buyBtn.dataset.kbLoading === '1') return;
   buyBtn.dataset.kbLoading = '1';
 
@@ -2300,7 +2256,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     buyBtn.dataset.kbLoading = '0';
     buyBtn.disabled = oldDisabled;
   }
-}, true); // Ô£à capture = true
+}, true); // ✅ capture = true
 })();
 
 (function(){
@@ -2333,7 +2289,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       const firstItem = parsed?.items?.[0];
       const hasProps = !!firstItem?.properties;
 
-      // ­ƒÜ¿ alguém adicionou item sem properties
+      // 🚨 alguém adicionou item sem properties
       if (parsed?.items && !hasProps) {
         flagExternalAdd('fetch_add_without_properties');
       }
@@ -2447,7 +2403,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   window.addEventListener('resize', () => {
     if (floatingLocked) return;
     updateVisibility();
-    // Ô£à opcional/recomendado: garante label correto ao girar tela / redimensionar
+    // ✅ opcional/recomendado: garante label correto ao girar tela / redimensionar
     setTimeout(updateFloatingLabel, 0);
   });
 
@@ -2527,7 +2483,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       }
     }
 
-    // Ô£à MOBILE: só "Kit X unidades". DESKTOP: mantém baseSubtitle + Kit X
+    // ✅ MOBILE: só "Kit X unidades". DESKTOP: mantém baseSubtitle + Kit X
     const isMobile = window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
     const packIsNumeric = pack && /^\d+\$/.test(pack);
     const kitLabel = pack
@@ -2619,7 +2575,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       class="vt-delivery-info"
       aria-label="Informações sobre entrega"
       data-vt-tooltip-btn
-    ></button>
+    >ⓘ</button>
 
     <div class="vt-delivery-tooltip" role="tooltip" data-vt-tooltip hidden>
       <div class="vt-delivery-tooltip-inner">
@@ -2789,8 +2745,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     --divider-justify-content: center;
     --padding-block-start: max(20px, calc(var(--spacing-scale) * 25px));--padding-block-end: 0px;
   "
-  
-
+  
 >
   <span
     class="divider__line"
@@ -2826,7 +2781,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 <!-- END app snippet -->
 
 <essential-upsell-product-addon-app-block
-  upsell-app-data="{&quot;funnels&quot;:[{&quot;id&quot;:&quot;50df4433-cb31-4adf-a7ed-669c475b1955&quot;,&quot;name&quot;:&quot;Cart page offer&quot;,&quot;content&quot;:{&quot;offerType&quot;:&quot;CROSS_SELL&quot;,&quot;titleText&quot;:&quot;Você pode gostar&quot;,&quot;buttonText&quot;:&quot;Comprar&quot;,&quot;secondaryButtonText&quot;:&quot;Close&quot;},&quot;upsell&quot;:{&quot;productsType&quot;:&quot;SPECIFIC&quot;,&quot;recommendationIntent&quot;:&quot;RELATED&quot;,&quot;discountType&quot;:&quot;PERCENTAGE&quot;,&quot;discountValue&quot;:30,&quot;applyDiscountType&quot;:&quot;ALWAYS&quot;,&quot;isHideProductInCart&quot;:false,&quot;isHideTriggerProduct&quot;:true,&quot;isPreselectProducts&quot;:true,&quot;isLimitDiscountedQuantity&quot;:true,&quot;discountedQuantityLimit&quot;:1,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7395852550215&quot;,&quot;shopifyHandle&quot;:&quot;booster-p-d-r-n-vegetal&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7395852779591&quot;,&quot;shopifyHandle&quot;:&quot;serum-firmador-facial&quot;,&quot;variantIds&quot;:[]}],&quot;customDiscounts&quot;:[]},&quot;design&quot;:{&quot;layoutType&quot;:&quot;CAROUSEL&quot;,&quot;stackedProductsCount&quot;:null,&quot;backgroundType&quot;:&quot;MONOCHROME&quot;,&quot;monochromeBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;gradientBackgroundStartColor&quot;:null,&quot;gradientBackgroundEndColor&quot;:null,&quot;gradientBackgroundAngle&quot;:null,&quot;borderRadius&quot;:8,&quot;borderSize&quot;:1,&quot;borderColor&quot;:&quot;#c5c8d1&quot;,&quot;insideTopSpacing&quot;:10,&quot;insideBottomSpacing&quot;:10,&quot;outsideTopSpacing&quot;:20,&quot;outsideBottomSpacing&quot;:20,&quot;font&quot;:&quot;INHERIT&quot;,&quot;titleSize&quot;:16,&quot;titleColor&quot;:&quot;#202223&quot;,&quot;productTitleSize&quot;:14,&quot;productTitleColor&quot;:&quot;#202223&quot;,&quot;productVariantSize&quot;:14,&quot;productVariantColor&quot;:&quot;#96a4b6&quot;,&quot;productPriceSize&quot;:14,&quot;productPriceColor&quot;:&quot;#96a4b6&quot;,&quot;discountedPriceSize&quot;:14,&quot;discountedPriceColor&quot;:&quot;#fa493d&quot;,&quot;buttonBackgroundColor&quot;:&quot;#202223&quot;,&quot;buttonTextSize&quot;:14,&quot;buttonTextColor&quot;:&quot;#fafafa&quot;,&quot;buttonBorderRadius&quot;:4,&quot;navigationIconColor&quot;:&quot;#333333&quot;,&quot;checkboxIconColor&quot;:null,&quot;checkboxBackgroundColor&quot;:null,&quot;checkboxBorderColor&quot;:null,&quot;popupBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;popupCloseButtonColor&quot;:&quot;#202223&quot;,&quot;popupBorderRadius&quot;:16,&quot;secondaryButtonTextSize&quot;:14,&quot;secondaryButtonTextColor&quot;:&quot;#202223&quot;},&quot;placement&quot;:{&quot;type&quot;:&quot;CART_PAGE&quot;,&quot;triggerType&quot;:&quot;SPECIFIC_PRODUCTS&quot;,&quot;cartPagePositionType&quot;:&quot;BOTTOM_OF_THE_CART&quot;,&quot;popupPlacementType&quot;:&quot;PRODUCT_PAGE&quot;,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7376358539335&quot;,&quot;shopifyHandle&quot;:&quot;kit-colageno-verisol┬«&quot;,&quot;variantIds&quot;:[]}],&quot;specificCollections&quot;:[]},&quot;contentTranslations&quot;:[]},{&quot;id&quot;:&quot;e91e11d5-2ab4-4d81-84d3-d92fa5286e2e&quot;,&quot;name&quot;:&quot;Page Collagen&quot;,&quot;content&quot;:{&quot;offerType&quot;:&quot;PRODUCT_ADDON&quot;,&quot;titleText&quot;:&quot;Aproveite e compre junto&quot;,&quot;buttonText&quot;:&quot;Claim Offer {total} {compared-at}&quot;,&quot;secondaryButtonText&quot;:&quot;Close&quot;},&quot;upsell&quot;:{&quot;productsType&quot;:&quot;SPECIFIC&quot;,&quot;recommendationIntent&quot;:&quot;RELATED&quot;,&quot;discountType&quot;:&quot;NONE&quot;,&quot;discountValue&quot;:null,&quot;applyDiscountType&quot;:&quot;ALWAYS&quot;,&quot;isHideProductInCart&quot;:true,&quot;isHideTriggerProduct&quot;:true,&quot;isPreselectProducts&quot;:true,&quot;isLimitDiscountedQuantity&quot;:false,&quot;discountedQuantityLimit&quot;:null,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373957726279&quot;,&quot;shopifyHandle&quot;:&quot;creatina-morning-shot-1&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373960085575&quot;,&quot;shopifyHandle&quot;:&quot;serum-anti-rugas&quot;,&quot;variantIds&quot;:[]}],&quot;customDiscounts&quot;:[]},&quot;design&quot;:{&quot;layoutType&quot;:&quot;STACKED&quot;,&quot;stackedProductsCount&quot;:2,&quot;backgroundType&quot;:&quot;MONOCHROME&quot;,&quot;monochromeBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;gradientBackgroundStartColor&quot;:null,&quot;gradientBackgroundEndColor&quot;:null,&quot;gradientBackgroundAngle&quot;:null,&quot;borderRadius&quot;:10,&quot;borderSize&quot;:1,&quot;borderColor&quot;:&quot;#dfdfdf&quot;,&quot;insideTopSpacing&quot;:10,&quot;insideBottomSpacing&quot;:10,&quot;outsideTopSpacing&quot;:20,&quot;outsideBottomSpacing&quot;:20,&quot;font&quot;:&quot;INHERIT&quot;,&quot;titleSize&quot;:16,&quot;titleColor&quot;:&quot;#141414&quot;,&quot;productTitleSize&quot;:14,&quot;productTitleColor&quot;:&quot;#141414&quot;,&quot;productVariantSize&quot;:14,&quot;productVariantColor&quot;:&quot;#666666&quot;,&quot;productPriceSize&quot;:14,&quot;productPriceColor&quot;:&quot;#a3a3a3&quot;,&quot;discountedPriceSize&quot;:14,&quot;discountedPriceColor&quot;:&quot;#141414&quot;,&quot;buttonBackgroundColor&quot;:&quot;#202223&quot;,&quot;buttonTextSize&quot;:14,&quot;buttonTextColor&quot;:&quot;#fafafa&quot;,&quot;buttonBorderRadius&quot;:8,&quot;navigationIconColor&quot;:&quot;#333333&quot;,&quot;checkboxIconColor&quot;:&quot;#ffffff&quot;,&quot;checkboxBackgroundColor&quot;:&quot;#202223&quot;,&quot;checkboxBorderColor&quot;:&quot;#202223&quot;,&quot;popupBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;popupCloseButtonColor&quot;:&quot;#202223&quot;,&quot;popupBorderRadius&quot;:16,&quot;secondaryButtonTextSize&quot;:14,&quot;secondaryButtonTextColor&quot;:&quot;#202223&quot;},&quot;placement&quot;:{&quot;type&quot;:&quot;PRODUCT_PAGE&quot;,&quot;triggerType&quot;:&quot;SPECIFIC_PRODUCTS&quot;,&quot;cartPagePositionType&quot;:null,&quot;popupPlacementType&quot;:&quot;PRODUCT_PAGE&quot;,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386495559&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-cranberry&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373957136455&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386659399&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-limao&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386692167&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-pink-limonade&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386561095&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-tangerina&quot;,&quot;variantIds&quot;:[]}],&quot;specificCollections&quot;:[]},&quot;contentTranslations&quot;:[]}]}"
+  upsell-app-data="{&quot;funnels&quot;:[{&quot;id&quot;:&quot;50df4433-cb31-4adf-a7ed-669c475b1955&quot;,&quot;name&quot;:&quot;Cart page offer&quot;,&quot;content&quot;:{&quot;offerType&quot;:&quot;CROSS_SELL&quot;,&quot;titleText&quot;:&quot;Você pode gostar&quot;,&quot;buttonText&quot;:&quot;Comprar&quot;,&quot;secondaryButtonText&quot;:&quot;Close&quot;},&quot;upsell&quot;:{&quot;productsType&quot;:&quot;SPECIFIC&quot;,&quot;recommendationIntent&quot;:&quot;RELATED&quot;,&quot;discountType&quot;:&quot;PERCENTAGE&quot;,&quot;discountValue&quot;:30,&quot;applyDiscountType&quot;:&quot;ALWAYS&quot;,&quot;isHideProductInCart&quot;:false,&quot;isHideTriggerProduct&quot;:true,&quot;isPreselectProducts&quot;:true,&quot;isLimitDiscountedQuantity&quot;:true,&quot;discountedQuantityLimit&quot;:1,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7395852550215&quot;,&quot;shopifyHandle&quot;:&quot;booster-p-d-r-n-vegetal&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7395852779591&quot;,&quot;shopifyHandle&quot;:&quot;serum-firmador-facial&quot;,&quot;variantIds&quot;:[]}],&quot;customDiscounts&quot;:[]},&quot;design&quot;:{&quot;layoutType&quot;:&quot;CAROUSEL&quot;,&quot;stackedProductsCount&quot;:null,&quot;backgroundType&quot;:&quot;MONOCHROME&quot;,&quot;monochromeBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;gradientBackgroundStartColor&quot;:null,&quot;gradientBackgroundEndColor&quot;:null,&quot;gradientBackgroundAngle&quot;:null,&quot;borderRadius&quot;:8,&quot;borderSize&quot;:1,&quot;borderColor&quot;:&quot;#c5c8d1&quot;,&quot;insideTopSpacing&quot;:10,&quot;insideBottomSpacing&quot;:10,&quot;outsideTopSpacing&quot;:20,&quot;outsideBottomSpacing&quot;:20,&quot;font&quot;:&quot;INHERIT&quot;,&quot;titleSize&quot;:16,&quot;titleColor&quot;:&quot;#202223&quot;,&quot;productTitleSize&quot;:14,&quot;productTitleColor&quot;:&quot;#202223&quot;,&quot;productVariantSize&quot;:14,&quot;productVariantColor&quot;:&quot;#96a4b6&quot;,&quot;productPriceSize&quot;:14,&quot;productPriceColor&quot;:&quot;#96a4b6&quot;,&quot;discountedPriceSize&quot;:14,&quot;discountedPriceColor&quot;:&quot;#fa493d&quot;,&quot;buttonBackgroundColor&quot;:&quot;#202223&quot;,&quot;buttonTextSize&quot;:14,&quot;buttonTextColor&quot;:&quot;#fafafa&quot;,&quot;buttonBorderRadius&quot;:4,&quot;navigationIconColor&quot;:&quot;#333333&quot;,&quot;checkboxIconColor&quot;:null,&quot;checkboxBackgroundColor&quot;:null,&quot;checkboxBorderColor&quot;:null,&quot;popupBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;popupCloseButtonColor&quot;:&quot;#202223&quot;,&quot;popupBorderRadius&quot;:16,&quot;secondaryButtonTextSize&quot;:14,&quot;secondaryButtonTextColor&quot;:&quot;#202223&quot;},&quot;placement&quot;:{&quot;type&quot;:&quot;CART_PAGE&quot;,&quot;triggerType&quot;:&quot;SPECIFIC_PRODUCTS&quot;,&quot;cartPagePositionType&quot;:&quot;BOTTOM_OF_THE_CART&quot;,&quot;popupPlacementType&quot;:&quot;PRODUCT_PAGE&quot;,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7376358539335&quot;,&quot;shopifyHandle&quot;:&quot;kit-colageno-verisol®&quot;,&quot;variantIds&quot;:[]}],&quot;specificCollections&quot;:[]},&quot;contentTranslations&quot;:[]},{&quot;id&quot;:&quot;e91e11d5-2ab4-4d81-84d3-d92fa5286e2e&quot;,&quot;name&quot;:&quot;Page Collagen&quot;,&quot;content&quot;:{&quot;offerType&quot;:&quot;PRODUCT_ADDON&quot;,&quot;titleText&quot;:&quot;Aproveite e compre junto&quot;,&quot;buttonText&quot;:&quot;Claim Offer {total} {compared-at}&quot;,&quot;secondaryButtonText&quot;:&quot;Close&quot;},&quot;upsell&quot;:{&quot;productsType&quot;:&quot;SPECIFIC&quot;,&quot;recommendationIntent&quot;:&quot;RELATED&quot;,&quot;discountType&quot;:&quot;NONE&quot;,&quot;discountValue&quot;:null,&quot;applyDiscountType&quot;:&quot;ALWAYS&quot;,&quot;isHideProductInCart&quot;:true,&quot;isHideTriggerProduct&quot;:true,&quot;isPreselectProducts&quot;:true,&quot;isLimitDiscountedQuantity&quot;:false,&quot;discountedQuantityLimit&quot;:null,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373957726279&quot;,&quot;shopifyHandle&quot;:&quot;creatina-morning-shot-1&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373960085575&quot;,&quot;shopifyHandle&quot;:&quot;serum-anti-rugas&quot;,&quot;variantIds&quot;:[]}],&quot;customDiscounts&quot;:[]},&quot;design&quot;:{&quot;layoutType&quot;:&quot;STACKED&quot;,&quot;stackedProductsCount&quot;:2,&quot;backgroundType&quot;:&quot;MONOCHROME&quot;,&quot;monochromeBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;gradientBackgroundStartColor&quot;:null,&quot;gradientBackgroundEndColor&quot;:null,&quot;gradientBackgroundAngle&quot;:null,&quot;borderRadius&quot;:10,&quot;borderSize&quot;:1,&quot;borderColor&quot;:&quot;#dfdfdf&quot;,&quot;insideTopSpacing&quot;:10,&quot;insideBottomSpacing&quot;:10,&quot;outsideTopSpacing&quot;:20,&quot;outsideBottomSpacing&quot;:20,&quot;font&quot;:&quot;INHERIT&quot;,&quot;titleSize&quot;:16,&quot;titleColor&quot;:&quot;#141414&quot;,&quot;productTitleSize&quot;:14,&quot;productTitleColor&quot;:&quot;#141414&quot;,&quot;productVariantSize&quot;:14,&quot;productVariantColor&quot;:&quot;#666666&quot;,&quot;productPriceSize&quot;:14,&quot;productPriceColor&quot;:&quot;#a3a3a3&quot;,&quot;discountedPriceSize&quot;:14,&quot;discountedPriceColor&quot;:&quot;#141414&quot;,&quot;buttonBackgroundColor&quot;:&quot;#202223&quot;,&quot;buttonTextSize&quot;:14,&quot;buttonTextColor&quot;:&quot;#fafafa&quot;,&quot;buttonBorderRadius&quot;:8,&quot;navigationIconColor&quot;:&quot;#333333&quot;,&quot;checkboxIconColor&quot;:&quot;#ffffff&quot;,&quot;checkboxBackgroundColor&quot;:&quot;#202223&quot;,&quot;checkboxBorderColor&quot;:&quot;#202223&quot;,&quot;popupBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;popupCloseButtonColor&quot;:&quot;#202223&quot;,&quot;popupBorderRadius&quot;:16,&quot;secondaryButtonTextSize&quot;:14,&quot;secondaryButtonTextColor&quot;:&quot;#202223&quot;},&quot;placement&quot;:{&quot;type&quot;:&quot;PRODUCT_PAGE&quot;,&quot;triggerType&quot;:&quot;SPECIFIC_PRODUCTS&quot;,&quot;cartPagePositionType&quot;:null,&quot;popupPlacementType&quot;:&quot;PRODUCT_PAGE&quot;,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386495559&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol®-com-acido-hialuronico-frutado-cranberry&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373957136455&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386659399&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol®-com-acido-hialuronico-frutado-limao&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386692167&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol®-com-acido-hialuronico-frutado-pink-limonade&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386561095&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol®-com-acido-hialuronico-frutado-tangerina&quot;,&quot;variantIds&quot;:[]}],&quot;specificCollections&quot;:[]},&quot;contentTranslations&quot;:[]}]}"
   product-page-product="{&quot;id&quot;:7395852779591,&quot;title&quot;:&quot;Botox Firmador Instantâneo - FaceLifting PRO&quot;,&quot;handle&quot;:&quot;serum-firmador-facial&quot;,&quot;description&quot;:&quot;\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-4e657dda-5028-4e37-8473-d4dde1d34e6d\&quot;\u003eO Firmador Instantâneo da AGE Solution é um cuidado tópico desenvolvido para proporcionar efeito tensor imediato na pele. Sua fórmula atua na superfície cutânea, ajudando a suavizar linhas finas, reduzir a aparência de rugas e melhorar o aspecto da flacidez logo após a aplicação.\u003c\/div\u003e\n\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-33938c3c-0f44-46b5-b35a-1f919544864e\&quot;\u003eA pele fica visivelmente mais firme, lisa e com aparência descansada. Um aliado pontual para momentos em que você quer ver diferença no espelho, de forma prática e sem procedimentos invasivos.\u003c\/div\u003e&quot;,&quot;published_at&quot;:&quot;2026-02-06T20:39:38-03:00&quot;,&quot;created_at&quot;:&quot;2026-01-16T10:38:20-03:00&quot;,&quot;vendor&quot;:&quot;AGE Solution&quot;,&quot;type&quot;:&quot;Cosmético&quot;,&quot;tags&quot;:[&quot;firmador&quot;,&quot;serum&quot;,&quot;skincare&quot;,&quot;upsell&quot;],&quot;price&quot;:7990,&quot;price_min&quot;:7990,&quot;price_max&quot;:7990,&quot;available&quot;:true,&quot;price_varies&quot;:false,&quot;compare_at_price&quot;:null,&quot;compare_at_price_min&quot;:0,&quot;compare_at_price_max&quot;:0,&quot;compare_at_price_varies&quot;:false,&quot;variants&quot;:[{&quot;id&quot;:42388679917639,&quot;title&quot;:&quot;Default Title&quot;,&quot;option1&quot;:&quot;Default Title&quot;,&quot;option2&quot;:null,&quot;option3&quot;:null,&quot;sku&quot;:&quot;CREM.0238&quot;,&quot;requires_shipping&quot;:false,&quot;taxable&quot;:false,&quot;featured_image&quot;:null,&quot;available&quot;:true,&quot;name&quot;:&quot;Botox Firmador Instantâneo - FaceLifting PRO&quot;,&quot;public_title&quot;:null,&quot;options&quot;:[&quot;Default Title&quot;],&quot;price&quot;:7990,&quot;weight&quot;:0,&quot;compare_at_price&quot;:null,&quot;inventory_management&quot;:&quot;shopify&quot;,&quot;barcode&quot;:null,&quot;requires_selling_plan&quot;:false,&quot;selling_plan_allocations&quot;:[],&quot;quantity_rule&quot;:{&quot;min&quot;:1,&quot;max&quot;:null,&quot;increment&quot;:1}}],&quot;images&quot;:[&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;,&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-02.jpg?v=1773253103&quot;,&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-03.jpg?v=1773253103&quot;,&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-04.jpg?v=1773253103&quot;,&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-01.jpg?v=1773253103&quot;],&quot;featured_image&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;,&quot;options&quot;:[&quot;Title&quot;],&quot;media&quot;:[{&quot;alt&quot;:null,&quot;id&quot;:24725657059399,&quot;position&quot;:1,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1000,&quot;width&quot;:1000,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1000,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;,&quot;width&quot;:1000},{&quot;alt&quot;:null,&quot;id&quot;:24855403593799,&quot;position&quot;:2,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-02.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-02.jpg?v=1773253103&quot;,&quot;width&quot;:1500},{&quot;alt&quot;:null,&quot;id&quot;:24855403561031,&quot;position&quot;:3,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-03.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-03.jpg?v=1773253103&quot;,&quot;width&quot;:1500},{&quot;alt&quot;:null,&quot;id&quot;:24855403528263,&quot;position&quot;:4,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-04.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-04.jpg?v=1773253103&quot;,&quot;width&quot;:1500},{&quot;alt&quot;:null,&quot;id&quot;:24855403495495,&quot;position&quot;:5,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-01.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-01.jpg?v=1773253103&quot;,&quot;width&quot;:1500}],&quot;requires_selling_plan&quot;:false,&quot;selling_plan_groups&quot;:[],&quot;content&quot;:&quot;\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-4e657dda-5028-4e37-8473-d4dde1d34e6d\&quot;\u003eO Firmador Instantâneo da AGE Solution é um cuidado tópico desenvolvido para proporcionar efeito tensor imediato na pele. Sua fórmula atua na superfície cutânea, ajudando a suavizar linhas finas, reduzir a aparência de rugas e melhorar o aspecto da flacidez logo após a aplicação.\u003c\/div\u003e\n\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-33938c3c-0f44-46b5-b35a-1f919544864e\&quot;\u003eA pele fica visivelmente mais firme, lisa e com aparência descansada. Um aliado pontual para momentos em que você quer ver diferença no espelho, de forma prática e sem procedimentos invasivos.\u003c\/div\u003e&quot;}"
   product-page-collection-ids="[286178869319]"
   cart-product-ids="[]"
@@ -3256,7 +3211,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   --color: #666666;
                 "
               >
-                <p><span class="metafield-multi_line_text_field">ügua Purificada:<br />
+                <p><span class="metafield-multi_line_text_field">Água Purificada:<br />
 Base da fórmula e veículo dos ativos.<br />
 • Garante distribuição uniforme<br />
  • Facilita absorção rápida<br />
@@ -3270,7 +3225,7 @@ Quando aplicado na pele:<br />
 • Promove contração temporária da superfície cutânea<br />
 • Suaviza visualmente linhas finas<br />
 • Proporciona efeito lifting em até 90 segundos<br />
-ë o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.<br />
+É o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.<br />
 <br />
 Silicato de Magnésio e Alumínio:<br />
 Ativo mineral com função estruturante e estabilizadora.<br />
@@ -3286,7 +3241,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
  • Contribui para suavização progressiva das linhas<br />
  • Atua como coadjuvante anti-idade<br />
  • Melhora o aspecto da pele com uso contínuo<br />
-ë um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.<br />
+É um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.<br />
 </span></p>
                 
               </div>
@@ -3296,7 +3251,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
               <div
                 class="answer-template--18579175112775__ss_tabs_block_9mRnTb"
               >
-                <p><span class="metafield-multi_line_text_field">ügua Purificada:<br />
+                <p><span class="metafield-multi_line_text_field">Água Purificada:<br />
 Base da fórmula e veículo dos ativos.<br />
 • Garante distribuição uniforme<br />
  • Facilita absorção rápida<br />
@@ -3310,7 +3265,7 @@ Quando aplicado na pele:<br />
 • Promove contração temporária da superfície cutânea<br />
 • Suaviza visualmente linhas finas<br />
 • Proporciona efeito lifting em até 90 segundos<br />
-ë o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.<br />
+É o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.<br />
 <br />
 Silicato de Magnésio e Alumínio:<br />
 Ativo mineral com função estruturante e estabilizadora.<br />
@@ -3326,7 +3281,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
  • Contribui para suavização progressiva das linhas<br />
  • Atua como coadjuvante anti-idade<br />
  • Melhora o aspecto da pele com uso contínuo<br />
-ë um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.<br />
+É um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.<br />
 </span></p>
                 
               </div>
@@ -3417,10 +3372,10 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
         }, 500);
     }
 
-    // Ô£à Run when page loads
+    // ✅ Run when page loads
     document.addEventListener('DOMContentLoaded', sectionSetup);
 
-    // Ô£à Run when Shopify dynamically reloads a section
+    // ✅ Run when Shopify dynamically reloads a section
     document.addEventListener('shopify:section:load', function (event) {
         if (event.detail.sectionId === 'template--18579175112775__ss_tabs_block_9mRnTb') {
             sectionSetup();
@@ -3432,8 +3387,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
 </script>
 
 
-</div><div id="shopify-section-template--18579175112775__ss_feature_44_mRfcgK" class="shopify-section">
-<style data-shopify>@font-face {
+</div><div id="shopify-section-template--18579175112775__ss_feature_44_mRfcgK" class="shopify-section"><style data-shopify>@font-face {
   font-family: Inter;
   font-weight: 700;
   font-style: normal;
@@ -4066,8 +4020,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
                   <div class="feature-title-wrapper-template--18579175112775__ss_feature_44_mRfcgK">
                     
                       <div class="feature-feature-icon-template--18579175112775__ss_feature_44_mRfcgK feature-feature-icon-feature_X8yEfL">
-                        
-<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
+                        <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
                         
                       </div>
                     
@@ -4112,8 +4065,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
                   <div class="feature-title-wrapper-template--18579175112775__ss_feature_44_mRfcgK">
                     
                       <div class="feature-feature-icon-template--18579175112775__ss_feature_44_mRfcgK feature-feature-icon-feature_aJVHb3">
-                        
-<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
+                        <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
                         
                       </div>
                     
@@ -4158,8 +4110,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
                   <div class="feature-title-wrapper-template--18579175112775__ss_feature_44_mRfcgK">
                     
                       <div class="feature-feature-icon-template--18579175112775__ss_feature_44_mRfcgK feature-feature-icon-feature_bJrajX">
-                        
-<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
+                        <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
                         
                       </div>
                     
@@ -4204,8 +4155,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
                   <div class="feature-title-wrapper-template--18579175112775__ss_feature_44_mRfcgK">
                     
                       <div class="feature-feature-icon-template--18579175112775__ss_feature_44_mRfcgK feature-feature-icon-feature_iJA4Uj">
-                        
-<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
+                        <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
                         
                       </div>
                     
@@ -4250,8 +4200,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
                   <div class="feature-title-wrapper-template--18579175112775__ss_feature_44_mRfcgK">
                     
                       <div class="feature-feature-icon-template--18579175112775__ss_feature_44_mRfcgK feature-feature-icon-feature_FTh6KW">
-                        
-<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
+                        <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
                         
                       </div>
                     
@@ -4318,7 +4267,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
       const iframe = videoElement.querySelector('iframe');
       const videoButton = videoElement.querySelector('.feature-play-button-template--18579175112775__ss_feature_44_mRfcgK');
 
-      // Ô£à Se for imagem (ou não tiver botão), não quebra o script
+      // ✅ Se for imagem (ou não tiver botão), não quebra o script
       if (videoButton) {
         videoButton.addEventListener('click', () => {
           if (videoButton.classList.contains('active')) {
@@ -5826,7 +5775,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
             <div class="product-info-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_gmxgyp">
                 
-                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">ügua Purificada</p>
+                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Água Purificada</p>
                 
                 
                   
@@ -5869,7 +5818,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
                       <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                     </div>
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                      <p>Principal responsável pelo efeito tensor imediato.</p><p>Quando aplicado na pele:</p><p>• Forma um filme invisível e elástico<br/>• Promove contração temporária da superfície cutânea<br/>• Suaviza visualmente linhas finas<br/>• Proporciona efeito lifting em até 90 segundos</p><p>ë o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.</p>        
+                      <p>Principal responsável pelo efeito tensor imediato.</p><p>Quando aplicado na pele:</p><p>• Forma um filme invisível e elástico<br/>• Promove contração temporária da superfície cutânea<br/>• Suaviza visualmente linhas finas<br/>• Proporciona efeito lifting em até 90 segundos</p><p>É o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.</p>        
                       <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                     </div>              
                   
@@ -5937,7 +5886,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
                       <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                     </div>
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                      <p>Peptídeo conhecido por atuar na suavização de linhas de expressão.</p><p>• Ajuda a reduzir a contração muscular superficial repetitiva<br/> • Contribui para suavização progressiva das linhas<br/> • Atua como coadjuvante anti-idade<br/> • Melhora o aspecto da pele com uso contínuo</p><p>ë um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.</p>        
+                      <p>Peptídeo conhecido por atuar na suavização de linhas de expressão.</p><p>• Ajuda a reduzir a contração muscular superficial repetitiva<br/> • Contribui para suavização progressiva das linhas<br/> • Atua como coadjuvante anti-idade<br/> • Melhora o aspecto da pele com uso contínuo</p><p>É um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.</p>        
                       <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                     </div>              
                   
@@ -5972,7 +5921,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
           <div class="product-info-template--18579175112775__ss_product_ingredients_5_gmxgyp">
             <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               
-                <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">ügua Purificada</p>
+                <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Água Purificada</p>
               
               
                 
@@ -6016,7 +5965,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
                     <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                   </div>
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                    <p>Principal responsável pelo efeito tensor imediato.</p><p>Quando aplicado na pele:</p><p>• Forma um filme invisível e elástico<br/>• Promove contração temporária da superfície cutânea<br/>• Suaviza visualmente linhas finas<br/>• Proporciona efeito lifting em até 90 segundos</p><p>ë o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.</p>        
+                    <p>Principal responsável pelo efeito tensor imediato.</p><p>Quando aplicado na pele:</p><p>• Forma um filme invisível e elástico<br/>• Promove contração temporária da superfície cutânea<br/>• Suaviza visualmente linhas finas<br/>• Proporciona efeito lifting em até 90 segundos</p><p>É o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.</p>        
                     <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                   </div>              
                 
@@ -6086,7 +6035,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
                     <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                   </div>
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                    <p>Peptídeo conhecido por atuar na suavização de linhas de expressão.</p><p>• Ajuda a reduzir a contração muscular superficial repetitiva<br/> • Contribui para suavização progressiva das linhas<br/> • Atua como coadjuvante anti-idade<br/> • Melhora o aspecto da pele com uso contínuo</p><p>ë um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.</p>        
+                    <p>Peptídeo conhecido por atuar na suavização de linhas de expressão.</p><p>• Ajuda a reduzir a contração muscular superficial repetitiva<br/> • Contribui para suavização progressiva das linhas<br/> • Atua como coadjuvante anti-idade<br/> • Melhora o aspecto da pele com uso contínuo</p><p>É um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.</p>        
                     <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                   </div>              
                 
@@ -6168,8 +6117,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
   }
 </script>
 
-</div><div id="shopify-section-template--18579175112775__ss_feature_13_LwhtnP" class="shopify-section">
-<style data-shopify>@font-face {
+</div><div id="shopify-section-template--18579175112775__ss_feature_13_LwhtnP" class="shopify-section"><style data-shopify>@font-face {
   font-family: Inter;
   font-weight: 700;
   font-style: normal;
@@ -6564,8 +6512,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
 
     
       <div class="feature-image-template--18579175112775__ss_feature_13_LwhtnP feature-image-mobile-template--18579175112775__ss_feature_13_LwhtnP">
-        
-<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1500 1500w" width="1500" height="1500" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
+        <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1500 1500w" width="1500" height="1500" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
         
       </div>
     
@@ -6575,8 +6522,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
         
           <div class="feature-item-template--18579175112775__ss_feature_13_LwhtnP">
             <div class="feature-icon-template--18579175112775__ss_feature_13_LwhtnP">
-              
-<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
+              <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
               
             </div>
 
@@ -6591,8 +6537,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
         
           <div class="feature-item-template--18579175112775__ss_feature_13_LwhtnP">
             <div class="feature-icon-template--18579175112775__ss_feature_13_LwhtnP">
-              
-<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
+              <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
               
             </div>
 
@@ -6617,8 +6562,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
           
             <div class="feature-item-template--18579175112775__ss_feature_13_LwhtnP">
               <div class="feature-icon-template--18579175112775__ss_feature_13_LwhtnP">
-                
-<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
+                <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
                 
               </div>
 
@@ -6705,8 +6649,7 @@ Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
   "
 >
   <div class="custom-section-background">
-
-</div>
+</div>
 
   <div
     class="border-style custom-section-content"
@@ -6784,8 +6727,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
 
 
-</div><div id="shopify-section-template--18579175112775__ss_faq_9_TECbfb" class="shopify-section">
-<style data-shopify>@font-face {
+</div><div id="shopify-section-template--18579175112775__ss_faq_9_TECbfb" class="shopify-section"><style data-shopify>@font-face {
   font-family: Inter;
   font-weight: 400;
   font-style: normal;
@@ -7447,10 +7389,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   </div>
                 </div>
                 <div class="faq-answer-template--18579175112775__ss_faq_9_TECbfb" style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>ë indicado para quem deseja suavizar temporariamente linhas de expressão, melhorar a aparência antes de compromissos importantes e buscar uma alternativa não invasiva ao lifting estético.</p>
+                    <p>É indicado para quem deseja suavizar temporariamente linhas de expressão, melhorar a aparência antes de compromissos importantes e buscar uma alternativa não invasiva ao lifting estético.</p>
                   </div>
                 <div class="faq-height-cal-template--18579175112775__ss_faq_9_TECbfb">
-                  <p>ë indicado para quem deseja suavizar temporariamente linhas de expressão, melhorar a aparência antes de compromissos importantes e buscar uma alternativa não invasiva ao lifting estético.</p>
+                  <p>É indicado para quem deseja suavizar temporariamente linhas de expressão, melhorar a aparência antes de compromissos importantes e buscar uma alternativa não invasiva ao lifting estético.</p>
                 </div>
               </div>
             
@@ -7555,8 +7497,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 </div>
     `;
 
-export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
-
+export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
 
   @font-face {
   font-family: Inter;
@@ -7595,8 +7536,7 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
 }
 
 
-  
-
+  
 
     @font-face {
   font-family: Inter;
@@ -7636,8 +7576,7 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
 
   
 
-  
-
+  
 
     @font-face {
   font-family: Inter;
