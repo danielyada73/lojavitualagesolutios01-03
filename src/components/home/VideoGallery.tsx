@@ -57,20 +57,26 @@ export default function VideoGallery() {
               <video
                 ref={el => videoRefs.current[index] = el}
                 src={getVideoUrl(video.driveId)}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover pointer-events-none"
                 muted
                 autoPlay
                 loop
                 playsInline
                 poster={getThumbnailUrl(video.driveId)}
-                onMouseOver={(e) => e.currentTarget.play()}
-                onMouseOut={(e) => e.currentTarget.play()} // Keep playing
               />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30 transform group-hover:scale-110 transition-transform">
+              <button 
+                type="button"
+                className="absolute inset-0 w-full h-full bg-black/10 group-hover:bg-black/40 transition-colors flex items-center justify-center z-10 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setSelectedVideo(video);
+                }}
+              >
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30 transform group-hover:scale-110 transition-transform pointer-events-none">
                   <Play size={28} className="md:w-8 md:h-8" fill="currentColor" />
                 </div>
-              </div>
+              </button>
             </div>
           ))}
         </div>
@@ -97,12 +103,12 @@ export default function VideoGallery() {
               exit={{ scale: 0.9, y: 20 }}
               className="relative w-full max-w-lg aspect-[9/16] bg-black rounded-[30px] md:rounded-[40px] overflow-hidden shadow-2xl border border-white/10"
             >
-              <iframe
-                src={getEmbedUrl(selectedVideo.driveId)}
-                className="w-full h-full border-0"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-              />
+                <iframe
+                  src={getEmbedUrl(selectedVideo.driveId)}
+                  className="w-full h-full border-0 rounded-[30px] md:rounded-[40px]"
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                />
 
               <div className="absolute top-4 left-8 right-8 pointer-events-none">
                 <div className="text-white">
