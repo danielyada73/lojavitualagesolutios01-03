@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { categories, products as mockProducts } from '../data/mock';
 import { Filter } from 'lucide-react';
@@ -10,6 +10,7 @@ export default function Category() {
   const { slug } = useParams();
   const [categoryProducts, setCategoryProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [sortOrder, setSortOrder] = useState('Mais Populares');
 
   const category = categories.find((c) => c.slug === slug);
 
@@ -60,6 +61,18 @@ export default function Category() {
     );
   }
 
+  const sortedProducts = useMemo(() => {
+    const list = [...categoryProducts];
+    if (sortOrder === 'Menor Preço') {
+      return list.sort((a, b) => a.price - b.price);
+    }
+    if (sortOrder === 'Maior Preço') {
+      return list.sort((a, b) => b.price - a.price);
+    }
+    // Para Mais Populares / Novidades, mantemos a ordem padrão ou adicionamos a lógica necessária futuramente.
+    return list;
+  }, [categoryProducts, sortOrder]);
+
   const displayName = category?.name || (slug ? slug.toUpperCase().replace('-', ' ') : 'Categoria');
   const bannerUrl = category?.banner_url || 'https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?q=80&w=1200&auto=format&fit=crop';
 
@@ -91,7 +104,11 @@ export default function Category() {
 
           <div className="flex items-center gap-4">
             <label className="text-sm text-gray-500">Ordenar por:</label>
-            <select className="border border-gray-200 rounded px-3 py-2 text-sm focus:outline-none focus:border-orange-500 bg-white">
+            <select 
+              value={sortOrder}
+              onChange={(e) => setSortOrder(e.target.value)}
+              className="border border-gray-200 rounded px-3 py-2 text-sm focus:outline-none focus:border-orange-500 bg-white"
+            >
               <option>Mais Populares</option>
               <option>Menor Preço</option>
               <option>Maior Preço</option>
@@ -105,9 +122,9 @@ export default function Category() {
           <div className="flex justify-center items-center py-20">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-age-gold"></div>
           </div>
-        ) : categoryProducts.length > 0 ? (
+        ) : sortedProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categoryProducts.map((product) => (
+            {sortedProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

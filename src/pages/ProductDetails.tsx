@@ -54,10 +54,33 @@ export default function ProductDetails() {
       const qtyInput = document.querySelector('input[name="quantity"]') as HTMLInputElement;
       const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
       
-      // Use the first available variant
-      const selectedVariation = product.variations?.[0] || undefined;
-      addItem(product, selectedVariation, quantity);
+      // Determine variant from standard Shopify hidden inputs or checked radios
+      let variantToSelect = product.variations?.[0] || undefined;
+      const selectedIdInput = document.querySelector('input[name="id"]:checked, select[name="id"]') as HTMLInputElement | HTMLSelectElement;
+      if (selectedIdInput && selectedIdInput.value) {
+        const found = product.variations?.find(v => v.id === selectedIdInput.value);
+        if (found) variantToSelect = found;
+      }
+      
+      addItem(product, variantToSelect, quantity);
     };
+
+    const handlePlus = (e: Event) => {
+      e.preventDefault();
+      const qtyInput = document.querySelector('input[name="quantity"]') as HTMLInputElement;
+      if (qtyInput) qtyInput.value = (parseInt(qtyInput.value) || 1) + 1 + '';
+    };
+
+    const handleMinus = (e: Event) => {
+      e.preventDefault();
+      const qtyInput = document.querySelector('input[name="quantity"]') as HTMLInputElement;
+      if (qtyInput && parseInt(qtyInput.value) > 1) qtyInput.value = (parseInt(qtyInput.value) - 1) + '';
+    };
+
+    const plusBtns = document.querySelectorAll('button[name="plus"], .quantity__button[name="plus"]');
+    const minusBtns = document.querySelectorAll('button[name="minus"], .quantity__button[name="minus"]');
+    plusBtns.forEach(btn => btn.addEventListener('click', handlePlus));
+    minusBtns.forEach(btn => btn.addEventListener('click', handleMinus));
 
     forms.forEach(f => f.addEventListener('submit', handleAdd));
     addToCartBtns.forEach(b => b.addEventListener('click', handleAdd));
@@ -75,6 +98,8 @@ export default function ProductDetails() {
       forms.forEach(f => f.removeEventListener('submit', handleAdd));
       addToCartBtns.forEach(b => b.removeEventListener('click', handleAdd));
       allButtons.forEach(btn => btn.removeEventListener('click', handleAdd));
+      plusBtns.forEach(btn => btn.removeEventListener('click', handlePlus));
+      minusBtns.forEach(btn => btn.removeEventListener('click', handleMinus));
     };
   }, [product, loading, addItem, navigate]);
 
@@ -128,11 +153,15 @@ export default function ProductDetails() {
   
   // 6. Replace image URL (main and gallery)
   if (product.thumbnail_url) {
-    // This regex catches all Renova Be product-specific CDN images and replaces them with the current product image
-    const cdnRegex = /https?:\/\/renovabe\.com\.br\/cdn\/shop\/files\/[^" ]+\.(jpg|jpeg|png|webp|gif)/gi;
-    finalHtml = finalHtml.replace(cdnRegex, product.thumbnail_url);
+    const images = product.images?.length ? product.images : [product.thumbnail_url];
+    let imgIndex = 0;
+    
     const protoRelativeCdnRegex = /\/\/renovabe\.com\.br\/cdn\/shop\/files\/[^" ]+\.(jpg|jpeg|png|webp|gif)/gi;
-    finalHtml = finalHtml.replace(protoRelativeCdnRegex, product.thumbnail_url);
+    finalHtml = finalHtml.replace(protoRelativeCdnRegex, (match) => {
+      const img = images[imgIndex % images.length];
+      imgIndex++;
+      return img;
+    });
   }
 
   return (

@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { useCartStore } from '../../store/cart';
 import { getAllProducts } from '../../lib/shopify';
 import { Product } from '../../types';
+import { products as mockProducts } from '../../data/mock';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,9 +17,16 @@ export default function Header() {
 
   useEffect(() => {
     async function loadAll() {
-      // Busca produtos da Shopify para o buscador
-      const prods = await getAllProducts(50);
-      if (prods) setAllProducts(prods);
+      try {
+        const prods = await getAllProducts(50);
+        if (prods && prods.length > 0) {
+          setAllProducts(prods);
+        } else {
+          setAllProducts(mockProducts);
+        }
+      } catch (err) {
+        setAllProducts(mockProducts);
+      }
     }
     loadAll();
   }, []);
