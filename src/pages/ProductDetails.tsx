@@ -39,25 +39,42 @@ export default function ProductDetails() {
     if (!product || loading) return;
 
     // Attach listener to any "Add to Cart" or form submit button
-    const forms = document.querySelectorAll('form[action="/cart/add"]');
-    const addToCartBtns = document.querySelectorAll('.product-form__submit, button[name="add"], .product-form__buttons button');
+    // Broader selectors to catch all possible buy buttons in the raw HTML template
+    const forms = document.querySelectorAll('form[action="/cart/add"], form[action*="cart"]');
+    const addToCartBtns = document.querySelectorAll(
+      '.product-form__submit, button[name="add"], .product-form__buttons button, ' +
+      '.add-to-cart, [data-add-to-cart], button.button--primary, ' +
+      'button[type="submit"], .kb-main-buy-btn, .kit-builder__buy-button'
+    );
 
     const handleAdd = (e: Event) => {
       e.preventDefault();
+      e.stopPropagation();
       // Get quantity if selected
       const qtyInput = document.querySelector('input[name="quantity"]') as HTMLInputElement;
       const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
       
-      addItem(product, undefined, quantity);
-      navigate('/cart');
+      // Use the first available variant
+      const selectedVariation = product.variations?.[0] || undefined;
+      addItem(product, selectedVariation, quantity);
     };
 
     forms.forEach(f => f.addEventListener('submit', handleAdd));
     addToCartBtns.forEach(b => b.addEventListener('click', handleAdd));
 
+    // Also capture any button with "Comprar" text that wasn't matched by selectors
+    const allButtons = document.querySelectorAll('.template-product button');
+    allButtons.forEach(btn => {
+      const text = btn.textContent?.toLowerCase() || '';
+      if (text.includes('comprar') || text.includes('adicionar') || text.includes('add to cart')) {
+        btn.addEventListener('click', handleAdd);
+      }
+    });
+
     return () => {
       forms.forEach(f => f.removeEventListener('submit', handleAdd));
       addToCartBtns.forEach(b => b.removeEventListener('click', handleAdd));
+      allButtons.forEach(btn => btn.removeEventListener('click', handleAdd));
     };
   }, [product, loading, addItem, navigate]);
 

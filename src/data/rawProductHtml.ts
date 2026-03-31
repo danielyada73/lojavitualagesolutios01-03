@@ -4,7 +4,7 @@
 
 
 <script type="application/ld+json">
-  {"@context":"http:\/\/schema.org\/","@id":"\/products\/serum-firmador-facial#product","@type":"Product","brand":{"@type":"Brand","name":"Renova Be"},"category":"S├®runs faciais","description":"O Firmador Instant├óneo da Renova Be ├® um cuidado t├│pico desenvolvido para proporcionar efeito tensor imediato na pele. Sua f├│rmula atua na superf├¡cie cut├ónea, ajudando a suavizar linhas finas, reduzir a apar├¬ncia de rugas e melhorar o aspecto da flacidez logo ap├│s a aplica├º├úo.\nA pele fica visivelmente mais firme, lisa e com apar├¬ncia descansada. Um aliado pontual para momentos em que voc├¬ quer ver diferen├ºa no espelho, de forma pr├ítica e sem procedimentos invasivos.","image":"https:\/\/renovabe.com.br\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349\u0026width=1920","name":"Botox Firmador Instant├óneo - FaceLifting PRO","offers":{"@id":"\/products\/serum-firmador-facial?variant=42388679917639#offer","@type":"Offer","availability":"http:\/\/schema.org\/InStock","price":"79.90","priceCurrency":"BRL","url":"https:\/\/renovabe.com.br\/products\/serum-firmador-facial?variant=42388679917639"},"sku":"CREM.0238","url":"https:\/\/renovabe.com.br\/products\/serum-firmador-facial"}
+  {{},"category":"Séruns faciais","description":"O Firmador Instantâneo da AGE Solution é um cuidado tópico desenvolvido para proporcionar efeito tensor imediato na pele. Sua fórmula atua na superfície cutânea, ajudando a suavizar linhas finas, reduzir a aparência de rugas e melhorar o aspecto da flacidez logo após a aplicação.\nA pele fica visivelmente mais firme, lisa e com aparência descansada. Um aliado pontual para momentos em que você quer ver diferença no espelho, de forma prática e sem procedimentos invasivos.","image":"https:\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349\u0026width=1920","name":"Botox Firmador Instantâneo - FaceLifting PRO","offers":{"@id":"\/products\/serum-firmador-facial?variant=42388679917639#offer","@type":"Offer","availability":"http:\/\/schema.org\/InStock","price":"79.90","priceCurrency":"BRL","url":"https:\/\/age-solution-suplementos.myshopify.com\/products\/serum-firmador-facial?variant=42388679917639"},"sku":"CREM.0238","url":"https:\/\/age-solution-suplementos.myshopify.com\/products\/serum-firmador-facial"}
 </script>
 
 <div class="section-background color-scheme-1"></div>
@@ -18,7 +18,7 @@
   class="skip-to-content-link button-secondary"
   href="#ProductInformation-template--18579175112775__main"
 >
-  Pular para as informa├º├Áes do produto
+  Pular para as informações do produto
 </a>
 
   
@@ -40,10 +40,7 @@
       >
 
 
-<script
-    src="//renovabe.com.br/cdn/shop/t/64/assets/drag-zoom-wrapper.js?v=52868656766563354141773950102"
-    type="module"
-  ></script><style data-shopify>
+<!-- ext script removed --><style data-shopify>
   
 
   
@@ -152,7 +149,7 @@
     
   "
   
-  aria-label="Pr├│ximo slide"
+  aria-label="Próximo slide"
   
   on:click="/next"
   ref="next"
@@ -203,7 +200,7 @@
   data-media-id="24725657059399"
 >
   
-  <img src="//renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" alt="Botox Firmador Instant├óneo - FaceLifting PRO" srcset="//renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=240 240w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1600 1600w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=2560 2560w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) 65rem, (min-width: 750px) calc(100vw - 25rem - 40px - 0px - 40px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" fetchpriority="high" style="--focal-point: 50.0% 50.0%;">
+  <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) 65rem, (min-width: 750px) calc(100vw - 25rem - 40px - 0px - 40px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" fetchpriority="high" style="--focal-point: 50.0% 50.0%;">
 
   
 
@@ -246,7 +243,7 @@
   data-media-id="24855403593799"
 >
   
-  <img src="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instant├óneo - FaceLifting PRO" srcset="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=240 240w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1600 1600w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=2560 2560w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
+  <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
   
 
@@ -289,7 +286,7 @@
   data-media-id="24855403561031"
 >
   
-  <img src="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instant├óneo - FaceLifting PRO" srcset="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=240 240w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1600 1600w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=2560 2560w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
+  <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
   
 
@@ -332,7 +329,7 @@
   data-media-id="24855403528263"
 >
   
-  <img src="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instant├óneo - FaceLifting PRO" srcset="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=240 240w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1600 1600w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=2560 2560w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
+  <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
   
 
@@ -375,7 +372,7 @@
   data-media-id="24855403495495"
 >
   
-  <img src="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instant├óneo - FaceLifting PRO" srcset="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=240 240w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1600 1600w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=2560 2560w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
+  <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
   
 
@@ -516,7 +513,7 @@
   data-media-id="24725657059399"
 >
   
-  <img src="//renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" alt="Botox Firmador Instant├óneo - FaceLifting PRO" srcset="//renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=240 240w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1600 1600w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=2560 2560w, //renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) 65rem, (min-width: 750px) calc(100vw - 25rem - 40px - 0px - 40px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" fetchpriority="high" style="--focal-point: 50.0% 50.0%;">
+  <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) 65rem, (min-width: 750px) calc(100vw - 25rem - 40px - 0px - 40px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=3840" fetchpriority="high" style="--focal-point: 50.0% 50.0%;">
 
   
 
@@ -541,7 +538,7 @@
   data-media-id="24855403593799"
 >
   
-  <img src="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instant├óneo - FaceLifting PRO" srcset="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=240 240w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1600 1600w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=2560 2560w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
+  <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-02.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
   
 
@@ -566,7 +563,7 @@
   data-media-id="24855403561031"
 >
   
-  <img src="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instant├óneo - FaceLifting PRO" srcset="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=240 240w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1600 1600w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=2560 2560w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
+  <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-03.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
   
 
@@ -591,7 +588,7 @@
   data-media-id="24855403528263"
 >
   
-  <img src="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instant├óneo - FaceLifting PRO" srcset="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=240 240w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1600 1600w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=2560 2560w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
+  <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-04.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
   
 
@@ -616,7 +613,7 @@
   data-media-id="24855403495495"
 >
   
-  <img src="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instant├óneo - FaceLifting PRO" srcset="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=240 240w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1600 1600w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=2560 2560w, //renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//renovabe.com.br/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
+  <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" alt="Botox Firmador Instantâneo - FaceLifting PRO" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=240 240w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1600 1600w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=2560 2560w, //age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840 3840w" width="3840" height="3840" sizes="(min-width: 95rem) calc((65rem) / 2 - 2px), (min-width: 750px) calc((100vw - 25rem) / 2 - 40px - 0px - 2px), 100vw" class="product-media__image" transitionToProduct="false" data_max_resolution="//age-solution-suplementos.myshopify.com/cdn/shop/files/galeria-firmador-instantaneo-01.jpg?v=1773253103&amp;width=3840" fetchpriority="auto" style="--focal-point: 50.0% 50.0%;">
 
   
 
@@ -634,9 +631,9 @@
 <script>
   (function(){
     // Troca a imagem principal da galeria quando o Kit Builder muda o pack.
-    // Estrat├®gia:
+    // Estratégia:
     // 1) Se recebemos mediaId e existir algum thumbnail/button com esse id -> clica.
-    // 2) Fallback: for├ºa troca do <img> principal (src + srcset + <source srcset>) usando imgUrl.
+    // 2) Fallback: força troca do <img> principal (src + srcset + <source srcset>) usando imgUrl.
     function setMainImage(img, imgUrl){
       if (!img || !imgUrl) return;
 
@@ -657,7 +654,7 @@
     }
 
     function findMainImage(gallery){
-      // tenta pegar a primeira imagem do slide principal (n├úo thumbnail)
+      // tenta pegar a primeira imagem do slide principal (não thumbnail)
       return (
         gallery.querySelector('.slideshow .product-media-container--image img') ||
         gallery.querySelector('.media-gallery__grid .product-media-container--image img') ||
@@ -864,7 +861,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       <a
         href="/products/serum-firmador-facial?variant=42388679917639"
         class="link"
-      >Botox Firmador Instant├óneo - FaceLifting PRO
+      >Botox Firmador Instantâneo - FaceLifting PRO
       </a>
     </div>
     
@@ -950,7 +947,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
   
 >
-    <h1>Botox Firmador Instant├óneo - FaceLifting PRO</h1>
+    <h1>Botox Firmador Instantâneo - FaceLifting PRO</h1>
   </rte-formatter>
 
 
@@ -1023,7 +1020,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   
 
 <div class="product-social-proof">
-  Mais de <strong>1800</strong> compras no m├¬s passado.
+  Mais de <strong>1800</strong> compras no mês passado.
 </div>
 
 
@@ -1075,7 +1072,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
 
   <p class="installments appmax-installments">
-    Em at├® 6x de R\$ 13,31 sem juros
+    Em até 6x de R\$ 13,31 sem juros
   </p>
 
 
@@ -1118,8 +1115,8 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
   
 >
-    <div class="ql-block" data-block-id="block-4e657dda-5028-4e37-8473-d4dde1d34e6d">O Firmador Instant├óneo da Renova Be ├® um cuidado t├│pico desenvolvido para proporcionar efeito tensor imediato na pele. Sua f├│rmula atua na superf├¡cie cut├ónea, ajudando a suavizar linhas finas, reduzir a apar├¬ncia de rugas e melhorar o aspecto da flacidez logo ap├│s a aplica├º├úo.</div>
-<div class="ql-block" data-block-id="block-33938c3c-0f44-46b5-b35a-1f919544864e">A pele fica visivelmente mais firme, lisa e com apar├¬ncia descansada. Um aliado pontual para momentos em que voc├¬ quer ver diferen├ºa no espelho, de forma pr├ítica e sem procedimentos invasivos.</div>
+    <div class="ql-block" data-block-id="block-4e657dda-5028-4e37-8473-d4dde1d34e6d">O Firmador Instantâneo da AGE Solution é um cuidado tópico desenvolvido para proporcionar efeito tensor imediato na pele. Sua fórmula atua na superfície cutânea, ajudando a suavizar linhas finas, reduzir a aparência de rugas e melhorar o aspecto da flacidez logo após a aplicação.</div>
+<div class="ql-block" data-block-id="block-33938c3c-0f44-46b5-b35a-1f919544864e">A pele fica visivelmente mais firme, lisa e com aparência descansada. Um aliado pontual para momentos em que você quer ver diferença no espelho, de forma prática e sem procedimentos invasivos.</div>
   </div>
 
 
@@ -1149,9 +1146,9 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   data-bundle-title="Selecione o kit"
   data-selected-pack="1"
 
-  data-base-title="Botox Firmador Instant├óneo - FaceLifting PRO"
+  data-base-title="Botox Firmador Instantâneo - FaceLifting PRO"
   data-base-subtitle="Default Title"
-  data-base-image="//renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=120"
+  data-base-image="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&amp;width=120"
   data-bonificado=""
 
   style="
@@ -1173,7 +1170,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             data-kit-variant-id="42490360758343"
             data-kit-price-cents="7990"
             data-kit-compare-cents="0"
-            data-pack-image="//renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-1-pote.jpg?v=1770401204&width=1600"
+            data-pack-image="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-1-pote.jpg?v=1770401204&width=1600"
             data-pack-media-id="24725609021511"
           ><button
               type="button"
@@ -1238,7 +1235,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             data-kit-variant-id="42490360791111"
             data-kit-price-cents="19770"
             data-kit-compare-cents="0"
-            data-pack-image="//renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-3-potes.jpg?v=1770401204&width=1600"
+            data-pack-image="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-3-potes.jpg?v=1770401204&width=1600"
             data-pack-media-id="24725609054279"
           ><button
               type="button"
@@ -1329,7 +1326,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                               
                                 
                                   <option value="42388679622727" data-sku="CREM.0237">
-                                    Booster PDRN 10.000ppm - Regenera├º├úo Anti-idade + Glow
+                                    Booster PDRN 10.000ppm - Regeneração Anti-idade + Glow
                                   </option>
                                 
                               
@@ -1337,25 +1334,25 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                               
                                 
                                   <option value="42437512331335" data-sku="BALM.0287">
-                                    Tikbalm ÔÇö Azedinho
+                                    Tikbalm — Azedinho
                                   </option>
                                 
                               
                                 
                                   <option value="42437512364103" data-sku="BALM.0288">
-                                    Tikbalm ÔÇö Leite Condensado
+                                    Tikbalm — Leite Condensado
                                   </option>
                                 
                               
                                 
                                   <option value="42437512396871" data-sku="BALM.0285">
-                                    Tikbalm ÔÇö Tangerina
+                                    Tikbalm — Tangerina
                                   </option>
                                 
                               
                                 
                                   <option value="42437512429639" data-sku="BALM.0286">
-                                    Tikbalm ÔÇö Cranberry
+                                    Tikbalm — Cranberry
                                   </option>
                                 
                               
@@ -1376,9 +1373,9 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             data-kit-variant-id="42490360823879"
             data-kit-price-cents="25770"
             data-kit-compare-cents="0"
-            data-pack-image="//renovabe.com.br/cdn/shop/files/botox-firmador-instantaneo-5-potes.jpg?v=1770401204&width=1600"
+            data-pack-image="//age-solution-suplementos.myshopify.com/cdn/shop/files/botox-firmador-instantaneo-5-potes.jpg?v=1770401204&width=1600"
             data-pack-media-id="24725609087047"
-          ><div class="kb-corner-badges"><span class="kb-badge kb-badge--promo">Promo├º├úo Carro</span></div><button
+          ><div class="kb-corner-badges"><span class="kb-badge kb-badge--promo">Promoção Carro</span></div><button
               type="button"
               class="kb-head"
               data-pack="5"
@@ -1487,7 +1484,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                               
                                 
                                   <option value="42388679622727" data-sku="CREM.0237">
-                                    Booster PDRN 10.000ppm - Regenera├º├úo Anti-idade + Glow
+                                    Booster PDRN 10.000ppm - Regeneração Anti-idade + Glow
                                   </option>
                                 
                               
@@ -1495,25 +1492,25 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                               
                                 
                                   <option value="42437512331335" data-sku="BALM.0287">
-                                    Tikbalm ÔÇö Azedinho
+                                    Tikbalm — Azedinho
                                   </option>
                                 
                               
                                 
                                   <option value="42437512364103" data-sku="BALM.0288">
-                                    Tikbalm ÔÇö Leite Condensado
+                                    Tikbalm — Leite Condensado
                                   </option>
                                 
                               
                                 
                                   <option value="42437512396871" data-sku="BALM.0285">
-                                    Tikbalm ÔÇö Tangerina
+                                    Tikbalm — Tangerina
                                   </option>
                                 
                               
                                 
                                   <option value="42437512429639" data-sku="BALM.0286">
-                                    Tikbalm ÔÇö Cranberry
+                                    Tikbalm — Cranberry
                                   </option>
                                 
                               
@@ -1529,7 +1526,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                               
                                 
                                   <option value="42388679622727" data-sku="CREM.0237">
-                                    Booster PDRN 10.000ppm - Regenera├º├úo Anti-idade + Glow
+                                    Booster PDRN 10.000ppm - Regeneração Anti-idade + Glow
                                   </option>
                                 
                               
@@ -1537,25 +1534,25 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                               
                                 
                                   <option value="42437512331335" data-sku="BALM.0287">
-                                    Tikbalm ÔÇö Azedinho
+                                    Tikbalm — Azedinho
                                   </option>
                                 
                               
                                 
                                   <option value="42437512364103" data-sku="BALM.0288">
-                                    Tikbalm ÔÇö Leite Condensado
+                                    Tikbalm — Leite Condensado
                                   </option>
                                 
                               
                                 
                                   <option value="42437512396871" data-sku="BALM.0285">
-                                    Tikbalm ÔÇö Tangerina
+                                    Tikbalm — Tangerina
                                   </option>
                                 
                               
                                 
                                   <option value="42437512429639" data-sku="BALM.0286">
-                                    Tikbalm ÔÇö Cranberry
+                                    Tikbalm — Cranberry
                                   </option>
                                 
                               
@@ -1628,9 +1625,9 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
 
   // =========================
-  // (NOVO) Atualizar pre├ºo do snippet price.liquid (S├ô VISUAL no modo KIT)
+  // (NOVO) Atualizar preço do snippet price.liquid (Sô VISUAL no modo KIT)
   // Requer no price.liquid:
-  //  - data-kb-main-price no elemento do pre├ºo final
+  //  - data-kb-main-price no elemento do preço final
   //  - data-kb-main-compare no elemento do compare-at (se existir)
   // =========================
   function kbFormatMoneyFromCents(cents){
@@ -1650,7 +1647,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     const p = Number(priceCents || 0);
     if (!c || !p || c <= p) return 0;
 
-    // Ô£à igual Liquid: truncar (divis├úo inteira)
+    // Ô£à igual Liquid: truncar (divisão inteira)
     return Math.floor(((c - p) * 100) / c);
   }
 
@@ -1658,7 +1655,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   function kbUpdateMainPriceFromActivePack(activeItem){
     if (!activeItem) return;
 
-    // S├│ no modo KIT
+    // Só no modo KIT
     if (wrap.classList.contains('kb-simple')) return;
 
     const priceCents = Number(activeItem.dataset.kitPriceCents || 0);
@@ -1710,7 +1707,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       if (el) { el.click(); return true; }
     }
 
-    // ├Çs vezes o bot├úo tem o id completo "gid://shopify/Media/123"
+    // Çs vezes o botão tem o id completo "gid://shopify/Media/123"
     const gid = \`gid://shopify/Media/\${mediaId}\`;
     const el2 = document.querySelector(\`[data-media-id="\${gid}"],[data-target="\${gid}"],[data-thumbnail-id="\${gid}"],[aria-controls="\${gid}"]\`);
     if (el2) { el2.click(); return true; }
@@ -1721,7 +1718,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   function kbFallbackSwapMainImg(imgUrl){
     if (!imgUrl) return false;
 
-    // Pega uma imagem grande/hero t├¡pica
+    // Pega uma imagem grande/hero típica
     const img =
       document.querySelector('.product__media img') ||
       document.querySelector('[data-product-media] img') ||
@@ -1732,7 +1729,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     if (!img) return false;
 
     img.src = imgUrl;
-    img.removeAttribute('srcset'); // evita o browser ÔÇ£voltarÔÇØ pro srcset antigo
+    img.removeAttribute('srcset'); // evita o browser “voltar” pro srcset antigo
     img.setAttribute('data-kb-swapped', '1');
     return true;
   }
@@ -1743,13 +1740,13 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     const mediaId = String(activeItem.dataset.packMediaId || '').trim();
     const imgUrl  = String(activeItem.dataset.packImage || '').trim();
 
-    // Dispara evento para o snippet da galeria (se existir listener l├í)
+    // Dispara evento para o snippet da galeria (se existir listener lá)
     try{
       window.dispatchEvent(new CustomEvent('kb:pack-change', { detail: { mediaId, imgUrl } }));
     }catch(e){}
 
 
-    // 1) Melhor: clicar no thumbnail (mant├®m zoom, slider etc do tema)
+    // 1) Melhor: clicar no thumbnail (mantém zoom, slider etc do tema)
     if (kbTryClickThumbnailByMediaId(mediaId)) return;
 
     // 2) Fallback: trocar src do hero
@@ -1763,13 +1760,13 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       body: JSON.stringify({ items })
     });
 
-    // Mensagem amig├ível pro cliente (evita cuspir HTML gigante de challenge / etc)
+    // Mensagem amigável pro cliente (evita cuspir HTML gigante de challenge / etc)
     if (!res.ok) {
-      throw new Error('Erro ao adicionar. Atualize a p├ígina e tente novamente.');
+      throw new Error('Erro ao adicionar. Atualize a página e tente novamente.');
     }
 
-    // ­ƒöÄ "Proven-only": s├│ reporta (Sentry) se CONSEGUIR provar pelo /cart.js que o item entrou sem a property Itens
-    // Isso evita 100% dos falsos positivos que acontecem quando algu├®m intercepta o response do /cart/add.js.
+    // ­ƒöÄ "Proven-only": só reporta (Sentry) se CONSEGUIR provar pelo /cart.js que o item entrou sem a property Itens
+    // Isso evita 100% dos falsos positivos que acontecem quando alguém intercepta o response do /cart/add.js.
     try {
       const it0 = Array.isArray(items) ? items[0] : null;
       const reqProps = it0?.properties || null;
@@ -1778,7 +1775,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       if (isKitReq && window.Sentry) {
         const variantId = String(it0?.id || '');
 
-        // D├í um tempinho pro cart refletir a adi├º├úo
+        // Dá um tempinho pro cart refletir a adição
         await new Promise(r => setTimeout(r, 250));
 
         const cartRes = await fetch('/cart.js', { headers: { 'Accept': 'application/json' } });
@@ -2020,7 +2017,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
       const variantId = getSimpleVariantId();
       if (!variantId) {
-        setError('N├úo encontrei a variante selecionada. Verifique o select/hidden do modo simples.');
+        setError('Não encontrei a variante selecionada. Verifique o select/hidden do modo simples.');
         return;
       }
 
@@ -2059,10 +2056,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
         // 1) garante defaults (base + extras) logo ao abrir
         ensureDefaultsInBody(b);
 
-        // 2) aplica defaults espec├¡ficos por pack (extras_default_raw)
+        // 2) aplica defaults específicos por pack (extras_default_raw)
         autoSelectExtrasForBody(b);
 
-        // 3) garante de novo (caso algum extra n├úo tenha sido preenchido)
+        // 3) garante de novo (caso algum extra não tenha sido preenchido)
         ensureDefaultsInBody(b);
 
         // 4) reinicia dropdowns e sincroniza label com o select real
@@ -2071,8 +2068,8 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
         // 5) depois do dropdown, garante novamente (porque ele move o select pro DOM)
         ensureDefaultsInBody(b);
       } else {
-        // ÔØî n├úo zera para "" (isso causa o bug depois)
-        // Em vez disso, volta para o primeiro item (estado v├ílido)
+        // ÔØî não zera para "" (isso causa o bug depois)
+        // Em vez disso, volta para o primeiro item (estado válido)
         b.querySelectorAll('select.kit-variant, select.kit-extra').forEach(s => {
           if (s.options && s.options.length) {
             s.selectedIndex = 0;
@@ -2084,7 +2081,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
     
 
-    // (NOVO) Atualiza o pre├ºo principal (price.liquid) conforme pack ativo
+    // (NOVO) Atualiza o preço principal (price.liquid) conforme pack ativo
     const activeItem = wrap.querySelector('.kb-item.is-active');
     kbUpdateMainPriceFromActivePack(activeItem);
     kbUpdateGalleryFromActivePack(activeItem);
@@ -2101,7 +2098,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     openPack(preferredPack);
   }
 
-  // (NOVO) Garante que o pre├ºo principal j├í inicie correto
+  // (NOVO) Garante que o preço principal já inicie correto
   kbUpdateMainPriceFromActivePack(wrap.querySelector('.kb-item.is-active'));
 
   function parseDefaultExtras(str){
@@ -2136,7 +2133,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
   heads.forEach(h => h.addEventListener('click', () => openPack(h.dataset.pack)));
 
-  // fallback antigo: s├│ roda se n├úo veio preferredPack
+  // fallback antigo: só roda se não veio preferredPack
   if (!preferredPack) {
     const initialActive = wrap.querySelector('.kb-item.is-active');
     if (initialActive) {
@@ -2159,7 +2156,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
   if (!buyBtn) return;
 
-  // Ô£à trava anti duplo clique / m├║ltiplos listeners
+  // Ô£à trava anti duplo clique / múltiplos listeners
   if (buyBtn.dataset.kbLoading === '1') return;
   buyBtn.dataset.kbLoading = '1';
 
@@ -2176,7 +2173,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     const kitPriceCents = Number(active.dataset.kitPriceCents || 0);
 
     if (!kitVariantId) {
-      setError('N├úo encontrei a variante do produto KIT para este pack. Verifique as variantes do produto KIT.');
+      setError('Não encontrei a variante do produto KIT para este pack. Verifique as variantes do produto KIT.');
       return;
     }
 
@@ -2191,7 +2188,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
     const ids = selects.map(s => Number(s.value));
     if (ids.some(id => !id)) {
-      setError('Selecione todas as op├º├Áes antes de continuar.');
+      setError('Selecione todas as opções antes de continuar.');
       return;
     }
 
@@ -2336,7 +2333,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       const firstItem = parsed?.items?.[0];
       const hasProps = !!firstItem?.properties;
 
-      // ­ƒÜ¿ algu├®m adicionou item sem properties
+      // ­ƒÜ¿ alguém adicionou item sem properties
       if (parsed?.items && !hasProps) {
         flagExternalAdd('fetch_add_without_properties');
       }
@@ -2378,20 +2375,20 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       </div>
 
       <div class="kb-floating-texts">
-        <div class="kb-floating-subtitle" data-kb-subtitle>ÔÇö</div>
+        <div class="kb-floating-subtitle" data-kb-subtitle>—</div>
         <div class="kb-floating-titleline">
-          <span class="kb-floating-title" data-kb-title>ÔÇö</span>
-          <span class="kb-badge kb-badge--off kb-badge--inline" data-kb-off hidden>ÔÇö</span>
+          <span class="kb-floating-title" data-kb-title>—</span>
+          <span class="kb-badge kb-badge--off kb-badge--inline" data-kb-off hidden>—</span>
         </div>
       </div>
     </div>
 
     <div class="kb-floating-price">
-      <s class="kb-floating-compare" data-kb-compare hidden>ÔÇö</s>
-      <span class="kb-floating-final" data-kb-price>ÔÇö</span>
+      <s class="kb-floating-compare" data-kb-compare hidden>—</s>
+      <span class="kb-floating-final" data-kb-price>—</span>
     </div>
 
-    <button type="button" class="kb-floating-btn" aria-label="Comprar (ir para sele├º├úo do kit)">
+    <button type="button" class="kb-floating-btn" aria-label="Comprar (ir para seleção do kit)">
       Comprar agora
     </button>
   </div>
@@ -2402,7 +2399,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   const priceEl = bar.querySelector('[data-kb-price]');
 
   // thumb + textos fixos (produto base)
-  const baseTitle = kitRoot.dataset.baseTitle || 'ÔÇö';
+  const baseTitle = kitRoot.dataset.baseTitle || '—';
   const baseSubtitle = (kitRoot.dataset.baseSubtitle && kitRoot.dataset.baseSubtitle !== 'Default Title')
     ? kitRoot.dataset.baseSubtitle
     : '';
@@ -2411,8 +2408,8 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   const subtitleEl = bar.querySelector('[data-kb-subtitle]');
   if (titleEl) titleEl.textContent = baseTitle;
 
-  // inicialmente: mant├®m baseSubtitle (desktop) ou ÔÇö; mobile ser├í sobrescrito em updateFloatingLabel
-  if (subtitleEl) subtitleEl.textContent = baseSubtitle || 'ÔÇö';
+  // inicialmente: mantém baseSubtitle (desktop) ou —; mobile será sobrescrito em updateFloatingLabel
+  if (subtitleEl) subtitleEl.textContent = baseSubtitle || '—';
 
   const imgEl = bar.querySelector('[data-kb-thumb]');
   const imgUrl = kitRoot.dataset.baseImage || '';
@@ -2504,8 +2501,8 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     const pack = getPackFromItem(item);
     const prices = getPricesFromItem(item);
 
-    // pre├ºo final
-    if (priceEl) priceEl.textContent = prices.price || 'ÔÇö';
+    // preço final
+    if (priceEl) priceEl.textContent = prices.price || '—';
 
     // compare
     const compareEl = bar.querySelector('[data-kb-compare]');
@@ -2518,7 +2515,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       }
     }
 
-    // OFF ÔÇö clona do pack ativo (n├úo recalcula)
+    // OFF — clona do pack ativo (não recalcula)
     const offElLocal = bar.querySelector('[data-kb-off]');
     const offFromItem = item.querySelector('.kb-badge--off');
     if (offElLocal) {
@@ -2530,7 +2527,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
       }
     }
 
-    // Ô£à MOBILE: s├│ "Kit X unidades". DESKTOP: mant├®m baseSubtitle + Kit X
+    // Ô£à MOBILE: só "Kit X unidades". DESKTOP: mantém baseSubtitle + Kit X
     const isMobile = window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
     const packIsNumeric = pack && /^\d+\$/.test(pack);
     const kitLabel = pack
@@ -2545,7 +2542,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
         const subtitle = [];
         if (baseSubtitle) subtitle.push(baseSubtitle);
         if (pack) subtitle.push(packIsNumeric ? \`Kit \${pack} unidade\${pack === '1' ? '' : 's'}\` : pack);
-        subtitleEl2.textContent = subtitle.length ? subtitle.join(' ÔÇó ') : 'ÔÇö';
+        subtitleEl2.textContent = subtitle.length ? subtitle.join(' • ') : '—';
       }
     }
   }
@@ -2594,7 +2591,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
 
 <div>
-  <!-- Delivery Pill (custom) ÔÇö TEXTO AJUSTADO -->
+  <!-- Delivery Pill (custom) — TEXTO AJUSTADO -->
 
 <div class="vt-delivery-pill" data-vt-delivery-pill>
   <div class="vt-delivery-top">
@@ -2609,26 +2606,26 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
     <div class="vt-delivery-text">
       <div class="vt-delivery-line">
         <strong class="vt-delivery-strong">ENTREGA FULL</strong>
-        <span class="vt-delivery-range">ÔÇô Envio imediato em at├® 24h</span>
+        <span class="vt-delivery-range">– Envio imediato em até 24h</span>
       </div>
 
       <div class="vt-delivery-timer">
-        Comprando dentro das pr├│ximas <span class="vt-delivery-count" data-vt-countdown>ÔÇö</span>
+        Comprando dentro das próximas <span class="vt-delivery-count" data-vt-countdown>—</span>
       </div>
     </div>
 
     <button
       type="button"
       class="vt-delivery-info"
-      aria-label="Informa├º├Áes sobre entrega"
+      aria-label="Informações sobre entrega"
       data-vt-tooltip-btn
-    >Ôôÿ</button>
+    ></button>
 
     <div class="vt-delivery-tooltip" role="tooltip" data-vt-tooltip hidden>
       <div class="vt-delivery-tooltip-inner">
-        <strong>Entrega Full</strong> garante envio imediato em at├® 24h ap├│s a confirma├º├úo do pedido.
+        <strong>Entrega Full</strong> garante envio imediato em até 24h após a confirmação do pedido.
         <br><br>
-        Consulte as op├º├Áes de frete e prazo exato na finaliza├º├úo do pedido.
+        Consulte as opções de frete e prazo exato na finalização do pedido.
       </div>
     </div>
   </div>
@@ -2829,8 +2826,8 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 <!-- END app snippet -->
 
 <essential-upsell-product-addon-app-block
-  upsell-app-data="{&quot;funnels&quot;:[{&quot;id&quot;:&quot;50df4433-cb31-4adf-a7ed-669c475b1955&quot;,&quot;name&quot;:&quot;Cart page offer&quot;,&quot;content&quot;:{&quot;offerType&quot;:&quot;CROSS_SELL&quot;,&quot;titleText&quot;:&quot;Voc├¬ pode gostar&quot;,&quot;buttonText&quot;:&quot;Comprar&quot;,&quot;secondaryButtonText&quot;:&quot;Close&quot;},&quot;upsell&quot;:{&quot;productsType&quot;:&quot;SPECIFIC&quot;,&quot;recommendationIntent&quot;:&quot;RELATED&quot;,&quot;discountType&quot;:&quot;PERCENTAGE&quot;,&quot;discountValue&quot;:30,&quot;applyDiscountType&quot;:&quot;ALWAYS&quot;,&quot;isHideProductInCart&quot;:false,&quot;isHideTriggerProduct&quot;:true,&quot;isPreselectProducts&quot;:true,&quot;isLimitDiscountedQuantity&quot;:true,&quot;discountedQuantityLimit&quot;:1,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7395852550215&quot;,&quot;shopifyHandle&quot;:&quot;booster-p-d-r-n-vegetal&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7395852779591&quot;,&quot;shopifyHandle&quot;:&quot;serum-firmador-facial&quot;,&quot;variantIds&quot;:[]}],&quot;customDiscounts&quot;:[]},&quot;design&quot;:{&quot;layoutType&quot;:&quot;CAROUSEL&quot;,&quot;stackedProductsCount&quot;:null,&quot;backgroundType&quot;:&quot;MONOCHROME&quot;,&quot;monochromeBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;gradientBackgroundStartColor&quot;:null,&quot;gradientBackgroundEndColor&quot;:null,&quot;gradientBackgroundAngle&quot;:null,&quot;borderRadius&quot;:8,&quot;borderSize&quot;:1,&quot;borderColor&quot;:&quot;#c5c8d1&quot;,&quot;insideTopSpacing&quot;:10,&quot;insideBottomSpacing&quot;:10,&quot;outsideTopSpacing&quot;:20,&quot;outsideBottomSpacing&quot;:20,&quot;font&quot;:&quot;INHERIT&quot;,&quot;titleSize&quot;:16,&quot;titleColor&quot;:&quot;#202223&quot;,&quot;productTitleSize&quot;:14,&quot;productTitleColor&quot;:&quot;#202223&quot;,&quot;productVariantSize&quot;:14,&quot;productVariantColor&quot;:&quot;#96a4b6&quot;,&quot;productPriceSize&quot;:14,&quot;productPriceColor&quot;:&quot;#96a4b6&quot;,&quot;discountedPriceSize&quot;:14,&quot;discountedPriceColor&quot;:&quot;#fa493d&quot;,&quot;buttonBackgroundColor&quot;:&quot;#202223&quot;,&quot;buttonTextSize&quot;:14,&quot;buttonTextColor&quot;:&quot;#fafafa&quot;,&quot;buttonBorderRadius&quot;:4,&quot;navigationIconColor&quot;:&quot;#333333&quot;,&quot;checkboxIconColor&quot;:null,&quot;checkboxBackgroundColor&quot;:null,&quot;checkboxBorderColor&quot;:null,&quot;popupBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;popupCloseButtonColor&quot;:&quot;#202223&quot;,&quot;popupBorderRadius&quot;:16,&quot;secondaryButtonTextSize&quot;:14,&quot;secondaryButtonTextColor&quot;:&quot;#202223&quot;},&quot;placement&quot;:{&quot;type&quot;:&quot;CART_PAGE&quot;,&quot;triggerType&quot;:&quot;SPECIFIC_PRODUCTS&quot;,&quot;cartPagePositionType&quot;:&quot;BOTTOM_OF_THE_CART&quot;,&quot;popupPlacementType&quot;:&quot;PRODUCT_PAGE&quot;,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7376358539335&quot;,&quot;shopifyHandle&quot;:&quot;kit-colageno-verisol┬«&quot;,&quot;variantIds&quot;:[]}],&quot;specificCollections&quot;:[]},&quot;contentTranslations&quot;:[]},{&quot;id&quot;:&quot;e91e11d5-2ab4-4d81-84d3-d92fa5286e2e&quot;,&quot;name&quot;:&quot;Page Collagen&quot;,&quot;content&quot;:{&quot;offerType&quot;:&quot;PRODUCT_ADDON&quot;,&quot;titleText&quot;:&quot;Aproveite e compre junto&quot;,&quot;buttonText&quot;:&quot;Claim Offer {total} {compared-at}&quot;,&quot;secondaryButtonText&quot;:&quot;Close&quot;},&quot;upsell&quot;:{&quot;productsType&quot;:&quot;SPECIFIC&quot;,&quot;recommendationIntent&quot;:&quot;RELATED&quot;,&quot;discountType&quot;:&quot;NONE&quot;,&quot;discountValue&quot;:null,&quot;applyDiscountType&quot;:&quot;ALWAYS&quot;,&quot;isHideProductInCart&quot;:true,&quot;isHideTriggerProduct&quot;:true,&quot;isPreselectProducts&quot;:true,&quot;isLimitDiscountedQuantity&quot;:false,&quot;discountedQuantityLimit&quot;:null,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373957726279&quot;,&quot;shopifyHandle&quot;:&quot;creatina-morning-shot-1&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373960085575&quot;,&quot;shopifyHandle&quot;:&quot;serum-anti-rugas&quot;,&quot;variantIds&quot;:[]}],&quot;customDiscounts&quot;:[]},&quot;design&quot;:{&quot;layoutType&quot;:&quot;STACKED&quot;,&quot;stackedProductsCount&quot;:2,&quot;backgroundType&quot;:&quot;MONOCHROME&quot;,&quot;monochromeBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;gradientBackgroundStartColor&quot;:null,&quot;gradientBackgroundEndColor&quot;:null,&quot;gradientBackgroundAngle&quot;:null,&quot;borderRadius&quot;:10,&quot;borderSize&quot;:1,&quot;borderColor&quot;:&quot;#dfdfdf&quot;,&quot;insideTopSpacing&quot;:10,&quot;insideBottomSpacing&quot;:10,&quot;outsideTopSpacing&quot;:20,&quot;outsideBottomSpacing&quot;:20,&quot;font&quot;:&quot;INHERIT&quot;,&quot;titleSize&quot;:16,&quot;titleColor&quot;:&quot;#141414&quot;,&quot;productTitleSize&quot;:14,&quot;productTitleColor&quot;:&quot;#141414&quot;,&quot;productVariantSize&quot;:14,&quot;productVariantColor&quot;:&quot;#666666&quot;,&quot;productPriceSize&quot;:14,&quot;productPriceColor&quot;:&quot;#a3a3a3&quot;,&quot;discountedPriceSize&quot;:14,&quot;discountedPriceColor&quot;:&quot;#141414&quot;,&quot;buttonBackgroundColor&quot;:&quot;#202223&quot;,&quot;buttonTextSize&quot;:14,&quot;buttonTextColor&quot;:&quot;#fafafa&quot;,&quot;buttonBorderRadius&quot;:8,&quot;navigationIconColor&quot;:&quot;#333333&quot;,&quot;checkboxIconColor&quot;:&quot;#ffffff&quot;,&quot;checkboxBackgroundColor&quot;:&quot;#202223&quot;,&quot;checkboxBorderColor&quot;:&quot;#202223&quot;,&quot;popupBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;popupCloseButtonColor&quot;:&quot;#202223&quot;,&quot;popupBorderRadius&quot;:16,&quot;secondaryButtonTextSize&quot;:14,&quot;secondaryButtonTextColor&quot;:&quot;#202223&quot;},&quot;placement&quot;:{&quot;type&quot;:&quot;PRODUCT_PAGE&quot;,&quot;triggerType&quot;:&quot;SPECIFIC_PRODUCTS&quot;,&quot;cartPagePositionType&quot;:null,&quot;popupPlacementType&quot;:&quot;PRODUCT_PAGE&quot;,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386495559&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-cranberry&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373957136455&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386659399&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-limao&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386692167&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-pink-limonade&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386561095&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-tangerina&quot;,&quot;variantIds&quot;:[]}],&quot;specificCollections&quot;:[]},&quot;contentTranslations&quot;:[]}]}"
-  product-page-product="{&quot;id&quot;:7395852779591,&quot;title&quot;:&quot;Botox Firmador Instant├óneo - FaceLifting PRO&quot;,&quot;handle&quot;:&quot;serum-firmador-facial&quot;,&quot;description&quot;:&quot;\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-4e657dda-5028-4e37-8473-d4dde1d34e6d\&quot;\u003eO Firmador Instant├óneo da Renova Be ├® um cuidado t├│pico desenvolvido para proporcionar efeito tensor imediato na pele. Sua f├│rmula atua na superf├¡cie cut├ónea, ajudando a suavizar linhas finas, reduzir a apar├¬ncia de rugas e melhorar o aspecto da flacidez logo ap├│s a aplica├º├úo.\u003c\/div\u003e\n\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-33938c3c-0f44-46b5-b35a-1f919544864e\&quot;\u003eA pele fica visivelmente mais firme, lisa e com apar├¬ncia descansada. Um aliado pontual para momentos em que voc├¬ quer ver diferen├ºa no espelho, de forma pr├ítica e sem procedimentos invasivos.\u003c\/div\u003e&quot;,&quot;published_at&quot;:&quot;2026-02-06T20:39:38-03:00&quot;,&quot;created_at&quot;:&quot;2026-01-16T10:38:20-03:00&quot;,&quot;vendor&quot;:&quot;Renova Be&quot;,&quot;type&quot;:&quot;Cosm├®tico&quot;,&quot;tags&quot;:[&quot;firmador&quot;,&quot;serum&quot;,&quot;skincare&quot;,&quot;upsell&quot;],&quot;price&quot;:7990,&quot;price_min&quot;:7990,&quot;price_max&quot;:7990,&quot;available&quot;:true,&quot;price_varies&quot;:false,&quot;compare_at_price&quot;:null,&quot;compare_at_price_min&quot;:0,&quot;compare_at_price_max&quot;:0,&quot;compare_at_price_varies&quot;:false,&quot;variants&quot;:[{&quot;id&quot;:42388679917639,&quot;title&quot;:&quot;Default Title&quot;,&quot;option1&quot;:&quot;Default Title&quot;,&quot;option2&quot;:null,&quot;option3&quot;:null,&quot;sku&quot;:&quot;CREM.0238&quot;,&quot;requires_shipping&quot;:false,&quot;taxable&quot;:false,&quot;featured_image&quot;:null,&quot;available&quot;:true,&quot;name&quot;:&quot;Botox Firmador Instant├óneo - FaceLifting PRO&quot;,&quot;public_title&quot;:null,&quot;options&quot;:[&quot;Default Title&quot;],&quot;price&quot;:7990,&quot;weight&quot;:0,&quot;compare_at_price&quot;:null,&quot;inventory_management&quot;:&quot;shopify&quot;,&quot;barcode&quot;:null,&quot;requires_selling_plan&quot;:false,&quot;selling_plan_allocations&quot;:[],&quot;quantity_rule&quot;:{&quot;min&quot;:1,&quot;max&quot;:null,&quot;increment&quot;:1}}],&quot;images&quot;:[&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;,&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-02.jpg?v=1773253103&quot;,&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-03.jpg?v=1773253103&quot;,&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-04.jpg?v=1773253103&quot;,&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-01.jpg?v=1773253103&quot;],&quot;featured_image&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;,&quot;options&quot;:[&quot;Title&quot;],&quot;media&quot;:[{&quot;alt&quot;:null,&quot;id&quot;:24725657059399,&quot;position&quot;:1,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1000,&quot;width&quot;:1000,&quot;src&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1000,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;,&quot;width&quot;:1000},{&quot;alt&quot;:null,&quot;id&quot;:24855403593799,&quot;position&quot;:2,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-02.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-02.jpg?v=1773253103&quot;,&quot;width&quot;:1500},{&quot;alt&quot;:null,&quot;id&quot;:24855403561031,&quot;position&quot;:3,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-03.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-03.jpg?v=1773253103&quot;,&quot;width&quot;:1500},{&quot;alt&quot;:null,&quot;id&quot;:24855403528263,&quot;position&quot;:4,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-04.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-04.jpg?v=1773253103&quot;,&quot;width&quot;:1500},{&quot;alt&quot;:null,&quot;id&quot;:24855403495495,&quot;position&quot;:5,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-01.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/renovabe.com.br\/cdn\/shop\/files\/galeria-firmador-instantaneo-01.jpg?v=1773253103&quot;,&quot;width&quot;:1500}],&quot;requires_selling_plan&quot;:false,&quot;selling_plan_groups&quot;:[],&quot;content&quot;:&quot;\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-4e657dda-5028-4e37-8473-d4dde1d34e6d\&quot;\u003eO Firmador Instant├óneo da Renova Be ├® um cuidado t├│pico desenvolvido para proporcionar efeito tensor imediato na pele. Sua f├│rmula atua na superf├¡cie cut├ónea, ajudando a suavizar linhas finas, reduzir a apar├¬ncia de rugas e melhorar o aspecto da flacidez logo ap├│s a aplica├º├úo.\u003c\/div\u003e\n\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-33938c3c-0f44-46b5-b35a-1f919544864e\&quot;\u003eA pele fica visivelmente mais firme, lisa e com apar├¬ncia descansada. Um aliado pontual para momentos em que voc├¬ quer ver diferen├ºa no espelho, de forma pr├ítica e sem procedimentos invasivos.\u003c\/div\u003e&quot;}"
+  upsell-app-data="{&quot;funnels&quot;:[{&quot;id&quot;:&quot;50df4433-cb31-4adf-a7ed-669c475b1955&quot;,&quot;name&quot;:&quot;Cart page offer&quot;,&quot;content&quot;:{&quot;offerType&quot;:&quot;CROSS_SELL&quot;,&quot;titleText&quot;:&quot;Você pode gostar&quot;,&quot;buttonText&quot;:&quot;Comprar&quot;,&quot;secondaryButtonText&quot;:&quot;Close&quot;},&quot;upsell&quot;:{&quot;productsType&quot;:&quot;SPECIFIC&quot;,&quot;recommendationIntent&quot;:&quot;RELATED&quot;,&quot;discountType&quot;:&quot;PERCENTAGE&quot;,&quot;discountValue&quot;:30,&quot;applyDiscountType&quot;:&quot;ALWAYS&quot;,&quot;isHideProductInCart&quot;:false,&quot;isHideTriggerProduct&quot;:true,&quot;isPreselectProducts&quot;:true,&quot;isLimitDiscountedQuantity&quot;:true,&quot;discountedQuantityLimit&quot;:1,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7395852550215&quot;,&quot;shopifyHandle&quot;:&quot;booster-p-d-r-n-vegetal&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7395852779591&quot;,&quot;shopifyHandle&quot;:&quot;serum-firmador-facial&quot;,&quot;variantIds&quot;:[]}],&quot;customDiscounts&quot;:[]},&quot;design&quot;:{&quot;layoutType&quot;:&quot;CAROUSEL&quot;,&quot;stackedProductsCount&quot;:null,&quot;backgroundType&quot;:&quot;MONOCHROME&quot;,&quot;monochromeBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;gradientBackgroundStartColor&quot;:null,&quot;gradientBackgroundEndColor&quot;:null,&quot;gradientBackgroundAngle&quot;:null,&quot;borderRadius&quot;:8,&quot;borderSize&quot;:1,&quot;borderColor&quot;:&quot;#c5c8d1&quot;,&quot;insideTopSpacing&quot;:10,&quot;insideBottomSpacing&quot;:10,&quot;outsideTopSpacing&quot;:20,&quot;outsideBottomSpacing&quot;:20,&quot;font&quot;:&quot;INHERIT&quot;,&quot;titleSize&quot;:16,&quot;titleColor&quot;:&quot;#202223&quot;,&quot;productTitleSize&quot;:14,&quot;productTitleColor&quot;:&quot;#202223&quot;,&quot;productVariantSize&quot;:14,&quot;productVariantColor&quot;:&quot;#96a4b6&quot;,&quot;productPriceSize&quot;:14,&quot;productPriceColor&quot;:&quot;#96a4b6&quot;,&quot;discountedPriceSize&quot;:14,&quot;discountedPriceColor&quot;:&quot;#fa493d&quot;,&quot;buttonBackgroundColor&quot;:&quot;#202223&quot;,&quot;buttonTextSize&quot;:14,&quot;buttonTextColor&quot;:&quot;#fafafa&quot;,&quot;buttonBorderRadius&quot;:4,&quot;navigationIconColor&quot;:&quot;#333333&quot;,&quot;checkboxIconColor&quot;:null,&quot;checkboxBackgroundColor&quot;:null,&quot;checkboxBorderColor&quot;:null,&quot;popupBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;popupCloseButtonColor&quot;:&quot;#202223&quot;,&quot;popupBorderRadius&quot;:16,&quot;secondaryButtonTextSize&quot;:14,&quot;secondaryButtonTextColor&quot;:&quot;#202223&quot;},&quot;placement&quot;:{&quot;type&quot;:&quot;CART_PAGE&quot;,&quot;triggerType&quot;:&quot;SPECIFIC_PRODUCTS&quot;,&quot;cartPagePositionType&quot;:&quot;BOTTOM_OF_THE_CART&quot;,&quot;popupPlacementType&quot;:&quot;PRODUCT_PAGE&quot;,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7376358539335&quot;,&quot;shopifyHandle&quot;:&quot;kit-colageno-verisol┬«&quot;,&quot;variantIds&quot;:[]}],&quot;specificCollections&quot;:[]},&quot;contentTranslations&quot;:[]},{&quot;id&quot;:&quot;e91e11d5-2ab4-4d81-84d3-d92fa5286e2e&quot;,&quot;name&quot;:&quot;Page Collagen&quot;,&quot;content&quot;:{&quot;offerType&quot;:&quot;PRODUCT_ADDON&quot;,&quot;titleText&quot;:&quot;Aproveite e compre junto&quot;,&quot;buttonText&quot;:&quot;Claim Offer {total} {compared-at}&quot;,&quot;secondaryButtonText&quot;:&quot;Close&quot;},&quot;upsell&quot;:{&quot;productsType&quot;:&quot;SPECIFIC&quot;,&quot;recommendationIntent&quot;:&quot;RELATED&quot;,&quot;discountType&quot;:&quot;NONE&quot;,&quot;discountValue&quot;:null,&quot;applyDiscountType&quot;:&quot;ALWAYS&quot;,&quot;isHideProductInCart&quot;:true,&quot;isHideTriggerProduct&quot;:true,&quot;isPreselectProducts&quot;:true,&quot;isLimitDiscountedQuantity&quot;:false,&quot;discountedQuantityLimit&quot;:null,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373957726279&quot;,&quot;shopifyHandle&quot;:&quot;creatina-morning-shot-1&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373960085575&quot;,&quot;shopifyHandle&quot;:&quot;serum-anti-rugas&quot;,&quot;variantIds&quot;:[]}],&quot;customDiscounts&quot;:[]},&quot;design&quot;:{&quot;layoutType&quot;:&quot;STACKED&quot;,&quot;stackedProductsCount&quot;:2,&quot;backgroundType&quot;:&quot;MONOCHROME&quot;,&quot;monochromeBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;gradientBackgroundStartColor&quot;:null,&quot;gradientBackgroundEndColor&quot;:null,&quot;gradientBackgroundAngle&quot;:null,&quot;borderRadius&quot;:10,&quot;borderSize&quot;:1,&quot;borderColor&quot;:&quot;#dfdfdf&quot;,&quot;insideTopSpacing&quot;:10,&quot;insideBottomSpacing&quot;:10,&quot;outsideTopSpacing&quot;:20,&quot;outsideBottomSpacing&quot;:20,&quot;font&quot;:&quot;INHERIT&quot;,&quot;titleSize&quot;:16,&quot;titleColor&quot;:&quot;#141414&quot;,&quot;productTitleSize&quot;:14,&quot;productTitleColor&quot;:&quot;#141414&quot;,&quot;productVariantSize&quot;:14,&quot;productVariantColor&quot;:&quot;#666666&quot;,&quot;productPriceSize&quot;:14,&quot;productPriceColor&quot;:&quot;#a3a3a3&quot;,&quot;discountedPriceSize&quot;:14,&quot;discountedPriceColor&quot;:&quot;#141414&quot;,&quot;buttonBackgroundColor&quot;:&quot;#202223&quot;,&quot;buttonTextSize&quot;:14,&quot;buttonTextColor&quot;:&quot;#fafafa&quot;,&quot;buttonBorderRadius&quot;:8,&quot;navigationIconColor&quot;:&quot;#333333&quot;,&quot;checkboxIconColor&quot;:&quot;#ffffff&quot;,&quot;checkboxBackgroundColor&quot;:&quot;#202223&quot;,&quot;checkboxBorderColor&quot;:&quot;#202223&quot;,&quot;popupBackgroundColor&quot;:&quot;#ffffff&quot;,&quot;popupCloseButtonColor&quot;:&quot;#202223&quot;,&quot;popupBorderRadius&quot;:16,&quot;secondaryButtonTextSize&quot;:14,&quot;secondaryButtonTextColor&quot;:&quot;#202223&quot;},&quot;placement&quot;:{&quot;type&quot;:&quot;PRODUCT_PAGE&quot;,&quot;triggerType&quot;:&quot;SPECIFIC_PRODUCTS&quot;,&quot;cartPagePositionType&quot;:null,&quot;popupPlacementType&quot;:&quot;PRODUCT_PAGE&quot;,&quot;specificProducts&quot;:[{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386495559&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-cranberry&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7373957136455&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386659399&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-limao&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386692167&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-pink-limonade&quot;,&quot;variantIds&quot;:[]},{&quot;shopifyId&quot;:&quot;gid://shopify/Product/7374386561095&quot;,&quot;shopifyHandle&quot;:&quot;colageno-verisol┬«-com-acido-hialuronico-frutado-tangerina&quot;,&quot;variantIds&quot;:[]}],&quot;specificCollections&quot;:[]},&quot;contentTranslations&quot;:[]}]}"
+  product-page-product="{&quot;id&quot;:7395852779591,&quot;title&quot;:&quot;Botox Firmador Instantâneo - FaceLifting PRO&quot;,&quot;handle&quot;:&quot;serum-firmador-facial&quot;,&quot;description&quot;:&quot;\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-4e657dda-5028-4e37-8473-d4dde1d34e6d\&quot;\u003eO Firmador Instantâneo da AGE Solution é um cuidado tópico desenvolvido para proporcionar efeito tensor imediato na pele. Sua fórmula atua na superfície cutânea, ajudando a suavizar linhas finas, reduzir a aparência de rugas e melhorar o aspecto da flacidez logo após a aplicação.\u003c\/div\u003e\n\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-33938c3c-0f44-46b5-b35a-1f919544864e\&quot;\u003eA pele fica visivelmente mais firme, lisa e com aparência descansada. Um aliado pontual para momentos em que você quer ver diferença no espelho, de forma prática e sem procedimentos invasivos.\u003c\/div\u003e&quot;,&quot;published_at&quot;:&quot;2026-02-06T20:39:38-03:00&quot;,&quot;created_at&quot;:&quot;2026-01-16T10:38:20-03:00&quot;,&quot;vendor&quot;:&quot;AGE Solution&quot;,&quot;type&quot;:&quot;Cosmético&quot;,&quot;tags&quot;:[&quot;firmador&quot;,&quot;serum&quot;,&quot;skincare&quot;,&quot;upsell&quot;],&quot;price&quot;:7990,&quot;price_min&quot;:7990,&quot;price_max&quot;:7990,&quot;available&quot;:true,&quot;price_varies&quot;:false,&quot;compare_at_price&quot;:null,&quot;compare_at_price_min&quot;:0,&quot;compare_at_price_max&quot;:0,&quot;compare_at_price_varies&quot;:false,&quot;variants&quot;:[{&quot;id&quot;:42388679917639,&quot;title&quot;:&quot;Default Title&quot;,&quot;option1&quot;:&quot;Default Title&quot;,&quot;option2&quot;:null,&quot;option3&quot;:null,&quot;sku&quot;:&quot;CREM.0238&quot;,&quot;requires_shipping&quot;:false,&quot;taxable&quot;:false,&quot;featured_image&quot;:null,&quot;available&quot;:true,&quot;name&quot;:&quot;Botox Firmador Instantâneo - FaceLifting PRO&quot;,&quot;public_title&quot;:null,&quot;options&quot;:[&quot;Default Title&quot;],&quot;price&quot;:7990,&quot;weight&quot;:0,&quot;compare_at_price&quot;:null,&quot;inventory_management&quot;:&quot;shopify&quot;,&quot;barcode&quot;:null,&quot;requires_selling_plan&quot;:false,&quot;selling_plan_allocations&quot;:[],&quot;quantity_rule&quot;:{&quot;min&quot;:1,&quot;max&quot;:null,&quot;increment&quot;:1}}],&quot;images&quot;:[&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;,&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-02.jpg?v=1773253103&quot;,&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-03.jpg?v=1773253103&quot;,&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-04.jpg?v=1773253103&quot;,&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-01.jpg?v=1773253103&quot;],&quot;featured_image&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;,&quot;options&quot;:[&quot;Title&quot;],&quot;media&quot;:[{&quot;alt&quot;:null,&quot;id&quot;:24725657059399,&quot;position&quot;:1,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1000,&quot;width&quot;:1000,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1000,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349&quot;,&quot;width&quot;:1000},{&quot;alt&quot;:null,&quot;id&quot;:24855403593799,&quot;position&quot;:2,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-02.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-02.jpg?v=1773253103&quot;,&quot;width&quot;:1500},{&quot;alt&quot;:null,&quot;id&quot;:24855403561031,&quot;position&quot;:3,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-03.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-03.jpg?v=1773253103&quot;,&quot;width&quot;:1500},{&quot;alt&quot;:null,&quot;id&quot;:24855403528263,&quot;position&quot;:4,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-04.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-04.jpg?v=1773253103&quot;,&quot;width&quot;:1500},{&quot;alt&quot;:null,&quot;id&quot;:24855403495495,&quot;position&quot;:5,&quot;preview_image&quot;:{&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;width&quot;:1500,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-01.jpg?v=1773253103&quot;},&quot;aspect_ratio&quot;:1.0,&quot;height&quot;:1500,&quot;media_type&quot;:&quot;image&quot;,&quot;src&quot;:&quot;\/\/age-solution-suplementos.myshopify.com\/cdn\/shop\/files\/galeria-firmador-instantaneo-01.jpg?v=1773253103&quot;,&quot;width&quot;:1500}],&quot;requires_selling_plan&quot;:false,&quot;selling_plan_groups&quot;:[],&quot;content&quot;:&quot;\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-4e657dda-5028-4e37-8473-d4dde1d34e6d\&quot;\u003eO Firmador Instantâneo da AGE Solution é um cuidado tópico desenvolvido para proporcionar efeito tensor imediato na pele. Sua fórmula atua na superfície cutânea, ajudando a suavizar linhas finas, reduzir a aparência de rugas e melhorar o aspecto da flacidez logo após a aplicação.\u003c\/div\u003e\n\u003cdiv class=\&quot;ql-block\&quot; data-block-id=\&quot;block-33938c3c-0f44-46b5-b35a-1f919544864e\&quot;\u003eA pele fica visivelmente mais firme, lisa e com aparência descansada. Um aliado pontual para momentos em que você quer ver diferença no espelho, de forma prática e sem procedimentos invasivos.\u003c\/div\u003e&quot;}"
   product-page-collection-ids="[286178869319]"
   cart-product-ids="[]"
   first-shop-product-id="7395852550215"
@@ -3052,14 +3049,14 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                 
                   <img
                     style="width: 22px; object-fit: contain; margin-right: 32px; flex-shrink: 0;"
-                    src="//renovabe.com.br/cdn/shop/files/info_1.svg?v=1768424274"
+                    src="//age-solution-suplementos.myshopify.com/cdn/shop/files/info_1.svg?v=1768424274"
                     alt=""
                   >
                 
                 <div
                   style=""
                 >
-                  Descri├º├úo
+                  Descrição
                 </div>
 
                 <svg
@@ -3119,14 +3116,14 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                 
                   <img
                     style="width: 22px; object-fit: contain; margin-right: 32px; flex-shrink: 0;"
-                    src="//renovabe.com.br/cdn/shop/files/heart_1.svg?v=1768425054"
+                    src="//age-solution-suplementos.myshopify.com/cdn/shop/files/heart_1.svg?v=1768425054"
                     alt=""
                   >
                 
                 <div
                   style=""
                 >
-                  Benef├¡cios
+                  Benefícios
                 </div>
 
                 <svg
@@ -3159,7 +3156,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                 "
               >
                 <p><span class="metafield-multi_line_text_field">- Efeito lifting imediato<br />
- Ajuda a deixar a pele com apar├¬ncia mais firme logo ap├│s a aplica├º├úo.<br />
+ Ajuda a deixar a pele com aparência mais firme logo após a aplicação.<br />
 <br />
 - Suaviza linhas finas e rugas aparentes<br />
  Contribui para uma pele visualmente mais lisa e uniforme.<br />
@@ -3167,14 +3164,14 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 - Melhora o aspecto da flacidez<br />
  Atua no efeito tensor da pele, deixando o contorno facial mais definido.<br />
 <br />
-- Reduz sinais de cansa├ºo<br />
- Ajuda a melhorar a apar├¬ncia da pele cansada, especialmente em regi├Áes delicadas.<br />
+- Reduz sinais de cansaço<br />
+ Ajuda a melhorar a aparência da pele cansada, especialmente em regiões delicadas.<br />
 <br />
-- Resultados vis├¡veis em poucos minutos<br />
+- Resultados visíveis em poucos minutos<br />
  Ideal para uso pontual, antes da maquiagem ou de compromissos especiais.<br />
 <br />
-- Aplica├º├úo pr├ítica e sem procedimentos invasivos<br />
- Um cuidado r├ípido, f├ícil de usar e sem tempo de recupera├º├úo.<br />
+- Aplicação prática e sem procedimentos invasivos<br />
+ Um cuidado rápido, fácil de usar e sem tempo de recuperação.<br />
 </span></p>
                 
               </div>
@@ -3185,7 +3182,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                 class="answer-template--18579175112775__ss_tabs_block_9mRnTb"
               >
                 <p><span class="metafield-multi_line_text_field">- Efeito lifting imediato<br />
- Ajuda a deixar a pele com apar├¬ncia mais firme logo ap├│s a aplica├º├úo.<br />
+ Ajuda a deixar a pele com aparência mais firme logo após a aplicação.<br />
 <br />
 - Suaviza linhas finas e rugas aparentes<br />
  Contribui para uma pele visualmente mais lisa e uniforme.<br />
@@ -3193,14 +3190,14 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 - Melhora o aspecto da flacidez<br />
  Atua no efeito tensor da pele, deixando o contorno facial mais definido.<br />
 <br />
-- Reduz sinais de cansa├ºo<br />
- Ajuda a melhorar a apar├¬ncia da pele cansada, especialmente em regi├Áes delicadas.<br />
+- Reduz sinais de cansaço<br />
+ Ajuda a melhorar a aparência da pele cansada, especialmente em regiões delicadas.<br />
 <br />
-- Resultados vis├¡veis em poucos minutos<br />
+- Resultados visíveis em poucos minutos<br />
  Ideal para uso pontual, antes da maquiagem ou de compromissos especiais.<br />
 <br />
-- Aplica├º├úo pr├ítica e sem procedimentos invasivos<br />
- Um cuidado r├ípido, f├ícil de usar e sem tempo de recupera├º├úo.<br />
+- Aplicação prática e sem procedimentos invasivos<br />
+ Um cuidado rápido, fácil de usar e sem tempo de recuperação.<br />
 </span></p>
                 
               </div>
@@ -3220,7 +3217,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                 
                   <img
                     style="width: 22px; object-fit: contain; margin-right: 32px; flex-shrink: 0;"
-                    src="//renovabe.com.br/cdn/shop/files/leaf.svg?v=1768425122"
+                    src="//age-solution-suplementos.myshopify.com/cdn/shop/files/leaf.svg?v=1768425122"
                     alt=""
                   >
                 
@@ -3259,37 +3256,37 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   --color: #666666;
                 "
               >
-                <p><span class="metafield-multi_line_text_field">├ügua Purificada:<br />
-Base da f├│rmula e ve├¡culo dos ativos.<br />
-ÔÇó Garante distribui├º├úo uniforme<br />
- ÔÇó Facilita absor├º├úo r├ípida<br />
- ÔÇó Proporciona aplica├º├úo leve e confort├ível<br />
-A ├ígua purificada assegura estabilidade e seguran├ºa dermatol├│gica.<br />
+                <p><span class="metafield-multi_line_text_field">ügua Purificada:<br />
+Base da fórmula e veículo dos ativos.<br />
+• Garante distribuição uniforme<br />
+ • Facilita absorção rápida<br />
+ • Proporciona aplicação leve e confortável<br />
+A água purificada assegura estabilidade e segurança dermatológica.<br />
 <br />
-Silicato de S├│dio:<br />
-Principal respons├ível pelo efeito tensor imediato.<br />
+Silicato de Sódio:<br />
+Principal responsável pelo efeito tensor imediato.<br />
 Quando aplicado na pele:<br />
-ÔÇó Forma um filme invis├¡vel e el├ístico<br />
-ÔÇó Promove contra├º├úo tempor├íria da superf├¡cie cut├ónea<br />
-ÔÇó Suaviza visualmente linhas finas<br />
-ÔÇó Proporciona efeito lifting em at├® 90 segundos<br />
-├ë o ativo que cria o chamado ÔÇ£efeito CinderelaÔÇØ: resultado vis├¡vel, r├ípido e tempor├írio.<br />
+• Forma um filme invisível e elástico<br />
+• Promove contração temporária da superfície cutânea<br />
+• Suaviza visualmente linhas finas<br />
+• Proporciona efeito lifting em até 90 segundos<br />
+ë o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.<br />
 <br />
-Silicato de Magn├®sio e Alum├¡nio:<br />
-Ativo mineral com fun├º├úo estruturante e estabilizadora.<br />
-ÔÇó Potencializa o efeito tensor<br />
- ÔÇó Melhora a ader├¬ncia do filme firmador<br />
- ÔÇó Contribui para acabamento mais uniforme<br />
- ÔÇó Auxilia no controle de oleosidade superficial<br />
-Ajuda a manter o efeito lifting mais homog├¬neo e natural.<br />
+Silicato de Magnésio e Alumínio:<br />
+Ativo mineral com função estruturante e estabilizadora.<br />
+• Potencializa o efeito tensor<br />
+ • Melhora a aderência do filme firmador<br />
+ • Contribui para acabamento mais uniforme<br />
+ • Auxilia no controle de oleosidade superficial<br />
+Ajuda a manter o efeito lifting mais homogêneo e natural.<br />
 <br />
-Acetil Hexapept├¡deo-8:<br />
-Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├úo.<br />
-ÔÇó Ajuda a reduzir a contra├º├úo muscular superficial repetitiva<br />
- ÔÇó Contribui para suaviza├º├úo progressiva das linhas<br />
- ÔÇó Atua como coadjuvante anti-idade<br />
- ÔÇó Melhora o aspecto da pele com uso cont├¡nuo<br />
-├ë um ativo reconhecido na cosmetologia por auxiliar na apar├¬ncia de rugas din├ómicas.<br />
+Acetil Hexapeptídeo-8:<br />
+Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
+• Ajuda a reduzir a contração muscular superficial repetitiva<br />
+ • Contribui para suavização progressiva das linhas<br />
+ • Atua como coadjuvante anti-idade<br />
+ • Melhora o aspecto da pele com uso contínuo<br />
+ë um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.<br />
 </span></p>
                 
               </div>
@@ -3299,37 +3296,37 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
               <div
                 class="answer-template--18579175112775__ss_tabs_block_9mRnTb"
               >
-                <p><span class="metafield-multi_line_text_field">├ügua Purificada:<br />
-Base da f├│rmula e ve├¡culo dos ativos.<br />
-ÔÇó Garante distribui├º├úo uniforme<br />
- ÔÇó Facilita absor├º├úo r├ípida<br />
- ÔÇó Proporciona aplica├º├úo leve e confort├ível<br />
-A ├ígua purificada assegura estabilidade e seguran├ºa dermatol├│gica.<br />
+                <p><span class="metafield-multi_line_text_field">ügua Purificada:<br />
+Base da fórmula e veículo dos ativos.<br />
+• Garante distribuição uniforme<br />
+ • Facilita absorção rápida<br />
+ • Proporciona aplicação leve e confortável<br />
+A água purificada assegura estabilidade e segurança dermatológica.<br />
 <br />
-Silicato de S├│dio:<br />
-Principal respons├ível pelo efeito tensor imediato.<br />
+Silicato de Sódio:<br />
+Principal responsável pelo efeito tensor imediato.<br />
 Quando aplicado na pele:<br />
-ÔÇó Forma um filme invis├¡vel e el├ístico<br />
-ÔÇó Promove contra├º├úo tempor├íria da superf├¡cie cut├ónea<br />
-ÔÇó Suaviza visualmente linhas finas<br />
-ÔÇó Proporciona efeito lifting em at├® 90 segundos<br />
-├ë o ativo que cria o chamado ÔÇ£efeito CinderelaÔÇØ: resultado vis├¡vel, r├ípido e tempor├írio.<br />
+• Forma um filme invisível e elástico<br />
+• Promove contração temporária da superfície cutânea<br />
+• Suaviza visualmente linhas finas<br />
+• Proporciona efeito lifting em até 90 segundos<br />
+ë o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.<br />
 <br />
-Silicato de Magn├®sio e Alum├¡nio:<br />
-Ativo mineral com fun├º├úo estruturante e estabilizadora.<br />
-ÔÇó Potencializa o efeito tensor<br />
- ÔÇó Melhora a ader├¬ncia do filme firmador<br />
- ÔÇó Contribui para acabamento mais uniforme<br />
- ÔÇó Auxilia no controle de oleosidade superficial<br />
-Ajuda a manter o efeito lifting mais homog├¬neo e natural.<br />
+Silicato de Magnésio e Alumínio:<br />
+Ativo mineral com função estruturante e estabilizadora.<br />
+• Potencializa o efeito tensor<br />
+ • Melhora a aderência do filme firmador<br />
+ • Contribui para acabamento mais uniforme<br />
+ • Auxilia no controle de oleosidade superficial<br />
+Ajuda a manter o efeito lifting mais homogêneo e natural.<br />
 <br />
-Acetil Hexapept├¡deo-8:<br />
-Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├úo.<br />
-ÔÇó Ajuda a reduzir a contra├º├úo muscular superficial repetitiva<br />
- ÔÇó Contribui para suaviza├º├úo progressiva das linhas<br />
- ÔÇó Atua como coadjuvante anti-idade<br />
- ÔÇó Melhora o aspecto da pele com uso cont├¡nuo<br />
-├ë um ativo reconhecido na cosmetologia por auxiliar na apar├¬ncia de rugas din├ómicas.<br />
+Acetil Hexapeptídeo-8:<br />
+Peptídeo conhecido por atuar na suavização de linhas de expressão.<br />
+• Ajuda a reduzir a contração muscular superficial repetitiva<br />
+ • Contribui para suavização progressiva das linhas<br />
+ • Atua como coadjuvante anti-idade<br />
+ • Melhora o aspecto da pele com uso contínuo<br />
+ë um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.<br />
 </span></p>
                 
               </div>
@@ -3441,8 +3438,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
   @font-face {
@@ -3450,8 +3447,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
 
@@ -3868,8 +3865,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
 
@@ -3946,8 +3943,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
 
@@ -4034,7 +4031,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
     <div class="feature-body-template--18579175112775__ss_feature_44_mRfcgK">
       <div class="feature-video-template--18579175112775__ss_feature_44_mRfcgK">
           
-            <img src="//renovabe.com.br/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=2000" alt="" srcset="//renovabe.com.br/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=352 352w, //renovabe.com.br/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=832 832w, //renovabe.com.br/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=1920 1920w, //renovabe.com.br/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=2000 2000w" width="2000" height="2769" loading="lazy" class="feature-media-image">
+            <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=2000" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=352 352w, //age-solution-suplementos.myshopify.com/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=832 832w, //age-solution-suplementos.myshopify.com/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=1920 1920w, //age-solution-suplementos.myshopify.com/cdn/shop/files/sesssao-pq-precisa.jpg?v=1772716162&amp;width=2000 2000w" width="2000" height="2769" loading="lazy" class="feature-media-image">
 
           
         </div>
@@ -4043,7 +4040,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           
               
                 <div class="feature-heading-heading_PU8fgz">
-                  <h2>Por que voc├¬ precisa do Firmador?</h2>
+                  <h2>Por que você precisa do Firmador?</h2>
                 </div>
               
             
@@ -4051,7 +4048,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           
               
                 <div class="feature-text-text_bKdAjg">
-                  <p>Sua pele perde firmeza todos os dias, mesmo que voc├¬ n├úo perceba. Radia├º├úo UV, polui├º├úo, estresse, altera├º├Áes hormonais e o pr├│prio envelhecimento natural aceleram a degrada├º├úo do col├ígeno e da elastina. Esses fatores causam:</p>
+                  <p>Sua pele perde firmeza todos os dias, mesmo que você não perceba. Radiação UV, poluição, estresse, alterações hormonais e o próprio envelhecimento natural aceleram a degradação do colágeno e da elastina. Esses fatores causam:</p>
                 </div>
               
             
@@ -4070,11 +4067,11 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                     
                       <div class="feature-feature-icon-template--18579175112775__ss_feature_44_mRfcgK feature-feature-icon-feature_X8yEfL">
                         
-<img src="//renovabe.com.br/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1500" alt="" srcset="//renovabe.com.br/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=165 165w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=360 360w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=535 535w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=750 750w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1070 1070w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
+<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Perda_progressiva_de_colageno.svg?v=1772716118&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
                         
                       </div>
                     
-                    <p class="feature-title-template--18579175112775__ss_feature_44_mRfcgK">Perda progressiva de col├ígeno</p>
+                    <p class="feature-title-template--18579175112775__ss_feature_44_mRfcgK">Perda progressiva de colágeno</p>
                   </div>
                   <div class="feature-open-icon-template--18579175112775__ss_feature_44_mRfcgK">
                     <svg
@@ -4092,10 +4089,10 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                   class="feature-feature-text-template--18579175112775__ss_feature_44_mRfcgK"
                   style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;"
                 >
-                  <p>A partir dos 30 anos, perdemos em m├®dia 1% de col├ígeno ao ano. A exposi├º├úo solar, o estresse oxidativo e a inflama├º├úo ativam enzimas que degradam a matriz de sustenta├º├úo da pele, levando ├á flacidez e ├á forma├º├úo de rugas.</p>
+                  <p>A partir dos 30 anos, perdemos em média 1% de colágeno ao ano. A exposição solar, o estresse oxidativo e a inflamação ativam enzimas que degradam a matriz de sustentação da pele, levando à flacidez e à formação de rugas.</p>
                 </div>
                 <div class="feature-height-cal-template--18579175112775__ss_feature_44_mRfcgK">
-                  <p>A partir dos 30 anos, perdemos em m├®dia 1% de col├ígeno ao ano. A exposi├º├úo solar, o estresse oxidativo e a inflama├º├úo ativam enzimas que degradam a matriz de sustenta├º├úo da pele, levando ├á flacidez e ├á forma├º├úo de rugas.</p>
+                  <p>A partir dos 30 anos, perdemos em média 1% de colágeno ao ano. A exposição solar, o estresse oxidativo e a inflamação ativam enzimas que degradam a matriz de sustentação da pele, levando à flacidez e à formação de rugas.</p>
                 </div>
               </div>
 
@@ -4116,11 +4113,11 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                     
                       <div class="feature-feature-icon-template--18579175112775__ss_feature_44_mRfcgK feature-feature-icon-feature_aJVHb3">
                         
-<img src="//renovabe.com.br/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1500" alt="" srcset="//renovabe.com.br/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=165 165w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=360 360w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=535 535w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=750 750w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1070 1070w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
+<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Flacidez_e_perda.svg?v=1772716059&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
                         
                       </div>
                     
-                    <p class="feature-title-template--18579175112775__ss_feature_44_mRfcgK">Flacidez e perda de defini├º├úo do contorno facial</p>
+                    <p class="feature-title-template--18579175112775__ss_feature_44_mRfcgK">Flacidez e perda de definição do contorno facial</p>
                   </div>
                   <div class="feature-open-icon-template--18579175112775__ss_feature_44_mRfcgK">
                     <svg
@@ -4138,10 +4135,10 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                   class="feature-feature-text-template--18579175112775__ss_feature_44_mRfcgK"
                   style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;"
                 >
-                  <p>Com menos col├ígeno e elastina, a pele perde sua capacidade de sustenta├º├úo. O resultado ├® a sensa├º├úo de que o rosto ÔÇ£cedeÔÇØ, especialmente na regi├úo do maxilar, bochechas e pesco├ºo. </p>
+                  <p>Com menos colágeno e elastina, a pele perde sua capacidade de sustentação. O resultado é a sensação de que o rosto “cede”, especialmente na região do maxilar, bochechas e pescoço. </p>
                 </div>
                 <div class="feature-height-cal-template--18579175112775__ss_feature_44_mRfcgK">
-                  <p>Com menos col├ígeno e elastina, a pele perde sua capacidade de sustenta├º├úo. O resultado ├® a sensa├º├úo de que o rosto ÔÇ£cedeÔÇØ, especialmente na regi├úo do maxilar, bochechas e pesco├ºo. </p>
+                  <p>Com menos colágeno e elastina, a pele perde sua capacidade de sustentação. O resultado é a sensação de que o rosto “cede”, especialmente na região do maxilar, bochechas e pescoço. </p>
                 </div>
               </div>
 
@@ -4162,7 +4159,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                     
                       <div class="feature-feature-icon-template--18579175112775__ss_feature_44_mRfcgK feature-feature-icon-feature_bJrajX">
                         
-<img src="//renovabe.com.br/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1500" alt="" srcset="//renovabe.com.br/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=165 165w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=360 360w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=535 535w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=750 750w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1070 1070w, //renovabe.com.br/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
+<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios__Linhas_mais_marcadas.svg?v=1772716102&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
                         
                       </div>
                     
@@ -4184,10 +4181,10 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                   class="feature-feature-text-template--18579175112775__ss_feature_44_mRfcgK"
                   style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;"
                 >
-                  <p>A redu├º├úo da densidade d├®rmica faz com que as linhas de express├úo fiquem mais vis├¡veis, mesmo quando voc├¬ est├í descansada. A pele perde aquele aspecto firme e resistente.</p>
+                  <p>A redução da densidade dérmica faz com que as linhas de expressão fiquem mais visíveis, mesmo quando você está descansada. A pele perde aquele aspecto firme e resistente.</p>
                 </div>
                 <div class="feature-height-cal-template--18579175112775__ss_feature_44_mRfcgK">
-                  <p>A redu├º├úo da densidade d├®rmica faz com que as linhas de express├úo fiquem mais vis├¡veis, mesmo quando voc├¬ est├í descansada. A pele perde aquele aspecto firme e resistente.</p>
+                  <p>A redução da densidade dérmica faz com que as linhas de expressão fiquem mais visíveis, mesmo quando você está descansada. A pele perde aquele aspecto firme e resistente.</p>
                 </div>
               </div>
 
@@ -4208,11 +4205,11 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                     
                       <div class="feature-feature-icon-template--18579175112775__ss_feature_44_mRfcgK feature-feature-icon-feature_iJA4Uj">
                         
-<img src="//renovabe.com.br/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1500" alt="" srcset="//renovabe.com.br/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=165 165w, //renovabe.com.br/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=360 360w, //renovabe.com.br/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=535 535w, //renovabe.com.br/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=750 750w, //renovabe.com.br/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1070 1070w, //renovabe.com.br/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
+<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Textura_irregular.svg?v=1772716145&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
                         
                       </div>
                     
-                    <p class="feature-title-template--18579175112775__ss_feature_44_mRfcgK">Textura irregular e apar├¬ncia menos uniforme</p>
+                    <p class="feature-title-template--18579175112775__ss_feature_44_mRfcgK">Textura irregular e aparência menos uniforme</p>
                   </div>
                   <div class="feature-open-icon-template--18579175112775__ss_feature_44_mRfcgK">
                     <svg
@@ -4230,10 +4227,10 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                   class="feature-feature-text-template--18579175112775__ss_feature_44_mRfcgK"
                   style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;"
                 >
-                  <p>Com o enfraquecimento da estrutura cut├ónea, a pele pode parecer mais fina, com poros mais aparentes e menos vi├ºo.</p>
+                  <p>Com o enfraquecimento da estrutura cutânea, a pele pode parecer mais fina, com poros mais aparentes e menos viço.</p>
                 </div>
                 <div class="feature-height-cal-template--18579175112775__ss_feature_44_mRfcgK">
-                  <p>Com o enfraquecimento da estrutura cut├ónea, a pele pode parecer mais fina, com poros mais aparentes e menos vi├ºo.</p>
+                  <p>Com o enfraquecimento da estrutura cutânea, a pele pode parecer mais fina, com poros mais aparentes e menos viço.</p>
                 </div>
               </div>
 
@@ -4254,11 +4251,11 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                     
                       <div class="feature-feature-icon-template--18579175112775__ss_feature_44_mRfcgK feature-feature-icon-feature_FTh6KW">
                         
-<img src="//renovabe.com.br/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1500" alt="" srcset="//renovabe.com.br/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=165 165w, //renovabe.com.br/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=360 360w, //renovabe.com.br/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=535 535w, //renovabe.com.br/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=750 750w, //renovabe.com.br/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1070 1070w, //renovabe.com.br/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
+<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1500" alt="" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=165 165w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=360 360w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=535 535w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=750 750w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1070 1070w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-beneficios_Maquiagem.svg?v=1772716133&amp;width=1500 1500w" width="224" height="226" loading="lazy" sizes="(min-width: 1300px) 600px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)">
                         
                       </div>
                     
-                    <p class="feature-title-template--18579175112775__ss_feature_44_mRfcgK">Maquiagem que n├úo assenta como antes</p>
+                    <p class="feature-title-template--18579175112775__ss_feature_44_mRfcgK">Maquiagem que não assenta como antes</p>
                   </div>
                   <div class="feature-open-icon-template--18579175112775__ss_feature_44_mRfcgK">
                     <svg
@@ -4276,10 +4273,10 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                   class="feature-feature-text-template--18579175112775__ss_feature_44_mRfcgK"
                   style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;"
                 >
-                  <p>A perda de firmeza altera a textura da pele, fazendo com que a maquiagem marque linhas e evidencie ├íreas de flacidez.</p>
+                  <p>A perda de firmeza altera a textura da pele, fazendo com que a maquiagem marque linhas e evidencie áreas de flacidez.</p>
                 </div>
                 <div class="feature-height-cal-template--18579175112775__ss_feature_44_mRfcgK">
-                  <p>A perda de firmeza altera a textura da pele, fazendo com que a maquiagem marque linhas e evidencie ├íreas de flacidez.</p>
+                  <p>A perda de firmeza altera a textura da pele, fazendo com que a maquiagem marque linhas e evidencie áreas de flacidez.</p>
                 </div>
               </div>
 
@@ -4321,7 +4318,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
       const iframe = videoElement.querySelector('iframe');
       const videoButton = videoElement.querySelector('.feature-play-button-template--18579175112775__ss_feature_44_mRfcgK');
 
-      // Ô£à Se for imagem (ou n├úo tiver bot├úo), n├úo quebra o script
+      // Ô£à Se for imagem (ou não tiver botão), não quebra o script
       if (videoButton) {
         videoButton.addEventListener('click', () => {
           if (videoButton.classList.contains('active')) {
@@ -4445,8 +4442,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
   @font-face {
@@ -4454,8 +4451,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
   @font-face {
@@ -4463,8 +4460,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
   @font-face {
@@ -4472,8 +4469,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/josefin_sans/josefinsans_n4.70f7efd699799949e6d9f99bc20843a2c86a2e0f.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/josefin_sans/josefinsans_n4.35d308a1bdf56e5556bc2ac79702c721e4e2e983.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/josefin_sans/josefinsans_n4.70f7efd699799949e6d9f99bc20843a2c86a2e0f.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/josefin_sans/josefinsans_n4.35d308a1bdf56e5556bc2ac79702c721e4e2e983.woff") format("woff");
 }
 
 
@@ -4966,7 +4963,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
 <div class="section-template--18579175112775__ss_product_ingredients_5_39NgRn product-template--18579175112775__ss_product_ingredients_5_39NgRn" style="background-color:#f2f2f2; background-image: ;">
   <div class="section-template--18579175112775__ss_product_ingredients_5_39NgRn-settings">
     
-      <div class="product-heading-template--18579175112775__ss_product_ingredients_5_39NgRn"><h2>O que o Firmador vai fazer por voc├¬</h2></div>
+      <div class="product-heading-template--18579175112775__ss_product_ingredients_5_39NgRn"><h2>O que o Firmador vai fazer por você</h2></div>
     
     <div class="product-slider-template--18579175112775__ss_product_ingredients_5_39NgRn preview swiper"
       data-gap="30"
@@ -4978,20 +4975,20 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           <div class="product-item-template--18579175112775__ss_product_ingredients_5_39NgRn swiper-slide">
             <div class="product-image-template--18579175112775__ss_product_ingredients_5_39NgRn">
               
-                <img src="//renovabe.com.br/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Efeito_tensor_imediato_700x700.jpg?v=1772716235" alt="">
+                <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Efeito_tensor_imediato_700x700.jpg?v=1772716235" alt="">
               
             </div>
             <div class="product-info-template--18579175112775__ss_product_ingredients_5_39NgRn">
               <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_39NgRn">
                 
-                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_39NgRn">1. Efeito tensor imediato (lifting vis├¡vel)</p>
+                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_39NgRn">1. Efeito tensor imediato (lifting visível)</p>
                 
                 
 
                 
                   
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_39NgRn">
-                      <p>Forma um filme invis├¡vel sobre a pele que promove contra├º├úo suave e tempor├íria, suavizando linhas finas e deixando o rosto com apar├¬ncia mais firme e descansada logo ap├│s a aplica├º├úo.</p>                  
+                      <p>Forma um filme invisível sobre a pele que promove contração suave e temporária, suavizando linhas finas e deixando o rosto com aparência mais firme e descansada logo após a aplicação.</p>                  
                     </div>  
                   
                        
@@ -5007,7 +5004,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           <div class="product-item-template--18579175112775__ss_product_ingredients_5_39NgRn swiper-slide">
             <div class="product-image-template--18579175112775__ss_product_ingredients_5_39NgRn">
               
-                <img src="//renovabe.com.br/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Melhora_da_firmeza_e_elasticidade_700x700.jpg?v=1772716273" alt="">
+                <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Melhora_da_firmeza_e_elasticidade_700x700.jpg?v=1772716273" alt="">
               
             </div>
             <div class="product-info-template--18579175112775__ss_product_ingredients_5_39NgRn">
@@ -5020,7 +5017,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                 
                   
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_39NgRn">
-                      <p>Com o refor├ºo da estrutura da pele, ela recupera parte da sua capacidade de ÔÇ£voltar ao lugarÔÇØ, reduzindo o aspecto de flacidez leve a moderada.</p>                  
+                      <p>Com o reforço da estrutura da pele, ela recupera parte da sua capacidade de “voltar ao lugar”, reduzindo o aspecto de flacidez leve a moderada.</p>                  
                     </div>  
                   
                        
@@ -5036,20 +5033,20 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           <div class="product-item-template--18579175112775__ss_product_ingredients_5_39NgRn swiper-slide">
             <div class="product-image-template--18579175112775__ss_product_ingredients_5_39NgRn">
               
-                <img src="//renovabe.com.br/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-_Reducao_visivel_de_linhas_finas_700x700.jpg?v=1772716196" alt="">
+                <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-_Reducao_visivel_de_linhas_finas_700x700.jpg?v=1772716196" alt="">
               
             </div>
             <div class="product-info-template--18579175112775__ss_product_ingredients_5_39NgRn">
               <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_39NgRn">
                 
-                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_39NgRn">3. Redu├º├úo vis├¡vel de linhas finas</p>
+                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_39NgRn">3. Redução visível de linhas finas</p>
                 
                 
 
                 
                   
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_39NgRn">
-                      <p>A combina├º├úo de hidrata├º├úo profunda + melhora da densidade cut├ónea suaviza linhas de express├úo e melhora o aspecto geral da pele.</p>                  
+                      <p>A combinação de hidratação profunda + melhora da densidade cutânea suaviza linhas de expressão e melhora o aspecto geral da pele.</p>                  
                     </div>  
                   
                        
@@ -5065,7 +5062,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           <div class="product-item-template--18579175112775__ss_product_ingredients_5_39NgRn swiper-slide">
             <div class="product-image-template--18579175112775__ss_product_ingredients_5_39NgRn">
               
-                <img src="//renovabe.com.br/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Textura_mais_uniforme_e_pele_mais_resistente_700x700.jpg?v=1772716357" alt="">
+                <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Textura_mais_uniforme_e_pele_mais_resistente_700x700.jpg?v=1772716357" alt="">
               
             </div>
             <div class="product-info-template--18579175112775__ss_product_ingredients_5_39NgRn">
@@ -5078,7 +5075,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
                 
                   
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_39NgRn">
-                      <p>A hidrata├º├úo otimizada e a prote├º├úo antioxidante ajudam a melhorar a textura, reduzir a apar├¬ncia de poros e devolver vi├ºo.</p>                  
+                      <p>A hidratação otimizada e a proteção antioxidante ajudam a melhorar a textura, reduzir a aparência de poros e devolver viço.</p>                  
                     </div>  
                   
                        
@@ -5104,20 +5101,20 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
         <div class="product-item-template--18579175112775__ss_product_ingredients_5_39NgRn">
           <div class="product-image-template--18579175112775__ss_product_ingredients_5_39NgRn">
             
-              <img src="//renovabe.com.br/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Efeito_tensor_imediato_700x700.jpg?v=1772716235" alt="">
+              <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Efeito_tensor_imediato_700x700.jpg?v=1772716235" alt="">
             
           </div>
           <div class="product-info-template--18579175112775__ss_product_ingredients_5_39NgRn">
             <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_39NgRn">
               
-                <p class="product-title-template--18579175112775__ss_product_ingredients_5_39NgRn">1. Efeito tensor imediato (lifting vis├¡vel)</p>
+                <p class="product-title-template--18579175112775__ss_product_ingredients_5_39NgRn">1. Efeito tensor imediato (lifting visível)</p>
               
               
 
               
                 
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_39NgRn">
-                    <p>Forma um filme invis├¡vel sobre a pele que promove contra├º├úo suave e tempor├íria, suavizando linhas finas e deixando o rosto com apar├¬ncia mais firme e descansada logo ap├│s a aplica├º├úo.</p>                  
+                    <p>Forma um filme invisível sobre a pele que promove contração suave e temporária, suavizando linhas finas e deixando o rosto com aparência mais firme e descansada logo após a aplicação.</p>                  
                   </div>  
                 
                           
@@ -5134,7 +5131,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
         <div class="product-item-template--18579175112775__ss_product_ingredients_5_39NgRn">
           <div class="product-image-template--18579175112775__ss_product_ingredients_5_39NgRn">
             
-              <img src="//renovabe.com.br/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Melhora_da_firmeza_e_elasticidade_700x700.jpg?v=1772716273" alt="">
+              <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Melhora_da_firmeza_e_elasticidade_700x700.jpg?v=1772716273" alt="">
             
           </div>
           <div class="product-info-template--18579175112775__ss_product_ingredients_5_39NgRn">
@@ -5147,7 +5144,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
               
                 
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_39NgRn">
-                    <p>Com o refor├ºo da estrutura da pele, ela recupera parte da sua capacidade de ÔÇ£voltar ao lugarÔÇØ, reduzindo o aspecto de flacidez leve a moderada.</p>                  
+                    <p>Com o reforço da estrutura da pele, ela recupera parte da sua capacidade de “voltar ao lugar”, reduzindo o aspecto de flacidez leve a moderada.</p>                  
                   </div>  
                 
                           
@@ -5164,20 +5161,20 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
         <div class="product-item-template--18579175112775__ss_product_ingredients_5_39NgRn">
           <div class="product-image-template--18579175112775__ss_product_ingredients_5_39NgRn">
             
-              <img src="//renovabe.com.br/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-_Reducao_visivel_de_linhas_finas_700x700.jpg?v=1772716196" alt="">
+              <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-_Reducao_visivel_de_linhas_finas_700x700.jpg?v=1772716196" alt="">
             
           </div>
           <div class="product-info-template--18579175112775__ss_product_ingredients_5_39NgRn">
             <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_39NgRn">
               
-                <p class="product-title-template--18579175112775__ss_product_ingredients_5_39NgRn">3. Redu├º├úo vis├¡vel de linhas finas</p>
+                <p class="product-title-template--18579175112775__ss_product_ingredients_5_39NgRn">3. Redução visível de linhas finas</p>
               
               
 
               
                 
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_39NgRn">
-                    <p>A combina├º├úo de hidrata├º├úo profunda + melhora da densidade cut├ónea suaviza linhas de express├úo e melhora o aspecto geral da pele.</p>                  
+                    <p>A combinação de hidratação profunda + melhora da densidade cutânea suaviza linhas de expressão e melhora o aspecto geral da pele.</p>                  
                   </div>  
                 
                           
@@ -5194,7 +5191,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
         <div class="product-item-template--18579175112775__ss_product_ingredients_5_39NgRn">
           <div class="product-image-template--18579175112775__ss_product_ingredients_5_39NgRn">
             
-              <img src="//renovabe.com.br/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Textura_mais_uniforme_e_pele_mais_resistente_700x700.jpg?v=1772716357" alt="">
+              <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_05_beneficios-o-que-firmador-vai-fazer-por-voce-Textura_mais_uniforme_e_pele_mais_resistente_700x700.jpg?v=1772716357" alt="">
             
           </div>
           <div class="product-info-template--18579175112775__ss_product_ingredients_5_39NgRn">
@@ -5207,7 +5204,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
               
                 
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_39NgRn">
-                    <p>A hidrata├º├úo otimizada e a prote├º├úo antioxidante ajudam a melhorar a textura, reduzir a apar├¬ncia de poros e devolver vi├ºo.</p>                  
+                    <p>A hidratação otimizada e a proteção antioxidante ajudam a melhorar a textura, reduzir a aparência de poros e devolver viço.</p>                  
                   </div>  
                 
                           
@@ -5296,8 +5293,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
   @font-face {
@@ -5305,8 +5302,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
   @font-face {
@@ -5314,8 +5311,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
   @font-face {
@@ -5323,8 +5320,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
 
@@ -5811,7 +5808,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
 <div class="section-template--18579175112775__ss_product_ingredients_5_gmxgyp product-template--18579175112775__ss_product_ingredients_5_gmxgyp" style="background-color:#ffffff; background-image: ;">
   <div class="section-template--18579175112775__ss_product_ingredients_5_gmxgyp-settings">
     
-      <div class="product-heading-template--18579175112775__ss_product_ingredients_5_gmxgyp"><h2>Descubra o segredo da nossa f├│rmula</h2></div>
+      <div class="product-heading-template--18579175112775__ss_product_ingredients_5_gmxgyp"><h2>Descubra o segredo da nossa fórmula</h2></div>
     
     <div class="product-slider-template--18579175112775__ss_product_ingredients_5_gmxgyp preview swiper"
       data-gap="30"
@@ -5823,22 +5820,22 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           <div class="product-item-template--18579175112775__ss_product_ingredients_5_gmxgyp swiper-slide">
             <div class="product-image-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               
-                <img src="//renovabe.com.br/cdn/shop/files/sessao_08-ingredientes-Agua_Purificada_700x700.jpg?v=1772716582" alt="">
+                <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_08-ingredientes-Agua_Purificada_700x700.jpg?v=1772716582" alt="">
               
             </div>
             <div class="product-info-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_gmxgyp">
                 
-                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">├ügua Purificada</p>
+                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">ügua Purificada</p>
                 
                 
                   
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-small-template--18579175112775__ss_product_ingredients_5_gmxgyp active">
-                      <p>Base da f├│rmula e ve├¡culo dos ativos.</p><p>ÔÇó Garante ...            
+                      <p>Base da fórmula e veículo dos ativos.</p><p>• Garante ...            
                       <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                     </div>
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                      <p>Base da f├│rmula e ve├¡culo dos ativos.</p><p>ÔÇó Garante distribui├º├úo uniforme<br/> ÔÇó Facilita absor├º├úo r├ípida<br/> ÔÇó Proporciona aplica├º├úo leve e confort├ível</p><p>A ├ígua purificada assegura estabilidade e seguran├ºa dermatol├│gica.</p>        
+                      <p>Base da fórmula e veículo dos ativos.</p><p>• Garante distribuição uniforme<br/> • Facilita absorção rápida<br/> • Proporciona aplicação leve e confortável</p><p>A água purificada assegura estabilidade e segurança dermatológica.</p>        
                       <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                     </div>              
                   
@@ -5857,22 +5854,22 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           <div class="product-item-template--18579175112775__ss_product_ingredients_5_gmxgyp swiper-slide">
             <div class="product-image-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               
-                <img src="//renovabe.com.br/cdn/shop/files/sessao_08-ingredientes-Silicato_de_Sodio_700x700.jpg?v=1772716616" alt="">
+                <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_08-ingredientes-Silicato_de_Sodio_700x700.jpg?v=1772716616" alt="">
               
             </div>
             <div class="product-info-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_gmxgyp">
                 
-                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Silicato de S├│dio</p>
+                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Silicato de Sódio</p>
                 
                 
                   
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-small-template--18579175112775__ss_product_ingredients_5_gmxgyp active">
-                      <p>Principal respons├ível pelo efeito tensor imediato.</p>...            
+                      <p>Principal responsável pelo efeito tensor imediato.</p>...            
                       <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                     </div>
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                      <p>Principal respons├ível pelo efeito tensor imediato.</p><p>Quando aplicado na pele:</p><p>ÔÇó Forma um filme invis├¡vel e el├ístico<br/>ÔÇó Promove contra├º├úo tempor├íria da superf├¡cie cut├ónea<br/>ÔÇó Suaviza visualmente linhas finas<br/>ÔÇó Proporciona efeito lifting em at├® 90 segundos</p><p>├ë o ativo que cria o chamado ÔÇ£efeito CinderelaÔÇØ: resultado vis├¡vel, r├ípido e tempor├írio.</p>        
+                      <p>Principal responsável pelo efeito tensor imediato.</p><p>Quando aplicado na pele:</p><p>• Forma um filme invisível e elástico<br/>• Promove contração temporária da superfície cutânea<br/>• Suaviza visualmente linhas finas<br/>• Proporciona efeito lifting em até 90 segundos</p><p>ë o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.</p>        
                       <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                     </div>              
                   
@@ -5891,22 +5888,22 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           <div class="product-item-template--18579175112775__ss_product_ingredients_5_gmxgyp swiper-slide">
             <div class="product-image-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               
-                <img src="//renovabe.com.br/cdn/shop/files/sessao_08-ingredientes-Silicato_de_Magnesio_e_Alumini_700x700.jpg?v=1772716647" alt="">
+                <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_08-ingredientes-Silicato_de_Magnesio_e_Alumini_700x700.jpg?v=1772716647" alt="">
               
             </div>
             <div class="product-info-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_gmxgyp">
                 
-                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Silicato de Magn├®sio e Alum├¡nio</p>
+                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Silicato de Magnésio e Alumínio</p>
                 
                 
                   
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-small-template--18579175112775__ss_product_ingredients_5_gmxgyp active">
-                      <p>Ativo mineral com fun├º├úo estruturante e estabilizadora...            
+                      <p>Ativo mineral com função estruturante e estabilizadora...            
                       <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                     </div>
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                      <p>Ativo mineral com fun├º├úo estruturante e estabilizadora.</p><p>ÔÇó Potencializa o efeito tensor<br/> ÔÇó Melhora a ader├¬ncia do filme firmador<br/> ÔÇó Contribui para acabamento mais uniforme<br/> ÔÇó Auxilia no controle de oleosidade superficial</p><p>Ajuda a manter o efeito lifting mais homog├¬neo e natural.</p>        
+                      <p>Ativo mineral com função estruturante e estabilizadora.</p><p>• Potencializa o efeito tensor<br/> • Melhora a aderência do filme firmador<br/> • Contribui para acabamento mais uniforme<br/> • Auxilia no controle de oleosidade superficial</p><p>Ajuda a manter o efeito lifting mais homogêneo e natural.</p>        
                       <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                     </div>              
                   
@@ -5925,22 +5922,22 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           <div class="product-item-template--18579175112775__ss_product_ingredients_5_gmxgyp swiper-slide">
             <div class="product-image-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               
-                <img src="//renovabe.com.br/cdn/shop/files/sessao_08-ingredientes-Acetil_Hexapeptideo-8_700x700.jpg?v=1772716682" alt="">
+                <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_08-ingredientes-Acetil_Hexapeptideo-8_700x700.jpg?v=1772716682" alt="">
               
             </div>
             <div class="product-info-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_gmxgyp">
                 
-                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Acetil Hexapept├¡deo-8</p>
+                  <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Acetil Hexapeptídeo-8</p>
                 
                 
                   
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-small-template--18579175112775__ss_product_ingredients_5_gmxgyp active">
-                      <p>Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas d...            
+                      <p>Peptídeo conhecido por atuar na suavização de linhas d...            
                       <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                     </div>
                     <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                      <p>Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├úo.</p><p>ÔÇó Ajuda a reduzir a contra├º├úo muscular superficial repetitiva<br/> ÔÇó Contribui para suaviza├º├úo progressiva das linhas<br/> ÔÇó Atua como coadjuvante anti-idade<br/> ÔÇó Melhora o aspecto da pele com uso cont├¡nuo</p><p>├ë um ativo reconhecido na cosmetologia por auxiliar na apar├¬ncia de rugas din├ómicas.</p>        
+                      <p>Peptídeo conhecido por atuar na suavização de linhas de expressão.</p><p>• Ajuda a reduzir a contração muscular superficial repetitiva<br/> • Contribui para suavização progressiva das linhas<br/> • Atua como coadjuvante anti-idade<br/> • Melhora o aspecto da pele com uso contínuo</p><p>ë um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.</p>        
                       <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                     </div>              
                   
@@ -5969,22 +5966,22 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
         <div class="product-item-template--18579175112775__ss_product_ingredients_5_gmxgyp">
           <div class="product-image-template--18579175112775__ss_product_ingredients_5_gmxgyp">
             
-              <img src="//renovabe.com.br/cdn/shop/files/sessao_08-ingredientes-Agua_Purificada_700x700.jpg?v=1772716582" alt="">
+              <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_08-ingredientes-Agua_Purificada_700x700.jpg?v=1772716582" alt="">
             
           </div>
           <div class="product-info-template--18579175112775__ss_product_ingredients_5_gmxgyp">
             <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               
-                <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">├ügua Purificada</p>
+                <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">ügua Purificada</p>
               
               
                 
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-small-template--18579175112775__ss_product_ingredients_5_gmxgyp active">
-                    <p>Base da f├│rmula e ve├¡culo dos ativos.</p><p>ÔÇó Garante ...            
+                    <p>Base da fórmula e veículo dos ativos.</p><p>• Garante ...            
                     <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                   </div>
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                    <p>Base da f├│rmula e ve├¡culo dos ativos.</p><p>ÔÇó Garante distribui├º├úo uniforme<br/> ÔÇó Facilita absor├º├úo r├ípida<br/> ÔÇó Proporciona aplica├º├úo leve e confort├ível</p><p>A ├ígua purificada assegura estabilidade e seguran├ºa dermatol├│gica.</p>        
+                    <p>Base da fórmula e veículo dos ativos.</p><p>• Garante distribuição uniforme<br/> • Facilita absorção rápida<br/> • Proporciona aplicação leve e confortável</p><p>A água purificada assegura estabilidade e segurança dermatológica.</p>        
                     <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                   </div>              
                 
@@ -6004,22 +6001,22 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
         <div class="product-item-template--18579175112775__ss_product_ingredients_5_gmxgyp">
           <div class="product-image-template--18579175112775__ss_product_ingredients_5_gmxgyp">
             
-              <img src="//renovabe.com.br/cdn/shop/files/sessao_08-ingredientes-Silicato_de_Sodio_700x700.jpg?v=1772716616" alt="">
+              <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_08-ingredientes-Silicato_de_Sodio_700x700.jpg?v=1772716616" alt="">
             
           </div>
           <div class="product-info-template--18579175112775__ss_product_ingredients_5_gmxgyp">
             <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               
-                <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Silicato de S├│dio</p>
+                <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Silicato de Sódio</p>
               
               
                 
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-small-template--18579175112775__ss_product_ingredients_5_gmxgyp active">
-                    <p>Principal respons├ível pelo efeito tensor imediato.</p>...            
+                    <p>Principal responsável pelo efeito tensor imediato.</p>...            
                     <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                   </div>
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                    <p>Principal respons├ível pelo efeito tensor imediato.</p><p>Quando aplicado na pele:</p><p>ÔÇó Forma um filme invis├¡vel e el├ístico<br/>ÔÇó Promove contra├º├úo tempor├íria da superf├¡cie cut├ónea<br/>ÔÇó Suaviza visualmente linhas finas<br/>ÔÇó Proporciona efeito lifting em at├® 90 segundos</p><p>├ë o ativo que cria o chamado ÔÇ£efeito CinderelaÔÇØ: resultado vis├¡vel, r├ípido e tempor├írio.</p>        
+                    <p>Principal responsável pelo efeito tensor imediato.</p><p>Quando aplicado na pele:</p><p>• Forma um filme invisível e elástico<br/>• Promove contração temporária da superfície cutânea<br/>• Suaviza visualmente linhas finas<br/>• Proporciona efeito lifting em até 90 segundos</p><p>ë o ativo que cria o chamado “efeito Cinderela”: resultado visível, rápido e temporário.</p>        
                     <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                   </div>              
                 
@@ -6039,22 +6036,22 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
         <div class="product-item-template--18579175112775__ss_product_ingredients_5_gmxgyp">
           <div class="product-image-template--18579175112775__ss_product_ingredients_5_gmxgyp">
             
-              <img src="//renovabe.com.br/cdn/shop/files/sessao_08-ingredientes-Silicato_de_Magnesio_e_Alumini_700x700.jpg?v=1772716647" alt="">
+              <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_08-ingredientes-Silicato_de_Magnesio_e_Alumini_700x700.jpg?v=1772716647" alt="">
             
           </div>
           <div class="product-info-template--18579175112775__ss_product_ingredients_5_gmxgyp">
             <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               
-                <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Silicato de Magn├®sio e Alum├¡nio</p>
+                <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Silicato de Magnésio e Alumínio</p>
               
               
                 
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-small-template--18579175112775__ss_product_ingredients_5_gmxgyp active">
-                    <p>Ativo mineral com fun├º├úo estruturante e estabilizadora...            
+                    <p>Ativo mineral com função estruturante e estabilizadora...            
                     <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                   </div>
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                    <p>Ativo mineral com fun├º├úo estruturante e estabilizadora.</p><p>ÔÇó Potencializa o efeito tensor<br/> ÔÇó Melhora a ader├¬ncia do filme firmador<br/> ÔÇó Contribui para acabamento mais uniforme<br/> ÔÇó Auxilia no controle de oleosidade superficial</p><p>Ajuda a manter o efeito lifting mais homog├¬neo e natural.</p>        
+                    <p>Ativo mineral com função estruturante e estabilizadora.</p><p>• Potencializa o efeito tensor<br/> • Melhora a aderência do filme firmador<br/> • Contribui para acabamento mais uniforme<br/> • Auxilia no controle de oleosidade superficial</p><p>Ajuda a manter o efeito lifting mais homogêneo e natural.</p>        
                     <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                   </div>              
                 
@@ -6074,22 +6071,22 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
         <div class="product-item-template--18579175112775__ss_product_ingredients_5_gmxgyp">
           <div class="product-image-template--18579175112775__ss_product_ingredients_5_gmxgyp">
             
-              <img src="//renovabe.com.br/cdn/shop/files/sessao_08-ingredientes-Acetil_Hexapeptideo-8_700x700.jpg?v=1772716682" alt="">
+              <img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/sessao_08-ingredientes-Acetil_Hexapeptideo-8_700x700.jpg?v=1772716682" alt="">
             
           </div>
           <div class="product-info-template--18579175112775__ss_product_ingredients_5_gmxgyp">
             <div class="product-info-top-template--18579175112775__ss_product_ingredients_5_gmxgyp">
               
-                <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Acetil Hexapept├¡deo-8</p>
+                <p class="product-title-template--18579175112775__ss_product_ingredients_5_gmxgyp">Acetil Hexapeptídeo-8</p>
               
               
                 
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-small-template--18579175112775__ss_product_ingredients_5_gmxgyp active">
-                    <p>Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas d...            
+                    <p>Peptídeo conhecido por atuar na suavização de linhas d...            
                     <span class="product-text-more-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver mais</span>              
                   </div>
                   <div class="product-text-template--18579175112775__ss_product_ingredients_5_gmxgyp product-text-full-template--18579175112775__ss_product_ingredients_5_gmxgyp">
-                    <p>Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├úo.</p><p>ÔÇó Ajuda a reduzir a contra├º├úo muscular superficial repetitiva<br/> ÔÇó Contribui para suaviza├º├úo progressiva das linhas<br/> ÔÇó Atua como coadjuvante anti-idade<br/> ÔÇó Melhora o aspecto da pele com uso cont├¡nuo</p><p>├ë um ativo reconhecido na cosmetologia por auxiliar na apar├¬ncia de rugas din├ómicas.</p>        
+                    <p>Peptídeo conhecido por atuar na suavização de linhas de expressão.</p><p>• Ajuda a reduzir a contração muscular superficial repetitiva<br/> • Contribui para suavização progressiva das linhas<br/> • Atua como coadjuvante anti-idade<br/> • Melhora o aspecto da pele com uso contínuo</p><p>ë um ativo reconhecido na cosmetologia por auxiliar na aparência de rugas dinâmicas.</p>        
                     <span class="product-text-less-template--18579175112775__ss_product_ingredients_5_gmxgyp">ver menos</span>             
                   </div>              
                 
@@ -6177,8 +6174,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
   @font-face {
@@ -6186,8 +6183,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
   @font-face {
@@ -6195,8 +6192,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
   @font-face {
@@ -6204,8 +6201,8 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
 
@@ -6568,7 +6565,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
     
       <div class="feature-image-template--18579175112775__ss_feature_13_LwhtnP feature-image-mobile-template--18579175112775__ss_feature_13_LwhtnP">
         
-<img src="//renovabe.com.br/cdn/shop/files/3.png?v=1768513451&amp;width=1500" srcset="//renovabe.com.br/cdn/shop/files/3.png?v=1768513451&amp;width=650 650w, //renovabe.com.br/cdn/shop/files/3.png?v=1768513451&amp;width=860 860w, //renovabe.com.br/cdn/shop/files/3.png?v=1768513451&amp;width=1000 1000w, //renovabe.com.br/cdn/shop/files/3.png?v=1768513451&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/3.png?v=1768513451&amp;width=1500 1500w" width="1500" height="1500" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
+<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451&amp;width=1500 1500w" width="1500" height="1500" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
         
       </div>
     
@@ -6579,7 +6576,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
           <div class="feature-item-template--18579175112775__ss_feature_13_LwhtnP">
             <div class="feature-icon-template--18579175112775__ss_feature_13_LwhtnP">
               
-<img src="//renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500" srcset="//renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=650 650w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=860 860w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1000 1000w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
+<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
               
             </div>
 
@@ -6588,23 +6585,23 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
             
 
             
-              <p class="feature-text-template--18579175112775__ss_feature_13_LwhtnP">Com a pele limpa e seca, aplique uma pequena quantidade diretamente nas ├íreas desejadas, como abaixo dos olhos ou nas linhas de express├úo. Deposite o produto com leves batidinhas, sem esfregar.</p>
+              <p class="feature-text-template--18579175112775__ss_feature_13_LwhtnP">Com a pele limpa e seca, aplique uma pequena quantidade diretamente nas áreas desejadas, como abaixo dos olhos ou nas linhas de expressão. Deposite o produto com leves batidinhas, sem esfregar.</p>
             
           </div>
         
           <div class="feature-item-template--18579175112775__ss_feature_13_LwhtnP">
             <div class="feature-icon-template--18579175112775__ss_feature_13_LwhtnP">
               
-<img src="//renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1500" srcset="//renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=650 650w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=860 860w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1000 1000w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
+<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
               
             </div>
 
             
-              <p class="feature-title-template--18579175112775__ss_feature_13_LwhtnP">Aguarde 90 segundos sem fazer express├Áes</p>
+              <p class="feature-title-template--18579175112775__ss_feature_13_LwhtnP">Aguarde 90 segundos sem fazer expressões</p>
             
 
             
-              <p class="feature-text-template--18579175112775__ss_feature_13_LwhtnP">Permane├ºa com o rosto relaxado por cerca de 90 segundos, at├® o produto secar completamente. Ap├│s atingir o efeito desejado, voc├¬ pode finalizar com maquiagem ou protetor solar.</p>
+              <p class="feature-text-template--18579175112775__ss_feature_13_LwhtnP">Permaneça com o rosto relaxado por cerca de 90 segundos, até o produto secar completamente. Após atingir o efeito desejado, você pode finalizar com maquiagem ou protetor solar.</p>
             
           </div>
         
@@ -6621,7 +6618,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
             <div class="feature-item-template--18579175112775__ss_feature_13_LwhtnP">
               <div class="feature-icon-template--18579175112775__ss_feature_13_LwhtnP">
                 
-<img src="//renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500" srcset="//renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=650 650w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=860 860w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1000 1000w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1200 1200w, //renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
+<img src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500" srcset="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=650 650w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=860 860w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1000 1000w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1200 1200w, //age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_aplique-no-rosto_9591b086-a270-42b3-a25f-9ce18ae4c498.svg?v=1772717921&amp;width=1500 1500w" width="1500" height="1513" loading="lazy" sizes="(min-width: 1200px) 428px, (min-width: 750px) calc((100vw - 130px) / 2), 100vw">
                 
               </div>
 
@@ -6630,7 +6627,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
               
 
               
-                <p class="feature-text-template--18579175112775__ss_feature_13_LwhtnP">Com a pele limpa e seca, aplique uma pequena quantidade diretamente nas ├íreas desejadas, como abaixo dos olhos ou nas linhas de express├úo. Deposite o produto com leves batidinhas, sem esfregar.</p>
+                <p class="feature-text-template--18579175112775__ss_feature_13_LwhtnP">Com a pele limpa e seca, aplique uma pequena quantidade diretamente nas áreas desejadas, como abaixo dos olhos ou nas linhas de expressão. Deposite o produto com leves batidinhas, sem esfregar.</p>
               
             </div>
           
@@ -6648,7 +6645,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
               <div class="feature-icon-template--18579175112775__ss_feature_13_LwhtnP">
                 
                   <img
-                    src="//renovabe.com.br/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957"
+                    src="//age-solution-suplementos.myshopify.com/cdn/shop/files/icones-como-usar-pdrn_90_segundos.svg?v=1772717957"
                     alt=""
                     
                       loading="lazy"
@@ -6658,11 +6655,11 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
               </div>
 
               
-                <p class="feature-title-template--18579175112775__ss_feature_13_LwhtnP">Aguarde 90 segundos sem fazer express├Áes</p>
+                <p class="feature-title-template--18579175112775__ss_feature_13_LwhtnP">Aguarde 90 segundos sem fazer expressões</p>
               
 
               
-                <p class="feature-text-template--18579175112775__ss_feature_13_LwhtnP">Permane├ºa com o rosto relaxado por cerca de 90 segundos, at├® o produto secar completamente. Ap├│s atingir o efeito desejado, voc├¬ pode finalizar com maquiagem ou protetor solar.</p>
+                <p class="feature-text-template--18579175112775__ss_feature_13_LwhtnP">Permaneça com o rosto relaxado por cerca de 90 segundos, até o produto secar completamente. Após atingir o efeito desejado, você pode finalizar com maquiagem ou protetor solar.</p>
               
             </div>
           
@@ -6673,7 +6670,7 @@ Pept├¡deo conhecido por atuar na suaviza├º├úo de linhas de express├ú
         <div class="feature-image-template--18579175112775__ss_feature_13_LwhtnP feature-image-desktop-template--18579175112775__ss_feature_13_LwhtnP">
           
             <img
-              src="//renovabe.com.br/cdn/shop/files/3.png?v=1768513451"
+              src="//age-solution-suplementos.myshopify.com/cdn/shop/files/3.png?v=1768513451"
               alt=""
               
                 loading="lazy"
@@ -6747,7 +6744,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 <div style='clear:both'></div>
 <div id='judgeme_product_reviews'
     class='jdgm-widget jdgm-review-widget'
-    data-product-title='Botox Firmador Instant├óneo - FaceLifting PRO'
+    data-product-title='Botox Firmador Instantâneo - FaceLifting PRO'
     data-id='7395852779591'
     data-product-id='7395852779591'
     data-widget="review"
@@ -6772,7 +6769,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
 
 <script class='jdgm-review-widget-data'>
   jdgm.data ||= {}; jdgm.data.reviewWidget ||= {};
-  jdgm.data.reviewWidget[7395852779591] = {"number_of_reviews":0,"average_rating":"0.00","number_of_questions":0,"product_name":"Botox Firmador Instant├óneo - FaceLifting PRO","product_external_id":7395852779591,"image_url":"https://cdn.shopify.com/s/files/1/0617/2311/5591/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349","histogram":[{"rating":5,"frequency":0,"percentage":0,"extra_class":null},{"rating":4,"frequency":0,"percentage":0,"extra_class":null},{"rating":3,"frequency":0,"percentage":0,"extra_class":null},{"rating":2,"frequency":0,"percentage":0,"extra_class":null},{"rating":1,"frequency":0,"percentage":0,"extra_class":null}],"review_keywords":null,"product_medals":[],"custom_form_filters_and_averages":null,"photo_gallery":null,"review_summary_text":"Be the first to write a review","ai_summary_text":"","sort_key":"highest_rating","multi_language_sorting_enabled":false,"metafield_updated_at":"2026-03-17T22:13:05Z","reviews":[],"pagination":{"total_pages":0,"current_page":1,"per_page":5}}
+  jdgm.data.reviewWidget[7395852779591] = {"number_of_reviews":0,"average_rating":"0.00","number_of_questions":0,"product_name":"Botox Firmador Instantâneo - FaceLifting PRO","product_external_id":7395852779591,"image_url":"https://cdn.shopify.com/s/files/1/0617/2311/5591/files/botox-firmador-instantaneo-1-pote_7470eed4-c1fa-4c20-9cc4-d4c65240e495.jpg?v=1770401349","histogram":[{"rating":5,"frequency":0,"percentage":0,"extra_class":null},{"rating":4,"frequency":0,"percentage":0,"extra_class":null},{"rating":3,"frequency":0,"percentage":0,"extra_class":null},{"rating":2,"frequency":0,"percentage":0,"extra_class":null},{"rating":1,"frequency":0,"percentage":0,"extra_class":null}],"review_keywords":null,"product_medals":[],"custom_form_filters_and_averages":null,"photo_gallery":null,"review_summary_text":"Be the first to write a review","ai_summary_text":"","sort_key":"highest_rating","multi_language_sorting_enabled":false,"metafield_updated_at":"2026-03-17T22:13:05Z","reviews":[],"pagination":{"total_pages":0,"current_page":1,"per_page":5}}
 </script>
 
 
@@ -6793,8 +6790,8 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
   @font-face {
@@ -6802,8 +6799,8 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
   
@@ -7042,8 +7039,8 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
       
@@ -7093,8 +7090,8 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
       
@@ -7175,7 +7172,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
           
             
               <div class="faq-heading-heading_m9eGmX">
-                <h2>Tem alguma d├║vida?<br/>A gente responde.</h2>
+                <h2>Tem alguma dúvida?<br/>A gente responde.</h2>
               </div>
             
             
@@ -7185,7 +7182,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             
             
               <div class="faq-text-text_L8XKJL">
-                <p>As perguntas mais comuns para voc├¬ comprar com</p><p>tranquilidade e confian├ºa.</p>
+                <p>As perguntas mais comuns para você comprar com</p><p>tranquilidade e confiança.</p>
               </div>
             
 
@@ -7251,7 +7248,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             
               <div class="faq-item-template--18579175112775__ss_faq_9_TECbfb">
                 <div class="faq-toggle-template--18579175112775__ss_faq_9_TECbfb">
-                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">O que ├® o Efeito Lifting e como o Firmador funciona?</p>
+                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">O que é o Efeito Lifting e como o Firmador funciona?</p>
                   <div class="faq-arrow-template--18579175112775__ss_faq_9_TECbfb">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 143.000000 83.000000" preserveAspectRatio="xMidYMid meet">
                       <g transform="translate(0.000000,83.000000) scale(0.100000,-0.100000)" fill="" stroke="none">
@@ -7261,10 +7258,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   </div>
                 </div>
                 <div class="faq-answer-template--18579175112775__ss_faq_9_TECbfb" style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>O ÔÇ£Efeito CinderelaÔÇØ ├® um efeito tensor imediato que promove lifting vis├¡vel tempor├írio. O Firmador combina silicatos de alta performance que formam um filme invis├¡vel sobre a pele, promovendo contra├º├úo suave e suavizando linhas em at├® 90 segundos. Al├®m disso, cont├®m Acetyl Hexapeptide-8, que auxilia na suaviza├º├úo progressiva das linhas com o uso cont├¡nuo.</p>
+                    <p>O “Efeito Cinderela” é um efeito tensor imediato que promove lifting visível temporário. O Firmador combina silicatos de alta performance que formam um filme invisível sobre a pele, promovendo contração suave e suavizando linhas em até 90 segundos. Além disso, contém Acetyl Hexapeptide-8, que auxilia na suavização progressiva das linhas com o uso contínuo.</p>
                   </div>
                 <div class="faq-height-cal-template--18579175112775__ss_faq_9_TECbfb">
-                  <p>O ÔÇ£Efeito CinderelaÔÇØ ├® um efeito tensor imediato que promove lifting vis├¡vel tempor├írio. O Firmador combina silicatos de alta performance que formam um filme invis├¡vel sobre a pele, promovendo contra├º├úo suave e suavizando linhas em at├® 90 segundos. Al├®m disso, cont├®m Acetyl Hexapeptide-8, que auxilia na suaviza├º├úo progressiva das linhas com o uso cont├¡nuo.</p>
+                  <p>O “Efeito Cinderela” é um efeito tensor imediato que promove lifting visível temporário. O Firmador combina silicatos de alta performance que formam um filme invisível sobre a pele, promovendo contração suave e suavizando linhas em até 90 segundos. Além disso, contém Acetyl Hexapeptide-8, que auxilia na suavização progressiva das linhas com o uso contínuo.</p>
                 </div>
               </div>
             
@@ -7272,7 +7269,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             
               <div class="faq-item-template--18579175112775__ss_faq_9_TECbfb">
                 <div class="faq-toggle-template--18579175112775__ss_faq_9_TECbfb">
-                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">Em quanto tempo o Firmador come├ºa a fazer efeito?</p>
+                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">Em quanto tempo o Firmador começa a fazer efeito?</p>
                   <div class="faq-arrow-template--18579175112775__ss_faq_9_TECbfb">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 143.000000 83.000000" preserveAspectRatio="xMidYMid meet">
                       <g transform="translate(0.000000,83.000000) scale(0.100000,-0.100000)" fill="" stroke="none">
@@ -7282,10 +7279,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   </div>
                 </div>
                 <div class="faq-answer-template--18579175112775__ss_faq_9_TECbfb" style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>O efeito lifting ├® vis├¡vel em at├® 90 segundos ap├│s a aplica├º├úo correta. A pele aparenta mais firmeza e as linhas ficam suavizadas imediatamente. O resultado ├® tempor├írio e dura por algumas horas.</p>
+                    <p>O efeito lifting é visível em até 90 segundos após a aplicação correta. A pele aparenta mais firmeza e as linhas ficam suavizadas imediatamente. O resultado é temporário e dura por algumas horas.</p>
                   </div>
                 <div class="faq-height-cal-template--18579175112775__ss_faq_9_TECbfb">
-                  <p>O efeito lifting ├® vis├¡vel em at├® 90 segundos ap├│s a aplica├º├úo correta. A pele aparenta mais firmeza e as linhas ficam suavizadas imediatamente. O resultado ├® tempor├írio e dura por algumas horas.</p>
+                  <p>O efeito lifting é visível em até 90 segundos após a aplicação correta. A pele aparenta mais firmeza e as linhas ficam suavizadas imediatamente. O resultado é temporário e dura por algumas horas.</p>
                 </div>
               </div>
             
@@ -7293,7 +7290,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             
               <div class="faq-item-template--18579175112775__ss_faq_9_TECbfb">
                 <div class="faq-toggle-template--18579175112775__ss_faq_9_TECbfb">
-                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">O efeito lifting ├® permanente?</p>
+                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">O efeito lifting é permanente?</p>
                   <div class="faq-arrow-template--18579175112775__ss_faq_9_TECbfb">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 143.000000 83.000000" preserveAspectRatio="xMidYMid meet">
                       <g transform="translate(0.000000,83.000000) scale(0.100000,-0.100000)" fill="" stroke="none">
@@ -7303,10 +7300,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   </div>
                 </div>
                 <div class="faq-answer-template--18579175112775__ss_faq_9_TECbfb" style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>N├úo. O efeito tensor imediato ├® tempor├írio e dura algumas horas. Para manter o resultado, ├® necess├írio reaplicar quando desejar. O pept├¡deo presente na f├│rmula auxilia no cuidado cont├¡nuo da apar├¬ncia das linhas com o uso frequente.</p>
+                    <p>Não. O efeito tensor imediato é temporário e dura algumas horas. Para manter o resultado, é necessário reaplicar quando desejar. O peptídeo presente na fórmula auxilia no cuidado contínuo da aparência das linhas com o uso frequente.</p>
                   </div>
                 <div class="faq-height-cal-template--18579175112775__ss_faq_9_TECbfb">
-                  <p>N├úo. O efeito tensor imediato ├® tempor├írio e dura algumas horas. Para manter o resultado, ├® necess├írio reaplicar quando desejar. O pept├¡deo presente na f├│rmula auxilia no cuidado cont├¡nuo da apar├¬ncia das linhas com o uso frequente.</p>
+                  <p>Não. O efeito tensor imediato é temporário e dura algumas horas. Para manter o resultado, é necessário reaplicar quando desejar. O peptídeo presente na fórmula auxilia no cuidado contínuo da aparência das linhas com o uso frequente.</p>
                 </div>
               </div>
             
@@ -7314,7 +7311,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             
               <div class="faq-item-template--18579175112775__ss_faq_9_TECbfb">
                 <div class="faq-toggle-template--18579175112775__ss_faq_9_TECbfb">
-                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">O Firmador substitui botox ou procedimentos est├®ticos?</p>
+                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">O Firmador substitui botox ou procedimentos estéticos?</p>
                   <div class="faq-arrow-template--18579175112775__ss_faq_9_TECbfb">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 143.000000 83.000000" preserveAspectRatio="xMidYMid meet">
                       <g transform="translate(0.000000,83.000000) scale(0.100000,-0.100000)" fill="" stroke="none">
@@ -7324,10 +7321,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   </div>
                 </div>
                 <div class="faq-answer-template--18579175112775__ss_faq_9_TECbfb" style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>A dose de cafe├¡na (75mg) ├® equilibrada, semelhante a 1 x├¡cara de caf├® expresso. D├í energia sem causar picos ou tremores, desde que voc├¬ n├úo tenha sensibilidade elevada.</p>
+                    <p>A dose de cafeína (75mg) é equilibrada, semelhante a 1 xícara de café expresso. Dá energia sem causar picos ou tremores, desde que você não tenha sensibilidade elevada.</p>
                   </div>
                 <div class="faq-height-cal-template--18579175112775__ss_faq_9_TECbfb">
-                  <p>A dose de cafe├¡na (75mg) ├® equilibrada, semelhante a 1 x├¡cara de caf├® expresso. D├í energia sem causar picos ou tremores, desde que voc├¬ n├úo tenha sensibilidade elevada.</p>
+                  <p>A dose de cafeína (75mg) é equilibrada, semelhante a 1 xícara de café expresso. Dá energia sem causar picos ou tremores, desde que você não tenha sensibilidade elevada.</p>
                 </div>
               </div>
             
@@ -7335,7 +7332,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             
               <div class="faq-item-template--18579175112775__ss_faq_9_TECbfb">
                 <div class="faq-toggle-template--18579175112775__ss_faq_9_TECbfb">
-                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">O produto deixa a pele esbranqui├ºada ou craquelada?</p>
+                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">O produto deixa a pele esbranquiçada ou craquelada?</p>
                   <div class="faq-arrow-template--18579175112775__ss_faq_9_TECbfb">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 143.000000 83.000000" preserveAspectRatio="xMidYMid meet">
                       <g transform="translate(0.000000,83.000000) scale(0.100000,-0.100000)" fill="" stroke="none">
@@ -7345,10 +7342,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   </div>
                 </div>
                 <div class="faq-answer-template--18579175112775__ss_faq_9_TECbfb" style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>Quando aplicado na quantidade correta e aguardando os 90 segundos sem fazer express├Áes, o acabamento ├® leve e invis├¡vel. Aplicar excesso pode comprometer o resultado.</p>
+                    <p>Quando aplicado na quantidade correta e aguardando os 90 segundos sem fazer expressões, o acabamento é leve e invisível. Aplicar excesso pode comprometer o resultado.</p>
                   </div>
                 <div class="faq-height-cal-template--18579175112775__ss_faq_9_TECbfb">
-                  <p>Quando aplicado na quantidade correta e aguardando os 90 segundos sem fazer express├Áes, o acabamento ├® leve e invis├¡vel. Aplicar excesso pode comprometer o resultado.</p>
+                  <p>Quando aplicado na quantidade correta e aguardando os 90 segundos sem fazer expressões, o acabamento é leve e invisível. Aplicar excesso pode comprometer o resultado.</p>
                 </div>
               </div>
             
@@ -7356,7 +7353,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             
               <div class="faq-item-template--18579175112775__ss_faq_9_TECbfb">
                 <div class="faq-toggle-template--18579175112775__ss_faq_9_TECbfb">
-                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">Posso usar maquiagem ap├│s aplicar o Firmador?</p>
+                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">Posso usar maquiagem após aplicar o Firmador?</p>
                   <div class="faq-arrow-template--18579175112775__ss_faq_9_TECbfb">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 143.000000 83.000000" preserveAspectRatio="xMidYMid meet">
                       <g transform="translate(0.000000,83.000000) scale(0.100000,-0.100000)" fill="" stroke="none">
@@ -7366,10 +7363,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   </div>
                 </div>
                 <div class="faq-answer-template--18579175112775__ss_faq_9_TECbfb" style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>Sim. Ap├│s o produto secar completamente (cerca de 90 segundos), voc├¬ pode aplicar maquiagem ou protetor solar normalmente.</p>
+                    <p>Sim. Após o produto secar completamente (cerca de 90 segundos), você pode aplicar maquiagem ou protetor solar normalmente.</p>
                   </div>
                 <div class="faq-height-cal-template--18579175112775__ss_faq_9_TECbfb">
-                  <p>Sim. Ap├│s o produto secar completamente (cerca de 90 segundos), voc├¬ pode aplicar maquiagem ou protetor solar normalmente.</p>
+                  <p>Sim. Após o produto secar completamente (cerca de 90 segundos), você pode aplicar maquiagem ou protetor solar normalmente.</p>
                 </div>
               </div>
             
@@ -7377,7 +7374,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             
               <div class="faq-item-template--18579175112775__ss_faq_9_TECbfb">
                 <div class="faq-toggle-template--18579175112775__ss_faq_9_TECbfb">
-                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">Pode usar na ├írea dos olhos?</p>
+                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">Pode usar na área dos olhos?</p>
                   <div class="faq-arrow-template--18579175112775__ss_faq_9_TECbfb">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 143.000000 83.000000" preserveAspectRatio="xMidYMid meet">
                       <g transform="translate(0.000000,83.000000) scale(0.100000,-0.100000)" fill="" stroke="none">
@@ -7387,10 +7384,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   </div>
                 </div>
                 <div class="faq-answer-template--18579175112775__ss_faq_9_TECbfb" style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>Sim, pode ser aplicado abaixo da p├ílpebra inferior e nas linhas de express├úo, sempre com pequena quantidade e sem esfregar.</p>
+                    <p>Sim, pode ser aplicado abaixo da pálpebra inferior e nas linhas de expressão, sempre com pequena quantidade e sem esfregar.</p>
                   </div>
                 <div class="faq-height-cal-template--18579175112775__ss_faq_9_TECbfb">
-                  <p>Sim, pode ser aplicado abaixo da p├ílpebra inferior e nas linhas de express├úo, sempre com pequena quantidade e sem esfregar.</p>
+                  <p>Sim, pode ser aplicado abaixo da pálpebra inferior e nas linhas de expressão, sempre com pequena quantidade e sem esfregar.</p>
                 </div>
               </div>
             
@@ -7398,7 +7395,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             
               <div class="faq-item-template--18579175112775__ss_faq_9_TECbfb">
                 <div class="faq-toggle-template--18579175112775__ss_faq_9_TECbfb">
-                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">O Firmador ├® seguro para todos os tipos de pele?</p>
+                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">O Firmador é seguro para todos os tipos de pele?</p>
                   <div class="faq-arrow-template--18579175112775__ss_faq_9_TECbfb">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 143.000000 83.000000" preserveAspectRatio="xMidYMid meet">
                       <g transform="translate(0.000000,83.000000) scale(0.100000,-0.100000)" fill="" stroke="none">
@@ -7408,10 +7405,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   </div>
                 </div>
                 <div class="faq-answer-template--18579175112775__ss_faq_9_TECbfb" style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>O produto ├® de uso externo e deve ser aplicado apenas nas ├íreas indicadas. Em caso de irrita├º├úo, o uso deve ser suspenso. N├úo aplicar sobre pele lesionada ou irritada.</p>
+                    <p>O produto é de uso externo e deve ser aplicado apenas nas áreas indicadas. Em caso de irritação, o uso deve ser suspenso. Não aplicar sobre pele lesionada ou irritada.</p>
                   </div>
                 <div class="faq-height-cal-template--18579175112775__ss_faq_9_TECbfb">
-                  <p>O produto ├® de uso externo e deve ser aplicado apenas nas ├íreas indicadas. Em caso de irrita├º├úo, o uso deve ser suspenso. N├úo aplicar sobre pele lesionada ou irritada.</p>
+                  <p>O produto é de uso externo e deve ser aplicado apenas nas áreas indicadas. Em caso de irritação, o uso deve ser suspenso. Não aplicar sobre pele lesionada ou irritada.</p>
                 </div>
               </div>
             
@@ -7440,7 +7437,7 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
             
               <div class="faq-item-template--18579175112775__ss_faq_9_TECbfb">
                 <div class="faq-toggle-template--18579175112775__ss_faq_9_TECbfb">
-                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">Para quem o Firmador ├® indicado?</p>
+                  <p class="faq-question-template--18579175112775__ss_faq_9_TECbfb">Para quem o Firmador é indicado?</p>
                   <div class="faq-arrow-template--18579175112775__ss_faq_9_TECbfb">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 143.000000 83.000000" preserveAspectRatio="xMidYMid meet">
                       <g transform="translate(0.000000,83.000000) scale(0.100000,-0.100000)" fill="" stroke="none">
@@ -7450,10 +7447,10 @@ rgb(var(--color-border-rgb) / 1.0); --border-radius:
                   </div>
                 </div>
                 <div class="faq-answer-template--18579175112775__ss_faq_9_TECbfb" style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>├ë indicado para quem deseja suavizar temporariamente linhas de express├úo, melhorar a apar├¬ncia antes de compromissos importantes e buscar uma alternativa n├úo invasiva ao lifting est├®tico.</p>
+                    <p>ë indicado para quem deseja suavizar temporariamente linhas de expressão, melhorar a aparência antes de compromissos importantes e buscar uma alternativa não invasiva ao lifting estético.</p>
                   </div>
                 <div class="faq-height-cal-template--18579175112775__ss_faq_9_TECbfb">
-                  <p>├ë indicado para quem deseja suavizar temporariamente linhas de express├úo, melhorar a apar├¬ncia antes de compromissos importantes e buscar uma alternativa n├úo invasiva ao lifting est├®tico.</p>
+                  <p>ë indicado para quem deseja suavizar temporariamente linhas de expressão, melhorar a aparência antes de compromissos importantes e buscar uma alternativa não invasiva ao lifting estético.</p>
                 </div>
               </div>
             
@@ -7566,8 +7563,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.b2a3f24c19b4de56e8871f609e73ca7f6d2e2bb9.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n4.af8052d517e0c9ffac7b814872cecc27ae1fa132.woff") format("woff");
 }
 
   @font-face {
@@ -7575,8 +7572,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
   @font-face {
@@ -7584,8 +7581,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_i4.feae1981dda792ab80d117249d9c7e0f1017e5b3.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_i4.62773b7113d5e5f02c71486623cf828884c85c6e.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i4.feae1981dda792ab80d117249d9c7e0f1017e5b3.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i4.62773b7113d5e5f02c71486623cf828884c85c6e.woff") format("woff");
 }
 
   @font-face {
@@ -7593,8 +7590,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 700;
   font-style: italic;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_i7.b377bcd4cc0f160622a22d638ae7e2cd9b86ea4c.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_i7.7c69a6a34e3bb44fcf6f975857e13b9a9b25beb4.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i7.b377bcd4cc0f160622a22d638ae7e2cd9b86ea4c.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i7.7c69a6a34e3bb44fcf6f975857e13b9a9b25beb4.woff") format("woff");
 }
 
 
@@ -7606,8 +7603,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n5.d7101d5e168594dd06f56f290dd759fba5431d97.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n5.5332a76bbd27da00474c136abb1ca3cbbf259068.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n5.d7101d5e168594dd06f56f290dd759fba5431d97.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n5.5332a76bbd27da00474c136abb1ca3cbbf259068.woff") format("woff");
 }
 
     @font-face {
@@ -7615,8 +7612,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
     @font-face {
@@ -7624,8 +7621,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 500;
   font-style: italic;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_i5.4474f48e6ab2b1e01aa2b6d942dd27fa24f2d99f.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_i5.493dbd6ee8e49f4ad722ebb68d92f201af2c2f56.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i5.4474f48e6ab2b1e01aa2b6d942dd27fa24f2d99f.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i5.493dbd6ee8e49f4ad722ebb68d92f201af2c2f56.woff") format("woff");
 }
 
     @font-face {
@@ -7633,8 +7630,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 700;
   font-style: italic;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_i7.b377bcd4cc0f160622a22d638ae7e2cd9b86ea4c.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_i7.7c69a6a34e3bb44fcf6f975857e13b9a9b25beb4.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i7.b377bcd4cc0f160622a22d638ae7e2cd9b86ea4c.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i7.7c69a6a34e3bb44fcf6f975857e13b9a9b25beb4.woff") format("woff");
 }
 
   
@@ -7647,8 +7644,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
     @font-face {
@@ -7656,8 +7653,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.02711e6b374660cfc7915d1afc1c204e633421e4.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_n7.6dab87426f6b8813070abd79972ceaf2f8d3b012.woff") format("woff");
 }
 
     @font-face {
@@ -7665,8 +7662,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 700;
   font-style: italic;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_i7.b377bcd4cc0f160622a22d638ae7e2cd9b86ea4c.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_i7.7c69a6a34e3bb44fcf6f975857e13b9a9b25beb4.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i7.b377bcd4cc0f160622a22d638ae7e2cd9b86ea4c.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i7.7c69a6a34e3bb44fcf6f975857e13b9a9b25beb4.woff") format("woff");
 }
 
     @font-face {
@@ -7674,8 +7671,8 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
   font-weight: 700;
   font-style: italic;
   font-display: swap;
-  src: url("//renovabe.com.br/cdn/fonts/inter/inter_i7.b377bcd4cc0f160622a22d638ae7e2cd9b86ea4c.woff2") format("woff2"),
-       url("//renovabe.com.br/cdn/fonts/inter/inter_i7.7c69a6a34e3bb44fcf6f975857e13b9a9b25beb4.woff") format("woff");
+  src: url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i7.b377bcd4cc0f160622a22d638ae7e2cd9b86ea4c.woff2") format("woff2"),
+       url("//age-solution-suplementos.myshopify.com/cdn/fonts/inter/inter_i7.7c69a6a34e3bb44fcf6f975857e13b9a9b25beb4.woff") format("woff");
 }
 
   
@@ -8088,18 +8085,18 @@ export const RAW_PRODUCT_HEAD_HTML = `<style data-shopify>
     --cart-secondary-font-style: var(--font-secondary--style);
     --cart-secondary-font-weight: var(--font-secondary--weight);
   }
-</style><link href="//renovabe.com.br/cdn/shop/t/64/assets/base.css?v=59725492481374766101773950102" rel="stylesheet" type="text/css" media="all" />
-<link href="//renovabe.com.br/cdn/shop/t/64/assets/swiper-bundle.min.css?v=22990111940818345961773950102" rel="stylesheet" type="text/css" media="all" />
-<link href="//renovabe.com.br/cdn/shop/t/64/assets/judge-me-reviews.css?v=118764059115479158931773950102" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" media="screen" href="//renovabe.com.br/cdn/shop/t/64/compiled_assets/styles.css?v=84213709887736644741773950102">
+</style><link href="//age-solution-suplementos.myshopify.com/cdn/shop/t/64/assets/base.css?v=59725492481374766101773950102" rel="stylesheet" type="text/css" media="all" />
+<link href="//age-solution-suplementos.myshopify.com/cdn/shop/t/64/assets/swiper-bundle.min.css?v=22990111940818345961773950102" rel="stylesheet" type="text/css" media="all" />
+<link href="//age-solution-suplementos.myshopify.com/cdn/shop/t/64/assets/judge-me-reviews.css?v=118764059115479158931773950102" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" media="screen" href="//age-solution-suplementos.myshopify.com/cdn/shop/t/64/compiled_assets/styles.css?v=84213709887736644741773950102">
 <link rel="preload" href="https://cdn.shopify.com/extensions/019cf65f-31ab-7288-bd0e-f192eff77900/wishlist-engine-230/assets/wishlist-engine.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="stylesheet" href="https://cdn.shopify.com/extensions/019cf65f-31ab-7288-bd0e-f192eff77900/wishlist-engine-230/assets/wishlist-engine.css">
 <link rel="stylesheet" type="text/css" media="all" href="https://cdnwidget.judge.me/shopify_v2.css">
-<link href="//renovabe.com.br/cdn/shop/t/64/assets/component-cart-drawer.css?v=16811" rel="stylesheet" type="text/css" media="all" />
-<link href="//renovabe.com.br/cdn/shop/t/64/assets/component-cart.css?v=16811" rel="stylesheet" type="text/css" media="all" />
-<link href="//renovabe.com.br/cdn/shop/t/64/assets/component-totals.css?v=16811" rel="stylesheet" type="text/css" media="all" />
-<link href="//renovabe.com.br/cdn/shop/t/64/assets/component-price.css?v=16811" rel="stylesheet" type="text/css" media="all" />
-<link href="//renovabe.com.br/cdn/shop/t/64/assets/component-discounts.css?v=16811" rel="stylesheet" type="text/css" media="all" />
+<link href="//age-solution-suplementos.myshopify.com/cdn/shop/t/64/assets/component-cart-drawer.css?v=16811" rel="stylesheet" type="text/css" media="all" />
+<link href="//age-solution-suplementos.myshopify.com/cdn/shop/t/64/assets/component-cart.css?v=16811" rel="stylesheet" type="text/css" media="all" />
+<link href="//age-solution-suplementos.myshopify.com/cdn/shop/t/64/assets/component-totals.css?v=16811" rel="stylesheet" type="text/css" media="all" />
+<link href="//age-solution-suplementos.myshopify.com/cdn/shop/t/64/assets/component-price.css?v=16811" rel="stylesheet" type="text/css" media="all" />
+<link href="//age-solution-suplementos.myshopify.com/cdn/shop/t/64/assets/component-discounts.css?v=16811" rel="stylesheet" type="text/css" media="all" />
 <link href="//cdn.shopify.com/extensions/019d1692-9a84-7566-8116-0ac21694d0ab/essential-post-purchase-upsell-1269/assets/stylex-Abx4-R5T.css" rel="stylesheet" type="text/css" media="all" />
 <link
   rel="stylesheet"
