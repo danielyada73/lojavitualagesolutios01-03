@@ -99,7 +99,7 @@ export function mapYampiProduct(item: any): Product {
         product_id: String(item.id),
         name: sku.title || sku.name || item.name,
         price: parseFloat(sku.prices?.data?.[0]?.price_sale || sku.price_sale || sku.price || '0'),
-        sku_token: sku.token || '', // Adicionado token para checkout
+        sku_token: sku.token || sku.sku || String(sku.id) || '', // Fallbacks robustos para garantir o checkout
     }));
 
     // Metadados extras
