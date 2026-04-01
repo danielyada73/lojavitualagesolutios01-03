@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { categories, products as mockProducts } from '../data/mock';
 import { Filter } from 'lucide-react';
 import ProductCard from '../components/ui/ProductCard';
-import { getProductsByCollection } from '../lib/shopify';
+import { getProductsByCategory } from '../lib/yampi';
 import { Product } from '../types';
 
 export default function Category() {
@@ -20,7 +20,7 @@ export default function Category() {
 
       setLoading(true);
       try {
-        const fetchedProducts = await getProductsByCollection(slug, 20);
+        const fetchedProducts = await getProductsByCategory(slug, 20);
 
         if (fetchedProducts && fetchedProducts.length > 0) {
           setCategoryProducts(fetchedProducts);
@@ -35,7 +35,7 @@ export default function Category() {
           setCategoryProducts(mocks);
         }
       } catch (error) {
-        console.error('Erro ao buscar categoria na Shopify:', error);
+        console.error('Erro ao buscar categoria na Yampi:', error);
         // Fallback em caso de erro
         const mocks = slug === 'kits'
           ? mockProducts.filter((p) => p.is_kit)

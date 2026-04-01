@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { CartItem, Product, ProductVariation } from '../types';
-import { createCart, addToCart } from '../lib/shopify';
+import { createCheckout, addToCheckout } from '../lib/yampi';
 
 interface CartStore {
   items: CartItem[];
@@ -57,26 +57,37 @@ export const useCartStore = create<CartStore>()(
           };
         });
 
-        // Sync with Shopify
+        // Sync with Yampi
         try {
           set({ isSyncing: true });
           const state = get();
-          const { cartId } = state;
-          const variantId = variation?.id || product.variations?.[0]?.id || product.id;
+          const { cartId, items } = state;
+          
+          // Encontra o SKU ID ou Token para a Yampi. 
+          // Se houver variação, assume ela. Caso contrário, tenta a primeira variação do produto.
+          const skuId = variation?.id || product.variations?.[0]?.id || product.id;
 
-          if (!cartId || cartId.includes('undefined')) {
-            const newCart = await createCart(variantId);
-            if (newCart) {
-              set({ cartId: newCart.id, checkoutUrl: newCart.checkoutUrl });
+          if (!cartId) {
+            const newCheckout = await createCheckout(skuId, quantity);
+            if (newCheckout) {
+              set({ cartId: newCheckout.id, checkoutUrl: newCheckout.checkoutUrl });
             }
           } else {
-            const updatedCart = await addToCart(cartId, variantId, quantity);
-            if (updatedCart) {
-              set({ checkoutUrl: updatedCart.checkoutUrl });
+            // Prepara lista de itens existentes para adicionar o novo
+            const existingItems = items
+              .filter(i => i.product.id !== product.id || (i.variation?.id !== (variation?.id || product.variations?.[0]?.id)))
+              .map(i => ({
+                skuId: i.variation?.id || i.product.variations?.[0]?.id || i.product.id,
+                quantity: i.quantity
+              }));
+
+            const updatedCheckout = await addToCheckout(cartId, skuId, quantity, existingItems);
+            if (updatedCheckout) {
+              set({ checkoutUrl: updatedCheckout.checkoutUrl });
             }
           }
         } catch (error) {
-          console.error('Erro ao sincronizar carrinho com Shopify:', error);
+          console.error('Erro ao sincronizar carrinho com Yampi:', error);
         } finally {
           set({ isSyncing: false });
         }
@@ -86,7 +97,6 @@ export const useCartStore = create<CartStore>()(
           items: state.items.filter((item) => item.id !== itemId),
         }));
         
-        // Sincroniza a remoção com o Shopify (ou limpa o checkout se vazio)
         if (get().items.length === 0) {
           get().clearCart();
         } else {
@@ -108,31 +118,30 @@ export const useCartStore = create<CartStore>()(
         set({ items: [], cartId: null, checkoutUrl: null });
       },
       syncCart: async () => {
-        const { items, cartId } = get();
+        const { items } = get();
         if (items.length === 0) return;
 
         try {
           set({ isSyncing: true });
 
-          // Se não tem cartId ou é inválido, cria um novo com todos os itens
-          // Simplificando: vamos pegar o primeiro item para criar o carrinho e depois os outros se necessário.
-          // Mas o createCart da lib/shopify aceita apenas um item inicialmente.
-          const firstItem = items[0];
-          const variantId = firstItem.variation?.id || firstItem.product.variations?.[0]?.id || firstItem.product.id;
+          // Cria um novo checkout com todos os itens atuais
+          const checkoutItems = items.map(item => ({
+            skuId: item.variation?.id || item.product.variations?.[0]?.id || item.product.id,
+            quantity: item.quantity
+          }));
 
-          const newCart = await createCart(variantId, firstItem.quantity);
-          if (newCart) {
-            set({ cartId: newCart.id, checkoutUrl: newCart.checkoutUrl });
+          const first = checkoutItems[0];
+          const rest = checkoutItems.slice(1);
 
-            // Se houver mais itens, adiciona-os
-            if (items.length > 1) {
-              for (let i = 1; i < items.length; i++) {
-                const item = items[i];
-                const vId = item.variation?.id || item.product.variations?.[0]?.id || item.product.id;
-                await addToCart(newCart.id, vId, item.quantity);
-              }
-              // O addToCart retorna o carrinho atualizado? Sim, mas podemos apenas confiar que o checkoutUrl permanece válido ou atualizar no final.
+          let result = await createCheckout(first.skuId, first.quantity);
+          if (result) {
+            for (const item of rest) {
+              result = await addToCheckout(result.id, item.skuId, item.quantity, [
+                { skuId: first.skuId, quantity: first.quantity },
+                ...rest.slice(0, rest.indexOf(item))
+              ]);
             }
+            set({ cartId: result?.id || null, checkoutUrl: result?.checkoutUrl || null });
           }
         } catch (error) {
           console.error('[CartStore] Erro ao sincronizar carrinho:', error);
@@ -143,7 +152,6 @@ export const useCartStore = create<CartStore>()(
       total: () => {
         const { items } = get();
         return items.reduce((acc, item) => {
-          // Usa o preço direto da Shopify se disponível
           const price = item.variation?.price || item.product.price;
           return acc + price * item.quantity;
         }, 0);
@@ -152,8 +160,7 @@ export const useCartStore = create<CartStore>()(
     {
       name: 'cart-storage',
       onRehydrateStorage: () => (state) => {
-        // Limpeza de segurança na hidratação
-        if (state?.checkoutUrl && (state.checkoutUrl.includes('yampi.com.br') || state.checkoutUrl.includes('undefined'))) {
+        if (state?.checkoutUrl && state.checkoutUrl.includes('undefined')) {
           state.checkoutUrl = null;
           state.cartId = null;
         }

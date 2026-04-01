@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products } from '../data/mock';
 import { useCartStore } from '../store/cart';
-import { getProductByHandle } from '../lib/shopify';
+import { getProductBySlug } from '../lib/yampi';
 import { Product } from '../types';
 
 import { RAW_PRODUCT_HTML, RAW_PRODUCT_HEAD_HTML } from '../data/rawProductHtml';
@@ -21,7 +21,7 @@ export default function ProductDetails() {
       setLoading(true);
       try {
         let target: Product | null | undefined = null;
-        try { target = await getProductByHandle(id); } catch { /* Shopify fail */ }
+        try { target = await getProductBySlug(id); } catch { /* Yampi fail */ }
         if (!target) { target = products.find(p => p.id === id) || null; }
         if (target) {
           setProduct(target);

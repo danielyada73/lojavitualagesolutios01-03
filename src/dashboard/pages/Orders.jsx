@@ -1,6 +1,6 @@
 // src/pages/Orders.jsx
-import { useMemo, useState } from "react";
-import { fetchOrders } from "@/dashboard/lib/api";
+import { useMemo, useState, useEffect } from "react";
+import { getAllOrders } from "../../lib/yampi";
 
 function clampNumber(v, def = 0) {
   const n = Number(String(v ?? "").replace(",", "."));
@@ -267,28 +267,30 @@ export default function Orders() {
   const [data, setData] = useState(null);
 
   async function load() {
-    const uid = localStorage.getItem("ml_user_id");
-    if (!uid) {
-      setErr("Sem ml_user_id. Faça OAuth em /auth/ml.");
-      return;
-    }
-
     setErr("");
     setLoading(true);
     try {
-      const r = await fetchOrders({
-        userId: uid,
-        role: "seller",
-        from,
-        to,
-        status: status || undefined,
-        q: q || undefined,
-        limit,
-        offset: page * limit,
-      });
+      const yampiOrders = await getAllOrders(limit);
+      
+      if (!yampiOrders) throw new Error("Falha ao carregar pedidos da Yampi");
+      
+      // Mapeia os pedidos da Yampi para o formato esperado pelo componente
+      const mapped = yampiOrders.map(o => ({
+        id: o.id || o.number,
+        date_created: o.created_at?.date || o.created_at || o.date_created,
+        status: o.status_label || o.status,
+        marketplace: "YAMPI",
+        buyer: {
+          nickname: `${o.customer?.data?.first_name || ''} ${o.customer?.data?.last_name || ''}`.trim() || o.customer?.data?.email || "Cliente Yampi"
+        },
+        paid_amount: parseFloat(o.total || 0),
+        items_count: o.items?.data?.length || 0,
+        units: o.items?.data?.reduce((acc, i) => acc + (i.quantity || 1), 0) || 0,
+        item_ids: o.items?.data?.map(i => i.product_id) || [],
+        fees: 0
+      }));
 
-      if (!r?.ok) throw new Error(r?.message || r?.error || "Falha ao carregar pedidos");
-      setData(r);
+      setData({ ok: true, orders: mapped });
     } catch (e) {
       setErr(e?.message || "Erro ao carregar");
       setData(null);
@@ -296,6 +298,11 @@ export default function Orders() {
       setLoading(false);
     }
   }
+
+  // Carregamento inicial
+  useEffect(() => {
+    load();
+  }, []);
 
   const orders = Array.isArray(data?.orders) ? data.orders : [];
 

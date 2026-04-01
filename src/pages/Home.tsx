@@ -11,7 +11,7 @@ import VideoGallery from '../components/home/VideoGallery';
 import InstagramFeed from '../components/home/InstagramFeed';
 import Newsletter from '../components/home/Newsletter';
 import { differentialsImages, colagenoOffers } from '../data/mock';
-import { getProductsByCollection } from '../lib/shopify';
+import { getProductsByCategory } from '../lib/yampi';
 import ProductCard from '../components/ui/ProductCard';
 import { Product } from '../types';
 
@@ -22,12 +22,12 @@ export default function Home() {
   useEffect(() => {
     async function loadProducts() {
       try {
-        const products = await getProductsByCollection('colageno', 10);
+        const products = await getProductsByCategory('colageno', 10);
         if (products && products.length > 0) {
           // Buscamos produtos específicos se existirem
-          const pote1 = products.find(p => p.handle === 'col-cran' || p.handle === 'colageno');
-          const kit2 = products.find(p => p.handle === 'col-kit-2');
-          const kit3 = products.find(p => p.handle === 'col-kit-3');
+          const pote1 = products.find(p => p.handle === 'col-cran' || p.handle === 'colageno' || p.name.toLowerCase().includes('cranberry'));
+          const kit2 = products.find(p => p.handle === 'col-kit-2' || p.name.toLowerCase().includes('2 potes'));
+          const kit3 = products.find(p => p.handle === 'col-kit-3' || p.name.toLowerCase().includes('3 potes'));
 
           const foundSpecific = [pote1, kit2, kit3].filter(Boolean) as Product[];
 
@@ -39,7 +39,7 @@ export default function Home() {
             setColagenoProducts(foundSpecific);
           }
         } else {
-          // Fallback para dados mockados se a Shopify retornar vazio
+          // Fallback para dados mockados se a Yampi retornar vazio
           const mappedMocks: Product[] = colagenoOffers.map(offer => ({
             id: offer.id,
             category_id: 'colageno',
@@ -57,7 +57,7 @@ export default function Home() {
           setColagenoProducts(mappedMocks);
         }
       } catch (error) {
-        console.error('Erro ao carregar produtos da Shopify:', error);
+        console.error('Erro ao carregar produtos da Yampi:', error);
         // Fallback em caso de erro na API
         const mappedMocks: Product[] = colagenoOffers.map(offer => ({
           id: offer.id,

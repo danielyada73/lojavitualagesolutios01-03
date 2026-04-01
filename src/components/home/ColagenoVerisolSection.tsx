@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useCartStore } from '../../store/cart';
 import ProductCard from '../ui/ProductCard';
 import { Product } from '../../types';
-import { getProductsByCategory } from '../../lib/shopify';
+import { getProductsByCategory } from '../../lib/yampi';
 import { Loader2 } from 'lucide-react';
 
 const mockOffers: Product[] = [

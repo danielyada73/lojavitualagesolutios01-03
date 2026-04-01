@@ -91,21 +91,23 @@ export function mapYampiProduct(item: any): Product {
         product_id: String(item.id),
         name: sku.title || sku.name || item.name,
         price: parseFloat(sku.prices?.data?.[0]?.price_sale || sku.price_sale || sku.price || '0'),
+        sku_token: sku.token || '', // Adicionado token para checkout
     }));
 
-    // Metadados extras (campos customizados da Yampi, se existirem)
-    const safeParse = (val: string | undefined) => {
+    // Metadados extras
+    const safeParse = (val: string | any) => {
+        if (typeof val === 'object') return val;
         try { return val ? JSON.parse(val) : undefined; }
         catch { return undefined; }
     };
 
     const customFields = item.custom_fields || item.metadata || {};
-    const benefits = safeParse(customFields.benefits_json);
-    const timeline = safeParse(customFields.timeline_json);
-    const faq = safeParse(customFields.faq_json);
-    const nutrition = safeParse(customFields.nutrition_json);
-    const howToUseSteps = safeParse(customFields.how_to_use_steps);
-    const howToUseDesc = customFields.how_to_use_description;
+    const benefits = safeParse(customFields.benefits_json || item.benefits);
+    const timeline = safeParse(customFields.timeline_json || item.timeline);
+    const faq = safeParse(customFields.faq_json || item.faq);
+    const nutrition = safeParse(customFields.nutrition_json || item.nutrition);
+    const howToUseSteps = safeParse(customFields.how_to_use_steps || item.how_to_use_steps);
+    const howToUseDesc = customFields.how_to_use_description || item.how_to_use_description;
 
     return {
         id: item.slug || String(item.id),
@@ -124,7 +126,7 @@ export function mapYampiProduct(item: any): Product {
         handle: item.slug || String(item.id),
         variations,
         details: {
-            subtitle: customFields.subtitle,
+            subtitle: customFields.subtitle || item.subtitle,
             reviews: {
                 rating: customFields.reviews_rating ? parseFloat(customFields.reviews_rating) : 4.9,
                 count: customFields.reviews_count ? parseInt(customFields.reviews_count) : 124,
@@ -300,6 +302,34 @@ export async function addToCheckout(
 // O gerenciamento de clientes é feito pelo painel admin.
 // Para compatibilidade, mantemos as funções mas simplificadas.
 
+// ── Pedidos (Orders) ──
+
+/**
+ * Busca todos os pedidos da loja.
+ */
+export async function getAllOrders(limit = 50): Promise<any[]> {
+    const data = await yampiFetch(`/orders?limit=${limit}&include=customer,items`);
+    return data?.data || [];
+}
+
+/**
+ * Busca pedido por ID.
+ */
+export async function getOrderById(id: string): Promise<any> {
+    const data = await yampiFetch(`/orders/${id}?include=customer,items,transactions`);
+    return data?.data || null;
+}
+
+// ── Clientes (Customers) ──
+
+/**
+ * Busca todos os clientes.
+ */
+export async function getAllCustomers(limit = 50): Promise<any[]> {
+    const data = await yampiFetch(`/customers?limit=${limit}`);
+    return data?.data || [];
+}
+
 export async function registerCustomer(input: {
     firstName: string;
     lastName: string;
@@ -329,7 +359,6 @@ export async function loginCustomer(_input: {
     password: string;
 }): Promise<any> {
     // Yampi não tem login via API pública do mesmo jeito que Shopify.
-    // Retorna erro amigável.
     console.warn('[Yampi] Login de clientes não suportado via API pública da Yampi.');
     return {
         customerAccessToken: null,
@@ -341,8 +370,8 @@ export async function loginCustomer(_input: {
     };
 }
 
-export async function getCustomer(_customerAccessToken: string): Promise<any> {
-    // Yampi não suporta busca de cliente via token de acesso do frontend
-    console.warn('[Yampi] Busca de cliente não suportada via API pública da Yampi.');
-    return null;
+export async function getCustomer(customerAccessToken: string): Promise<any> {
+    // Busca cliente por ID (usando o "token" como ID para fins de mockup)
+    const data = await yampiFetch(`/customers/${customerAccessToken}`);
+    return data?.data || null;
 }

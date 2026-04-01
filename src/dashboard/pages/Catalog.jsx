@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { fetchCatalog } from "@/dashboard/lib/api";
+import { getAllProducts } from "../../lib/yampi";
 
 function clampNumber(v, def = 0) {
   const n = Number(String(v ?? "").replace(",", "."));
@@ -16,13 +16,13 @@ function moneyBRL(v) {
 function normalizeItem(x) {
   return {
     id: x?.id ?? "",
-    title: x?.title ?? "Sem título",
+    title: x?.name ?? "Sem título",
     price: clampNumber(x?.price ?? 0, 0),
-    available_quantity: Number(x?.available_quantity ?? 0) || 0,
-    status: x?.status ?? "—",
-    thumbnail: x?.thumbnail ?? "",
-    permalink: x?.permalink ?? "",
-    sku: x?.seller_sku ?? "",
+    available_quantity: x?.is_available ? 99 : 0, // Yampi simplistic available check
+    status: x?.is_available ? "active" : "paused",
+    thumbnail: x?.thumbnail_url ?? "",
+    permalink: `/product/${x?.handle || x?.id}`,
+    sku: x?.handle ?? "",
   };
 }
 
@@ -79,11 +79,10 @@ export default function Catalog() {
     setErr("");
     setLoading(true);
     try {
-      const res = await fetchCatalog("ml");
-      const raw = Array.isArray(res?.items) ? res.items : [];
-      setItems(raw.map(normalizeItem));
+      const res = await getAllProducts(50);
+      setItems(res.map(normalizeItem));
     } catch (e) {
-      setErr("Erro ao carregar catálogo");
+      setErr("Erro ao carregar catálogo da Yampi");
       setItems([]);
     } finally {
       setLoading(false);
@@ -138,7 +137,7 @@ export default function Catalog() {
       {/* Header */}
       <div>
         <div style={{ fontSize: 20, fontWeight: 900 }}>
-          Catálogo — Mercado Livre
+          Catálogo — Yampi
         </div>
         <div className="small" style={{ opacity: 0.8 }}>
           Visão organizada por status e estoque
@@ -369,7 +368,7 @@ export default function Catalog() {
               whiteSpace: "nowrap",
             }}
           >
-            Abrir no ML →
+            Ver na Loja →
           </a>
         ) : null}
       </div>

@@ -1,6 +1,6 @@
-// src/pages/Dashboard.jsx
-import { useMemo, useState } from "react";
-import { fetchDashboardSummary } from "@/dashboard/lib/api";
+import { useMemo, useState, useEffect } from "react";
+import { getAllOrders } from "../../lib/yampi";
+import { Link } from "react-router-dom";
 
 function clampNumber(v, def = 0) {
   const n = Number(String(v ?? "").replace(",", "."));
@@ -45,26 +45,27 @@ export default function Dashboard() {
   const [showJson, setShowJson] = useState(false);
 
   async function load() {
-    const uid = localStorage.getItem("ml_user_id");
-    if (!uid) {
-      setErr(
-        <span>
-          Sem ml_user_id. Faça{" "}
-          <Link to="/admin/auth/ml" style={{ color: "#78c8ff", textDecoration: "underline" }}>
-            OAuth em /auth/ml
-          </Link>
-          .
-        </span>
-      );
-      return;
-    }
-
     setErr("");
     setLoading(true);
     try {
-      const r = await fetchDashboardSummary({ userId: uid, from, to });
-      if (!r?.ok) throw new Error(r?.message || r?.error || "Falha ao carregar dashboard");
-      setData(r);
+      const orders = await getAllOrders(100);
+      if (!orders) throw new Error("Falha ao carregar dados da Yampi");
+
+      // Agrupa pedidos por semana ou dia para o componente
+      const bucketsMap = new Map();
+      orders.forEach(o => {
+        const date = o.created_at?.date || o.created_at || o.date_created;
+        const week = String(date).slice(0, 10); // Simplificado por dia
+        const val = bucketsMap.get(week) || { id: week, campanha: week, inicio: week, fim: week, orders: 0, units: 0, receita: 0, tarifas: 0, custoProd: 0, ads: 0 };
+        val.orders += 1;
+        val.receita += parseFloat(o.total || 0);
+        val.units += o.items?.data?.reduce((acc, i) => acc + (i.quantity || 1), 0) || 0;
+        bucketsMap.set(week, val);
+      });
+
+      const buckets = Array.from(bucketsMap.values()).sort((a,b) => b.inicio.localeCompare(a.inicio)).slice(0, 10);
+
+      setData({ ok: true, buckets });
     } catch (e) {
       setErr(e?.message || "Erro ao carregar");
       setData(null);
@@ -72,6 +73,10 @@ export default function Dashboard() {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    load();
+  }, []);
 
   const buckets = Array.isArray(data?.buckets) ? data.buckets : [];
 
@@ -150,9 +155,9 @@ export default function Dashboard() {
       {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
         <div>
-          <div style={{ fontSize: 18, fontWeight: 900 }}>Dashboard (visualização real)</div>
+          <div style={{ fontSize: 18, fontWeight: 900 }}>Dashboard — Yampi</div>
           <div className="small" style={{ opacity: 0.8 }}>
-            Mostrando o que o backend retorna em <b>/dashboard/summary</b>
+            Métricas reais extraídas dos seus pedidos na Yampi
           </div>
         </div>
 

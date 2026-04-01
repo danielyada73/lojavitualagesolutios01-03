@@ -32,6 +32,7 @@ export interface ProductVariation {
   name: string;
   price?: number;
   price_modifier?: number;
+  sku_token?: string;
 }
 
 export interface Banner {
