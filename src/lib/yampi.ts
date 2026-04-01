@@ -221,6 +221,42 @@ const CATEGORY_MAPPING: Record<string, string> = {
 };
 
 /**
+ * Tradução de IDs internos do site para Tokens de Checkout da Yampi.
+ * Isso garante que mesmo produtos de mock funcionem no checkout.
+ */
+const INTERNAL_TOKEN_MAP: Record<string, string> = {
+    // Creatina
+    'cre-ind': '9K68OGYB34',
+    'cre-kit-2': '3LGTLLJT9Q',
+    'cre-kit-3': 'CAZ37JJ91W',
+    
+    // Celluli Burn
+    'cell-ind': 'RMAGUPCGHB',
+    'cell-kit-3': '78HF7WJF4F',
+    'cell-kit-5': 'KDNJ1WEHC3',
+    
+    // Coenzima Q10
+    'coenz-ind': 'JD0TPQXRRP',
+    'coenz-kit-3': 'KSO4RI8XF0',
+    'coenz-kit-5': 'C1EJM7X0EW',
+    
+    // Colágeno com Ácido Hialurônico
+    'col-cran': '3U1Y8DTZH9',
+    'col-lim': '3U1Y8DTZH9', // Mesmo token pois sabor é variação na Yampi
+    'col-kit-2': 'HOYDA7TYT0',
+    'col-kit-3': 'RZI9L4LENR',
+    
+    // Colágeno Verisol
+    'verisol-ind': '8G95KP981S',
+    'verisol-kit-2': 'E6DOV587F3',
+    'verisol-kit-3': '3AUV0QPTH3',
+    
+    // Fallbacks para IDs que já são tokens
+    '9K68OGYB34': '9K68OGYB34',
+    'RMAGUPCGHB': 'RMAGUPCGHB',
+};
+
+/**
  * Busca produtos de uma categoria por slug com limite aumentado.
  */
 export async function getProductsByCategory(slug: string, limit = 100): Promise<Product[]> {
@@ -267,7 +303,13 @@ export function generateCheckoutUrl(items: { skuToken: string; quantity: number 
     // Formato: sku_token:quantidade,sku_token:quantidade
     const itemsStr = items
         .filter(item => !!item.skuToken)
-        .map(item => `${item.skuToken}:${item.quantity}`)
+        .map(item => {
+            // Resolve o token (se for um ID interno, troca pelo real da Yampi)
+            const realToken = INTERNAL_TOKEN_MAP[item.skuToken] || 
+                             (yampiTokens as any)[item.skuToken] || 
+                             item.skuToken;
+            return `${realToken}:${item.quantity}`;
+        })
         .join(',');
     
     if (!itemsStr) {
