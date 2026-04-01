@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../ui/ProductCard';
 import { Product } from '../../types';
-import { getProductsByCategory } from '../../lib/yampi';
+import { getProductsByCategory, getAllProducts } from '../../lib/yampi';
 import { Loader2 } from 'lucide-react';
 
 const mockOffers: Product[] = [
@@ -47,13 +47,19 @@ export default function CelulliBurnSection() {
   useEffect(() => {
     async function loadData() {
       try {
-        const yampiProducts = await getProductsByCategory('celluli', 10);
+        let yampiProducts = await getProductsByCategory('celluli', 10);
+        
+        if (!yampiProducts || yampiProducts.length < 3) {
+            // Fallback: tenta buscar por slug se a categoria não retornar o suficiente
+            const slugs = ['cell-ind', 'cell-kit-2', 'cell-kit-3'];
+            const all = await getAllProducts(50);
+            const found = all.filter(p => slugs.includes(p.handle));
+            if (found.length > 0) yampiProducts = found;
+        }
+
         if (yampiProducts && yampiProducts.length > 0) {
-          const filtered = yampiProducts
-            .filter(p => !p.name.toLowerCase().includes('6 potes'))
-            .sort((a, b) => a.price - b.price)
-            .slice(0, 3);
-          setProducts(filtered);
+          const sorted = [...yampiProducts].sort((a, b) => a.price - b.price).slice(0, 3);
+          setProducts(sorted);
         } else {
           setProducts(mockOffers);
         }

@@ -386,6 +386,60 @@ export async function loginCustomer(_input: {
     };
 }
 
+// ── Métodos de Escrita (Sincronização) ──
+
+/**
+ * Cria um produto na Yampi.
+ */
+export async function createProduct(data: any): Promise<any> {
+    return yampiFetch('/catalog/products', {
+        method: 'POST',
+        body: JSON.stringify(data),
+    });
+}
+
+/**
+ * Atualiza um produto na Yampi.
+ */
+export async function updateProduct(id: string | number, data: any): Promise<any> {
+    return yampiFetch(`/catalog/products/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+    });
+}
+
+/**
+ * Faz upload de uma imagem para um produto.
+ */
+export async function uploadProductImage(productId: string | number, imageUrl: string): Promise<any> {
+    return yampiFetch(`/catalog/products/${productId}/images`, {
+        method: 'POST',
+        body: JSON.stringify({
+            image_url: imageUrl,
+            is_main: true,
+        }),
+    });
+}
+
+/**
+ * Garante que uma categoria exista, criando-a se necessário.
+ */
+export async function ensureCategory(name: string): Promise<any> {
+    const categories = await getCategoriesFromApi();
+    const existing = categories.find(c => c.name.toLowerCase() === name.toLowerCase());
+    
+    if (existing) return existing;
+
+    const created = await yampiFetch('/catalog/categories', {
+        method: 'POST',
+        body: JSON.stringify({ name, active: true }),
+    });
+
+    // Limpa cache para forçar recarregamento
+    categoriesCache = null;
+    return created?.data || null;
+}
+
 export async function getCustomer(customerAccessToken: string): Promise<any> {
     // Busca cliente por ID (usando o "token" como ID para fins de mockup)
     const data = await yampiFetch(`/customers/${customerAccessToken}`);

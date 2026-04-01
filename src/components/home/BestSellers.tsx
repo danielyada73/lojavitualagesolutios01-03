@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { products as mockProducts } from '../../data/mock';
 import ProductCard from '../ui/ProductCard';
 import { Product } from '../../types';
-import { getProductsByCategory } from '../../lib/yampi';
+import { getProductsByCategory, getAllProducts } from '../../lib/yampi';
 import { Loader2 } from 'lucide-react';
 
 export default function BestSellers() {
@@ -16,9 +16,16 @@ export default function BestSellers() {
         if (yampiProducts && yampiProducts.length > 0) {
           setProducts(yampiProducts);
         } else {
-          // Fallback para os IDs específicos que o usuário pediu originalmente
-          const bestSellersIds = ['col-cran', 'cre-ind', 'coenz-ind', 'cell-ind', 'col-kit-3'];
-          setProducts(mockProducts.filter((p) => bestSellersIds.includes(p.id)));
+          // Busca todos e filtra os principais se a categoria 'mais-vendidos' não existir
+          const all = await getAllProducts(50);
+          const bestSellerSlugs = ['col-cran', 'cre-ind', 'coenz-ind', 'cell-ind', 'col-kit-3'];
+          const filtered = all.filter(p => bestSellerSlugs.includes(p.handle)).slice(0, 5);
+          
+          if (filtered.length > 0) {
+            setProducts(filtered);
+          } else {
+            setProducts(mockProducts.filter((p) => bestSellerSlugs.includes(p.id)));
+          }
         }
       } catch (error) {
         console.error('Erro ao carregar Mais Vendidos da Yampi:', error);

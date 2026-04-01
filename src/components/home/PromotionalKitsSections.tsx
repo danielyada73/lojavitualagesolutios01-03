@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Product } from '../../types';
 import ProductCard from '../ui/ProductCard';
-import { getProductsByCategory } from '../../lib/shopify';
+import { getProductsByCategory, getAllProducts } from '../../lib/yampi';
 import { Loader2 } from 'lucide-react';
 
 export default function PromotionalKitsSections() {
