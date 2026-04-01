@@ -16,15 +16,18 @@ export default function CartDrawer() {
   }, [checkoutUrl]);
 
   const handleCheckout = async () => {
-    if (checkoutUrl) {
+    if (checkoutUrl && !checkoutUrl.endsWith('/r/')) {
       window.location.href = checkoutUrl;
-    } else if (items.length > 0) {
-      // Tenta re-sincronizar se o checkoutUrl sumiu mas ainda há itens
-      console.log('[CartDrawer] CheckoutUrl ausente, tentando re-sincronizar...');
+    } else {
+      // Tenta re-sincronizar se o checkoutUrl está inválido
+      console.log('[CartDrawer] CheckoutUrl inválido ou ausente, tentando re-sincronizar...');
       await useCartStore.getState().syncCart();
       const newUrl = useCartStore.getState().checkoutUrl;
-      if (newUrl) {
+      
+      if (newUrl && !newUrl.endsWith('/r/')) {
         window.location.href = newUrl;
+      } else {
+        alert('Ops! Alguns produtos no seu carrinho parecem estar sem link de compra. Por favor, tente novamente em alguns instantes ou entre em contato com o suporte.');
       }
     }
   };

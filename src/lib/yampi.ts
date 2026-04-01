@@ -1,4 +1,5 @@
 import { Product, ProductVariation } from '../types';
+import yampiTokens from '../data/yampi_tokens.json';
 
 // ── Configuração Yampi ──
 const alias = import.meta.env.VITE_YAMPI_ALIAS;
@@ -100,7 +101,10 @@ export function mapYampiProduct(item: any): Product {
         name: sku.title || sku.name || item.name,
         price: parseFloat(sku.prices?.data?.[0]?.price_sale || sku.price_sale || sku.price || '0'),
         // Prioriza o token de venda real (RMAG...), depois o SKU técnico, depois o ID
-        sku_token: sku.token || item.token || (sku.purchase_url ? sku.purchase_url.split('/r/')[1] : '') || sku.sku || String(sku.id) || '',
+        sku_token: sku.token || item.token || (sku.purchase_url ? sku.purchase_url.split('/r/')[1] : '') || 
+                  (sku.checkout_url ? sku.checkout_url.split('/r/')[1] : '') ||
+                  (yampiTokens as any)[item.slug] || (yampiTokens as any)[String(sku.id)] ||
+                  sku.sku || String(sku.id) || '',
     }));
 
     console.log(`[Yampi] Mapeado: ${item.name} | Token Checkout: ${variations[0]?.sku_token}`);
@@ -266,6 +270,10 @@ export function generateCheckoutUrl(items: { skuToken: string; quantity: number 
         .map(item => `${item.skuToken}:${item.quantity}`)
         .join(',');
     
+    if (!itemsStr) {
+        console.warn('[Yampi] Checkout URL gerada sem tokens de SKU!');
+    }
+
     // Para domínio customizado, o padrão é seguro.agesolution.com.br
     return `https://seguro.agesolution.com.br/r/${itemsStr}`;
 }
