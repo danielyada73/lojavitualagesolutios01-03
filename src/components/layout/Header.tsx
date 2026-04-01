@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ShoppingCart, Search, Menu, X, User } from 'lucide-react';
 import { useState, useMemo, useEffect } from 'react';
 import { useCartStore } from '../../store/cart';
-import { getAllProducts } from '../../lib/shopify';
+import { getAllProducts } from '../../lib/yampi';
 import { Product } from '../../types';
 import { products as mockProducts } from '../../data/mock';
 
@@ -155,9 +155,14 @@ export default function Header() {
                 )}
               </div>
 
-              <Link to="/auth" className="text-white hover:text-age-gold transition-colors">
+              <a 
+                href="https://seguro.agesolution.com.br/auth/login" 
+                className="text-white hover:text-age-gold transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <User size={20} />
-              </Link>
+              </a>
 
               <button
                 onClick={toggleCart}
