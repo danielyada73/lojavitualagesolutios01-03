@@ -99,8 +99,11 @@ export function mapYampiProduct(item: any): Product {
         product_id: String(item.id),
         name: sku.title || sku.name || item.name,
         price: parseFloat(sku.prices?.data?.[0]?.price_sale || sku.price_sale || sku.price || '0'),
-        sku_token: sku.token || sku.sku || String(sku.id) || '', // Fallbacks robustos para garantir o checkout
+        // Prioriza o token de venda real (RMAG...), depois o SKU técnico, depois o ID
+        sku_token: sku.token || item.token || (sku.purchase_url ? sku.purchase_url.split('/r/')[1] : '') || sku.sku || String(sku.id) || '',
     }));
+
+    console.log(`[Yampi] Mapeado: ${item.name} | Token Checkout: ${variations[0]?.sku_token}`);
 
     // Metadados extras
     const safeParse = (val: string | any) => {
