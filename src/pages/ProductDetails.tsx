@@ -21,7 +21,23 @@ export default function ProductDetails() {
       setLoading(true);
       try {
         let target: Product | null | undefined = null;
-        try { target = await getProductBySlug(id); } catch { /* Yampi fail */ }
+        try { 
+          // Primeiro tenta pelo Slug exato (ex: cell-ind ou slug da Yampi)
+          target = await getProductBySlug(id); 
+          
+          // Se não achar e for um ID do mockup (ex: cell-ind), tenta buscar pelo nome aproximado na Yampi
+          if (!target && products.find(p => p.id === id)) {
+            const mockP = products.find(p => p.id === id);
+            if (mockP) {
+              const searchName = mockP.name.split(' ')[0]; // Pega a primeira palavra (ex: Celluli)
+              // Tenta achar na Yampi por esse nome
+              const yampiSearch = await getProductBySlug(searchName);
+              if (yampiSearch) target = yampiSearch;
+            }
+          }
+        } catch { /* Yampi fail */ }
+        
+        // Fallback apenas se a Yampi realmente não tiver nada
         if (!target) { target = products.find(p => p.id === id) || null; }
         if (target) {
           setProduct(target);

@@ -263,7 +263,8 @@ export function generateCheckoutUrl(items: { skuToken: string; quantity: number 
         .map(item => `${item.skuToken}:${item.quantity}`)
         .join(',');
     
-    return `https://${alias}.pay.yampi.com.br/r/${itemsStr}`;
+    // Para domínio customizado, o padrão é seguro.agesolution.com.br
+    return `https://seguro.agesolution.com.br/r/${itemsStr}`;
 }
 
 /**
