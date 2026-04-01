@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { CartItem, Product, ProductVariation } from '../types';
-import { createCheckout, addToCheckout } from '../lib/yampi';
+import { createCheckout, addToCheckout, generateCheckoutUrl } from '../lib/yampi';
 
 interface CartStore {
   items: CartItem[];
@@ -61,31 +61,19 @@ export const useCartStore = create<CartStore>()(
         try {
           set({ isSyncing: true });
           const state = get();
-          const { cartId, items } = state;
+          const { items } = state;
           
-          // Encontra o SKU ID ou Token para a Yampi. 
-          // Se houver variação, assume ela. Caso contrário, tenta a primeira variação do produto.
-          const skuId = variation?.id || product.variations?.[0]?.id || product.id;
+          // Gera a URL completa com todos os itens atuais
+          const checkoutItems = items.map(i => ({
+            skuToken: i.variation?.sku_token || i.product.variations?.[0]?.sku_token || '',
+            quantity: i.quantity
+          }));
 
-          if (!cartId) {
-            const newCheckout = await createCheckout(skuId, quantity);
-            if (newCheckout) {
-              set({ cartId: newCheckout.id, checkoutUrl: newCheckout.checkoutUrl });
-            }
-          } else {
-            // Prepara lista de itens existentes para adicionar o novo
-            const existingItems = items
-              .filter(i => i.product.id !== product.id || (i.variation?.id !== (variation?.id || product.variations?.[0]?.id)))
-              .map(i => ({
-                skuId: i.variation?.id || i.product.variations?.[0]?.id || i.product.id,
-                quantity: i.quantity
-              }));
-
-            const updatedCheckout = await addToCheckout(cartId, skuId, quantity, existingItems);
-            if (updatedCheckout) {
-              set({ checkoutUrl: updatedCheckout.checkoutUrl });
-            }
-          }
+          const checkoutUrl = generateCheckoutUrl(checkoutItems);
+          set({ 
+            cartId: `yampi-checkout-${Date.now()}`, 
+            checkoutUrl 
+          });
         } catch (error) {
           console.error('Erro ao sincronizar carrinho com Yampi:', error);
         } finally {
@@ -119,30 +107,24 @@ export const useCartStore = create<CartStore>()(
       },
       syncCart: async () => {
         const { items } = get();
-        if (items.length === 0) return;
+        if (items.length === 0) {
+          set({ checkoutUrl: null, cartId: null });
+          return;
+        }
 
         try {
           set({ isSyncing: true });
 
-          // Cria um novo checkout com todos os itens atuais
           const checkoutItems = items.map(item => ({
-            skuId: item.variation?.id || item.product.variations?.[0]?.id || item.product.id,
+            skuToken: item.variation?.sku_token || item.product.variations?.[0]?.sku_token || '',
             quantity: item.quantity
           }));
 
-          const first = checkoutItems[0];
-          const rest = checkoutItems.slice(1);
-
-          let result = await createCheckout(first.skuId, first.quantity);
-          if (result) {
-            for (const item of rest) {
-              result = await addToCheckout(result.id, item.skuId, item.quantity, [
-                { skuId: first.skuId, quantity: first.quantity },
-                ...rest.slice(0, rest.indexOf(item))
-              ]);
-            }
-            set({ cartId: result?.id || null, checkoutUrl: result?.checkoutUrl || null });
-          }
+          const checkoutUrl = generateCheckoutUrl(checkoutItems);
+          set({ 
+            cartId: `yampi-checkout-${Date.now()}`, 
+            checkoutUrl 
+          });
         } catch (error) {
           console.error('[CartStore] Erro ao sincronizar carrinho:', error);
         } finally {

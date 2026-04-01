@@ -45,7 +45,7 @@ export default function ProductDetails() {
       '.product-form__submit, button[name="add"], .product-form__buttons button, ' +
       '.add-to-cart, [data-add-to-cart], button.button--primary, ' +
       'button[type="submit"], .kb-main-buy-btn, .kit-builder__buy-button, ' +
-      '.kb-cta, .kit-buy-btn'
+      '.kb-cta, .kit-buy-btn, .buy-now-btn, .comprar-agora'
     );
 
     const handleAdd = (e: Event) => {

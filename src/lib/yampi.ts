@@ -61,26 +61,34 @@ export function mapYampiProduct(item: any): Product {
 
     // Imagens
     const images: string[] = [];
+    
+    // 1. Imagens do Produto
     if (item.images?.data) {
         item.images.data.forEach((img: any) => {
-            if (img.url) images.push(img.url);
-            else if (img.image_url) images.push(img.image_url);
+            const url = img.url || img.image_url;
+            if (url && !images.includes(url)) images.push(url);
         });
     }
-    // Fallback: imagens das SKUs
-    if (images.length === 0 && skus.length > 0) {
+
+    // 2. Imagens das SKUs (Variações) - Muitas vezes as fotos reais estão aqui
+    if (skus.length > 0) {
         skus.forEach((sku: any) => {
             if (sku.images?.data) {
                 sku.images.data.forEach((img: any) => {
-                    if (img.url) images.push(img.url);
-                    else if (img.image_url) images.push(img.image_url);
+                    const url = img.url || img.image_url;
+                    if (url && !images.includes(url)) images.push(url);
                 });
             }
         });
     }
 
-    // Thumbnail
-    const thumbnail = images[0] || item.thumbnail || 'https://placehold.co/600x600?text=Sem+Imagem';
+    // Se ainda não tiver imagens, tenta a thumbnail direta
+    if (images.length === 0 && item.thumbnail_url) {
+        images.push(item.thumbnail_url);
+    }
+
+    // Thumbnail final para o card
+    const thumbnail = images[0] || 'https://placehold.co/600x600?text=Sem+Imagem';
 
     // Categoria
     const categorySlug = item.categories?.data?.[0]?.slug || item.category?.slug || 'geral';
@@ -147,9 +155,9 @@ export function mapYampiProduct(item: any): Product {
 // ── Produtos ──
 
 /**
- * Busca todos os produtos da loja.
+ * Busca todos os produtos da loja com limite aumentado.
  */
-export async function getAllProducts(limit = 20): Promise<Product[]> {
+export async function getAllProducts(limit = 100): Promise<Product[]> {
     const data = await yampiFetch(`/catalog/products?include=skus.prices,images,categories&limit=${limit}`);
     if (!data?.data) return [];
     return data.data.map((item: any) => mapYampiProduct(item));
@@ -206,9 +214,9 @@ const CATEGORY_MAPPING: Record<string, string> = {
 };
 
 /**
- * Busca produtos de uma categoria por slug.
+ * Busca produtos de uma categoria por slug com limite aumentado.
  */
-export async function getProductsByCategory(slug: string, limit = 20): Promise<Product[]> {
+export async function getProductsByCategory(slug: string, limit = 100): Promise<Product[]> {
     const yampiSlug = CATEGORY_MAPPING[slug] || slug;
 
     console.log(`[Yampi] Buscando categoria: ${slug} -> ${yampiSlug}`);
@@ -246,11 +254,15 @@ export async function getProductsByCategory(slug: string, limit = 20): Promise<P
 /**
  * Gera uma URL de checkout da Yampi para os itens do carrinho.
  * A Yampi suporta links de pagamento diretos no formato:
- * https://{alias}.checkout.yampi.com.br/r/{skuId},{quantity}
+ * https://{alias}.checkout.yampi.com.br/r/{skuToken}:{quantity},{skuToken}:{quantity}
  */
-export function generateCheckoutUrl(items: { skuId: string; quantity: number }[]): string {
-    // Formato: sku_id,quantidade;sku_id,quantidade
-    const itemsStr = items.map(item => `${item.skuId},${item.quantity}`).join(';');
+export function generateCheckoutUrl(items: { skuToken: string; quantity: number }[]): string {
+    // Formato: sku_token:quantidade,sku_token:quantidade
+    const itemsStr = items
+        .filter(item => !!item.skuToken)
+        .map(item => `${item.skuToken}:${item.quantity}`)
+        .join(',');
+    
     return `https://${alias}.checkout.yampi.com.br/r/${itemsStr}`;
 }
 
@@ -259,12 +271,12 @@ export function generateCheckoutUrl(items: { skuId: string; quantity: number }[]
  * Equivalente ao createCart da Shopify.
  */
 export async function createCheckout(
-    skuId?: string,
+    skuToken?: string,
     quantity = 1
 ): Promise<{ id: string; checkoutUrl: string } | null> {
-    if (!skuId) return null;
+    if (!skuToken) return null;
 
-    const checkoutUrl = generateCheckoutUrl([{ skuId, quantity }]);
+    const checkoutUrl = generateCheckoutUrl([{ skuToken, quantity }]);
     return {
         id: `yampi-checkout-${Date.now()}`,
         checkoutUrl,
@@ -277,17 +289,17 @@ export async function createCheckout(
  */
 export async function addToCheckout(
     _currentCheckoutId: string,
-    skuId: string,
+    skuToken: string,
     quantity = 1,
-    existingItems: { skuId: string; quantity: number }[] = []
+    existingItems: { skuToken: string; quantity: number }[] = []
 ): Promise<{ id: string; checkoutUrl: string } | null> {
     // Verifica se o item já existe na lista
     const updatedItems = [...existingItems];
-    const existing = updatedItems.find(item => item.skuId === skuId);
+    const existing = updatedItems.find(item => item.skuToken === skuToken);
     if (existing) {
         existing.quantity += quantity;
     } else {
-        updatedItems.push({ skuId, quantity });
+        updatedItems.push({ skuToken, quantity });
     }
 
     const checkoutUrl = generateCheckoutUrl(updatedItems);

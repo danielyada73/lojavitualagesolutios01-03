@@ -255,7 +255,7 @@ function MonthlyChart({ title, points }) {
 export default function Orders() {
   const [from, setFrom] = useState("2026-01-29");
   const [to, setTo] = useState("2026-02-28");
-  const [limit, setLimit] = useState(20);
+  const [limit, setLimit] = useState(100);
   const [page, setPage] = useState(0);
 
   const [status, setStatus] = useState("");

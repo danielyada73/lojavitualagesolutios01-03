@@ -12,7 +12,7 @@ export default function BestSellers() {
   useEffect(() => {
     async function loadData() {
       try {
-        const yampiProducts = await getProductsByCategory('mais-vendidos', 5);
+        const yampiProducts = await getProductsByCategory('mais-vendidos', 15);
         if (yampiProducts && yampiProducts.length > 0) {
           setProducts(yampiProducts);
         } else {

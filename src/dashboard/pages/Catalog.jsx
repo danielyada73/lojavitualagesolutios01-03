@@ -79,7 +79,7 @@ export default function Catalog() {
     setErr("");
     setLoading(true);
     try {
-      const res = await getAllProducts(50);
+      const res = await getAllProducts(100);
       setItems(res.map(normalizeItem));
     } catch (e) {
       setErr("Erro ao carregar catálogo da Yampi");

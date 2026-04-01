@@ -8,9 +8,9 @@ export default function CartDrawer() {
   const { items, isOpen, toggleCart, removeItem, updateQuantity, total, checkoutUrl, isSyncing } = useCartStore();
 
   useEffect(() => {
-    // Limpa URLs legadas da Yampi se existirem no estado
-    if (checkoutUrl && (checkoutUrl.includes('yampi.com.br') || checkoutUrl.includes('undefined'))) {
-      console.log('[CartDrawer] Limpando URL legada da Yampi/Undefined.');
+    // Limpa apenas URLs legadas se forem da Shopify ou inválidas
+    if (checkoutUrl && (checkoutUrl.includes('myshopify.com') || checkoutUrl.includes('undefined'))) {
+      console.log('[CartDrawer] Limpando URL legada ou inválida.');
       useCartStore.setState({ checkoutUrl: null, cartId: null });
     }
   }, [checkoutUrl]);

@@ -22,7 +22,7 @@ export default function Home() {
   useEffect(() => {
     async function loadProducts() {
       try {
-        const products = await getProductsByCategory('colageno', 10);
+        const products = await getProductsByCategory('colageno', 20);
         if (products && products.length > 0) {
           // Buscamos produtos específicos se existirem
           const pote1 = products.find(p => p.handle === 'col-cran' || p.handle === 'colageno' || p.name.toLowerCase().includes('cranberry'));
