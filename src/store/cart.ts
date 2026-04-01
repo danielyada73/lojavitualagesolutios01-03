@@ -65,8 +65,9 @@ export const useCartStore = create<CartStore>()(
           
           // Gera a URL completa com todos os itens atuais
           const checkoutItems = items.map(i => ({
-            skuToken: i.variation?.sku_token || i.product.variations?.[0]?.sku_token || '',
-            quantity: i.quantity
+            skuToken: i.variation?.sku_token || i.product.variations?.[0]?.sku_token || i.product.id || '',
+            quantity: i.quantity,
+            name: i.product.name
           }));
 
           const checkoutUrl = generateCheckoutUrl(checkoutItems);
@@ -116,8 +117,9 @@ export const useCartStore = create<CartStore>()(
           set({ isSyncing: true });
 
           const checkoutItems = items.map(item => ({
-            skuToken: item.variation?.sku_token || item.product.variations?.[0]?.sku_token || '',
-            quantity: item.quantity
+            skuToken: item.variation?.sku_token || item.product.variations?.[0]?.sku_token || item.product.id || '',
+            quantity: item.quantity,
+            name: item.product.name
           }));
 
           const checkoutUrl = generateCheckoutUrl(checkoutItems);

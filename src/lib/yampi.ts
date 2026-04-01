@@ -299,21 +299,43 @@ export async function getProductsByCategory(slug: string, limit = 100): Promise<
  * A Yampi suporta links de pagamento diretos no formato:
  * https://{alias}.checkout.yampi.com.br/r/{skuToken}:{quantity},{skuToken}:{quantity}
  */
-export function generateCheckoutUrl(items: { skuToken: string; quantity: number }[]): string {
+export function generateCheckoutUrl(items: { skuToken: string; quantity: number; name?: string }[]): string {
     // Formato: sku_token:quantidade,sku_token:quantidade
     const itemsStr = items
-        .filter(item => !!item.skuToken)
+        .filter(item => !!item.skuToken || !!item.name)
         .map(item => {
-            // Resolve o token (se for um ID interno, troca pelo real da Yampi)
-            const realToken = INTERNAL_TOKEN_MAP[item.skuToken] || 
-                             (yampiTokens as any)[item.skuToken] || 
-                             item.skuToken;
-            return `${realToken}:${item.quantity}`;
+            // 1. Tenta pelo Mapa de IDs Internos
+            let realToken = INTERNAL_TOKEN_MAP[item.skuToken];
+            
+            // 2. Tenta pelo Mapa de Segurança (JSON gerado)
+            if (!realToken) {
+                realToken = (yampiTokens as any)[item.skuToken];
+            }
+            
+            // 3. Tenta pelo NOME do produto (Fuzzy match) - Último recurso
+            if (!realToken && item.name) {
+                const cleanName = item.name.toLowerCase().trim();
+                // Tenta achar qualquer chave no JSON que contenha o nome do produto
+                const foundKey = Object.keys(yampiTokens).find(key => 
+                    cleanName.includes(key.toLowerCase()) || key.toLowerCase().includes(cleanName)
+                );
+                if (foundKey) {
+                    realToken = (yampiTokens as any)[foundKey];
+                }
+            }
+
+            // 4. Se ainda não achou, usa o que tiver como token original
+            const finalToken = realToken || item.skuToken;
+            
+            console.log(`[Yampi] Resolvendo Token para ${item.name || item.skuToken}: ${finalToken}`);
+            return `${finalToken}:${item.quantity}`;
         })
+        .filter(str => !str.startsWith(':')) // Remove itens sem token
         .join(',');
     
-    if (!itemsStr) {
+    if (!itemsStr || itemsStr === '') {
         console.warn('[Yampi] Checkout URL gerada sem tokens de SKU!');
+        return '';
     }
 
     // Para domínio customizado, o padrão é seguro.agesolution.com.br
