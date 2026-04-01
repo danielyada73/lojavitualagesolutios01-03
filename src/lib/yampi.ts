@@ -232,28 +232,34 @@ const INTERNAL_TOKEN_MAP: Record<string, string> = {
     
     // Celluli Burn
     'cell-ind': 'RMAGUPCGHB',
+    'cell-kit-2': 'PCF9HY50IY',
     'cell-kit-3': '78HF7WJF4F',
     'cell-kit-5': 'KDNJ1WEHC3',
+    'cell-kit-6': 'KDNJ1WEHC3', // Fallback se mapeado errado
     
     // Coenzima Q10
     'coenz-ind': 'JD0TPQXRRP',
+    'coenz-kit-2': 'ARHY9PYKB4',
     'coenz-kit-3': 'KSO4RI8XF0',
     'coenz-kit-5': 'C1EJM7X0EW',
     
     // Colágeno com Ácido Hialurônico
     'col-cran': '3U1Y8DTZH9',
-    'col-lim': '3U1Y8DTZH9', // Mesmo token pois sabor é variação na Yampi
+    'col-lim': '3U1Y8DTZH9', 
     'col-kit-2': 'HOYDA7TYT0',
     'col-kit-3': 'RZI9L4LENR',
+    'col-kit-6': 'OICN88HJC2',
     
     // Colágeno Verisol
     'verisol-ind': '8G95KP981S',
     'verisol-kit-2': 'E6DOV587F3',
     'verisol-kit-3': '3AUV0QPTH3',
+    'verisol-kit-6': 'S5LJPNV5AG',
     
-    // Fallbacks para IDs que já são tokens
-    '9K68OGYB34': '9K68OGYB34',
-    'RMAGUPCGHB': 'RMAGUPCGHB',
+    // Outros
+    'eye-care-ind': 'M3031LYEM6',
+    'eye-care-kit-2': 'AJGJNNIH77',
+    'eye-care-kit-3': 'GIJO9RSP81',
 };
 
 /**
@@ -314,11 +320,12 @@ export function generateCheckoutUrl(items: { skuToken: string; quantity: number;
             
             // 3. Tenta pelo NOME do produto (Fuzzy match) - Último recurso
             if (!realToken && item.name) {
-                const cleanName = item.name.toLowerCase().trim();
-                // Tenta achar qualquer chave no JSON que contenha o nome do produto
-                const foundKey = Object.keys(yampiTokens).find(key => 
-                    cleanName.includes(key.toLowerCase()) || key.toLowerCase().includes(cleanName)
-                );
+                const cleanName = item.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+                // Tenta achar qualquer chave no JSON que contenha as palavras principais
+                const foundKey = Object.keys(yampiTokens).find(key => {
+                    const cleanKey = key.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    return cleanName.includes(cleanKey) || cleanKey.includes(cleanName);
+                });
                 if (foundKey) {
                     realToken = (yampiTokens as any)[foundKey];
                 }
@@ -423,6 +430,7 @@ export async function registerCustomer(input: {
     lastName: string;
     email: string;
     phone?: string;
+    document?: string;
     password?: string;
     acceptsMarketing?: boolean;
 }): Promise<any> {
@@ -433,12 +441,22 @@ export async function registerCustomer(input: {
             last_name: input.lastName,
             email: input.email,
             phone: input.phone,
+            document: input.document,
         }),
     });
 
+    if (data?.errors) {
+        // Formata os erros da Yampi para exibição amigável
+        const errorMsg = Object.values(data.errors).flat().join(' ');
+        return {
+            customer: null,
+            customerUserErrors: [{ message: errorMsg || 'Erro ao registrar cliente.' }]
+        };
+    }
+
     return {
         customer: data?.data || null,
-        customerUserErrors: data?.errors || [],
+        customerUserErrors: [],
     };
 }
 
