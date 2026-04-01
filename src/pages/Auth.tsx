@@ -1,6 +1,6 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mail, Lock, User, ArrowRight, Phone, AlertCircle } from 'lucide-react';
+import { Mail, Lock, User, ArrowRight, Phone, AlertCircle, Fingerprint } from 'lucide-react';
 import { registerCustomer, loginCustomer, getCustomer } from '../lib/yampi';
 
 export default function Auth() {
@@ -13,6 +13,7 @@ export default function Auth() {
     name: '',
     email: '',
     phone: '',
+    cpf: '',
     password: ''
   });
 
@@ -29,9 +30,18 @@ export default function Auth() {
   const formatPhone = (value: string) => {
     const numbers = value.replace(/\D/g, '');
     const truncated = numbers.slice(0, 11);
-    if (truncated.length <= 2) return truncated;
+    if (truncated.length === 0) return '';
+    if (truncated.length <= 2) return `(${truncated}`;
     if (truncated.length <= 7) return `(${truncated.slice(0, 2)}) ${truncated.slice(2)}`;
     return `(${truncated.slice(0, 2)}) ${truncated.slice(2, 7)}-${truncated.slice(7)}`;
+  };
+  
+  const formatCPF = (value: string) => {
+    const numbers = value.replace(/\D/g, '').slice(0, 11);
+    if (numbers.length <= 3) return numbers;
+    if (numbers.length <= 6) return `${numbers.slice(0, 3)}.${numbers.slice(3)}`;
+    if (numbers.length <= 9) return `${numbers.slice(0, 3)}.${numbers.slice(3, 6)}.${numbers.slice(6)}`;
+    return `${numbers.slice(0, 3)}.${numbers.slice(3, 6)}.${numbers.slice(6, 9)}-${numbers.slice(9)}`;
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -53,6 +63,9 @@ export default function Auth() {
       } else {
         setErrors(prev => ({ ...prev, email: '' }));
       }
+    } else if (name === 'cpf') {
+      const formatted = formatCPF(value);
+      setFormData(prev => ({ ...prev, [name]: formatted }));
     } else {
       setFormData(prev => ({ ...prev, [name]: value }));
     }
@@ -100,6 +113,10 @@ export default function Auth() {
 
         if (formData.phone && formData.phone.length >= 10) {
           registrationInput.phone = `+55${formData.phone.replace(/\D/g, '')}`;
+        }
+        
+        if (formData.cpf && formData.cpf.length >= 11) {
+          registrationInput.document = formData.cpf.replace(/\D/g, '');
         }
 
         console.log('[Auth] Tentando registrar cliente:', registrationInput.email);
@@ -220,6 +237,27 @@ export default function Auth() {
                   <AlertCircle size={10} /> {errors.phone}
                 </div>
               )}
+            </div>
+          )}
+
+          {!isLogin && (
+            <div className="relative group">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Fingerprint className="h-5 w-5 text-age-gold" />
+              </div>
+              <input
+                id="cpf"
+                name="cpf"
+                type="text"
+                required
+                disabled={loading}
+                value={formData.cpf}
+                onChange={handleChange}
+                maxLength={14}
+                style={{ paddingLeft: '80px' }}
+                className="appearance-none rounded-xl relative block w-full pr-4 py-4 bg-neutral-900/50 border border-white/10 placeholder-gray-500 text-white focus:outline-none focus:border-age-gold focus:ring-1 focus:ring-age-gold transition-colors sm:text-sm disabled:opacity-50"
+                placeholder="CPF (000.000.000-00)"
+              />
             </div>
           )}
 
