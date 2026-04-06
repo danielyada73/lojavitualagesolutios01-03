@@ -227,18 +227,19 @@ const INTERNAL_TOKEN_MAP: Record<string, string> = {
     'cell-ind': 'RMAGUPCGHB',
     'cell-kit-2': 'PCF9HY50IY',
     'cell-kit-3': '78HF7WJF4F',
-    'cell-kit-5': 'KDNJ1WEHC3',
-    'cell-kit-6': 'KDNJ1WEHC3', // Fallback se mapeado errado
+    'cell-kit-5': 'KDNJ1WEHC3', // Fallback antigo
+    'cell-kit-6': 'KDNJ1WEHC3', 
     
     // Coenzima Q10
     'coenz-ind': 'JD0TPQXRRP',
     'coenz-kit-2': 'ARHY9PYKB4',
     'coenz-kit-3': 'KSO4RI8XF0',
-    'coenz-kit-5': 'C1EJM7X0EW',
+    'coenz-kit-5': 'C1EJM7X0EW', // Fallback antigo
+    'coenz-kit-6': 'C1EJM7X0EW',
     
     // Colágeno com Ácido Hialurônico
     'col-cran': '3U1Y8DTZH9',
-    'col-lim': '3U1Y8DTZH9', 
+    'col-lim': 'EECCFB5BPD', 
     'col-kit-2': 'HOYDA7TYT0',
     'col-kit-3': 'RZI9L4LENR',
     'col-kit-6': 'OICN88HJC2',
@@ -249,7 +250,23 @@ const INTERNAL_TOKEN_MAP: Record<string, string> = {
     'verisol-kit-3': '3AUV0QPTH3',
     'verisol-kit-6': 'S5LJPNV5AG',
     
-    // Outros
+    // Variações de SKUs exatas do documento
+    'SU00OB2UPO': 'HOYDA7TYT0',
+    'T8FLZ97W6Q': 'KGICWXOHDC',
+    'BVWVFE850M': '4TQFOJG1EA',
+    'MHZ3CETVPP': 'OICN88HJC2',
+    'BNODV4WM6B': 'B0A9ME4GR9',
+    'JJSZBF9NE4': 'J7NHAD9XT9',
+    'ROCI8LHZ6O': 'RZI9L4LENR',
+    'ES1VAOF0AV': '955WW4R8LN',
+    'AR2J5CAD8B': 'GX3HE6DQ4M',
+    'T9E82T5H5D': 'P9FLSNK3UX',
+    'FFBYLP511J': '3U1Y8DTZH9',
+    'QEO6C8Q6LN': 'EECCFB5BPD',
+    'CREATINA-1UN': '9K68OGYB34',
+    'CREATINA-KIT-2': 'HJAMENSAUX',
+    'CREATINA-KIT-3': 'FYZPE4SJ4B',
+
     // Outros
     'eye-care-ind': 'M3031LYEM6',
     'eye-care-kit-2': 'AJGJNNIH77',
