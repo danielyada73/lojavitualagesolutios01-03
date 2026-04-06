@@ -1,32 +1,25 @@
 import { Product, ProductVariation } from '../types';
 import yampiTokens from '../data/yampi_tokens.json';
 
-// ── Configuração Yampi ──
-const alias = import.meta.env.VITE_YAMPI_ALIAS;
-const userToken = import.meta.env.VITE_YAMPI_TOKEN;
-const userSecretKey = import.meta.env.VITE_YAMPI_SECRET_KEY;
-const BASE_URL = `https://api.dooki.com.br/v2/${alias}`;
+// ── Configuração Yampi (Via Server-Side) ──
+const BASE_URL = `/api/yampi`;
 
 /**
- * Função base para chamadas à API REST da Yampi.
+ * Função base para chamadas à API da Yampi via proxy backend.
  */
 export async function yampiFetch(endpoint: string, options: RequestInit = {}): Promise<any> {
-    if (!alias || !userToken || !userSecretKey) {
-        console.error('❌ Yampi config missing', { alias, token: !!userToken, secret: !!userSecretKey });
-        return null;
-    }
-
-    const url = `${BASE_URL}${endpoint}`;
-
     try {
-        const response = await fetch(url, {
-            ...options,
+        const response = await fetch(BASE_URL, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'User-Token': userToken,
-                'User-Secret-Key': userSecretKey,
                 ...options.headers,
             },
+            body: JSON.stringify({
+                endpoint,
+                method: options.method || 'GET',
+                body: options.body ? JSON.parse(options.body as string) : undefined
+            })
         });
 
         const body = await response.json();
@@ -37,7 +30,7 @@ export async function yampiFetch(endpoint: string, options: RequestInit = {}): P
 
         return body;
     } catch (error) {
-        console.error('Error fetching from Yampi:', error);
+        console.error('Error fetching from Yampi proxy:', error);
         return null;
     }
 }
@@ -257,10 +250,34 @@ const INTERNAL_TOKEN_MAP: Record<string, string> = {
     'verisol-kit-6': 'S5LJPNV5AG',
     
     // Outros
+    // Outros
     'eye-care-ind': 'M3031LYEM6',
     'eye-care-kit-2': 'AJGJNNIH77',
     'eye-care-kit-3': 'GIJO9RSP81',
 };
+
+/**
+ * Verifica se o produto tem algum token Yampi válido.
+ */
+export function hasValidYampiToken(skuToken: string, name?: string): boolean {
+    let realToken = INTERNAL_TOKEN_MAP[skuToken];
+    if (!realToken) realToken = (yampiTokens as any)[skuToken];
+    if (!realToken && name) {
+        const cleanName = name.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const foundKey = Object.keys(yampiTokens).find(key => {
+            const cleanKey = key.toLowerCase().replace(/[^a-z0-9]/g, '');
+            return cleanName.includes(cleanKey) || cleanKey.includes(cleanName);
+        });
+        if (foundKey) realToken = (yampiTokens as any)[foundKey];
+    }
+    // Consideramos válido se mapenou para um Token da Yampi (que costuma ser alfa-numérico grande ou os especificados)
+    if (realToken) return true;
+    
+    // Se o skuToken original for um token Yampi válido nativo (geralmente > 8 chars letras e números maiúsculos)
+    if (skuToken && skuToken.length >= 8 && /^[A-Z0-9]+$/.test(skuToken)) return true;
+    
+    return false;
+}
 
 /**
  * Busca produtos de uma categoria por slug com limite aumentado.

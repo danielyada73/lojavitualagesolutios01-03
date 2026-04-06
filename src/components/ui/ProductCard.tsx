@@ -2,16 +2,19 @@ import { useNavigate } from 'react-router-dom';
 import { Star, ShoppingCart } from 'lucide-react';
 import { useCartStore } from '../../store/cart';
 import { Product } from '../../types';
+import { hasValidYampiToken } from '../../lib/yampi';
 
 interface ProductCardProps {
   product: Product;
   key?: string | number;
 }
 
-
 export default function ProductCard({ product }: ProductCardProps) {
   const navigate = useNavigate();
   const addItem = useCartStore((state) => state.addItem);
+
+  const firstSkuToken = product.variations?.[0]?.sku_token || product.id;
+  const isAvailable = product.is_available !== false && hasValidYampiToken(firstSkuToken, product.name);
 
   return (
     <div
@@ -28,7 +31,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             {product.discount_percentage}% OFF
           </div>
         )}
-        {product.is_available === false && (
+        {!isAvailable && (
           <div className="bg-red-100 text-red-600 text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
             ESGOTADO
           </div>
@@ -68,11 +71,15 @@ export default function ProductCard({ product }: ProductCardProps) {
           {product.description}
         </p>
 
-        <div className="mt-auto pt-4 border-t border-gray-50">
+        <div className="mt-auto pt-4 border-t border-gray-50 flex flex-col">
           <div className="flex flex-col mb-4">
-            <span className="text-[10px] text-gray-400 line-through mb-0.5">
-              De R$ {product.original_price?.toFixed(2).replace('.', ',')} por apenas
-            </span>
+            <div className="h-[15px] mb-0.5">
+              {product.original_price ? (
+                <span className="text-[10px] text-gray-400 line-through">
+                  De R$ {product.original_price.toFixed(2).replace('.', ',')} por apenas
+                </span>
+              ) : null}
+            </div>
             <div className="flex items-baseline gap-1">
               <span className="text-xl font-black text-black">
                 R$ {product.price.toFixed(2).replace('.', ',')}
@@ -84,17 +91,17 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
 
           <button
-            disabled={product.is_available === false}
+            disabled={!isAvailable}
             onClick={(e) => {
               e.stopPropagation();
-              if (product.is_available !== false) addItem(product);
+              if (isAvailable) addItem(product);
             }}
-            className={`w-full font-bold uppercase text-[11px] tracking-widest py-3.5 rounded-full transition-all duration-300 shadow-lg ${product.is_available === false
+            className={`w-full font-bold uppercase text-[11px] tracking-widest py-3.5 rounded-full mt-auto mb-0 transition-all duration-300 shadow-lg ${!isAvailable
                 ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                 : 'bg-black hover:bg-age-gold text-white hover:shadow-age-gold/20'
               }`}
           >
-            {product.is_available === false ? 'Indisponível' : 'Comprar Agora'}
+            {!isAvailable ? 'Indisponível' : 'Comprar Agora'}
           </button>
         </div>
       </div>
