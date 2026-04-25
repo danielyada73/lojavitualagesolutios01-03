@@ -135,35 +135,7 @@ export default function ProductDetails() {
     };
   }, [product, loading, addItem, navigate]);
 
-  // Handle Image Replacement safely via DOM after render
-  useEffect(() => {
-    if (!product || loading) return;
-    
-    // Replace gallery images
-    const galleryImages = document.querySelectorAll('.product__media-list img, .thumbnail-list img');
-    if (galleryImages.length > 0 && product.images && product.images.length > 0) {
-      galleryImages.forEach((img, index) => {
-        const src = product.images![index % product.images!.length];
-        (img as HTMLImageElement).src = src;
-        (img as HTMLImageElement).srcset = src;
-      });
-    } else if (galleryImages.length > 0 && product.thumbnail_url) {
-      galleryImages.forEach((img) => {
-        (img as HTMLImageElement).src = product.thumbnail_url!;
-        (img as HTMLImageElement).srcset = product.thumbnail_url!;
-      });
-    }
-
-    // Replace the main featured image if it exists
-    const mainImages = document.querySelectorAll('.product__media-item--variant img');
-    if (mainImages.length > 0 && product.thumbnail_url) {
-        mainImages.forEach(img => {
-            (img as HTMLImageElement).src = product.thumbnail_url!;
-            (img as HTMLImageElement).srcset = product.thumbnail_url!;
-        });
-    }
-  }, [product, loading]);
-
+  // DOM manipulation image replacement removed.
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="w-12 h-12 border-4 border-age-gold border-t-transparent rounded-full animate-spin" />
@@ -268,21 +240,16 @@ export default function ProductDetails() {
 
       finalHtml = finalHtml.replace(descRegex, colagenoHtml);
 
-      finalHtml = finalHtml.replace(descRegex, colagenoHtml);
-
-      // Corta fora TODAS as seções extras (Por que precisa do Firmador, FAQ do firmador, reviews, etc)
-      // Procurando pelo texto inicial da seção extra
-      const searchStr = "Por que voc";
-      let startIndex = finalHtml.indexOf(searchStr);
-      if (startIndex !== -1) {
-          // Volta um pouco para encontrar a abertura da div ou h2
-          const divStart = finalHtml.lastIndexOf('<div', startIndex);
-          if (divStart !== -1) {
-              finalHtml = finalHtml.substring(0, divStart);
-          } else {
-              finalHtml = finalHtml.substring(0, startIndex);
+      // Remove sections extras (FAQ, Reviews, Por que precisa) do Firmador de forma SEGURA usando CSS
+      // Assim o React não se perde com tags HTML não fechadas.
+      finalHtml += `
+        <style>
+          /* Esconde TODAS as seções da página exceto a principal do produto */
+          div.shopify-section:not(#shopify-section-template--18579175112775__main) {
+             display: none !important;
           }
-      }
+        </style>
+      `;
 
       // Adiciona CSS para esconder miniaturas extras se houver apenas 1 foto
       const totalImages = product.images?.length || (product.thumbnail_url ? 1 : 0);
@@ -291,6 +258,8 @@ export default function ProductDetails() {
             <style>
               .product__media-list li:nth-child(n+2),
               .thumbnail-list li:nth-child(n+2),
+              slider-component li:nth-child(n+2),
+              media-gallery li:nth-child(n+2),
               .slider-buttons {
                 display: none !important;
               }
@@ -312,8 +281,19 @@ export default function ProductDetails() {
   // 5. Replace installments if found
   finalHtml = finalHtml.replace(/6,66/g, installmentPrice.toFixed(2).replace('.', ','));
   
-  // 6. As imagens agora são substituídas via DOM manipulation no useEffect,
-  // evitando quebrar o layout da página inteira com regex massivo.
+  // 6. Replace image URL (main and gallery)
+  // Como as seções extras estão escondidas via CSS, isso só vai afetar as imagens visíveis da galeria!
+  if (product.thumbnail_url) {
+    const images = product.images?.length ? product.images : [product.thumbnail_url];
+    let imgIndex = 0;
+    
+    const protoRelativeCdnRegex = /\/\/renovabe\.com\.br\/cdn\/shop\/files\/[^" ]+\.(jpg|jpeg|png|webp|gif)/gi;
+    finalHtml = finalHtml.replace(protoRelativeCdnRegex, (match) => {
+      const img = images[imgIndex % images.length];
+      imgIndex++;
+      return img;
+    });
+  }
 
   return (
     <div className="template-product">
