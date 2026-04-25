@@ -170,7 +170,15 @@ export default function ProductDetails() {
   // Catches the characteristic competitor description and puts the user's product description
   const descRegex = /O Firmador Instant.*?da (Renova Be|AGE Solution).*?procedimentos invasivos\./is;
   if (product.description) {
-    finalHtml = finalHtml.replace(descRegex, product.description);
+    if (product.description.includes('colageno-description')) {
+      // Remove entirely the Firmador specific content for Colágeno
+      const firmadorExtraContentRegex = /<h2[^>]*>Por que voc.*?Para quem o Firmador é indicado.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/is;
+      finalHtml = finalHtml.replace(firmadorExtraContentRegex, '');
+      // And also replace the first block with the description
+      finalHtml = finalHtml.replace(descRegex, product.description);
+    } else {
+      finalHtml = finalHtml.replace(descRegex, product.description);
+    }
   }
 
   // 4. Replace Prices (global)

@@ -102,7 +102,69 @@ export const products: Product[] = [
     id: 'col-cran',
     category_id: 'colageno-po',
     name: 'Colágeno com Ácido Hialurônico',
-    description: 'Tratamento anti-idade para pele mais jovem. Contém Ácido Hialurônico (50mg), Proteína (10g), Vitaminas B6, C, E e Zinco.',
+    description: `
+      <div class="colageno-description" style="padding: 20px 0; font-family: var(--font-body--family);">
+        <h2 style="color: #c9a15c; font-size: 24px; margin-bottom: 10px;">Tratamento anti-idade</h2>
+        <h3 style="font-size: 18px; margin-bottom: 20px; font-weight: bold; line-height: 1.4;">TENHA UMA PELE MAIS JOVEM, SEM RUGAS E SEM LINHA DE EXPRESSÃO! RENOVE SUA PELE COM O COLÁGENO MAIS EFICAZ DO BRASIL!</h3>
+        
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+          <h3 style="color: #c9a15c; font-size: 20px; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">VANTAGENS E BENEFÍCIOS</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li style="margin-bottom: 15px;">
+              <strong style="font-size: 16px;">Ácido hialurônico 50mg</strong><br>
+              <span style="color: #555;">Contribui para a elasticidade e resistência da pele, para a saúde das unhas e cabelos e é responsável por constituir as fibras que sustentam os tecidos do corpo - como ossos, músculos, tendões e articulações.</span>
+            </li>
+            <li style="margin-bottom: 15px;">
+              <strong style="font-size: 16px;">PROTEÍNA 10g</strong><br>
+              <span style="color: #555;">Proteínas são componentes essenciais para as células e estão presentes em quase todas as funções fisiológicas do nosso corpo. As proteínas são capazes de regenerar tecidos, além de desempenhar um papel muito importante no sistema imunológico e serem fundamentais no processo de desenvolvimento e reprodução.</span>
+            </li>
+            <li style="margin-bottom: 15px;">
+              <strong style="font-size: 16px;">Vitamina B6, C e E</strong><br>
+              <span style="color: #555;">É um antioxidante forte e eficaz que beneficia a luminosidade da pele, deixando-a mais viçosa, bonita e com aparência saudável.</span>
+            </li>
+            <li style="margin-bottom: 15px;">
+              <strong style="font-size: 16px;">Zinco</strong><br>
+              <span style="color: #555;">O zinco atua como um antioxidante fundamental para o sistema de defesa da pele; diminui a formação de radicais livres e protege as células produtoras de colágeno e as gorduras da pele. O zinco também ajuda a curar e rejuvenescer a pele. Isso porque, se existe algum corte na pele a quantidade desse mineral ao redor do corte aumenta a fim de proteger contra infecções e controlar a inflamação.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 30px; font-weight: bold; background-color: #fff8e1; padding: 20px; border-radius: 8px;">
+          <p style="font-size: 18px; color: #c9a15c; margin-bottom: 10px;">Você vai precisar de apenas 1 Scoop por dia!</p>
+          <p style="color: #444;">O consumo é indicado sempre após a refeição.<br>Podendo ser após seu café da manhã ou após o almoço.</p>
+        </div>
+
+        <h3 style="color: #c9a15c; font-size: 20px; margin-bottom: 15px; text-align: center;">PRECISA DE AJUDA?</h3>
+        <h4 style="font-size: 18px; margin-bottom: 10px;">Perguntas Frequentes</h4>
+        <p style="margin-bottom: 20px; color: #666;">Abaixo você encontra as principais dúvidas sobre o melhor colágeno do Brasil.</p>
+        
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #333;">Em quanto tempo começa a aparecer os resultados?</strong><br>
+          <span style="color: #555;">A maioria dos estudos demonstram que os resultados são visíveis a partir de 8 semanas, mas começam a ser notados a partir de 4 semanas. Resultados podem variar de organismo para organismo.</span>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #333;">Como devo tomar?</strong><br>
+          <span style="color: #555;">Misture 1 colher de sopa (aprox.12g) em 150ml de água, consumir uma vez ao dia.</span>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #333;">Qual o prazo de entrega?</strong><br>
+          <span style="color: #555;">Em média despachamos o produto em até 24hs após comprovação do pagamento. Utilizamos a transportadora Kangu para agilizar a entrega:<br>
+          Região Sudeste – de 1 a 8 dias úteis<br>
+          Região Sul – de 1 a 9 dias úteis<br>
+          Região Centro-Oeste – de 1 a 10 dias úteis<br>
+          Região Nordeste – de 2 a 14 dias úteis<br>
+          Região Norte – de 3 a 15 dias úteis</span>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #333;">Contém alguma contraindicação?</strong><br>
+          <span style="color: #555;">Gestantes, nutrizes, lactantes e crianças (até 3 anos) somente devem consumir este produto sob orientação de nutricionistas ou médicos. Não exceder a recomendação diária de consumo.</span>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #333;">Os ingredientes são naturais?</strong><br>
+          <span style="color: #555;">Sim, Priorizamos sempre a qualidade! Por isso não utilizamos corantes artificiais, malto e nem conservantes!</span>
+        </div>
+      </div>
+    `,
     price: 89.90,
     original_price: 119.90,
     discount_percentage: 25,
@@ -116,7 +178,69 @@ export const products: Product[] = [
     id: 'col-lim',
     category_id: 'colageno-po',
     name: 'Colágeno: Ácido Hialurônico',
-    description: 'Sabor: Limão. 60 cápsulas.',
+    description: `
+      <div class="colageno-description" style="padding: 20px 0; font-family: var(--font-body--family);">
+        <h2 style="color: #c9a15c; font-size: 24px; margin-bottom: 10px;">Tratamento anti-idade</h2>
+        <h3 style="font-size: 18px; margin-bottom: 20px; font-weight: bold; line-height: 1.4;">TENHA UMA PELE MAIS JOVEM, SEM RUGAS E SEM LINHA DE EXPRESSÃO! RENOVE SUA PELE COM O COLÁGENO MAIS EFICAZ DO BRASIL!</h3>
+        
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+          <h3 style="color: #c9a15c; font-size: 20px; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">VANTAGENS E BENEFÍCIOS</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li style="margin-bottom: 15px;">
+              <strong style="font-size: 16px;">Ácido hialurônico 50mg</strong><br>
+              <span style="color: #555;">Contribui para a elasticidade e resistência da pele, para a saúde das unhas e cabelos e é responsável por constituir as fibras que sustentam os tecidos do corpo - como ossos, músculos, tendões e articulações.</span>
+            </li>
+            <li style="margin-bottom: 15px;">
+              <strong style="font-size: 16px;">PROTEÍNA 10g</strong><br>
+              <span style="color: #555;">Proteínas são componentes essenciais para as células e estão presentes em quase todas as funções fisiológicas do nosso corpo. As proteínas são capazes de regenerar tecidos, além de desempenhar um papel muito importante no sistema imunológico e serem fundamentais no processo de desenvolvimento e reprodução.</span>
+            </li>
+            <li style="margin-bottom: 15px;">
+              <strong style="font-size: 16px;">Vitamina B6, C e E</strong><br>
+              <span style="color: #555;">É um antioxidante forte e eficaz que beneficia a luminosidade da pele, deixando-a mais viçosa, bonita e com aparência saudável.</span>
+            </li>
+            <li style="margin-bottom: 15px;">
+              <strong style="font-size: 16px;">Zinco</strong><br>
+              <span style="color: #555;">O zinco atua como um antioxidante fundamental para o sistema de defesa da pele; diminui a formação de radicais livres e protege as células produtoras de colágeno e as gorduras da pele. O zinco também ajuda a curar e rejuvenescer a pele. Isso porque, se existe algum corte na pele a quantidade desse mineral ao redor do corte aumenta a fim de proteger contra infecções e controlar a inflamação.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 30px; font-weight: bold; background-color: #fff8e1; padding: 20px; border-radius: 8px;">
+          <p style="font-size: 18px; color: #c9a15c; margin-bottom: 10px;">Você vai precisar de apenas 1 Scoop por dia!</p>
+          <p style="color: #444;">O consumo é indicado sempre após a refeição.<br>Podendo ser após seu café da manhã ou após o almoço.</p>
+        </div>
+
+        <h3 style="color: #c9a15c; font-size: 20px; margin-bottom: 15px; text-align: center;">PRECISA DE AJUDA?</h3>
+        <h4 style="font-size: 18px; margin-bottom: 10px;">Perguntas Frequentes</h4>
+        <p style="margin-bottom: 20px; color: #666;">Abaixo você encontra as principais dúvidas sobre o melhor colágeno do Brasil.</p>
+        
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #333;">Em quanto tempo começa a aparecer os resultados?</strong><br>
+          <span style="color: #555;">A maioria dos estudos demonstram que os resultados são visíveis a partir de 8 semanas, mas começam a ser notados a partir de 4 semanas. Resultados podem variar de organismo para organismo.</span>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #333;">Como devo tomar?</strong><br>
+          <span style="color: #555;">Misture 1 colher de sopa (aprox.12g) em 150ml de água, consumir uma vez ao dia.</span>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #333;">Qual o prazo de entrega?</strong><br>
+          <span style="color: #555;">Em média despachamos o produto em até 24hs após comprovação do pagamento. Utilizamos a transportadora Kangu para agilizar a entrega:<br>
+          Região Sudeste – de 1 a 8 dias úteis<br>
+          Região Sul – de 1 a 9 dias úteis<br>
+          Região Centro-Oeste – de 1 a 10 dias úteis<br>
+          Região Nordeste – de 2 a 14 dias úteis<br>
+          Região Norte – de 3 a 15 dias úteis</span>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #333;">Contém alguma contraindicação?</strong><br>
+          <span style="color: #555;">Gestantes, nutrizes, lactantes e crianças (até 3 anos) somente devem consumir este produto sob orientação de nutricionistas ou médicos. Não exceder a recomendação diária de consumo.</span>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <strong style="color: #333;">Os ingredientes são naturais?</strong><br>
+          <span style="color: #555;">Sim, Priorizamos sempre a qualidade! Por isso não utilizamos corantes artificiais, malto e nem conservantes!</span>
+        </div>
+      </div>
+    `,
     price: 89.90,
     original_price: 119.90,
     discount_percentage: 25,
