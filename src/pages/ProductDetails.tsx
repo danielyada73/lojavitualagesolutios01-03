@@ -135,6 +135,35 @@ export default function ProductDetails() {
     };
   }, [product, loading, addItem, navigate]);
 
+  // Handle Image Replacement safely via DOM after render
+  useEffect(() => {
+    if (!product || loading) return;
+    
+    // Replace gallery images
+    const galleryImages = document.querySelectorAll('.product__media-list img, .thumbnail-list img');
+    if (galleryImages.length > 0 && product.images && product.images.length > 0) {
+      galleryImages.forEach((img, index) => {
+        const src = product.images![index % product.images!.length];
+        (img as HTMLImageElement).src = src;
+        (img as HTMLImageElement).srcset = src;
+      });
+    } else if (galleryImages.length > 0 && product.thumbnail_url) {
+      galleryImages.forEach((img) => {
+        (img as HTMLImageElement).src = product.thumbnail_url!;
+        (img as HTMLImageElement).srcset = product.thumbnail_url!;
+      });
+    }
+
+    // Replace the main featured image if it exists
+    const mainImages = document.querySelectorAll('.product__media-item--variant img');
+    if (mainImages.length > 0 && product.thumbnail_url) {
+        mainImages.forEach(img => {
+            (img as HTMLImageElement).src = product.thumbnail_url!;
+            (img as HTMLImageElement).srcset = product.thumbnail_url!;
+        });
+    }
+  }, [product, loading]);
+
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="w-12 h-12 border-4 border-age-gold border-t-transparent rounded-full animate-spin" />
@@ -239,22 +268,34 @@ export default function ProductDetails() {
 
       finalHtml = finalHtml.replace(descRegex, colagenoHtml);
 
-      // Remove the firmador-specific sections by finding the "Por que você precisa" block and wiping until the end of the content div, but safely.
-      const extraRegex = /<div class="ql-block"[^>]*><h2[^>]*>Por que voc.*?Para quem o Firmador.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/is;
-      
-      const startIndex = finalHtml.search(/<div class="ql-block"[^>]*><h2[^>]*>Por que voc[^<]*precisa do Firmador/is);
+      finalHtml = finalHtml.replace(descRegex, colagenoHtml);
+
+      // Corta fora TODAS as seções extras (Por que precisa do Firmador, FAQ do firmador, reviews, etc)
+      // Procurando pelo texto inicial da seção extra
+      const searchStr = "Por que voc";
+      let startIndex = finalHtml.indexOf(searchStr);
       if (startIndex !== -1) {
-          const beforeExtra = finalHtml.substring(0, startIndex);
-          // Find the exact end by matching the whole block
-          const afterExtraMatch = finalHtml.substring(startIndex).match(/Para quem o Firmador.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/is);
-          
-          if (afterExtraMatch) {
-              const endIndex = startIndex + afterExtraMatch.index! + afterExtraMatch[0].length;
-              finalHtml = beforeExtra + finalHtml.substring(endIndex);
+          // Volta um pouco para encontrar a abertura da div ou h2
+          const divStart = finalHtml.lastIndexOf('<div', startIndex);
+          if (divStart !== -1) {
+              finalHtml = finalHtml.substring(0, divStart);
           } else {
-             // Fallback caso não ache o final exato, corta até achar uma tag de fechamento dupla e segura
-             finalHtml = finalHtml.replace(/<div class="ql-block"[^>]*><h2[^>]*>Por que voc[^<]*precisa do Firmador.*?Para quem o Firmador.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/is, '');
+              finalHtml = finalHtml.substring(0, startIndex);
           }
+      }
+
+      // Adiciona CSS para esconder miniaturas extras se houver apenas 1 foto
+      const totalImages = product.images?.length || (product.thumbnail_url ? 1 : 0);
+      if (totalImages === 1) {
+         finalHtml += `
+            <style>
+              .product__media-list li:nth-child(n+2),
+              .thumbnail-list li:nth-child(n+2),
+              .slider-buttons {
+                display: none !important;
+              }
+            </style>
+         `;
       }
       
   } else if (product.description) {
@@ -271,18 +312,8 @@ export default function ProductDetails() {
   // 5. Replace installments if found
   finalHtml = finalHtml.replace(/6,66/g, installmentPrice.toFixed(2).replace('.', ','));
   
-  // 6. Replace image URL (main and gallery)
-  if (product.thumbnail_url) {
-    const images = product.images?.length ? product.images : [product.thumbnail_url];
-    let imgIndex = 0;
-    
-    const protoRelativeCdnRegex = /\/\/renovabe\.com\.br\/cdn\/shop\/files\/[^" ]+\.(jpg|jpeg|png|webp|gif)/gi;
-    finalHtml = finalHtml.replace(protoRelativeCdnRegex, (match) => {
-      const img = images[imgIndex % images.length];
-      imgIndex++;
-      return img;
-    });
-  }
+  // 6. As imagens agora são substituídas via DOM manipulation no useEffect,
+  // evitando quebrar o layout da página inteira com regex massivo.
 
   return (
     <div className="template-product">
