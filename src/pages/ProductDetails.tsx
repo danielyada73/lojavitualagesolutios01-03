@@ -167,9 +167,8 @@ export default function ProductDetails() {
   finalHtml = finalHtml.replace(/Renova Be/g, 'AGE Solution');
   
   // 3. Replace Main Description
-  // Catches the characteristic competitor description and puts the user's product description
-  // Adicionamos a flag 'g' para garantir que substitua tanto no JSON+LD (no início) quanto no HTML visível
-  const descRegex = /O Firmador Instant.*?da (Renova Be|AGE Solution).*?procedimentos invasivos\./gis;
+  // Agora buscamos exatamente as divs reais para evitar que o replace quebre o JSON das propriedades da Yampi/Shopify
+  const descRegex = /<div class="ql-block"[^>]*>O Firmador Instant.*?da (Renova Be|AGE Solution).*?procedimentos invasivos\.<\/div>/is;
   
   const isColageno = product.id.startsWith('col-') || product.name.toLowerCase().includes('colágeno') || product.name.toLowerCase().includes('colageno') || product.id === '137428494';
 
@@ -240,23 +239,26 @@ export default function ProductDetails() {
 
       finalHtml = finalHtml.replace(descRegex, colagenoHtml);
 
-      // Remove the firmador-specific sections by finding the "Por que você precisa" block and wiping until the footer/end
-      const startIndex = finalHtml.search(/<h2[^>]*>Por que voc[^<]*precisa do Firmador/i);
+      // Remove the firmador-specific sections by finding the "Por que você precisa" block and wiping until the end of the content div, but safely.
+      const extraRegex = /<div class="ql-block"[^>]*><h2[^>]*>Por que voc.*?Para quem o Firmador.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/is;
+      
+      const startIndex = finalHtml.search(/<div class="ql-block"[^>]*><h2[^>]*>Por que voc[^<]*precisa do Firmador/is);
       if (startIndex !== -1) {
           const beforeExtra = finalHtml.substring(0, startIndex);
+          // Find the exact end by matching the whole block
           const afterExtraMatch = finalHtml.substring(startIndex).match(/Para quem o Firmador.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/is);
           
           if (afterExtraMatch) {
               const endIndex = startIndex + afterExtraMatch.index! + afterExtraMatch[0].length;
               finalHtml = beforeExtra + finalHtml.substring(endIndex);
           } else {
-             // Fallback caso não ache o final exato, usa regex para remover até a seção de faq acabar
-             finalHtml = finalHtml.replace(/<h2[^>]*>Por que voc[^<]*precisa do Firmador.*?Para quem o Firmador.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/gis, '');
+             // Fallback caso não ache o final exato, corta até achar uma tag de fechamento dupla e segura
+             finalHtml = finalHtml.replace(/<div class="ql-block"[^>]*><h2[^>]*>Por que voc[^<]*precisa do Firmador.*?Para quem o Firmador.*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>/is, '');
           }
       }
       
   } else if (product.description) {
-      finalHtml = finalHtml.replace(descRegex, product.description);
+      finalHtml = finalHtml.replace(descRegex, `<div class="ql-block">` + product.description + `</div>`);
   }
 
   // 4. Replace Prices (global)
