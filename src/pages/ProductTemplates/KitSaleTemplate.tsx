@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Product } from '../../types';
 import { useCartStore } from '../../store/cart';
-import { Star, ShoppingCart, ChevronDown, ChevronRight, Shield, Truck } from 'lucide-react';
+import { ShoppingCart, ChevronDown, ChevronRight, ShieldCheck, Truck, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -20,7 +20,6 @@ export default function KitSaleTemplate({ product }: Props) {
   const basePrice = product.price;
   const originalBasePrice = product.original_price || basePrice * 1.5;
 
-  // Mocking the kits based on standard landing page logic
   const kits = [
     { pots: 6, discount: 0.80, label: 'KIT MAIS COMPLETO', popular: false },
     { pots: 3, discount: 0.77, label: 'MAIS ECONOMIA', popular: true },
@@ -29,105 +28,99 @@ export default function KitSaleTemplate({ product }: Props) {
   ];
 
   const currentKit = kits.find(k => k.pots === selectedKit) || kits[1];
-  
-  // Calculate specific kit prices
   const kitOriginalTotal = originalBasePrice * currentKit.pots;
   const kitFinalTotal = kitOriginalTotal * (1 - currentKit.discount);
   const kitInstallment = kitFinalTotal / 12;
 
   const handleAddToCart = () => {
-    // Add the base product with the selected quantity
     addItem(product, undefined, selectedKit);
     toggleCart();
   };
 
   const faqItems = [
-    { question: 'Em quanto tempo começa a aparecer os resultados?', answer: 'A maioria dos estudos demonstram que os resultados são visíveis a partir de 8 semanas, mas começam a ser notados a partir de 4 semanas. Resultados podem variar de organismo para organismo.' },
-    { question: 'Como devo tomar?', answer: 'O consumo é indicado sempre após as refeições. Podendo ser após seu café da manhã ou após o almoço.' },
+    { question: 'Em quanto tempo começa a aparecer os resultados?', answer: 'A maioria dos estudos demonstram que os resultados são visíveis a partir de 8 semanas, mas começam a ser notados a partir de 4 semanas.' },
+    { question: 'Como devo tomar?', answer: 'O consumo é indicado sempre após as refeições.' },
     { question: 'Qual o prazo de entrega?', answer: 'Em média despachamos o produto em até 24hs após comprovação do pagamento.' },
-    { question: 'Contém alguma contraindicação?', answer: 'Recomendamos buscar orientação médica para gestantes e lactantes.' },
-    { question: 'Os ingredientes são naturais?', answer: 'Sim, suplemento alimentar 100% natural.' },
   ];
 
   return (
-    <div className="bg-[#f9f8f6] min-h-screen">
-      <div className="container mx-auto px-4 py-4">
-        <nav className="flex items-center gap-2 text-xs text-gray-400">
-          <Link to="/" className="hover:text-age-gold transition-colors">Home</Link>
-          <ChevronRight size={12} />
-          <Link to={`/category/${product.category_id}`} className="hover:text-age-gold transition-colors capitalize">
+    <div className="bg-[#111] text-white min-h-screen selection:bg-[#ff3333] selection:text-white font-sans">
+      <div className="container mx-auto px-4 py-6">
+        <nav className="flex items-center gap-2 text-xs text-gray-500 font-medium tracking-wide">
+          <Link to="/" className="hover:text-red-500 transition-colors uppercase">Home</Link>
+          <ChevronRight size={14} className="text-gray-700" />
+          <Link to={`/category/${product.category_id}`} className="hover:text-red-500 transition-colors uppercase">
             {product.category_id?.replace(/-/g, ' ')}
           </Link>
-          <ChevronRight size={12} />
-          <span className="text-gray-600 font-medium truncate max-w-[200px]">{product.name}</span>
+          <ChevronRight size={14} className="text-gray-700" />
+          <span className="text-red-500 truncate max-w-[200px] uppercase">{product.name}</span>
         </nav>
       </div>
 
-      <div className="container mx-auto px-4 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Esquerda: Imagens */}
-          <div className="flex flex-col-reverse md:flex-row gap-4">
-            {images.length > 1 && (
-              <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto md:max-h-[600px] pb-2 md:pb-0 md:pr-2">
-                {images.map((img, i) => (
-                  <button key={i} onClick={() => setSelectedImage(i)} className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 transition-all ${selectedImage === i ? 'border-age-gold' : 'border-gray-200'}`}>
-                    <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
-                  </button>
-                ))}
-              </div>
-            )}
-            <div className="flex-1 relative">
-              <div className="bg-white rounded-[20px] overflow-hidden shadow-lg aspect-square flex items-center justify-center p-4">
-                <img src={images[selectedImage] || product.thumbnail_url} alt={product.name} className="w-full h-full object-contain" />
-              </div>
+      <div className="container mx-auto px-4 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+          
+          {/* GALERIA */}
+          <div className="lg:col-span-6 flex flex-col gap-4">
+            <div className="relative bg-gradient-to-tr from-gray-900 to-black rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-square flex items-center justify-center p-8 border border-white/5 group">
+              <div className="absolute inset-0 bg-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl rounded-full scale-150" />
+              <img 
+                src={images[selectedImage] || product.thumbnail_url} 
+                alt={product.name} 
+                className="w-full h-full object-contain drop-shadow-2xl z-10 group-hover:scale-105 transition-transform duration-700 ease-out" 
+              />
             </div>
           </div>
 
-          {/* Direita: Info Principal */}
-          <div className="flex flex-col">
-            <h1 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight mb-2">{product.name}</h1>
-            <p className="text-sm text-gray-500 mb-6">Suplemento 100% natural de alta performance.</p>
+          {/* COMPRA: KITS PREMIUM */}
+          <div className="lg:col-span-6 flex flex-col justify-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 leading-[1.1] mb-4 tracking-tighter">
+              {product.name}
+            </h1>
+            <p className="text-lg text-gray-400 mb-8 font-light">Suplemento 100% natural de alta performance.</p>
 
-            <div className="bg-white rounded-2xl p-6 mb-8 border border-gray-100 shadow-sm text-center">
-              <p className="text-gray-500 mb-1">De R$ {kitOriginalTotal.toFixed(2).replace('.', ',')} por apenas</p>
-              <p className="text-sm text-gray-600">12x sem juros de</p>
-              <div className="text-5xl font-black text-age-gold my-2">R$ {kitInstallment.toFixed(2).replace('.', ',')}</div>
-              <p className="text-sm text-gray-500">ou R$ {kitFinalTotal.toFixed(2).replace('.', ',')} à vista</p>
-            </div>
-
-            {/* SELETOR DE KITS */}
-            <div className="mb-8">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3 text-center">Selecione o Kit:</h3>
-              <div className="flex flex-col gap-3">
+            {/* SELETOR DE KITS - OFERTAS AGRESSIVAS */}
+            <div className="mb-8 space-y-4">
+              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500 mb-4 flex items-center gap-2">
+                <Sparkles size={14} className="text-red-500" /> Selecione seu Kit:
+              </h3>
+              
+              <div className="flex flex-col gap-4">
                 {kits.map((kit) => (
                   <button
                     key={kit.pots}
                     onClick={() => setSelectedKit(kit.pots)}
-                    className={`relative w-full rounded-xl border-2 transition-all overflow-hidden text-left flex items-center justify-between p-4 ${
+                    className={`relative w-full rounded-3xl transition-all duration-300 text-left p-6 border ${
                       selectedKit === kit.pots
-                        ? 'border-age-gold bg-[#fff8e1]'
-                        : 'border-gray-200 bg-white hover:border-gray-300'
+                        ? 'bg-gradient-to-br from-red-600/10 to-transparent border-red-500 shadow-[0_0_30px_rgba(239,68,68,0.15)] scale-[1.02]'
+                        : 'bg-white/5 border-white/10 hover:border-white/30 hover:bg-white/10'
                     }`}
                   >
-                    {selectedKit === kit.pots && (
-                      <div className="absolute top-0 right-0 bg-age-gold text-white text-[10px] font-black uppercase px-3 py-1 rounded-bl-lg">
-                        Selecionado
+                    {/* Tag de Destaque */}
+                    {kit.popular && (
+                      <div className="absolute -top-3 right-6 bg-red-600 text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-full tracking-widest shadow-lg shadow-red-600/30 animate-pulse">
+                        Escolha Mais Inteligente
                       </div>
                     )}
                     
-                    <div>
-                      <div className="font-black text-gray-900 text-lg uppercase">{kit.pots} {product.name.split(' ')[0]}</div>
-                      <div className="text-xs text-gray-500 mt-1">
-                        Economize R$ {(kitOriginalTotal - kitFinalTotal).toFixed(2).replace('.', ',')}
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <div className="font-black text-white text-xl md:text-2xl tracking-tight uppercase flex items-center gap-3">
+                          {kit.pots} POTES
+                          {selectedKit === kit.pots && <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />}
+                        </div>
+                        <div className="text-sm text-gray-400 mt-1 font-light">
+                          Economia de <span className="text-white font-bold tracking-wide">R$ {(kitOriginalTotal - kitFinalTotal).toFixed(2).replace('.', ',')}</span>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="text-right">
-                      <div className="text-2xl font-black text-[#2E7D32]">
-                        {Math.round(kit.discount * 100)}% OFF
-                      </div>
-                      <div className="text-[10px] text-gray-400 font-bold uppercase mt-1">
-                        {kit.label}
+                      <div className="text-right">
+                        <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600 tracking-tighter">
+                          {Math.round(kit.discount * 100)}% OFF
+                        </div>
+                        <div className="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">
+                          {kit.label}
+                        </div>
                       </div>
                     </div>
                   </button>
@@ -135,48 +128,65 @@ export default function KitSaleTemplate({ product }: Props) {
               </div>
             </div>
 
-            {/* Comprar */}
-            <button onClick={handleAddToCart} className="w-full h-16 bg-[#2E7D32] hover:bg-[#1b5e20] text-white font-black uppercase tracking-widest text-lg rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3 animate-pulse">
-              <ShoppingCart size={24} /> COMPRAR AGORA
+            {/* PREÇO FINAL EM DESTAQUE */}
+            <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 mb-8 border border-white/5 shadow-2xl text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 blur-3xl rounded-full" />
+              <p className="text-gray-400 mb-1 font-light">De <span className="line-through">R$ {kitOriginalTotal.toFixed(2).replace('.', ',')}</span> por apenas</p>
+              <div className="text-sm text-gray-500 font-medium">12x sem juros de</div>
+              <div className="text-6xl font-black text-white tracking-tighter my-2 drop-shadow-lg">
+                <span className="text-3xl text-gray-400">R$</span> {kitInstallment.toFixed(2).replace('.', ',')}
+              </div>
+              <p className="text-sm text-gray-500">ou R$ {kitFinalTotal.toFixed(2).replace('.', ',')} à vista</p>
+            </div>
+
+            <button 
+              onClick={handleAddToCart} 
+              className="w-full h-20 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-[0.2em] text-lg rounded-2xl transition-all duration-300 shadow-[0_0_40px_-10px_rgba(220,38,38,0.5)] hover:shadow-[0_0_60px_-10px_rgba(220,38,38,0.7)] flex items-center justify-center gap-4 transform hover:-translate-y-1 animate-pulse"
+            >
+              <ShoppingCart size={24} /> FINALIZAR COMPRA
             </button>
             
-            <div className="grid grid-cols-2 gap-4 mt-6">
-              <div className="flex items-center gap-2 justify-center text-xs text-gray-600 font-medium">
-                <Truck size={16} className="text-age-gold" /> Frete Grátis Brasil
+            <div className="grid grid-cols-2 gap-4 mt-8">
+              <div className="flex items-center gap-3 justify-center text-xs text-gray-400 font-medium tracking-wide">
+                <Truck size={18} className="text-red-500" /> Frete Grátis Brasil
               </div>
-              <div className="flex items-center gap-2 justify-center text-xs text-gray-600 font-medium">
-                <Shield size={16} className="text-age-gold" /> Compra 100% Segura
+              <div className="flex items-center gap-3 justify-center text-xs text-gray-400 font-medium tracking-wide">
+                <ShieldCheck size={18} className="text-red-500" /> Compra 100% Segura
               </div>
             </div>
           </div>
         </div>
 
-        {/* Informações Extras */}
-        <div className="mt-16 bg-white rounded-[20px] p-8 md:p-12 shadow-sm border border-gray-100">
-          
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-black text-gray-900 mb-4 uppercase">Suplemento 100% Natural</h2>
+        {/* EXTRAS */}
+        <div className="mt-32">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-8">
+              Fórmula <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">100% Natural</span>
+            </h2>
             <div className="flex flex-wrap justify-center gap-4">
-              <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-bold">0% Açúcar</span>
-              <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-bold">0% Lactose</span>
-              <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-bold">0% Glúten</span>
+              <span className="bg-white/5 border border-white/10 text-gray-300 px-6 py-3 rounded-full text-sm font-bold tracking-widest uppercase shadow-lg">0% Açúcar</span>
+              <span className="bg-white/5 border border-white/10 text-gray-300 px-6 py-3 rounded-full text-sm font-bold tracking-widest uppercase shadow-lg">0% Lactose</span>
+              <span className="bg-white/5 border border-white/10 text-gray-300 px-6 py-3 rounded-full text-sm font-bold tracking-widest uppercase shadow-lg">0% Glúten</span>
             </div>
           </div>
 
-          <hr className="border-gray-100 mb-12" />
-
-          {/* FAQ */}
-          <h2 className="text-2xl font-black text-gray-900 mb-6 text-center uppercase">Perguntas Frequentes</h2>
-          <div className="space-y-3 max-w-3xl mx-auto">
-            {faqItems.map((item, i) => (
-              <div key={i} className="border border-gray-100 rounded-xl overflow-hidden bg-white">
-                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50">
-                  <span className="font-bold text-sm text-gray-800 pr-4">{item.question}</span>
-                  <ChevronDown size={18} className={`text-gray-400 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
-                </button>
-                {openFaq === i && <div className="px-5 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-50 pt-4">{item.answer}</div>}
-              </div>
-            ))}
+          <div className="max-w-4xl mx-auto mt-24">
+            <h2 className="text-3xl font-black text-white mb-10 text-center uppercase tracking-tighter">Dúvidas Frequentes</h2>
+            <div className="space-y-4">
+              {faqItems.map((item, i) => (
+                <div key={i} className="border border-white/10 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20">
+                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-6 text-left">
+                    <span className="font-bold text-gray-200 pr-4 tracking-wide">{item.question}</span>
+                    <ChevronDown size={20} className={`text-red-500 transition-transform duration-500 ${openFaq === i ? 'rotate-180' : ''}`} />
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="px-6 pb-6 text-gray-400 leading-relaxed font-light border-t border-white/5 pt-4">
+                      {item.answer}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

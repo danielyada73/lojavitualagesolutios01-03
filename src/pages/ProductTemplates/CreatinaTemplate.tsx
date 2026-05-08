@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Product } from '../../types';
 import { useCartStore } from '../../store/cart';
-import { Star, Minus, Plus, ShoppingCart, ChevronDown, ChevronRight } from 'lucide-react';
+import { Star, Minus, Plus, ShoppingCart, ChevronDown, ChevronRight, Zap, Target, RefreshCcw, Brain, ShieldCheck, Truck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -34,169 +34,214 @@ export default function CreatinaTemplate({ product }: Props) {
   ];
 
   const benefits = [
-    { title: 'Aumento de Força', desc: 'Eleve sua capacidade de levantar mais peso e ter mais resistência nos treinos.' },
-    { title: 'Recuperação Muscular', desc: 'Reduz a fadiga e acelera a regeneração dos músculos após treinos intensos.' },
-    { title: 'Desempenho Máximo', desc: 'A creatina aumenta os níveis de ATP, garantindo mais potência para suas atividades.' },
-    { title: 'Melhoria Cognitiva', desc: 'Estudos comprovam que a creatina melhora o foco, a memória e a clareza mental.' },
+    { icon: <Target size={32} />, title: 'Aumento de Força', desc: 'Eleve sua capacidade de levantar mais peso e ter mais resistência nos treinos.' },
+    { icon: <RefreshCcw size={32} />, title: 'Recuperação Muscular', desc: 'Reduz a fadiga e acelera a regeneração dos músculos após treinos intensos.' },
+    { icon: <Zap size={32} />, title: 'Desempenho Máximo', desc: 'A creatina aumenta os níveis de ATP, garantindo mais potência para suas atividades.' },
+    { icon: <Brain size={32} />, title: 'Melhoria Cognitiva', desc: 'Estudos comprovam que a creatina melhora o foco, a memória e a clareza mental.' },
   ];
 
   return (
-    <div className="bg-[#f9f8f6] min-h-screen">
-      <div className="container mx-auto px-4 py-4">
-        <nav className="flex items-center gap-2 text-xs text-gray-400">
-          <Link to="/" className="hover:text-age-gold transition-colors">Home</Link>
-          <ChevronRight size={12} />
-          <Link to={`/category/${product.category_id}`} className="hover:text-age-gold transition-colors capitalize">
+    <div className="bg-[#111] text-white min-h-screen selection:bg-age-gold selection:text-black font-sans">
+      <div className="container mx-auto px-4 py-6">
+        <nav className="flex items-center gap-2 text-xs text-gray-500 font-medium tracking-wide">
+          <Link to="/" className="hover:text-age-gold transition-colors uppercase">Home</Link>
+          <ChevronRight size={14} className="text-gray-700" />
+          <Link to={`/category/${product.category_id}`} className="hover:text-age-gold transition-colors uppercase">
             {product.category_id?.replace(/-/g, ' ')}
           </Link>
-          <ChevronRight size={12} />
-          <span className="text-gray-600 font-medium truncate max-w-[200px]">{product.name}</span>
+          <ChevronRight size={14} className="text-gray-700" />
+          <span className="text-age-gold truncate max-w-[200px] uppercase">{product.name}</span>
         </nav>
       </div>
 
-      <div className="container mx-auto px-4 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Esquerda: Imagens */}
-          <div className="flex flex-col-reverse md:flex-row gap-4">
+      <div className="container mx-auto px-4 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+          
+          {/* GALERIA */}
+          <div className="lg:col-span-6 flex flex-col gap-4">
+            <div className="relative bg-gradient-to-tr from-gray-900 to-black rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-square flex items-center justify-center p-8 border border-white/5 group">
+              <div className="absolute inset-0 bg-age-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl rounded-full scale-150" />
+              <img 
+                src={images[selectedImage] || product.thumbnail_url} 
+                alt={product.name} 
+                className="w-full h-full object-contain drop-shadow-2xl z-10 group-hover:scale-105 transition-transform duration-700 ease-out" 
+              />
+            </div>
+            
             {images.length > 1 && (
-              <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto md:max-h-[600px] pb-2 md:pb-0 md:pr-2">
+              <div className="flex gap-3 overflow-x-auto pb-4 custom-scrollbar">
                 {images.map((img, i) => (
-                  <button key={i} onClick={() => setSelectedImage(i)} className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 transition-all ${selectedImage === i ? 'border-age-gold' : 'border-gray-200'}`}>
+                  <button 
+                    key={i} 
+                    onClick={() => setSelectedImage(i)} 
+                    className={`flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden transition-all duration-300 ${
+                      selectedImage === i 
+                        ? 'ring-2 ring-age-gold opacity-100 bg-white/10' 
+                        : 'ring-1 ring-white/5 opacity-40 hover:opacity-100 bg-black'
+                    }`}
+                  >
                     <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
             )}
-            <div className="flex-1 relative">
-              <div className="bg-white rounded-[20px] overflow-hidden shadow-lg aspect-square flex items-center justify-center p-4">
-                <img src={images[selectedImage] || product.thumbnail_url} alt={product.name} className="w-full h-full object-contain" />
-              </div>
-            </div>
           </div>
 
-          {/* Direita: Info Principal */}
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="flex gap-0.5">
+          {/* INFORMAÇÕES DE COMPRA */}
+          <div className="lg:col-span-6 flex flex-col justify-center">
+            
+            <div className="flex items-center gap-3 mb-6 bg-white/5 inline-flex w-fit px-4 py-2 rounded-full border border-white/10">
+              <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => <Star key={i} size={14} className="fill-age-gold text-age-gold" />)}
               </div>
-              <span className="text-sm text-gray-500 font-medium">4.9 (2450 avaliações)</span>
+              <span className="text-xs text-gray-300 font-bold uppercase tracking-wider">Altíssima Pureza</span>
             </div>
 
-            <h1 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight mb-2">{product.name}</h1>
-            <p className="text-sm text-gray-500 mb-4">Diminui a fadiga e aumenta a resistência e força em exercícios físicos de alta intensidade. Dose diária: 3g.</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 leading-[1.1] mb-6 tracking-tighter">
+              {product.name}
+            </h1>
+            
+            <p className="text-lg text-gray-400 mb-8 font-light leading-relaxed">
+              Diminui a fadiga e aumenta a resistência e força em exercícios físicos de alta intensidade. 100% Pura Monohidratada. Dose diária recomendada: 3g.
+            </p>
 
-            <div className="bg-white rounded-2xl p-6 mb-6 border border-gray-100 shadow-sm">
+            <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 mb-8 border border-white/10 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-age-gold/20 blur-3xl rounded-full" />
+              
               {product.original_price && (
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-sm text-gray-400 line-through">De R$ {product.original_price.toFixed(2).replace('.', ',')}</span>
-                  <span className="text-xs font-black text-white bg-red-500 px-2 py-0.5 rounded-full">-{discount}%</span>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-sm text-gray-500 line-through">De R$ {product.original_price.toFixed(2).replace('.', ',')}</span>
+                  <span className="text-xs font-black text-black bg-age-gold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg shadow-age-gold/20">
+                    -{discount}% OFF
+                  </span>
                 </div>
               )}
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-3xl md:text-4xl font-black text-gray-900">R$ {displayPrice.toFixed(2).replace('.', ',')}</span>
+              
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="text-5xl md:text-6xl font-black text-white tracking-tighter">
+                  R$ {displayPrice.toFixed(2).replace('.', ',')}
+                </span>
               </div>
-              <p className="text-sm text-[#2E7D32] font-bold">R$ {(displayPrice * 0.95).toFixed(2).replace('.', ',')} no PIX</p>
-              <p className="text-xs text-gray-500">ou 12x de R$ {(displayPrice / 12).toFixed(2).replace('.', ',')} sem juros</p>
+              <p className="text-age-gold font-bold text-lg mb-1">
+                R$ {(displayPrice * 0.95).toFixed(2).replace('.', ',')} no PIX
+              </p>
+              <p className="text-sm text-gray-400">ou 12x de R$ {(displayPrice / 12).toFixed(2).replace('.', ',')} sem juros</p>
             </div>
 
-            {/* Quantidade e Comprar */}
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <div className="flex items-center border-2 border-gray-200 rounded-xl overflow-hidden h-14">
-                <button onClick={() => setQuantity(q => Math.max(1, q - 1))} className="w-12 h-full flex items-center justify-center hover:bg-gray-50"><Minus size={16} /></button>
-                <span className="w-12 text-center font-bold text-lg">{quantity}</span>
-                <button onClick={() => setQuantity(q => q + 1)} className="w-12 h-full flex items-center justify-center hover:bg-gray-50"><Plus size={16} /></button>
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex items-center bg-white/5 border border-white/10 rounded-2xl overflow-hidden h-16 w-full sm:w-36 backdrop-blur-md">
+                <button onClick={() => setQuantity(q => Math.max(1, q - 1))} className="w-12 h-full flex items-center justify-center hover:bg-white/10 transition-colors text-gray-400 hover:text-white"><Minus size={18} /></button>
+                <span className="flex-1 text-center font-black text-xl">{quantity}</span>
+                <button onClick={() => setQuantity(q => q + 1)} className="w-12 h-full flex items-center justify-center hover:bg-white/10 transition-colors text-gray-400 hover:text-white"><Plus size={18} /></button>
               </div>
-              <button onClick={handleAddToCart} className="flex-1 h-14 bg-black hover:bg-age-gold text-white hover:text-black font-black uppercase tracking-widest text-sm rounded-xl transition-all shadow-lg flex items-center justify-center gap-3">
-                <ShoppingCart size={18} /> Comprar Agora
+              
+              <button 
+                onClick={handleAddToCart} 
+                className="flex-1 h-16 bg-gradient-to-r from-[#c9a15c] to-[#e6c887] hover:from-[#e6c887] hover:to-[#c9a15c] text-black font-black uppercase tracking-[0.2em] text-sm rounded-2xl transition-all shadow-[0_0_40px_-10px_rgba(201,161,92,0.6)] hover:shadow-[0_0_60px_-10px_rgba(201,161,92,0.8)] flex items-center justify-center gap-3 transform hover:-translate-y-1 animate-pulse"
+              >
+                <ShoppingCart size={20} /> GARANTIR MEU POTENCIAL
               </button>
             </div>
             
-            <div className="bg-[#E8F5E9] text-[#2E7D32] text-center p-3 rounded-xl text-xs font-bold border border-[#2E7D32]/20">
-              🚚 Frete GRÁTIS PARA TODO BRASIL!
+            <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-8">
+              <div className="flex items-center gap-3 justify-center sm:justify-start text-xs text-gray-300 font-medium tracking-wide">
+                <Truck size={18} className="text-age-gold" /> Frete Grátis Brasil
+              </div>
+              <div className="flex items-center gap-3 justify-center sm:justify-start text-xs text-gray-300 font-medium tracking-wide">
+                <ShieldCheck size={18} className="text-age-gold" /> Compra Segura
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Informações Extras (Creatina) */}
-        <div className="mt-16 bg-white rounded-[20px] p-8 md:p-12 shadow-sm border border-gray-100">
+        {/* INFORMAÇÕES EXTRAS - PERFORMANCE */}
+        <div className="mt-32">
           
           {/* Benefícios */}
-          <h2 className="text-2xl font-black text-gray-900 mb-8 text-center uppercase">Principais Benefícios da Creatina</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+              Benefícios da <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a15c] to-[#e6c887]">Creatina</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
             {benefits.map((b, i) => (
-              <div key={i} className="text-center p-4">
-                <div className="w-16 h-16 mx-auto bg-age-gold/10 rounded-full flex items-center justify-center mb-4 text-age-gold">
-                  {/* Ícones genéricos simples com Emoji para não depender de libs extras complexas, mantendo minimalista */}
-                  <span className="text-2xl">{i === 0 ? '💪' : i === 1 ? '🔄' : i === 2 ? '⚡' : '🧠'}</span>
+              <div key={i} className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group text-center">
+                <div className="w-20 h-20 mx-auto rounded-2xl bg-age-gold/10 border border-age-gold/20 flex items-center justify-center text-age-gold mb-6 group-hover:scale-110 transition-transform">
+                  {b.icon}
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2">{b.title}</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">{b.desc}</p>
+                <h4 className="text-xl font-black text-white mb-3 tracking-tight uppercase">{b.title}</h4>
+                <p className="text-gray-400 font-light leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
 
-          <hr className="border-gray-100 mb-12" />
-
-          {/* Como Tomar */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16 items-center">
+          {/* Como Tomar & Tabela Nutricional */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-24 items-start">
             <div>
-              <h2 className="text-2xl font-black text-gray-900 mb-6 uppercase">Como devo tomar?</h2>
-              <p className="text-gray-600 mb-6">Muitas pessoas têm dúvidas sobre como tomar creatina, mas o mais importante é entender que o consumo diário é essencial para garantir seus benefícios.</p>
+              <h2 className="text-3xl font-black text-white mb-8 uppercase tracking-tighter">Como devo tomar?</h2>
+              <p className="text-gray-400 mb-8 font-light leading-relaxed text-lg">
+                Muitas pessoas têm dúvidas sobre como tomar creatina, mas o mais importante é entender que o consumo diário é essencial para garantir seus benefícios acumulativos.
+              </p>
               
-              <div className="mb-6">
-                <h4 className="font-bold text-gray-900 mb-2">Preciso tomar todos os dias?</h4>
-                <p className="text-sm text-gray-600">Sim. A creatina deve ser consumida diariamente, mesmo nos dias em que você não treina. Seu efeito é acumulativo.</p>
-              </div>
-              
-              <div>
-                <h4 className="font-bold text-gray-900 mb-2">Qual a quantidade ideal?</h4>
-                <p className="text-sm text-gray-600">A recomendação é consumir entre 3g e 5g de creatina por dia para obter todos os benefícios. Não é necessário fazer fase de saturação.</p>
+              <div className="space-y-8">
+                <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                  <h4 className="font-bold text-white mb-2 uppercase tracking-widest text-sm flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-age-gold"></span> Preciso tomar todos os dias?
+                  </h4>
+                  <p className="text-gray-400 font-light">Sim. A creatina deve ser consumida diariamente, mesmo nos dias em que você não treina. Seu efeito é crônico.</p>
+                </div>
+                
+                <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                  <h4 className="font-bold text-white mb-2 uppercase tracking-widest text-sm flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-age-gold"></span> Qual a quantidade ideal?
+                  </h4>
+                  <p className="text-gray-400 font-light">A recomendação é consumir 3g de creatina por dia para obter todos os benefícios. Não é estritamente necessário fazer fase de saturação.</p>
+                </div>
               </div>
             </div>
-            <div className="bg-[#f9f8f6] p-8 rounded-[20px] border border-gray-100">
-              <h3 className="font-black text-gray-900 mb-4 uppercase">Como consumir?</h3>
-              <p className="text-sm text-gray-600 mb-4">A creatina pode ser facilmente misturada em água, suco ou shakes proteicos.</p>
-              <p className="text-sm text-gray-600">Para otimizar sua absorção, consuma junto com alimentos que estimulam a produção de insulina (arroz, banana, mel, dextrose).</p>
+
+            <div className="bg-gradient-to-br from-gray-900 to-black p-10 rounded-[3rem] border border-white/10 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-age-gold/5 blur-3xl rounded-full" />
+              <h2 className="text-2xl font-black text-white mb-6 text-center uppercase tracking-tighter">Informação Nutricional</h2>
+              <p className="text-sm text-age-gold mb-6 text-center font-bold tracking-widest uppercase">Porção de 3g (1 dosador)</p>
+              
+              <div className="border border-white/10 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm">
+                <div className="grid grid-cols-2 bg-white/10 px-6 py-4 text-xs font-bold uppercase tracking-widest text-gray-300">
+                  <span>Quantidade por porção</span>
+                  <span className="text-right">%VD (*)</span>
+                </div>
+                <div className="grid grid-cols-2 px-6 py-5 text-sm border-b border-white/5">
+                  <span className="text-gray-300">Creatina Monohidratada</span>
+                  <span className="text-right text-white font-black text-lg">3000mg</span>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 mt-6 text-center font-light leading-relaxed">
+                Não contém quantidades significativas de valor energético, carboidratos, açúcares, proteínas, gorduras totais, gorduras saturadas, gorduras trans, fibra alimentar e sódio.
+              </p>
             </div>
           </div>
-
-          <hr className="border-gray-100 mb-12" />
-
-          {/* Tabela Nutricional */}
-          <div className="max-w-2xl mx-auto mb-16">
-            <h2 className="text-2xl font-black text-gray-900 mb-6 text-center uppercase">Tabela Nutricional</h2>
-            <p className="text-sm text-gray-500 mb-4 text-center">Porção de 3g (1 dosador)</p>
-            <div className="border border-gray-200 rounded-xl overflow-hidden">
-              <div className="grid grid-cols-2 bg-gray-50 px-4 py-3 text-xs font-bold uppercase tracking-wider text-gray-500">
-                <span>Quantidade por porção</span>
-                <span className="text-right">%VD (*)</span>
-              </div>
-              <div className="grid grid-cols-2 px-4 py-3 text-sm bg-white border-b border-gray-100">
-                <span className="text-gray-700">Creatina Monohidratada</span>
-                <span className="text-right text-gray-900 font-bold">3000mg</span>
-              </div>
-            </div>
-            <p className="text-[10px] text-gray-400 mt-4 text-center">
-              Não contém quantidades significativas de valor energético, carboidratos, açúcares, proteínas, gorduras e sódio.
-            </p>
-          </div>
-
-          <hr className="border-gray-100 mb-12" />
 
           {/* FAQ */}
-          <h2 className="text-2xl font-black text-gray-900 mb-6 text-center uppercase">Perguntas Frequentes</h2>
-          <div className="space-y-3 max-w-3xl mx-auto">
-            {faqItems.map((item, i) => (
-              <div key={i} className="border border-gray-100 rounded-xl overflow-hidden bg-white">
-                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50">
-                  <span className="font-bold text-sm text-gray-800 pr-4">{item.question}</span>
-                  <ChevronDown size={18} className={`text-gray-400 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
-                </button>
-                {openFaq === i && <div className="px-5 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-50 pt-4">{item.answer}</div>}
-              </div>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-black text-white mb-10 text-center uppercase tracking-tighter">Perguntas Frequentes</h2>
+            <div className="space-y-4">
+              {faqItems.map((item, i) => (
+                <div key={i} className="border border-white/10 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20">
+                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-6 text-left">
+                    <span className="font-bold text-gray-200 pr-4 tracking-wide">{item.question}</span>
+                    <ChevronDown size={20} className={`text-age-gold transition-transform duration-500 ${openFaq === i ? 'rotate-180' : ''}`} />
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="px-6 pb-6 text-gray-400 leading-relaxed font-light border-t border-white/5 pt-4">
+                      {item.answer}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+
         </div>
       </div>
     </div>
