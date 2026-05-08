@@ -62,7 +62,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6 text-black">Relacionamento</h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li>Central de Atendimento:</li>
-              <li className="font-bold">(11) 91634-2268</li>
+              <li className="font-bold">(11) 94792-8227</li>
               <li className="mt-4">Horário de atendimento:</li>
               <li>Segunda a sexta-feira das 8h às 18h.</li>
             </ul>

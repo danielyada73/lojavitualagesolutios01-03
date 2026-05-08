@@ -102,7 +102,7 @@ export default function PrivacyPolicy() {
               Se tiver qualquer dúvida sobre segurança, privacidade ou suspeitar de uso indevido de dados, fale com o nosso suporte.
             </p>
             <div className="flex justify-center flex-wrap gap-4">
-              <a href="https://wa.me/5511916342268" target="_blank" rel="noopener noreferrer" className="bg-black text-age-gold px-10 py-4 rounded-full font-black uppercase italic text-xs tracking-widest hover:scale-105 transition-all">
+              <a href="https://wa.me/5511947928227" target="_blank" rel="noopener noreferrer" className="bg-black text-age-gold px-10 py-4 rounded-full font-black uppercase italic text-xs tracking-widest hover:scale-105 transition-all">
                 Chamar Suporte
               </a>
             </div>

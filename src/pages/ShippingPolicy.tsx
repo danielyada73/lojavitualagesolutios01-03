@@ -56,7 +56,7 @@ export default function ShippingPolicy() {
                 </div>
                 <div className="bg-white/10 p-4 rounded-2xl border border-white/10">
                   <p className="text-xs uppercase text-gray-400 font-bold mb-1">WhatsApp</p>
-                  <p className="font-bold">(11) 91634-2268</p>
+                  <p className="font-bold">(11) 94792-8227</p>
                 </div>
               </div>
               <div className="bg-age-gold/10 p-6 rounded-2xl border border-age-gold/20">
@@ -136,9 +136,9 @@ export default function ShippingPolicy() {
                 <Mail size={20} />
                 <span className="font-bold">contato@agesolution.com.br</span>
               </a>
-              <a href="tel:5511916342268" className="flex items-center gap-3 bg-white/5 px-6 py-4 rounded-2xl hover:bg-age-gold hover:text-black transition-all">
+              <a href="tel:5511947928227" className="flex items-center gap-3 bg-white/5 px-6 py-4 rounded-2xl hover:bg-age-gold hover:text-black transition-all">
                 <Phone size={20} />
-                <span className="font-bold">(11) 91634-2268</span>
+                <span className="font-bold">(11) 94792-8227</span>
               </a>
             </div>
           </section>

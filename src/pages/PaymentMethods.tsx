@@ -115,7 +115,7 @@ export default function PaymentMethods() {
                         <p className="text-gray-400 mb-10 font-medium italic">
                             Se tiver qualquer dificuldade para concluir, fale com o nosso suporte agora.
                         </p>
-                        <a href="https://wa.me/5511916342268" target="_blank" rel="noopener noreferrer" className="inline-block bg-age-gold text-black px-12 py-5 rounded-full font-black uppercase italic tracking-[0.2em] text-xs hover:bg-white hover:scale-110 transition-all">
+                        <a href="https://wa.me/5511947928227" target="_blank" rel="noopener noreferrer" className="inline-block bg-age-gold text-black px-12 py-5 rounded-full font-black uppercase italic tracking-[0.2em] text-xs hover:bg-white hover:scale-110 transition-all">
                             Suporte WhatsApp
                         </a>
                     </footer>

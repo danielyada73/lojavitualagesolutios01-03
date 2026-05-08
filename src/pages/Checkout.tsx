@@ -161,7 +161,7 @@ export default function Checkout() {
                 Se tiver qualquer dificuldade para concluir, fale com o nosso suporte agora.
               </p>
               <a
-                href="https://wa.me/5511916342268"
+                href="https://wa.me/5511947928227"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full py-3 bg-gray-100 text-black text-xs font-bold uppercase rounded-lg hover:bg-age-gold transition-colors"

@@ -36,7 +36,7 @@ export default function App() {
 
       {/* Botão flutuante do WhatsApp */}
       <a
-        href="https://api.whatsapp.com/send/?phone=5511916342268&text=Ol%C3%A1%2C%20acabei%20de%20ver%20a%20loja%20de%20voc%C3%AAs%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos!&type=phone_number&app_absent=0"
+        href="https://api.whatsapp.com/send/?phone=5511947928227&text=Ol%C3%A1%2C%20acabei%20de%20ver%20a%20loja%20de%20voc%C3%AAs%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos!&type=phone_number&app_absent=0"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
