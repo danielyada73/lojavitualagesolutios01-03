@@ -4,6 +4,7 @@
   --color-age-gold: #D4AF37;
   --color-age-dark: #0A0A0A;
   --color-age-green: #008148;
+  --color-age-parchment: #f9f8f6;
   --font-inter: "Inter", sans-serif;
 
   /* Premium Shadows & Blurs */
@@ -11,10 +12,16 @@
   --shadow-gold-glow: 0 0 20px rgba(212, 175, 55, 0.3);
   
   --animate-shimmer: shimmer 2s linear infinite;
+  --animate-marquee: marquee 30s linear infinite;
 
   @keyframes shimmer {
     from { background-position: -200% 0; }
     to { background-position: 200% 0; }
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-33.333%); }
   }
 }
 
@@ -65,4 +72,10 @@ img {
 
 .hero-gradient {
   background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
-}
+}
+
+/* Product page prose cleanup */
+.prose h2, .prose h3 {
+  text-transform: none;
+  letter-spacing: normal;
+}

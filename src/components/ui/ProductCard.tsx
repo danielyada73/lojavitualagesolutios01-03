@@ -68,7 +68,9 @@ export default function ProductCard({ product }: ProductCardProps) {
         </h3>
 
         <p className="text-[11px] text-gray-500 mb-4 line-clamp-2 leading-relaxed">
-          {product.description}
+          {product.description?.includes('<')
+            ? product.description.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().slice(0, 150)
+            : product.description}
         </p>
 
         <div className="mt-auto pt-4 border-t border-gray-50 flex flex-col">
