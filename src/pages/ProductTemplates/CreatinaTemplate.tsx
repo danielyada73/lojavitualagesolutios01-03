@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Product } from '../../types';
-import { useCartStore } from '../../store/cart';
+import { getDirectCheckoutUrl } from '../../lib/yampi';
 import { Minus, Plus, ShoppingCart, ChevronDown, ChevronRight, ShieldCheck, Truck, Zap, Target, Brain } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -9,8 +9,6 @@ interface Props {
 }
 
 export default function CreatinaTemplate({ product }: Props) {
-  const addItem = useCartStore((state) => state.addItem);
-  const toggleCart = useCartStore((state) => state.toggleCart);
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -19,9 +17,9 @@ export default function CreatinaTemplate({ product }: Props) {
   const images = product.images?.length ? product.images : [product.thumbnail_url];
   const displayPrice = product.price;
 
-  const handleAddToCart = () => {
-    addItem(product, undefined, quantity);
-    toggleCart();
+  const handleBuyNow = () => {
+    const url = getDirectCheckoutUrl(product.id, quantity);
+    window.open(url, '_blank');
   };
 
   const benefits = [
@@ -81,8 +79,8 @@ export default function CreatinaTemplate({ product }: Props) {
                 <span className="flex-1 text-center font-black text-xl">{quantity}</span>
                 <button onClick={() => setQuantity(q => q + 1)} className="flex-1 h-full flex items-center justify-center hover:bg-gray-100"><Plus size={18} /></button>
               </div>
-              <button onClick={handleAddToCart} className="flex-[2] h-16 bg-[#141414] text-white font-black uppercase tracking-[0.4em] text-[11px] hover:bg-gray-800 transition-all flex items-center justify-center gap-4 rounded-none">
-                <ShoppingCart size={18} /> Adicionar ao Carrinho
+              <button onClick={handleBuyNow} className="flex-[2] h-16 bg-[#141414] text-white font-black uppercase tracking-[0.4em] text-[11px] hover:bg-gray-800 transition-all flex items-center justify-center gap-4 rounded-none">
+                <ShoppingCart size={18} /> COMPRAR AGORA
               </button>
             </div>
 

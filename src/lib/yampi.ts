@@ -267,6 +267,25 @@ const INTERNAL_TOKEN_MAP: Record<string, string> = {
     'CREATINA-KIT-2': 'HJAMENSAUX',
     'CREATINA-KIT-3': 'FYZPE4SJ4B',
 
+    // IDs numéricos do Mock (Yampi IDs)
+    '137428494': 'RZI9L4LENR',  // Colágeno c/ Ác. Hialurônico Kit 3
+    '137428501': '78HF7WJF4F',  // Celluli Burn Kit 3
+    '137428502': 'KSO4RI8XF0',  // Coenzima Q10 Kit 3
+
+    // Mapeamento extra para Kits (IDs do Mock -> Tokens Yampi)
+    'verisol-ind': '8G95KP981S',
+    'verisol-kit-2': 'E6DOV587F3',
+    'verisol-kit-3': '3AUV0QPTH3',
+    'verisol-kit-6': 'S5LJPNV5AG',
+    'cell-ind': 'RMAGUPCGHB',
+    'cell-kit-2': 'PCF9HY50IY',
+    'cell-kit-3': '78HF7WJF4F',
+    'cell-kit-6': 'KDNJ1WEHC3',
+    'coenz-ind': 'JD0TPQXRRP',
+    'coenz-kit-2': 'ARHY9PYKB4',
+    'coenz-kit-3': 'KSO4RI8XF0',
+    'coenz-kit-6': 'C1EJM7X0EW',
+
     // Outros
     'eye-care-ind': 'M3031LYEM6',
     'eye-care-kit-2': 'AJGJNNIH77',
@@ -384,7 +403,39 @@ export function generateCheckoutUrl(items: { skuToken: string; quantity: number;
 }
 
 /**
+ * Retorna a URL de checkout direto para um produto/SKU.
+ * Resolve o ID interno para o token Yampi e monta o link.
+ */
+export function getDirectCheckoutUrl(productId: string, quantity = 1): string {
+    const token = INTERNAL_TOKEN_MAP[productId] || (yampiTokens as any)[productId] || productId;
+    return `https://seguro.agesolution.com.br/r/${token}:${quantity}`;
+}
+
+/**
+ * Resolve checkout específico para kits, buscando tokens de kit se existirem.
+ */
+export function getKitCheckoutUrl(baseProductId: string, pots: number): string {
+    // Normaliza o baseProductId removendo o sufixo -ind se existir
+    const normalizedBaseId = baseProductId.replace('-ind', '');
+    
+    // 1. Tenta encontrar um token específico para o kit (ex: verisol-kit-3)
+    const kitId = `${normalizedBaseId}-kit-${pots}`;
+    const token = INTERNAL_TOKEN_MAP[kitId] || (yampiTokens as any)[kitId];
+    
+    if (token) {
+        // Se achou um token de kit (ex: 3AUV0QPTH3), a quantidade no link deve ser 1 
+        // (já que o SKU já representa o kit)
+        return `https://seguro.agesolution.com.br/r/${token}:1`;
+    }
+    
+    // 2. Fallback: usa o token base com a quantidade multiplicada
+    const baseToken = INTERNAL_TOKEN_MAP[normalizedBaseId] || INTERNAL_TOKEN_MAP[baseProductId] || (yampiTokens as any)[normalizedBaseId] || baseProductId;
+    return `https://seguro.agesolution.com.br/r/${baseToken}:${pots}`;
+}
+
+/**
  * Cria/retorna uma URL de checkout.
+
  * Equivalente ao createCart da Shopify.
  */
 export async function createCheckout(

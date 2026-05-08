@@ -6,9 +6,8 @@ import { Product } from '../types';
 
 // Importando os Templates Dinâmicos
 import ColagenoTemplate from './ProductTemplates/ColagenoTemplate';
-import CreatinaTemplate from './ProductTemplates/CreatinaTemplate';
-import KitSaleTemplate from './ProductTemplates/KitSaleTemplate';
-import ModeloMaeTemplate from './ProductTemplates/ModeloMaeTemplate'; // NOVO: Modelo Mãe
+import ModeloMaeTemplate from './ProductTemplates/ModeloMaeTemplate';
+import HighPerformanceTemplate from './ProductTemplates/HighPerformanceTemplate';
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -74,26 +73,36 @@ export default function ProductDetails() {
   // ==========================================
   // ORQUESTRADOR DE TEMPLATES DE PRODUTO
   // ==========================================
-  
-  // Analisa o ID da categoria com segurança
+
   const cat = (product.category_id || '').toLowerCase();
+  const pid = product.id.toLowerCase();
+  const pname = product.name.toLowerCase();
 
-  // 1. Creatina
-  if (cat.includes('creatina')) {
-    return <CreatinaTemplate product={product} />;
-  }
-  
-  // 2. Kits (Coenzima, Celluli, Verisol)
-  const kitSaleCategories = ['coenzima', 'celluli', 'verisol'];
-  if (kitSaleCategories.some(k => cat.includes(k))) {
-    return <KitSaleTemplate product={product} />;
+  // 1. Creatina → HighPerformanceTemplate (kit selector com tokens corretos)
+  if (cat.includes('creatina') || pid.includes('cre') || pname.includes('creatina')) {
+    return <HighPerformanceTemplate product={product} />;
   }
 
-  // 3. Colágeno (Foco em Sabor)
-  if (cat.includes('colageno')) {
+  // 2. Verisol → HighPerformanceTemplate
+  if (cat.includes('verisol') || pid.includes('verisol') || pname.includes('verisol')) {
+    return <HighPerformanceTemplate product={product} />;
+  }
+
+  // 3. Coenzima → HighPerformanceTemplate
+  if (cat.includes('coenzima') || pid.includes('coenz') || pname.includes('coenzima')) {
+    return <HighPerformanceTemplate product={product} />;
+  }
+
+  // 4. Celluli → HighPerformanceTemplate
+  if (cat.includes('celluli') || pid.includes('cell') || pname.includes('celluli')) {
+    return <HighPerformanceTemplate product={product} />;
+  }
+
+  // 5. Colágeno com Ácido Hialurônico → ColagenoTemplate (kit + sabor selector)
+  if (cat.includes('colageno') || pid.includes('col') || pname.includes('colágeno')) {
     return <ColagenoTemplate product={product} />;
   }
 
-  // 4. MODELO MÃE: O Fallback Premium Universal para qualquer outro produto (ex: Ômega 3)
+  // 6. Fallback universal
   return <ModeloMaeTemplate product={product} />;
 }

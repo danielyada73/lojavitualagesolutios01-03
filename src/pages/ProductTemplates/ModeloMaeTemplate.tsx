@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Product } from '../../types';
-import { useCartStore } from '../../store/cart';
+import { getDirectCheckoutUrl } from '../../lib/yampi';
 import { Star, Minus, Plus, ShoppingCart, ChevronRight, ShieldCheck, Truck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -9,8 +9,6 @@ interface Props {
 }
 
 export default function ModeloMaeTemplate({ product }: Props) {
-  const addItem = useCartStore((state) => state.addItem);
-  const toggleCart = useCartStore((state) => state.toggleCart);
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -18,9 +16,9 @@ export default function ModeloMaeTemplate({ product }: Props) {
   const images = product.images?.length ? product.images : [product.thumbnail_url];
   const displayPrice = product.price;
 
-  const handleAddToCart = () => {
-    addItem(product, undefined, quantity);
-    toggleCart();
+  const handleBuyNow = () => {
+    const url = getDirectCheckoutUrl(product.id, quantity);
+    window.open(url, '_blank');
   };
 
   return (
@@ -109,10 +107,10 @@ export default function ModeloMaeTemplate({ product }: Props) {
                 </div>
                 
                 <button 
-                  onClick={handleAddToCart} 
+                  onClick={handleBuyNow} 
                   className="flex-1 h-14 bg-[#141414] text-white font-black uppercase tracking-[0.3em] text-xs hover:bg-gray-800 transition-all flex items-center justify-center gap-3"
                 >
-                  <ShoppingCart size={18} /> Adicionar ao Carrinho
+                  <ShoppingCart size={18} /> COMPRAR AGORA
                 </button>
               </div>
             </div>

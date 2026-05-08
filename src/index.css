@@ -45,7 +45,7 @@
   }
   
   .btn-premium {
-    @apply relative overflow-hidden bg-age-dark text-white font-black py-5 px-8 rounded-full 
+    @apply relative overflow-hidden bg-age-dark text-white font-black py-5 px-8 rounded-none 
            hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-premium;
   }
 

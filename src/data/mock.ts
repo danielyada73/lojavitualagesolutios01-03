@@ -42,6 +42,12 @@ export const categories: Category[] = [
     name: 'KITS PROMOCIONAIS',
     slug: 'kits-promocionais',
     banner_url: 'https://lh3.googleusercontent.com/d/17vf7Yp0mi5tBOBrSmNMXjWNHKhEMkCKN'
+  },
+  {
+    id: 'colageno-verisol',
+    name: 'COLÁGENO VERISOL',
+    slug: 'colageno-verisol',
+    banner_url: 'https://lh3.googleusercontent.com/d/1Ty6gz_sNRs6B9m74oLQySoYHTSZjLTpw'
   }
 ];
 
@@ -218,6 +224,64 @@ export const products: Product[] = [
     details: { ...commonDetails, subtitle: 'Kit Tratamento Completo 3 Potes' }
   },
 
+  // --- COLÁGENO VERISOL ---
+  {
+    id: 'verisol-ind',
+    category_id: 'colageno-verisol',
+    name: 'Colágeno Verisol',
+    description: 'Peptídeos bioativos Verisol® com comprovação clínica para pele, unhas e articulações.',
+    price: 89.90,
+    original_price: 119.90,
+    discount_percentage: 25,
+    thumbnail_url: 'https://agesolution.com.br/wp-content/uploads/2023/01/colageno-verisol.webp',
+    images: ['https://agesolution.com.br/wp-content/uploads/2023/01/colageno-verisol.webp'],
+    is_popular: true,
+    is_kit: false,
+    details: { ...commonDetails, subtitle: 'Peptídeos Bioativos Verisol®' }
+  },
+  {
+    id: 'verisol-kit-2',
+    category_id: 'colageno-verisol',
+    name: 'Colágeno Verisol — Kit 2 Potes',
+    description: '2 potes de Colágeno Verisol',
+    price: 139.90,
+    original_price: 239.80,
+    discount_percentage: 42,
+    thumbnail_url: 'https://agesolution.com.br/wp-content/uploads/2023/01/colageno-verisol.webp',
+    images: ['https://agesolution.com.br/wp-content/uploads/2023/01/colageno-verisol.webp'],
+    is_popular: true,
+    is_kit: true,
+    details: { ...commonDetails, subtitle: 'Kit Duplo 2 Potes' }
+  },
+  {
+    id: 'verisol-kit-3',
+    category_id: 'colageno-verisol',
+    name: 'Colágeno Verisol — Kit 3 Potes',
+    description: '3 potes de Colágeno Verisol',
+    price: 179.90,
+    original_price: 359.70,
+    discount_percentage: 50,
+    thumbnail_url: 'https://agesolution.com.br/wp-content/uploads/2023/01/colageno-verisol.webp',
+    images: ['https://agesolution.com.br/wp-content/uploads/2023/01/colageno-verisol.webp'],
+    is_popular: true,
+    is_kit: true,
+    details: { ...commonDetails, subtitle: 'Kit Tratamento Completo 3 Potes' }
+  },
+  {
+    id: 'verisol-kit-6',
+    category_id: 'colageno-verisol',
+    name: 'Colágeno Verisol — Kit 6 Potes',
+    description: '6 potes de Colágeno Verisol',
+    price: 299.90,
+    original_price: 719.40,
+    discount_percentage: 58,
+    thumbnail_url: 'https://agesolution.com.br/wp-content/uploads/2023/01/colageno-verisol.webp',
+    images: ['https://agesolution.com.br/wp-content/uploads/2023/01/colageno-verisol.webp'],
+    is_popular: true,
+    is_kit: true,
+    details: { ...commonDetails, subtitle: 'Kit Longevidade 6 Potes' }
+  },
+
   // --- CREATINA ---
   {
     id: 'cre-ind',
@@ -278,6 +342,20 @@ export const products: Product[] = [
     details: { ...commonDetails, subtitle: 'Energia Celular e Coração Forte' }
   },
   {
+    id: 'coenz-kit-2',
+    category_id: 'coenzima',
+    name: 'Coenzima Q10 — Kit com 2',
+    description: '2 potes de 60 cápsulas',
+    price: 89.90,
+    original_price: 124.76,
+    discount_percentage: 28,
+    thumbnail_url: 'https://agesolution.com.br/wp-content/uploads/2023/01/coenzima-q10.webp',
+    images: ['https://agesolution.com.br/wp-content/uploads/2023/01/coenzima-q10.webp'],
+    is_popular: true,
+    is_kit: true,
+    details: { ...commonDetails, subtitle: 'Kit Duplo 2 Potes' }
+  },
+  {
     id: '137428502', // Coenzima Q10 3 Potes (Yampi)
     category_id: 'coenzima',
     name: 'Coenzima Q10 - Kit com 3',
@@ -291,6 +369,20 @@ export const products: Product[] = [
     is_kit: true,
     variations: [{ id: '137428502', product_id: '137428502', name: 'Kit 3 Potes', price: 129.90 }],
     details: { ...commonDetails, subtitle: 'Kit Saúde 3 Potes' }
+  },
+  {
+    id: 'coenz-kit-6',
+    category_id: 'coenzima',
+    name: 'Coenzima Q10 — Kit com 6',
+    description: '6 potes de 60 cápsulas',
+    price: 219.90,
+    original_price: 374.28,
+    discount_percentage: 41,
+    thumbnail_url: 'https://lh3.googleusercontent.com/d/1z764f5Ozo0qBgXsbHAjHASNF_zghzS8e',
+    images: ['https://lh3.googleusercontent.com/d/1z764f5Ozo0qBgXsbHAjHASNF_zghzS8e'],
+    is_popular: true,
+    is_kit: true,
+    details: { ...commonDetails, subtitle: 'Kit Longevidade 6 Potes' }
   },
   {
     id: 'coenz-kit-5',
@@ -323,6 +415,20 @@ export const products: Product[] = [
     details: { ...commonDetails, subtitle: 'Combate a Celulite e Retenção' }
   },
   {
+    id: 'cell-kit-2',
+    category_id: 'celluli',
+    name: 'Celluli Burn — Kit com 2',
+    description: '2 potes de 60 cápsulas',
+    price: 69.90,
+    original_price: 99.76,
+    discount_percentage: 30,
+    thumbnail_url: 'https://lh3.googleusercontent.com/d/1tOBC8M0mpnAkHCUtZntZLf-PiWzcWMTo',
+    images: ['https://lh3.googleusercontent.com/d/1tOBC8M0mpnAkHCUtZntZLf-PiWzcWMTo'],
+    is_popular: true,
+    is_kit: true,
+    details: { ...commonDetails, subtitle: 'Kit Duplo 2 Potes' }
+  },
+  {
     id: '137428501', // Celluli Burn 3 Potes (Yampi)
     category_id: 'celluli',
     name: 'Celluli Burn - Kit com 3',
@@ -336,6 +442,20 @@ export const products: Product[] = [
     is_kit: true,
     variations: [{ id: '137428501', product_id: '137428501', name: 'Kit 3 Potes', price: 99.90 }],
     details: { ...commonDetails, subtitle: 'Kit Redução de Medidas 3 Potes' }
+  },
+  {
+    id: 'cell-kit-6',
+    category_id: 'celluli',
+    name: 'Celluli Burn — Kit com 6',
+    description: '6 potes de 60 cápsulas',
+    price: 179.90,
+    original_price: 299.28,
+    discount_percentage: 40,
+    thumbnail_url: 'https://lh3.googleusercontent.com/d/1450UF0tdiT5sjxv7CJZJeh4CuZpNZAAY',
+    images: ['https://lh3.googleusercontent.com/d/1450UF0tdiT5sjxv7CJZJeh4CuZpNZAAY'],
+    is_popular: true,
+    is_kit: true,
+    details: { ...commonDetails, subtitle: 'Kit Longevidade 6 Potes' }
   },
   {
     id: 'cell-kit-5',
