@@ -1,5 +1,21 @@
-import { Facebook, Instagram, Youtube, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+function FacebookIcon({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+    </svg>
+  );
+}
+
+function TikTokIcon({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.3 0 .59.05.86.12V9.01a6.32 6.32 0 0 0-.86-.06 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.18 8.18 0 0 0 4.78 1.54V6.84a4.85 4.85 0 0 1-1.02-.15z"/>
+    </svg>
+  );
+}
 
 export default function Footer() {
   return (
@@ -17,14 +33,14 @@ export default function Footer() {
 
             <h4 className="font-bold mb-4 mt-6">Redes Sociais</h4>
             <div className="flex gap-4">
-              <a href="#" className="text-age-gold hover:text-black transition-colors no-underline">
-                <Facebook size={24} />
+              <a href="https://www.facebook.com/AgeSolutionsOficial" target="_blank" rel="noopener noreferrer" className="text-age-gold hover:text-black transition-colors no-underline">
+                <FacebookIcon size={24} />
               </a>
-              <a href="#" className="text-age-gold hover:text-black transition-colors no-underline">
+              <a href="https://www.instagram.com/agesolutions/" target="_blank" rel="noopener noreferrer" className="text-age-gold hover:text-black transition-colors no-underline">
                 <Instagram size={24} />
               </a>
-              <a href="#" className="text-age-gold hover:text-black transition-colors no-underline">
-                <div className="w-6 h-6 flex items-center justify-center font-bold border border-current rounded-full text-[10px]">Tk</div>
+              <a href="https://www.tiktok.com/@agesolutions.officialbr" target="_blank" rel="noopener noreferrer" className="text-age-gold hover:text-black transition-colors no-underline">
+                <TikTokIcon size={24} />
               </a>
             </div>
           </div>
