@@ -291,8 +291,8 @@ export const products: Product[] = [
     price: 79.90,
     original_price: 119.90,
     discount_percentage: 33,
-    thumbnail_url: 'https://agesolution.com.br/wp-content/uploads/2025/02/promo-320-x-500-px.png',
-    images: ['https://agesolution.com.br/wp-content/uploads/2025/02/promo-320-x-500-px.png'],
+    thumbnail_url: '/creatina-premium.jpg',
+    images: ['/creatina-premium.jpg'],
     is_popular: true,
     is_kit: false,
     details: { ...commonDetails, subtitle: 'Força e Explosão Muscular' }
