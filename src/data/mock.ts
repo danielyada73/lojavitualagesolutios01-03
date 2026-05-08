@@ -17,7 +17,7 @@ export const categories: Category[] = [
     id: 'coenzima',
     name: 'COENZIMA',
     slug: 'coenzima',
-    banner_url: 'https://lh3.googleusercontent.com/d/1kBR7ir_TjJ3J8ptrApjq2Lt_YQrI5uYI'
+    banner_url: '/banner-coenzima.jpg'
   },
   {
     id: 'omega-3',
@@ -516,6 +516,15 @@ export const banners: Banner[] = [
     image_url: 'https://lh3.googleusercontent.com/d/1yy_f33w_qx8zf4aPOE3vM2WVcK_Jz_fC',
     mobile_image_url: 'https://lh3.googleusercontent.com/d/1bkYo7vC0vGjc7rj98TvsvFjfqvUEG2FI',
     target_url: '/category/creatina',
+    is_active: true
+  },
+  {
+    id: '2',
+    title: 'RENOVE SUA PELE',
+    description: '3 POTES DE COLÁGENO COM ÁCIDO HIALURÔNICO DE R$ 269,70 POR: R$ 179,90',
+    image_url: '/banner-colageno-desktop.jpg',
+    mobile_image_url: '/banner-colageno-mobile.jpg',
+    target_url: '/category/colageno-po',
     is_active: true
   }
 ];

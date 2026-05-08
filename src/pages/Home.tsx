@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import HeroCarousel from '../components/home/HeroCarousel';
 import BenefitsBanner from '../components/home/BenefitsBanner';
 import BestSellers from '../components/home/BestSellers';
@@ -10,76 +10,18 @@ import CoenzimaQ10Section from '../components/home/CoenzimaQ10Section';
 import VideoGallery from '../components/home/VideoGallery';
 import InstagramFeed from '../components/home/InstagramFeed';
 import Newsletter from '../components/home/Newsletter';
-import { differentialsImages, colagenoOffers } from '../data/mock';
-import { getProductsByCategory } from '../lib/yampi';
+import { differentialsImages, products as allProducts } from '../data/mock';
 import ProductCard from '../components/ui/ProductCard';
-import { Product } from '../types';
 
 export default function Home() {
-  const [colagenoProducts, setColagenoProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function loadProducts() {
-      try {
-        const products = await getProductsByCategory('colageno', 20);
-        if (products && products.length > 0) {
-          // Buscamos produtos específicos se existirem
-          const pote1 = products.find(p => p.handle === 'col-cran' || p.handle === 'colageno' || p.name.toLowerCase().includes('cranberry'));
-          const kit2 = products.find(p => p.handle === 'col-kit-2' || p.name.toLowerCase().includes('2 potes'));
-          const kit3 = products.find(p => p.handle === 'col-kit-3' || p.name.toLowerCase().includes('3 potes'));
-
-          const foundSpecific = [pote1, kit2, kit3].filter(Boolean) as Product[];
-
-          // Se não encontrou todos os 3 específicos, preenche com os restantes da coleção
-          if (foundSpecific.length < 3) {
-            const others = products.filter(p => !foundSpecific.find(fs => fs.id === p.id));
-            setColagenoProducts([...foundSpecific, ...others].slice(0, 3));
-          } else {
-            setColagenoProducts(foundSpecific);
-          }
-        } else {
-          // Fallback para dados mockados se a Yampi retornar vazio
-          const mappedMocks: Product[] = colagenoOffers.map(offer => ({
-            id: offer.id,
-            category_id: 'colageno',
-            name: offer.name,
-            description: offer.description,
-            price: offer.price,
-            original_price: offer.original_price,
-            discount_percentage: offer.discount_percentage,
-            thumbnail_url: offer.thumbnail_url,
-            is_popular: true,
-            handle: offer.id,
-            images: [offer.thumbnail_url],
-            variations: []
-          }));
-          setColagenoProducts(mappedMocks);
-        }
-      } catch (error) {
-        console.error('Erro ao carregar produtos da Yampi:', error);
-        // Fallback em caso de erro na API
-        const mappedMocks: Product[] = colagenoOffers.map(offer => ({
-          id: offer.id,
-          category_id: 'colageno',
-          name: offer.name,
-          description: offer.description,
-          price: offer.price,
-          original_price: offer.original_price,
-          discount_percentage: offer.discount_percentage,
-          thumbnail_url: offer.thumbnail_url,
-          is_popular: true,
-          handle: offer.id,
-          images: [offer.thumbnail_url],
-          variations: []
-        }));
-        setColagenoProducts(mappedMocks);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadProducts();
-  }, []);
+  // Apenas produtos ColAH (1 pote cranberry, 1 pote limão, kit 2) — sem Verisol
+  const colagenoProducts = useMemo(() =>
+    allProducts
+      .filter(p => p.category_id === 'colageno-po')
+      .sort((a, b) => a.price - b.price)
+      .slice(0, 3),
+    []
+  );
 
   return (
     <div className="animate-in fade-in duration-500">
@@ -100,17 +42,11 @@ export default function Home() {
             </p>
           </div>
 
-          {loading ? (
-            <div className="flex justify-center items-center py-20">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-age-gold"></div>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {colagenoProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {colagenoProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
       </section>
 
