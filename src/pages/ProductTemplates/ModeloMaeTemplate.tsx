@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { Product } from '../../types';
-import { getDirectCheckoutUrl } from '../../lib/yampi';
 import { Star, Minus, Plus, ShoppingCart, ChevronRight, ShieldCheck, Truck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useCartStore } from '../../store/cart';
 
 interface Props {
   product: Product;
 }
 
 export default function ModeloMaeTemplate({ product }: Props) {
+  const addItem = useCartStore((s) => s.addItem);
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -17,8 +18,7 @@ export default function ModeloMaeTemplate({ product }: Props) {
   const displayPrice = product.price;
 
   const handleBuyNow = () => {
-    const url = getDirectCheckoutUrl(product.id, quantity);
-    window.open(url, '_blank');
+    addItem(product, undefined, quantity);
   };
 
   return (

@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { useCartStore } from '../../store/cart';
 
 // ── Dados de Kit + Sabor para Colágeno com Ácido Hialurônico ──
 // Cada kit tem flavors com tokens diretos da Yampi
@@ -89,8 +90,12 @@ const faqItems = [
 ];
 
 export default function ColagenoTemplate({ product }: Props) {
+  const addItem = useCartStore((s) => s.addItem);
+
+  // Detecta sabor padrão pelo produto clicado (col-lim → Limão)
+  const isLimao = product.id === 'col-lim' || product.name.toLowerCase().includes('limão');
   const [selectedKitIdx, setSelectedKitIdx] = useState(1); // default: 2 potes
-  const [selectedFlavorIdx, setSelectedFlavorIdx] = useState(0);
+  const [selectedFlavorIdx, setSelectedFlavorIdx] = useState(isLimao ? 1 : 0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const currentKit = COL_KITS[selectedKitIdx];
@@ -101,7 +106,10 @@ export default function ColagenoTemplate({ product }: Props) {
   const discountPct = Math.round((savings / currentKit.originalPrice) * 100);
 
   const handleBuyNow = () => {
-    window.open(`https://seguro.agesolution.com.br/r/${currentFlavor.token}:1`, '_blank');
+    addItem(
+      { ...product, price: currentKit.price, original_price: currentKit.originalPrice },
+      { id: currentFlavor.token, product_id: product.id, name: `${currentKit.label} — ${currentFlavor.name}`, price: currentKit.price, price_modifier: 0, sku_token: currentFlavor.token } as any
+    );
   };
 
   return (

@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { useCartStore } from '../../store/cart';
 
 // ── Tipos ─────────────────────────────────────────────
 interface KitOption {
@@ -141,6 +142,7 @@ interface Props {
 }
 
 export default function HighPerformanceTemplate({ product }: Props) {
+  const addItem = useCartStore((s) => s.addItem);
   const key = resolveProductKey(product);
   const kitData = key ? PRODUCT_KITS[key] : null;
 
@@ -152,7 +154,10 @@ export default function HighPerformanceTemplate({ product }: Props) {
 
   const handleBuyNow = () => {
     if (!selectedKit) return;
-    window.open(`https://seguro.agesolution.com.br/r/${selectedKit.token}:1`, '_blank');
+    addItem(
+      { ...product, price: selectedKit.price, original_price: selectedKit.originalPrice },
+      { id: selectedKit.token, product_id: product.id, name: selectedKit.label, price: selectedKit.price, price_modifier: 0, sku_token: selectedKit.token } as any
+    );
   };
 
   if (!kitData || !selectedKit) {
