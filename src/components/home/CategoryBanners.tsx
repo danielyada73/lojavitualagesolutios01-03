@@ -15,7 +15,7 @@ export default function CategoryBanners() {
     {
       title: 'CELULI BURN',
       image: 'https://lh3.googleusercontent.com/d/1MWS5erJ-7Nl-5XpKvZqmEe7qhakvTYbD',
-      link: '/category/emagrecimento'
+      link: '/category/celluli'
     },
     {
       title: 'COENZIMA Q10',

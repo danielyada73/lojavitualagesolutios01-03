@@ -1,58 +1,25 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { categories, products as mockProducts } from '../data/mock';
 import { Filter } from 'lucide-react';
 import ProductCard from '../components/ui/ProductCard';
-import { getProductsByCategory } from '../lib/yampi';
-import { Product } from '../types';
 
 export default function Category() {
   const { slug } = useParams();
-  const [categoryProducts, setCategoryProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
   const [sortOrder, setSortOrder] = useState('Mais Populares');
 
   const category = categories.find((c) => c.slug === slug);
 
-  useEffect(() => {
-    async function loadCategoryData() {
-      if (!slug) return;
-
-      setLoading(true);
-      try {
-        const fetchedProducts = await getProductsByCategory(slug, 20);
-
-        if (fetchedProducts && fetchedProducts.length > 0) {
-          setCategoryProducts(fetchedProducts);
-        } else {
-          // Fallback para dados mockados
-          const mocks = slug === 'kits'
-            ? mockProducts.filter((p) => p.is_kit)
-            : mockProducts.filter((p) => {
-              const cat = categories.find((c) => c.slug === slug);
-              return p.category_id === cat?.id;
-            });
-          setCategoryProducts(mocks);
-        }
-      } catch (error) {
-        console.error('Erro ao buscar categoria na Yampi:', error);
-        // Fallback em caso de erro
-        const mocks = slug === 'kits'
-          ? mockProducts.filter((p) => p.is_kit)
-          : mockProducts.filter((p) => {
-            const cat = categories.find((c) => c.slug === slug);
-            return p.category_id === cat?.id;
-          });
-        setCategoryProducts(mocks);
-      } finally {
-        setLoading(false);
-      }
+  const categoryProducts = useMemo(() => {
+    if (!slug) return [];
+    if (slug === 'kits' || slug === 'kits-promocionais') {
+      return mockProducts.filter((p) => p.is_kit);
     }
-
-    loadCategoryData();
+    const cat = categories.find((c) => c.slug === slug);
+    return cat ? mockProducts.filter((p) => p.category_id === cat.id) : [];
   }, [slug]);
 
-  if (!category && !loading && categoryProducts.length === 0) {
+  if (!category && categoryProducts.length === 0) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
         <h1 className="text-2xl font-bold mb-4">Categoria não encontrada</h1>
@@ -98,7 +65,7 @@ export default function Category() {
           <div className="flex items-center gap-2 text-gray-500 mb-4 md:mb-0">
             <Filter size={20} />
             <span className="font-medium">
-              {loading ? 'Buscando produtos...' : `${categoryProducts.length} produtos encontrados`}
+              {`${categoryProducts.length} produtos encontrados`}
             </span>
           </div>
 
@@ -118,11 +85,7 @@ export default function Category() {
         </div>
 
         {/* Products Grid */}
-        {loading ? (
-          <div className="flex justify-center items-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-age-gold"></div>
-          </div>
-        ) : sortedProducts.length > 0 ? (
+        {sortedProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {sortedProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
