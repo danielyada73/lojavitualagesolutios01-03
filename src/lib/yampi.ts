@@ -59,7 +59,7 @@ export function mapYampiProduct(item: any): Product {
     // 1. Imagens do Produto
     if (item.images?.data) {
         item.images.data.forEach((img: any) => {
-            const url = img.url || img.image_url;
+            const url = img.large?.url || img.medium?.url || img.name;
             if (url && !images.includes(url)) images.push(url);
         });
     }
@@ -69,7 +69,7 @@ export function mapYampiProduct(item: any): Product {
         skus.forEach((sku: any) => {
             if (sku.images?.data) {
                 sku.images.data.forEach((img: any) => {
-                    const url = img.url || img.image_url;
+                    const url = img.large?.url || img.medium?.url || img.name;
                     if (url && !images.includes(url)) images.push(url);
                 });
             }
