@@ -291,8 +291,8 @@ export const products: Product[] = [
     price: 79.90,
     original_price: 119.90,
     discount_percentage: 33,
-    thumbnail_url: '/creatina-premium.jpg',
-    images: ['/creatina-premium.jpg'],
+    thumbnail_url: '/creatina-premium.png',
+    images: ['/creatina-premium.png'],
     is_popular: true,
     is_kit: false,
     details: { ...commonDetails, subtitle: 'Força e Explosão Muscular' }
