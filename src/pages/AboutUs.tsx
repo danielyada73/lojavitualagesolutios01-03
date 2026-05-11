@@ -1,120 +1,197 @@
 import React from 'react';
-import { Target, Heart, ShieldCheck, Zap, Users, Sparkles, Activity } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const valores = [
+  {
+    titulo: 'Ciência e Consistência',
+    desc: 'Acreditamos em resultados construídos com base em evidências e rotinas bem estruturadas. Nada de promessas vazias ou soluções milagrosas.',
+  },
+  {
+    titulo: 'Transparência e Confiança',
+    desc: 'Nosso compromisso é com a clareza em cada produto, fórmula e informação. Prezamos por uma relação honesta com quem escolhe a Age Solutions.',
+  },
+  {
+    titulo: 'Autocuidado com Propósito',
+    desc: 'Encorajamos práticas reais, possíveis e conscientes. Respeitamos o tempo, o ritmo e a individualidade de cada pessoa.',
+  },
+  {
+    titulo: 'Qualidade com Responsabilidade',
+    desc: 'Todos os nossos produtos passam por curadoria criteriosa, com foco em eficácia, segurança e bem-estar.',
+  },
+  {
+    titulo: 'Atendimento Humano e Acolhedor',
+    desc: 'Mais do que vender, buscamos ouvir, orientar e acompanhar. Cada pessoa importa, e cada jornada merece atenção de verdade.',
+  },
+];
 
 export default function AboutUs() {
-    return (
-        <div className="bg-white">
-            {/* Hero Section */}
-            <section className="relative py-24 bg-black text-white overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-age-gold/10 rounded-full blur-[120px] -mr-48 -mt-48"></div>
-                <div className="container mx-auto px-4 relative z-10 text-center">
-                    <h1 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter mb-6">
-                        Sobre Nós
-                    </h1>
-                    <div className="w-32 h-1 bg-age-gold mx-auto mb-10"></div>
-                    <p className="text-2xl md:text-3xl text-age-gold max-w-4xl mx-auto font-black leading-tight uppercase italic tracking-tighter">
-                        Beleza e performance de dentro para fora
-                    </p>
-                </div>
-            </section>
+  return (
+    <div className="bg-white">
 
-            {/* Narrative Section */}
-            <section className="py-20 md:py-32">
-                <div className="container mx-auto px-4 max-w-5xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                        <div className="lg:col-span-12 prose prose-xl max-w-none text-gray-600 leading-relaxed font-medium">
-                            <p className="text-3xl text-black font-black mb-12 italic border-l-8 border-age-gold pl-8 uppercase tracking-tighter">
-                                A Age Solutions nasceu para simplificar o autocuidado com uma regra clara: resultado real exige fórmula certa + rotina possível.
-                            </p>
+      {/* ── HERO ─────────────────────────────────────────── */}
+      <section
+        className="relative min-h-[520px] md:min-h-[600px] flex items-center justify-center overflow-hidden"
+        style={{
+          backgroundImage:
+            'url(https://agesolution.com.br/wp-content/uploads/2023/10/age-sobre-nos-banner.jpg), url(https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 30%',
+        }}
+      >
+        {/* Overlay escuro */}
+        <div className="absolute inset-0 bg-black/65" />
 
-                            <div className="space-y-8">
-                                <p>
-                                    Nós unimos nutrição inteligente e cuidado estético de alta performance para quem quer melhorar pele, composição corporal e energia sem cair em promessas vazias. Aqui, cada produto entra no catálogo por um motivo: entregar função, segurança e consistência.
-                                </p>
-
-                                <p>
-                                    A nossa curadoria prioriza ativos com uso consolidado e propósito claro — como colágenos específicos (incluindo Verisol), ácido hialurónico, coenzima Q10 e creatina 100% pura — para apoiar a tua rotina "de dentro para fora".
-                                </p>
-
-                                <p>
-                                    Mais do que vender suplementos, o nosso compromisso é ajudar-te a construir um plano de autocuidado realista e sustentável: o que faz sentido para ti, no teu ritmo, com informação clara e atendimento humano.
-                                </p>
-                            </div>
-
-                            <p className="text-2xl text-black font-black uppercase italic tracking-tighter mt-16 bg-gray-50 p-8 rounded-[40px] text-center">
-                                Age Solutions é um convite simples: cuidar de ti com critério — e ver isso aparecer no espelho e no dia a dia.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Product Lines / Positioning */}
-            <section className="py-24 bg-black text-white">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-4xl font-black text-center uppercase italic tracking-tighter mb-20 text-age-gold">
-                        Nossas Linhas Principais
-                    </h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                        <div className="bg-white/5 p-12 rounded-[50px] border border-white/10 group hover:border-age-gold transition-all">
-                            <Sparkles className="text-age-gold mb-6" size={48} />
-                            <h3 className="text-3xl font-black uppercase italic tracking-tighter mb-6">Pele & Beleza (Core)</h3>
-                            <ul className="space-y-4 text-gray-400 font-bold uppercase tracking-widest text-sm">
-                                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-age-gold rounded-full"></span> Colagénio + Ácido Hialurónico</li>
-                                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-age-gold rounded-full"></span> Colagénio Verisol</li>
-                                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-age-gold rounded-full"></span> Coenzima Q10</li>
-                            </ul>
-                        </div>
-                        <div className="bg-white/5 p-12 rounded-[50px] border border-white/10 group hover:border-age-gold transition-all">
-                            <Activity className="text-age-gold mb-6" size={48} />
-                            <h3 className="text-3xl font-black uppercase italic tracking-tighter mb-6">Corpo & Performance</h3>
-                            <ul className="space-y-4 text-gray-400 font-bold uppercase tracking-widest text-sm">
-                                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-age-gold rounded-full"></span> Creatina 100% Pura</li>
-                                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-age-gold rounded-full"></span> Celulli Burn (Suporte ao Metabolismo)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Mission & Values */}
-            <section className="py-24 bg-gray-50">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-4xl font-black uppercase italic tracking-tighter mb-20 inline-block border-b-4 border-age-gold pb-4">
-                        Nossos Valores
-                    </h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        {[
-                            { icon: <Target />, title: 'Ciência aplicada', desc: 'Evidência sem complicação na sua rotina.' },
-                            { icon: <ShieldCheck />, title: 'Transparência Radical', desc: 'Fórmula, função e expectativa sempre claras.' },
-                            { icon: <Zap />, title: 'Qualidade Exigente', desc: 'Curadoria criteriosa, segurança e consistência total.' },
-                            { icon: <Heart />, title: 'Autocuidado Possível', desc: 'Sem extremos, sem terrorismo e sem culpa.' },
-                            { icon: <Users />, title: 'Atendimento Humano', desc: 'Orientação e proximidade, não apenas checkout.' }
-                        ].map((item, idx) => (
-                            <div key={idx} className="bg-white p-10 rounded-[50px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all group">
-                                <div className="mb-8 inline-block p-5 bg-black text-age-gold rounded-[24px] group-hover:rotate-12 transition-transform">
-                                    {item.icon}
-                                </div>
-                                <h3 className="text-lg font-black uppercase italic tracking-widest mb-4">{item.title}</h3>
-                                <p className="text-sm text-gray-500 leading-relaxed font-bold">{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Full Mission Statement */}
-            <section className="py-32 bg-white text-center">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <h2 className="text-sm font-black text-age-gold uppercase tracking-[0.3em] mb-12">Nossa Missão</h2>
-                    <blockquote className="text-2xl md:text-3xl text-black font-black leading-relaxed italic mb-16 uppercase tracking-tight">
-                        "Transformar o autocuidado em um ato consciente, acessível e eficaz. Acreditamos que beleza e bem-estar caminham juntos, e que cuidar de si vai muito além da estética: é um compromisso com saúde, autoestima e equilíbrio."
-                    </blockquote>
-                    <div className="w-48 h-1 bg-black mx-auto opacity-10"></div>
-                </div>
-            </section>
+        {/* Conteúdo */}
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <p className="text-age-gold font-bold uppercase tracking-[0.3em] text-sm mb-6">
+            A Age Solutions é uma empresa 100% brasileira
+          </p>
+          <h1 className="text-white font-black uppercase italic tracking-tighter leading-none text-4xl md:text-6xl lg:text-7xl mb-8">
+            Existe beleza em<br />cada fase da vida.
+            <br />
+            <span className="text-age-gold">E a nossa missão</span><br />
+            é fazer ela brilhar.
+          </h1>
+          <div className="w-20 h-1 bg-age-gold mx-auto" />
         </div>
-    );
+      </section>
+
+      {/* ── SOBRE NÓS + VALORES + MISSÃO ─────────────────── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-16">
+
+            {/* — SOBRE NÓS — */}
+            <div>
+              <h2 className="text-2xl font-black text-age-gold uppercase italic tracking-tight mb-6 pb-3 border-b-2 border-age-gold/30">
+                Sobre Nós
+              </h2>
+              <div className="space-y-4 text-gray-600 text-sm leading-relaxed font-medium">
+                <p>
+                  A verdadeira transformação começa quando você escolhe cuidar de si com intenção. Na Age Solutions, não acreditamos em promessas vazias ou fórmulas mágicas. Acreditamos em ciência, consistência e resultados reais.
+                </p>
+                <p>
+                  Nossa missão é oferecer produtos que unem o melhor da nutrição inteligente com a dermocosmética de alta performance, para que você possa cuidar da sua pele com eficácia e segurança, de dentro para fora.
+                </p>
+                <p>
+                  Trabalhamos com uma curadoria criteriosa de suplementos — como nosso colágeno com ácido hialurônico, coenzima Q10 e creatina 100% pura — desenvolvidos para promover firmeza, hidratação e vitalidade.
+                </p>
+                <p>
+                  Cada produto foi escolhido com um único objetivo: te ajudar a construir uma rotina de autocuidado realista, eficaz e prazerosa, que respeite seu tempo, seu ritmo e suas necessidades únicas.
+                </p>
+                <p>
+                  Age Solutions é mais do que uma marca — é um convite para você colocar sua beleza como prioridade, com consciência e propósito.
+                </p>
+              </div>
+            </div>
+
+            {/* — VALORES — */}
+            <div>
+              <h2 className="text-2xl font-black text-age-gold uppercase italic tracking-tight mb-6 pb-3 border-b-2 border-age-gold/30">
+                Valores
+              </h2>
+              <div className="space-y-5">
+                {valores.map((v, i) => (
+                  <div key={i} className="flex gap-3 items-start">
+                    <span className="mt-1 w-2 h-2 rounded-full bg-age-gold flex-shrink-0" />
+                    <div>
+                      <p className="text-sm font-black text-black mb-1">{v.titulo}</p>
+                      <p className="text-sm text-gray-500 leading-relaxed font-medium">{v.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* — MISSÃO — */}
+            <div>
+              <h2 className="text-2xl font-black text-age-gold uppercase italic tracking-tight mb-6 pb-3 border-b-2 border-age-gold/30">
+                Missão
+              </h2>
+              <div className="space-y-4 text-gray-600 text-sm leading-relaxed font-medium">
+                <p>
+                  Nossa missão é transformar o autocuidado em um ato consciente, acessível e eficaz. Na Age Solutions, acreditamos que beleza e bem-estar caminham juntos, e que cuidar de si vai muito além da estética: é um compromisso com saúde, autoestima e equilíbrio.
+                </p>
+                <p>
+                  Por isso, desenvolvemos e selecionamos produtos que unem ciência, nutrição inteligente e dermocosmética de alta performance, oferecendo soluções que atuam de dentro para fora com segurança, eficácia e respaldo técnico.
+                </p>
+                <p>
+                  Queremos que cada pessoa se sinta segura para construir uma rotina de cuidados que faça sentido — que respeite seu tempo, seu ritmo e suas necessidades reais. Sem fórmulas mágicas, sem exageros, sem promessas vazias.
+                </p>
+              </div>
+
+              {/* Quote em destaque */}
+              <blockquote className="mt-8 bg-black text-white p-6 rounded-[24px] relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-age-gold/10 rounded-full blur-[60px]" />
+                <p className="text-age-gold font-black italic text-3xl leading-none mb-3 relative z-10">"</p>
+                <p className="text-sm font-medium text-gray-300 leading-relaxed relative z-10 italic">
+                  Nosso propósito é promover resultados reais e sustentáveis, incentivando uma relação mais leve, confiante e intencional com a própria beleza.
+                </p>
+              </blockquote>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── LINHAS DE PRODUTOS ────────────────────────────── */}
+      <section className="py-20 bg-black text-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-center text-3xl md:text-4xl font-black uppercase italic tracking-tighter text-age-gold mb-16">
+            Nossas Linhas
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Pele & Beleza */}
+            <div className="border border-white/10 rounded-[40px] p-10 hover:border-age-gold transition-all duration-300 group">
+              <p className="text-xs uppercase tracking-[0.3em] text-age-gold font-bold mb-4">Linha</p>
+              <h3 className="text-2xl font-black uppercase italic tracking-tight mb-8">Pele &amp; Beleza</h3>
+              <ul className="space-y-3">
+                {['Colágeno com Ácido Hialurônico', 'Colágeno Verisol', 'Coenzima Q10', 'Ômega 3'].map((p, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm text-gray-400 font-bold uppercase tracking-widest">
+                    <span className="w-1.5 h-1.5 bg-age-gold rounded-full flex-shrink-0" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Corpo & Performance */}
+            <div className="border border-white/10 rounded-[40px] p-10 hover:border-age-gold transition-all duration-300 group">
+              <p className="text-xs uppercase tracking-[0.3em] text-age-gold font-bold mb-4">Linha</p>
+              <h3 className="text-2xl font-black uppercase italic tracking-tight mb-8">Corpo &amp; Performance</h3>
+              <ul className="space-y-3">
+                {['Creatina 100% Pura', 'Celluli Burn (Suporte ao Metabolismo)'].map((p, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm text-gray-400 font-bold uppercase tracking-widest">
+                    <span className="w-1.5 h-1.5 bg-age-gold rounded-full flex-shrink-0" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FRASE FINAL / CTA ─────────────────────────────── */}
+      <section className="py-24 bg-white text-center">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="w-12 h-1 bg-age-gold mx-auto mb-12" />
+          <h2 className="text-3xl md:text-4xl font-black uppercase italic tracking-tighter text-black mb-8 leading-tight">
+            Cuidar de ti com critério — e ver isso aparecer no espelho e no dia a dia.
+          </h2>
+          <p className="text-gray-500 font-medium mb-12 text-sm uppercase tracking-widest">
+            Age Solutions — Ciência. Consistência. Resultado.
+          </p>
+          <Link
+            to="/"
+            className="inline-block bg-black text-age-gold font-black uppercase italic tracking-[0.2em] text-xs px-12 py-5 rounded-full hover:bg-age-gold hover:text-black transition-all duration-300"
+          >
+            Ver Produtos
+          </Link>
+        </div>
+      </section>
+
+    </div>
+  );
 }
