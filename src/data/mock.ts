@@ -478,9 +478,9 @@ export const products: Product[] = [
     category_id: 'omega-3',
     name: 'Ômega 3 60 Cápsulas',
     description: 'Alta concentração de EPA, DHA e ALA. Saúde cardiovascular e cerebral.',
-    price: 59.90,
+    price: 49.90,
     original_price: 79.90,
-    discount_percentage: 25,
+    discount_percentage: 38,
     thumbnail_url: 'https://agesolution.com.br/wp-content/uploads/2025/07/OMEGA-3-MOCKUP.webp',
     images: ['https://agesolution.com.br/wp-content/uploads/2025/07/OMEGA-3-MOCKUP.webp'],
     is_popular: true,
@@ -488,18 +488,32 @@ export const products: Product[] = [
     details: { ...commonDetails, subtitle: 'Saúde Cardiovascular e Cerebral' }
   },
   {
-    id: 'omega-kit-3',
+    id: 'omega-kit-2',
     category_id: 'omega-3',
-    name: 'Ômega 3 - Kit com 3',
-    description: '3 potes de 120 cápsulas',
-    price: 149.90,
-    original_price: 239.70,
-    discount_percentage: 37,
-    thumbnail_url: 'https://placehold.co/500x500/black/gold?text=Omega+3+Kit', // Placeholder
-    images: ['https://placehold.co/500x500/black/gold?text=Omega+3+Kit'],
+    name: 'Ômega 3 - Kit com 2 Potes',
+    description: '2 potes de Ômega 3 60 Cápsulas. Alta concentração de EPA, DHA e ALA.',
+    price: 89.90,
+    original_price: 159.80,
+    discount_percentage: 44,
+    thumbnail_url: 'https://agesolution.com.br/wp-content/uploads/2025/07/OMEGA-3-MOCKUP.webp',
+    images: ['https://agesolution.com.br/wp-content/uploads/2025/07/OMEGA-3-MOCKUP.webp'],
     is_popular: true,
     is_kit: true,
-    details: { ...commonDetails, subtitle: 'Kit Família 3 Potes' }
+    details: { ...commonDetails, subtitle: 'Kit Duplo — Melhor Custo-Benefício' }
+  },
+  {
+    id: 'omega-kit-3',
+    category_id: 'omega-3',
+    name: 'Ômega 3 - Kit com 3 Potes',
+    description: '3 potes de Ômega 3 60 Cápsulas. Alta concentração de EPA, DHA e ALA.',
+    price: 99.90,
+    original_price: 239.70,
+    discount_percentage: 58,
+    thumbnail_url: 'https://agesolution.com.br/wp-content/uploads/2025/07/OMEGA-3-MOCKUP.webp',
+    images: ['https://agesolution.com.br/wp-content/uploads/2025/07/OMEGA-3-MOCKUP.webp'],
+    is_popular: true,
+    is_kit: true,
+    details: { ...commonDetails, subtitle: 'Kit Família — Maior Economia' }
   }
 ];
 

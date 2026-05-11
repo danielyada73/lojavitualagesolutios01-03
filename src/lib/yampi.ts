@@ -290,6 +290,11 @@ const INTERNAL_TOKEN_MAP: Record<string, string> = {
     'eye-care-ind': 'M3031LYEM6',
     'eye-care-kit-2': 'AJGJNNIH77',
     'eye-care-kit-3': 'GIJO9RSP81',
+
+    // Ômega 3
+    'omega-ind': 'OMEGA3IND01',
+    'omega-kit-2': 'OMEGA3KIT2P',
+    'omega-kit-3': 'OMEGA3KIT3P',
 };
 
 /**
