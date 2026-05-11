@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const valores = [
   {
@@ -131,64 +130,6 @@ export default function AboutUs() {
             </div>
 
           </div>
-        </div>
-      </section>
-
-      {/* ── LINHAS DE PRODUTOS ────────────────────────────── */}
-      <section className="py-20 bg-black text-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-center text-3xl md:text-4xl font-black uppercase italic tracking-tighter text-age-gold mb-16">
-            Nossas Linhas
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Pele & Beleza */}
-            <div className="border border-white/10 rounded-[40px] p-10 hover:border-age-gold transition-all duration-300 group">
-              <p className="text-xs uppercase tracking-[0.3em] text-age-gold font-bold mb-4">Linha</p>
-              <h3 className="text-2xl font-black uppercase italic tracking-tight mb-8">Pele &amp; Beleza</h3>
-              <ul className="space-y-3">
-                {['Colágeno com Ácido Hialurônico', 'Colágeno Verisol', 'Coenzima Q10', 'Ômega 3'].map((p, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-gray-400 font-bold uppercase tracking-widest">
-                    <span className="w-1.5 h-1.5 bg-age-gold rounded-full flex-shrink-0" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Corpo & Performance */}
-            <div className="border border-white/10 rounded-[40px] p-10 hover:border-age-gold transition-all duration-300 group">
-              <p className="text-xs uppercase tracking-[0.3em] text-age-gold font-bold mb-4">Linha</p>
-              <h3 className="text-2xl font-black uppercase italic tracking-tight mb-8">Corpo &amp; Performance</h3>
-              <ul className="space-y-3">
-                {['Creatina 100% Pura', 'Celluli Burn (Suporte ao Metabolismo)'].map((p, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-gray-400 font-bold uppercase tracking-widest">
-                    <span className="w-1.5 h-1.5 bg-age-gold rounded-full flex-shrink-0" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FRASE FINAL / CTA ─────────────────────────────── */}
-      <section className="py-24 bg-white text-center">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="w-12 h-1 bg-age-gold mx-auto mb-12" />
-          <h2 className="text-3xl md:text-4xl font-black uppercase italic tracking-tighter text-black mb-8 leading-tight">
-            Cuidar de ti com critério — e ver isso aparecer no espelho e no dia a dia.
-          </h2>
-          <p className="text-gray-500 font-medium mb-12 text-sm uppercase tracking-widest">
-            Age Solutions — Ciência. Consistência. Resultado.
-          </p>
-          <Link
-            to="/"
-            className="inline-block bg-black text-age-gold font-black uppercase italic tracking-[0.2em] text-xs px-12 py-5 rounded-full hover:bg-age-gold hover:text-black transition-all duration-300"
-          >
-            Ver Produtos
-          </Link>
         </div>
       </section>
 
