@@ -1,10 +1,5 @@
 {
   "rewrites": [{ "source": "/(?!api/).*", "destination": "/index.html" }],
-  "functions": {
-    "api/newsletter.ts": {
-      "includeFiles": "node_modules/nodemailer/**"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
