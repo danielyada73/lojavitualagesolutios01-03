@@ -1,5 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -12,16 +12,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: 'Nome e e-mail são obrigatórios.' });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return res.status(500).json({ error: 'Serviço de e-mail não configurado.' });
-  }
-
-  const resend = new Resend(apiKey);
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT) || 587,
+    secure: false,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
 
   try {
-    await resend.emails.send({
-      from: 'Newsletter Age Solutions <onboarding@resend.dev>',
+    await transporter.sendMail({
+      from: `"Age Solutions" <${process.env.SMTP_USER}>`,
       to: 'marketing@anutrition.com.br',
       subject: 'Inscrição na Newsletter — Age Solutions',
       html: `
