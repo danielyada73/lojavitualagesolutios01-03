@@ -368,30 +368,25 @@ export function generateCheckoutUrl(items: { skuToken: string; quantity: number;
     const itemsStr = items
         .filter(item => !!item.skuToken || !!item.name)
         .map(item => {
-            // 1. Tenta pelo Mapa de IDs Internos
+            // 0. Se o skuToken JÁ É um token Yampi nativo (ex: P9FLSNK3UX, RZI9L4LENR),
+            //    usa direto sem nenhum remapeamento — evita substituição errada por fuzzy match.
+            const isNativeYampiToken = item.skuToken.length >= 8 && /^[A-Z0-9]+$/.test(item.skuToken);
+            if (isNativeYampiToken) {
+                console.log(`[Yampi] Token nativo detectado para ${item.name || item.skuToken}: ${item.skuToken}`);
+                return `${item.skuToken}:${item.quantity}`;
+            }
+
+            // 1. Tenta pelo Mapa de IDs Internos (ex: 'cre-ind' → '9K68OGYB34')
             let realToken = INTERNAL_TOKEN_MAP[item.skuToken];
-            
+
             // 2. Tenta pelo Mapa de Segurança (JSON gerado)
             if (!realToken) {
                 realToken = (yampiTokens as any)[item.skuToken];
             }
-            
-            // 3. Tenta pelo NOME do produto (Fuzzy match) - Último recurso
-            if (!realToken && item.name) {
-                const cleanName = item.name.toLowerCase().replace(/[^a-z0-9]/g, '');
-                // Tenta achar qualquer chave no JSON que contenha as palavras principais
-                const foundKey = Object.keys(yampiTokens).find(key => {
-                    const cleanKey = key.toLowerCase().replace(/[^a-z0-9]/g, '');
-                    return cleanName.includes(cleanKey) || cleanKey.includes(cleanName);
-                });
-                if (foundKey) {
-                    realToken = (yampiTokens as any)[foundKey];
-                }
-            }
 
-            // 4. Se ainda não achou, usa o que tiver como token original
+            // 3. Se ainda não achou, usa o que tiver como token original
             const finalToken = realToken || item.skuToken;
-            
+
             console.log(`[Yampi] Resolvendo Token para ${item.name || item.skuToken}: ${finalToken}`);
             return `${finalToken}:${item.quantity}`;
         })
