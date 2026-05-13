@@ -1,7 +1,9 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import nodemailer from 'nodemailer';
+import * as nodemailer from 'nodemailer';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  res.setHeader('Content-Type', 'application/json');
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -12,19 +14,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: 'Nome e e-mail são obrigatórios.' });
   }
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT) || 587,
-    secure: false,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
+
+  if (!smtpHost || !smtpUser || !smtpPass) {
+    return res.status(500).json({ error: 'Serviço de e-mail não configurado.' });
+  }
 
   try {
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: Number(process.env.SMTP_PORT) || 587,
+      secure: false,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+    });
+
     await transporter.sendMail({
-      from: `"Age Solutions" <${process.env.SMTP_USER}>`,
+      from: `"Age Solutions" <${smtpUser}>`,
       to: 'marketing@anutrition.com.br',
       subject: 'Inscrição na Newsletter — Age Solutions',
       html: `
@@ -47,8 +57,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     return res.status(200).json({ success: true });
-  } catch (error) {
-    console.error('[Newsletter] Erro ao enviar e-mail:', error);
-    return res.status(500).json({ error: 'Erro ao enviar e-mail. Tente novamente.' });
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    console.error('[Newsletter] Erro ao enviar e-mail:', msg);
+    return res.status(500).json({ error: 'Erro ao enviar e-mail: ' + msg });
   }
 }
