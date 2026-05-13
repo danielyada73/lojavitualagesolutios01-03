@@ -17,7 +17,7 @@ export default function Layout() {
   }, [checkoutUrl]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 overflow-x-hidden">
       <Header />
       <main className="flex-grow">
         <Outlet />

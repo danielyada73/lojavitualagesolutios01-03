@@ -1,26 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import ProductCard from '../components/ui/ProductCard';
-import { Product } from '../types';
-import { getProductsByCategory } from '../lib/yampi';
-import { Loader2 } from 'lucide-react';
+import { products as mockProducts } from '../data/mock';
 
 export default function Kits() {
-  const [kits, setKits] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function loadKits() {
-      try {
-        const data = await getProductsByCategory('kits', 50);
-        setKits(data);
-      } catch (error) {
-        console.error('Erro ao buscar kits:', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadKits();
-  }, []);
+  const kits = useMemo(() => mockProducts.filter(p => p.is_kit), []);
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -31,12 +14,8 @@ export default function Kits() {
         Aproveite nossos descontos exclusivos em combos selecionados para maximizar seus resultados.
       </p>
 
-      {loading ? (
-        <div className="flex justify-center py-20">
-          <Loader2 className="animate-spin text-age-gold" size={40} />
-        </div>
-      ) : kits.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {kits.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {kits.map((kit) => (
             <ProductCard key={kit.id} product={kit} />
           ))}

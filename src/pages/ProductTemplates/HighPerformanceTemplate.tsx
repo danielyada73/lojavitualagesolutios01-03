@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Product } from '../../types';
 import {
   ShoppingCart, ChevronRight, ShieldCheck, Truck,
-  Star, Plus, Check, RefreshCw, Package
+  Star, Plus, RefreshCw, Package
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
@@ -199,16 +199,16 @@ export default function HighPerformanceTemplate({ product }: Props) {
         </motion.nav>
 
         {/* ── Hero 2-colunas ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 py-12 lg:py-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 py-8 lg:py-16 items-start">
 
           {/* Coluna Esquerda: Imagem */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="sticky top-6"
+            className="lg:sticky lg:top-6"
           >
-            <div className="bg-[#F9F8F6] rounded-2xl overflow-hidden aspect-square flex items-center justify-center p-10 border border-[#E5E5E5] relative">
+            <div className="bg-[#F9F8F6] rounded-2xl overflow-hidden aspect-square flex items-center justify-center p-6 md:p-10 border border-[#E5E5E5] relative">
               <img
                 src={images[0] || product.thumbnail_url}
                 alt={product.name}
@@ -300,11 +300,11 @@ export default function HighPerformanceTemplate({ product }: Props) {
               custom={2}
               className="bg-[#F9F8F6] border border-[#E5E5E5] p-6"
             >
-              <div className="flex items-end gap-4 mb-1">
-                <div className="text-5xl font-black text-[#141414] tracking-tighter leading-none">
+              <div className="flex items-end gap-3 mb-1 flex-wrap">
+                <div className="text-4xl lg:text-5xl font-black text-[#141414] tracking-tighter leading-none">
                   R$ {selectedKit.price.toFixed(2).replace('.', ',')}
                 </div>
-                <div className="text-lg text-gray-400 line-through mb-0.5">
+                <div className="text-base lg:text-lg text-gray-400 line-through mb-0.5">
                   R$ {selectedKit.originalPrice.toFixed(2).replace('.', ',')}
                 </div>
               </div>
@@ -392,43 +392,6 @@ export default function HighPerformanceTemplate({ product }: Props) {
               </motion.div>
             ))}
           </div>
-        </section>
-
-        {/* ── O que está incluso ── */}
-        <section className="py-20 border-t border-[#E5E5E5] bg-[#F9F8F6] -mx-4 px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-2xl font-black text-[#141414] uppercase tracking-tighter mb-10">
-              O que você recebe no kit {selectedKit.label}
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-4 text-left">
-              {[
-                `${selectedKit.pots} pote${selectedKit.pots > 1 ? 's' : ''} de ${product.name}`,
-                'Nota fiscal e embalagem segura',
-                'Rastreamento do pedido por e-mail',
-                'Suporte dedicado via WhatsApp',
-                '30 dias de garantia incondicional',
-                `${selectedKit.pots * 30} dias de tratamento completo`,
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.4 }}
-                  className="flex items-center gap-3 bg-white border border-[#E5E5E5] px-5 py-3"
-                >
-                  <Check size={16} className="text-[#28A745] shrink-0" />
-                  <span className="text-sm font-bold text-[#141414]">{item}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </section>
 
         {/* ── Depoimentos ── */}

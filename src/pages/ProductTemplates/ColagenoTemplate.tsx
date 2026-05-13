@@ -32,7 +32,7 @@ const COL_KITS = [
     flavors: [
       { name: 'Cranberry', token: 'HOYDA7TYT0' },
       { name: 'Limão', token: 'KGICWXOHDC' },
-      { name: 'Mix', token: '4TQFOJG1EA' },
+      { name: '1 Cranberry + 1 Limão', token: '4TQFOJG1EA' },
     ],
   },
   {
@@ -44,8 +44,8 @@ const COL_KITS = [
     flavors: [
       { name: 'Cranberry', token: 'RZI9L4LENR' },
       { name: 'Limão', token: '955WW4R8LN' },
-      { name: 'Mix A', token: 'GX3HE6DQ4M' },
-      { name: 'Mix B', token: 'P9FLSNK3UX' },
+      { name: '2 Cranberry + 1 Limão', token: 'GX3HE6DQ4M' },
+      { name: '1 Cranberry + 2 Limão', token: 'P9FLSNK3UX' },
     ],
   },
   {
@@ -57,7 +57,7 @@ const COL_KITS = [
     flavors: [
       { name: 'Cranberry', token: 'OICN88HJC2' },
       { name: 'Limão', token: 'B0A9ME4GR9' },
-      { name: 'Mix', token: 'J7NHAD9XT9' },
+      { name: '3 Cranberry + 3 Limão', token: 'J7NHAD9XT9' },
     ],
   },
 ];
@@ -139,16 +139,16 @@ export default function ColagenoTemplate({ product }: Props) {
         </motion.nav>
 
         {/* ── Hero ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 py-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 py-8 lg:py-12 items-start">
 
           {/* Imagem */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="sticky top-6"
+            className="lg:sticky lg:top-6"
           >
-            <div className="bg-[#F9F8F6] rounded-2xl overflow-hidden aspect-square flex items-center justify-center p-10 border border-[#E5E5E5] relative">
+            <div className="bg-[#F9F8F6] rounded-2xl overflow-hidden aspect-square flex items-center justify-center p-6 md:p-10 border border-[#E5E5E5] relative">
               <img
                 src={images[0] || product.thumbnail_url}
                 alt={product.name}
@@ -244,11 +244,11 @@ export default function ColagenoTemplate({ product }: Props) {
               custom={3}
               className="bg-[#F9F8F6] border border-[#E5E5E5] p-6"
             >
-              <div className="flex items-end gap-4 mb-1">
-                <div className="text-5xl font-black text-[#141414] tracking-tighter leading-none">
+              <div className="flex items-end gap-3 mb-1 flex-wrap">
+                <div className="text-4xl lg:text-5xl font-black text-[#141414] tracking-tighter leading-none">
                   R$ {currentKit.price.toFixed(2).replace('.', ',')}
                 </div>
-                <div className="text-lg text-gray-400 line-through mb-0.5">
+                <div className="text-base lg:text-lg text-gray-400 line-through mb-0.5">
                   R$ {currentKit.originalPrice.toFixed(2).replace('.', ',')}
                 </div>
               </div>
@@ -335,7 +335,7 @@ export default function ColagenoTemplate({ product }: Props) {
         </section>
 
         {/* ── Como Usar ── */}
-        <section className="py-16 border-t border-[#E5E5E5] bg-[#F9F8F6] -mx-4 px-4">
+        <section className="py-16 border-t border-[#E5E5E5] bg-[#F9F8F6] rounded-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
