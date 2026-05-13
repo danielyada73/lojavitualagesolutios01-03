@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Product } from '../../types';
 import {
-  Star, Minus, Plus, ShoppingCart, ChevronRight,
-  Sparkles, ShieldCheck, Truck, RefreshCw
+  Star, Minus, Plus, ShoppingCart, ChevronRight, Sparkles
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
@@ -114,17 +113,6 @@ export default function ColagenoTemplate({ product }: Props) {
 
   return (
     <div className="bg-white text-[#141414] min-h-screen font-sans">
-
-      {/* ── Barra de Promoção ── */}
-      <div className="bg-[#141414] text-white py-2.5 overflow-hidden">
-        <div className="flex gap-16 animate-marquee whitespace-nowrap">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <span key={i} className="text-[10px] font-black uppercase tracking-[0.3em] shrink-0">
-              🚚 FRETE GRÁTIS PARA TODO O BRASIL &nbsp;•&nbsp; 🔒 COMPRA 100% SEGURA &nbsp;•&nbsp; ✨ RESULTADO EM 4 SEMANAS
-            </span>
-          ))}
-        </div>
-      </div>
 
       <div className="container mx-auto px-4">
         {/* ── Breadcrumb ── */}
@@ -275,27 +263,6 @@ export default function ColagenoTemplate({ product }: Props) {
               COMPRAR AGORA
             </motion.button>
 
-            {/* Selos */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              custom={5}
-              className="grid grid-cols-3 gap-4 border-t border-[#E5E5E5] pt-5"
-            >
-              {[
-                { icon: <Truck size={18} />, label: 'Frete Grátis', sub: 'Todo o Brasil' },
-                { icon: <ShieldCheck size={18} />, label: 'Compra Segura', sub: 'Checkout Protegido' },
-                { icon: <RefreshCw size={18} />, label: 'Garantia 30d', sub: 'Devolução Total' },
-              ].map((b, i) => (
-                <div key={i} className="flex flex-col items-center gap-1.5 text-center">
-                  <div className="w-10 h-10 bg-[#F9F8F6] flex items-center justify-center text-[#141414]">{b.icon}</div>
-                  <div className="text-[9px] font-black uppercase tracking-widest leading-tight">
-                    {b.label}<br /><span className="text-gray-400 font-bold">{b.sub}</span>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
           </div>
         </div>
 
