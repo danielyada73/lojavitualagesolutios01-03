@@ -292,9 +292,9 @@ const INTERNAL_TOKEN_MAP: Record<string, string> = {
     'eye-care-kit-3': 'GIJO9RSP81',
 
     // Ômega 3
-    'omega-ind': 'OMEGA3IND01',
-    'omega-kit-2': 'OMEGA3KIT2P',
-    'omega-kit-3': 'OMEGA3KIT3P',
+    'omega-ind': 'JTFKQO2CWQ',
+    'omega-kit-2': 'NJSMXRZR7F',
+    'omega-kit-3': 'S667G9A3J5',
 };
 
 /**
