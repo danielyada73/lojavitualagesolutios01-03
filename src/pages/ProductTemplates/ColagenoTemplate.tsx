@@ -17,8 +17,8 @@ const COL_KITS = [
     label: '1 POTE',
     tag: '',
     flavors: [
-      { name: 'Cranberry', token: '3U1Y8DTZH9' },
-      { name: 'Limão', token: 'EECCFB5BPD' },
+      { name: 'Cranberry', token: 'EECCFB5BPD' },
+      { name: 'Limão', token: '3U1Y8DTZH9' },
     ],
   },
   {

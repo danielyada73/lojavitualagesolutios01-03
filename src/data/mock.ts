@@ -1,5 +1,7 @@
 import { Category, Product, ProductVariation, Banner, PromotionalKit, Video } from '../types';
 
+const B = import.meta.env.BASE_URL;
+
 export const categories: Category[] = [
   {
     id: 'colageno-po',
@@ -17,7 +19,7 @@ export const categories: Category[] = [
     id: 'coenzima',
     name: 'COENZIMA',
     slug: 'coenzima',
-    banner_url: '/banner-coenzima.jpg'
+    banner_url: `${B}banner-coenzima.jpg`
   },
   {
     id: 'omega-3',
@@ -291,8 +293,8 @@ export const products: Product[] = [
     price: 79.90,
     original_price: 119.90,
     discount_percentage: 33,
-    thumbnail_url: '/creatina-premium.png',
-    images: ['/creatina-premium.png'],
+    thumbnail_url: `${B}creatina-premium.png`,
+    images: [`${B}creatina-premium.png`],
     is_popular: true,
     is_kit: false,
     details: { ...commonDetails, subtitle: 'Força e Explosão Muscular' }
@@ -481,8 +483,8 @@ export const products: Product[] = [
     price: 49.90,
     original_price: 79.90,
     discount_percentage: 38,
-    thumbnail_url: '/capa-omega-1pote.jpeg',
-    images: ['/capa-omega-1pote.jpeg', '/omega-segunda-imagem.jpeg', '/omega-terceira-imagem.jpeg', '/omega-quarta-imagem.jpeg'],
+    thumbnail_url: `${B}capa-omega-1pote.jpeg`,
+    images: [`${B}capa-omega-1pote.jpeg`, `${B}omega-segunda-imagem.jpeg`, `${B}omega-terceira-imagem.jpeg`, `${B}omega-quarta-imagem.jpeg`],
     is_popular: true,
     is_kit: false,
     details: { ...commonDetails, subtitle: 'Saúde Cardiovascular e Cerebral' }
@@ -495,8 +497,8 @@ export const products: Product[] = [
     price: 89.90,
     original_price: 159.80,
     discount_percentage: 44,
-    thumbnail_url: '/capa-omega-2potes.jpeg',
-    images: ['/capa-omega-2potes.jpeg', '/omega-segunda-imagem.jpeg', '/omega-terceira-imagem.jpeg', '/omega-quarta-imagem.jpeg'],
+    thumbnail_url: `${B}capa-omega-2potes.jpeg`,
+    images: [`${B}capa-omega-2potes.jpeg`, `${B}omega-segunda-imagem.jpeg`, `${B}omega-terceira-imagem.jpeg`, `${B}omega-quarta-imagem.jpeg`],
     is_popular: true,
     is_kit: true,
     details: { ...commonDetails, subtitle: 'Kit Duplo — Melhor Custo-Benefício' }
@@ -509,8 +511,8 @@ export const products: Product[] = [
     price: 119.90,
     original_price: 239.70,
     discount_percentage: 50,
-    thumbnail_url: '/capa-omega-3potes.jpeg',
-    images: ['/capa-omega-3potes.jpeg', '/omega-segunda-imagem.jpeg', '/omega-terceira-imagem.jpeg', '/omega-quarta-imagem.jpeg'],
+    thumbnail_url: `${B}capa-omega-3potes.jpeg`,
+    images: [`${B}capa-omega-3potes.jpeg`, `${B}omega-segunda-imagem.jpeg`, `${B}omega-terceira-imagem.jpeg`, `${B}omega-quarta-imagem.jpeg`],
     is_popular: true,
     is_kit: true,
     details: { ...commonDetails, subtitle: 'Kit Família — Maior Economia' }
@@ -536,8 +538,8 @@ export const banners: Banner[] = [
     id: '2',
     title: 'RENOVE SUA PELE',
     description: '3 POTES DE COLÁGENO COM ÁCIDO HIALURÔNICO DE R$ 269,70 POR: R$ 179,90',
-    image_url: '/banner-colageno-desktop.jpg',
-    mobile_image_url: '/banner-colageno-mobile.jpg',
+    image_url: `${B}banner-colageno-desktop.jpg`,
+    mobile_image_url: `${B}banner-colageno-mobile.jpg`,
     target_url: '/category/colageno-po',
     is_active: true
   }

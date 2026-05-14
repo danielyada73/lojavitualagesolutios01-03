@@ -19,7 +19,7 @@ export default function CategoryBanners() {
     },
     {
       title: 'COENZIMA Q10',
-      image: '/banner-coenzima.jpg',
+      image: `${import.meta.env.BASE_URL}banner-coenzima.jpg`,
       link: '/category/coenzima'
     },
     {

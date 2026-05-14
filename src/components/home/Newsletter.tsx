@@ -15,7 +15,7 @@ export default function Newsletter() {
     setErrorMsg('');
 
     try {
-      const res = await fetch('/api/newsletter', {
+      const res = await fetch('https://lojashopifyagesolutios.vercel.app/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: name.trim(), email: email.trim() }),

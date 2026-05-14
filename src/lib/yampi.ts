@@ -238,8 +238,8 @@ const INTERNAL_TOKEN_MAP: Record<string, string> = {
     'coenz-kit-6': 'C1EJM7X0EW',
     
     // Colágeno com Ácido Hialurônico
-    'col-cran': '3U1Y8DTZH9',
-    'col-lim': 'EECCFB5BPD', 
+    'col-cran': 'EECCFB5BPD',
+    'col-lim': '3U1Y8DTZH9',
     'col-kit-2': 'HOYDA7TYT0',
     'col-kit-3': 'RZI9L4LENR',
     'col-kit-6': 'OICN88HJC2',

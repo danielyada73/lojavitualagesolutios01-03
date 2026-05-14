@@ -31,7 +31,7 @@ import OAuthML from './dashboard/pages/OAuthML';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/loja-age">
       <ScrollToTop />
 
       {/* Botão flutuante do WhatsApp */}

@@ -78,8 +78,8 @@ export default function Footer() {
                 { name: 'Amex', url: 'https://img.icons8.com/color/48/000000/amex.png' },
                 { name: 'Diners', url: 'https://img.icons8.com/color/48/000000/diners-club.png' },
                 { name: 'Discover', url: 'https://img.icons8.com/color/48/000000/discover.png' },
-                { name: 'Elo', url: '/elo.svg' },
-                { name: 'Hipercard', url: '/hipercard.svg' },
+                { name: 'Elo', url: `${import.meta.env.BASE_URL}elo.svg` },
+                { name: 'Hipercard', url: `${import.meta.env.BASE_URL}hipercard.svg` },
                 { name: 'Pix', url: 'https://img.icons8.com/color/48/000000/pix.png' }
               ].map((card, i) => (
                 <div key={i} className="bg-white h-10 rounded flex items-center justify-center p-1 border border-gray-100 shadow-sm overflow-hidden">
