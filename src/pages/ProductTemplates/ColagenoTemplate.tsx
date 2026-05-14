@@ -43,8 +43,8 @@ const COL_KITS = [
     flavors: [
       { name: 'Cranberry', token: 'RZI9L4LENR' },
       { name: 'Limão', token: '955WW4R8LN' },
-      { name: '2 Cranberry + 1 Limão', token: 'GX3HE6DQ4M' },
-      { name: '1 Cranberry + 2 Limão', token: 'P9FLSNK3UX' },
+      { name: '2 Cranberry + 1 Limão', token: 'P9FLSNK3UX' },
+      { name: '1 Cranberry + 2 Limão', token: 'GX3HE6DQ4M' },
     ],
   },
   {
